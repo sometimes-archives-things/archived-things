@@ -1,0 +1,1076 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://passthepopcorn.me/forums.php?action=viewthread&threadid=20494 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge">
+		<meta name="referrer" content="no-referrer">
+	<meta name="referrer" content="same-origin">
+	<meta name="robots" content="noindex">
+		<title>MIXMUX :: PassThePopcorn</title>
+	<link rel="shortcut icon" href="https://passthepopcorn.me/favicon.ico">
+	<link rel="apple-touch-icon" href="https://passthepopcorn.me/static/common/touch-icon-iphone.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://passthepopcorn.me/static/common/touch-icon-ipad.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://passthepopcorn.me/static/common/touch-icon-iphone-retina.png?v=1514440441">
+	<link rel="search" type="application/opensearchdescription+xml" title="PassThePopcorn" href="https://passthepopcorn.me/static/opensearch.xml">
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+				<link href="./MIXMUX_files/marcel.css" rel="stylesheet" type="text/css" media="screen">
+						<script src="./MIXMUX_files/script_start.js.download" type="text/javascript"></script>
+						<script src="./MIXMUX_files/class_ajax.js.download" type="text/javascript"></script>
+						<script src="./MIXMUX_files/global.js.download" type="text/javascript"></script>
+							<script src="./MIXMUX_files/jquery.js.download" type="text/javascript"></script>
+						<script src="./MIXMUX_files/autocomplete.js.download" type="text/javascript"></script>
+					<script src="./MIXMUX_files/comments.js.download" type="text/javascript"></script>
+					<script src="./MIXMUX_files/subscriptions.js.download" type="text/javascript"></script>
+					<script src="./MIXMUX_files/bbcode.js.download" type="text/javascript"></script>
+					<script src="./MIXMUX_files/mousetrap.min.js.download" type="text/javascript"></script>
+					<script src="./MIXMUX_files/jquery.rangyinputs.js.download" type="text/javascript"></script>
+					<script src="./MIXMUX_files/jquery.qtip.min.js.download" type="text/javascript"></script>
+					<script src="./MIXMUX_files/jquery.simplemodal.1.4.4.min.js.download" type="text/javascript"></script>
+		</head>
+<body id="forums" data-anticsrftoken="9001" style="">
+<div id="wrapper">
+	<div id="header" class="header">
+		<div class="site-logo"><a class="site-logo__link" href="https://passthepopcorn.me/index.php"></a></div>
+				
+			<div class="main-menu">
+			<ul class="main-menu__list">
+				<li class="main-menu__item" id="nav_index"><a class="main-menu__link" href="https://passthepopcorn.me/index.php">Home</a></li>
+				<li class="main-menu__item" id="nav_torrents"><a class="main-menu__link" href="https://passthepopcorn.me/torrents.php">Movies</a></li>
+				<li class="main-menu__item" id="nav_collages"><a class="main-menu__link" href="https://passthepopcorn.me/collages.php">Collections</a></li>
+				<li class="main-menu__item" id="nav_requests"><a class="main-menu__link" href="https://passthepopcorn.me/requests.php">Requests</a></li>
+				<li class="main-menu__item" id="nav_forums"><a class="main-menu__link" href="https://passthepopcorn.me/forums.php">Forums</a></li>
+				<li class="main-menu__item" id="nav_irc"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php?action=article&amp;id=95">Chat</a></li>
+				<li class="main-menu__item" id="nav_top10"><a class="main-menu__link" href="https://passthepopcorn.me/top10.php">Top&nbsp;10</a></li>
+				<li class="main-menu__item" id="nav_rules"><a class="main-menu__link" href="https://passthepopcorn.me/rules.php">Rules</a></li>
+				<li class="main-menu__item" id="nav_wiki"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php">Wiki</a></li>
+				<li class="main-menu__item" id="nav_staff"><a class="main-menu__link" href="https://passthepopcorn.me/staff.php">Staff</a></li>
+			</ul>
+		</div>
+				<div class="search-bar">
+			<ul class="search-bar__list">
+				<li id="searchbar_torrents" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/torrents.php" method="get" class="search-bar__search-field__form">
+												<input type="hidden" name="order_by" value="relevance">
+						<input id="torrentssearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="m" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;torrents&#39;);" onblur="" placeholder="Movies" type="text" name="searchstr" size="17">
+						<ul id="torrentscomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_people" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/artist.php" method="get" class="search-bar__search-field__form">
+						<input id="artistsearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="p" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;artist&#39;);" placeholder="People" type="text" name="artistname" size="17">
+						<ul id="artistcomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_collections" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/collages.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="c" spellcheck="false" id="collectionsearch" placeholder="Collections" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_requests" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/requests.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="r" spellcheck="false" placeholder="Requests" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_forums" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/forums.php" method="get" class="search-bar__search-field__form">
+						<input value="search" type="hidden" name="action">
+						<input class="search-bar__search-field__input" accesskey="f" spellcheck="false" placeholder="Forums" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_log" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/log.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="l" spellcheck="false" placeholder="Log" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_users" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/user.php" method="get" class="search-bar__search-field__form">
+						<input type="hidden" name="action" value="search">
+						<input class="search-bar__search-field__input" accesskey="u" spellcheck="false" placeholder="Users" type="text" name="search" size="17">
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+		<div id="content" class="page__main-content">
+<script type="text/javascript">var ThreadID='20494';</script>
+<div class="thin">
+	<h2 class="page__title">
+		<a href="https://passthepopcorn.me/forums.php">Forums</a> &gt;
+		<a href="https://passthepopcorn.me/forums.php?action=viewforum&amp;forumid=43">Encoding</a> &gt;
+		MIXMUX	</h2>
+	<div class="linkbox">
+		<a class="linkbox__link" href="https://passthepopcorn.me/reports.php?action=report&amp;type=thread&amp;id=20494">[Report Thread]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#" onclick="SubscribeToForumTopic( this, 20494 ); return false;">[Subscribe]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#" onclick="ToggleSearchThreadForm( this ); return false;">[Search this Thread]</a>
+	</div>
+	<div id="searchthread" class="hidden" style="text-align: center;">
+		<div class="panel" style="display: inline-block; text-align: left;">
+			<div class="panel__body">
+				<form action="https://passthepopcorn.me/forums.php" method="get">
+					<input type="hidden" name="action" value="search">
+					<input type="hidden" name="threadid" value="20494">
+					<div class="form__group">
+						<input type="text" id="searchbox" name="search" size="70" placeholder="Post" class="form__input">
+					</div>
+					<div class="form__group">
+						<input type="text" id="username" name="user" size="70" placeholder="Username" class="form__input">
+					</div>
+					<div class="form__group">
+						<input type="submit" name="submit" value="Search this thread" class="form__input">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		<div class="pagination pagination--top"><span class="pagination__current-page">1-25</span> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=20494" class="pagination__link pagination__link--page">26-50</a> | <a href="https://passthepopcorn.me/forums.php?page=3&amp;action=viewthread&amp;threadid=20494" class="pagination__link pagination__link--page">51-75</a> | <a href="https://passthepopcorn.me/forums.php?page=4&amp;action=viewthread&amp;threadid=20494" class="pagination__link pagination__link--page">76-94</a> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=20494" class="pagination__link pagination__link--next">Next &gt;</a> <a href="https://passthepopcorn.me/forums.php?page=4&amp;action=viewthread&amp;threadid=20494" class="pagination__link pagination__link--last"> Last &gt;&gt;</a></div>
+
+	<div class="forum_post forum-post" id="post681784">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=681784#post681784">#681784</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 11 2013, 20:29">[ Jul 11 2013, 20:29 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;681784&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar681784" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=681784">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content681784">
+				<strong><span style="text-decoration: underline;"><div style="text-align:center"><span style="color:#00ffff"><span class="bbcode-size-10"><span class="bbcode-size-10">MIXMUX IS BACK</span></span></span></div></span></strong><br>
+<br>
+<span class="bbcode-size-5"><div style="text-align:center"><a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=23460">MIXMUX Remuxing Guide</a> | <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20495">Approval Thread</a> | <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20526&amp;postid=684278#post684278">Request a MIXMUX</a> | <a href="https://passthepopcorn.me/collages.php?id=3248">Collection</a><br>
+</div></span> <br>
+<div style="text-align:center"><br>
+______________________________________________________________________________________________________<br>
+</div> <br>
+<br>
+<div style="text-align:center"><br>
+<strong><span style="text-decoration: underline;"><span class="bbcode-size-5">The MIXMUX Team</span></span></strong><br>
+<br>
+<strong><span style="text-decoration: underline;">MIXMUX Leader</span></strong><br>
+<a href="https://passthepopcorn.me/user.php?action=search&amp;search=FatherTimeline">FatherTimeline</a><br>
+<br>
+<strong><span style="text-decoration: underline;">MIXMUXER</span></strong><br>
+<a href="https://passthepopcorn.me/user.php?action=search&amp;search=Tamjuk">Tamjuk</a><br>
+<br>
+<strong><span style="text-decoration: underline;">Approval MUXER</span></strong><br>
+<br>
+<strong><span style="text-decoration: underline;">MIXMember</span></strong><br>
+</div> <br>
+<br>
+<div style="text-align:center"><br>
+______________________________________________________________________________________________________<br>
+</div> <br>
+<br>
+<br>
+<br>
+<strong><span class="bbcode-size-5">About MIXMUX</span></strong><br>
+MIXMUX is an internal group that specializes in remuxes of the highest possible quality. All MIXMUX releases must be thoroughly researched to find the best possible video/audio/commentary tracks avalable/ and subtitles available in the sources aquired during obtaining the video and audio tracks.  This will help to ensure better encodes in the future for our internal groups, while allowing them to use less bandwidth.  Any releases MUST be unique in some way that separates them from the others that are commercially available.  For example, the best video source or the only video source available.<br>
+<br>
+<strong><span class="bbcode-size-5">How to Join</span></strong><br>
+<ul><li>Get 5 approvals in the MIXMUX approval thread and you are a MIXMember.</li><li>Get 10 approvals and you are allowed to approve MIXMUX submissions. (Approval MUXERs no longer have to post eac3to logs)</li><li>Get 25 approvals and you are a MIXMUXER. (exemptions to follow)</li></ul><br>
+<br>
+<strong><span class="bbcode-size-5">Ranks</span></strong><br>
+<ul><li>MIXMember</li><li>Approval MUXER</li><li>MIXMUXER</li></ul><br>
+<br>
+<br>
+<div style="text-align:center"><br>
+<strong><span class="bbcode-size-8">The Guidelines</span></strong><br>
+______________________________________________________________________________________________________<br>
+</div> <br>
+<span style="text-decoration: underline;"><strong>1. Purpose:</strong></span><br>
+<blockquote><br>
+1.1 - MIXMUX has the goal of creating the highest quality remuxes.<br>
+1.2 - All MIXMUX remuxes will be unique/superior in some way that distinguishes it from other commercially available sources.<br>
+1.3 - Remuxes will always be peer-reviewed to ensure quality.<br>
+1.4 - MIXMUX will produce a product that not only the PTP population can rely upon, but the internal encoding groups.<br>
+</blockquote><br>
+<br>
+<span style="text-decoration: underline;"><strong>2. Membership:</strong></span><br>
+OPEN<br>
+<br>
+<span style="text-decoration: underline;"><strong>3. Submission:</strong></span><br>
+<blockquote><br>
+3.1 - All remuxes must comply with all PTP rules.<br>
+3.2 - All remuxers of any level must submit the remux for approval before uploading to the site.<br>
+3.3 - Approval requests should have media info posted.<br>
+3.4 - Until there are actual members, I will review them.<br>
+3.5 - When uploading, edition information should include MIXMUX after all other edition information.<br>
+3.6 - When uploading, all approval information (Bluray comparison source, media info, and sources of all audio sources contained, etc.) should be included in the torrent description.<br>
+3.7 - Once uploaded and checked by PTP staff, MIXMUX remuxes may be uploaded by any user to other private trackers, where rules allow.<br>
+</blockquote><br>
+<br>
+<span style="text-decoration: underline;"><strong>4. Trumping:</strong></span><br>
+<blockquote><br>
+4.1 - Remuxes can be trumped with a superior video source.<br>
+4.2 - Remuxes can be trumped with a superior audio source.<br>
+4.3 - Remuxes can be trumped with additional commentaries taken from other sources.<br>
+</blockquote><br>
+<br>
+<br>
+<div style="text-align:center"><br>
+<strong><span class="bbcode-size-8">Rules</span></strong><br>
+______________________________________________________________________________________________________<br>
+</div> <br>
+<span style="text-decoration: underline;"><strong>1. Container/Subtitles:</strong></span><br>
+<blockquote><br>
+1.1 - MKV container muxed with MKVMerge.<br>
+1.2 - Remux must be a single file (no samples, screenshots, NFOs, or subtitles in the torrent).<br>
+1.3 - Releases should always be tagged using the following template:<br>
+- International.English.Title.Year.(Distribution.Company.Edition).[3 Letter Acronym For Country Of Origion].(Resolution).(Video Source).(Remux).(VC-1|AVC).(FLAC.1.0/2.0/3.0/5.1/7.1)-MIXMUX.mkv<br>
+<br>
+<code>Tenebre.1982.Wild.Side.FRA.1080p.Bluray.Remux.AVC.FLAC.2.0-MIXMUX.mkv</code><br>
+<br>
+1.4 - All subtitles from source must be PGS file format, outside subtitle sources should be PGS but exceptions can be made. No compression is allowed (zlib).<br>
+1.5 - In foreign films, English subtitles must be included if available and set to default.<br>
+1.6 - If available, chapter titles from the source should be included and properly named.<br>
+</blockquote><br>
+<br>
+<span style="text-decoration: underline;"><strong>2. Contents of Remux MUST:</strong></span><br>
+<blockquote><br>
+2.1 - Video must be the highest quality source available.  If no proof can be found you must be able to explain why it is superior in some way.<br>
+2.2 - Audio from the best video source is generally accepted, and original audio must be used (prefer 1.0 and 2.0 origional mixes and  multichannel upmixes should be avoided).<br>
+2.3 - Commentary tracks must be fully researched.  Any commercially distributed commentary, either on other DVDs or Bluray, must be acquired if the length/cut of the film or length is similar.  There will be mismatches between framerates.  This can be converted to the correct framerate/length using audacity.  Tutorial: <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=23423" title="Forum Link">Syncing Audio/Commentaries/Subtitles/Chapters From Other Sources</a><br>
+2.4 - Any sources acquired during the research must be inspected for subtitles.  If any unique subtitle files are found, they should be included if they are compatible.<br>
+</blockquote><br>
+<br>
+<span style="text-decoration: underline;"><strong>3. Formats of files</strong></span><br>
+<blockquote><br>
+3.1 - Audio<br>
+<ul><li>Lossless audio that is LPCM should be converted to FLAC.</li><li>Any other lossless audio that has a core audio track should remain as found on the Bluray.  If the lossless audio (after being converted to FLAC) is smaller than the lossy core audio track, then it is preferred that it be converted to FLAC.  This is typical with 1.0 and 2.0 channel audio and 5.1 that is padded to 24 bits.</li><li>Other lossy audio should remain as found on the Bluray.</li></ul><br>
+3.2 - Commentary tracks should be left untouched is they are lossy sources (i.e. AC-3).  If they are lossless formats, convert them to FLAC.<br>
+3.3 - All subtitles should be set to "no" under default, unless the film is in a foreign language, then English should be set to default and be first in the cue to trigger it as such.  Forced English subtitle flags need to be set to default and forced.<br>
+</blockquote><br>
+<br>
+<br>
+<br>
+<br>
+Any input or suggestions are very much welcome, thanks for reading and look forward to some great remuxes for PTP!<br>
+<br>
+<br>
+<br>
+<br>
+<span style="color:#00ffff"><strong><span class="bbcode-size-4">RUNNING LIST OF BLURAY/DVD COMPARISON SITES:</span></strong></span><br>
+<a rel="noreferrer" target="_blank" href="http://www.dvdbeaver.com/">http://www.dvdbeaver.com/</a><br>
+<a rel="noreferrer" target="_blank" href="http://www.landofwhimsy.com/">http://www.landofwhimsy.com/</a><br>
+<a rel="noreferrer" target="_blank" href="https://www.google.com/">https://www.google.com/</a><br>
+<a rel="noreferrer" target="_blank" href="http://www.dvdcompare.net/comparisons/">http://www.dvdcompare.net/comparisons/</a><br>
+<a rel="noreferrer" target="_blank" href="http://blu-ray.com/">http://blu-ray.com/</a><br>
+<a rel="noreferrer" target="_blank" href="http://forum.blu-ray.com/showthread.php?t=179724">List of International BDs with Better PQ, AQ, and/or More Extras</a><br>
+<a rel="noreferrer" target="_blank" href="https://caps-a-holic.com/index.php">https://caps-a-holic.com/index.php</a><br>
+<a rel="noreferrer" target="_blank" href="https://blah-ray.blogspot.com/">https://blah-ray.blogspot.com/</a><br>
+<a rel="noreferrer" target="_blank" href="http://www.invelos.com/Database.aspx">http://www.invelos.com/Database.aspx</a><br>
+<a rel="noreferrer" target="_blank" href="https://www.worldcat.org/">https://www.worldcat.org/</a>									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a> <span class="time" title="Jun 05 2020, 04:39">[ Jun 05 2020, 04:39 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post681791">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=681791#post681791">#681791</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=60714">chauncey</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=60714&amp;scene=3"><img src="./MIXMUX_files/encoder_gp.png" title="Golden Popcorn Encoder"></a> <img src="./MIXMUX_files/badge_gpchecker.png" title="Golden Popcorn Checker"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=60714"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 91 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (#ptp-encoding) </span>
+			<span class="time" title="Jul 11 2013, 20:36">[ Jul 11 2013, 20:36 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;681791&#39;, &#39;chauncey&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar681791" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=681791">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/31eh4i.png" class="forum-post__avatar__image" alt="chauncey&#39;s avatar" width="433" height="304">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content681791">
+				first page<br>
+<br>
+edit: selling this space, for any inquiries PM me 									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=60714">chauncey</a> <span class="time" title="May 18 2014, 05:33">[ May 18 2014, 05:33 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post681793">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=681793#post681793">#681793</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 11 2013, 20:39">[ Jul 11 2013, 20:39 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;681793&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar681793" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=681793">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content681793">
+				Commentary:<br>
+<a rel="noreferrer" target="_blank" href="http://www.dvdbeaver.com/film/dvdcompare5/tenebre.htm">http://www.dvdbeaver.com/film/dvdcompare5/tenebre.htm</a><br>
+<br>
+Video comparison:<br>
+<a rel="noreferrer" target="_blank" href="http://forums.highdefdigest.com/blu-ray-imports-subforum/117784-another-spotty-arrow-video-transfer-time-tenebrae.html">http://forums.highdefdigest.com/blu-ray-imports-subforum/117784-another-spotty-arrow-video-transfer-time-tenebrae.html</a><br>
+<a rel="noreferrer" target="_blank" href="http://www.landofwhimsy.com/archives/2010/11/some-thoughts-on-wild-sides-new-tenebrae-bd/">http://www.landofwhimsy.com/archives/2010/11/some-thoughts-on-wild-sides-new-tenebrae-bd/</a><br>
+<a rel="noreferrer" target="_blank" href="http://www.landofwhimsy.com/archives/2011/06/tenebrae-redux/">http://www.landofwhimsy.com/archives/2011/06/tenebrae-redux/</a><br>
+<br>
+<ul><li>Note subtitle english is delayed 5083ms.</li></ul><br>
+<br>
+<a href="javascript:void(0);" onclick="BBCode.MediaInfoToggleShow( this );">Tenebre.1982.Wild.Side.1080p.Remux.AVC.FLAC.2.0-MIXMUX.mkv</a><table class="mediainfo"><tbody><tr><td><table class="nobr mediainfo__section"><caption class="mediainfo__section__caption">General</caption><tbody><tr><td>Container:</td><td>Matroska</td></tr><tr><td>Runtime:</td><td>1h 40mn</td></tr><tr><td>Size:</td><td>26.1 GiB</td></tr></tbody></table></td><td><table class="nobr mediainfo__section"><caption class="mediainfo__section__caption">Video</caption><tbody><tr><td>Codec:</td><td>h264</td></tr><tr><td>Resolution:</td><td>1920x1080</td></tr><tr><td>Aspect ratio:</td><td>16:9</td></tr><tr><td>Frame rate:</td><td>24.000 fps</td></tr><tr><td>Bit rate:</td><td>37.0 Mbps</td></tr></tbody></table></td><td><table class="mediainfo__section"><caption class="mediainfo__section__caption">Audio</caption><tbody><tr><td>#1:</td><td>English 2.0ch FLAC</td></tr><tr><td>#2:</td><td>Italian 2.0ch FLAC</td></tr><tr><td>#3:</td><td>2.0ch Vorbis @ 80.0 Kbps (Commentary by Director Dario Argento, Composer Claudio Simonetti and Jounalist Loris Curci)</td></tr><tr><td>#4:</td><td>2.0ch Vorbis @ 80.0 Kbps (Commentary by Kim Newman and Alan Jones)</td></tr><tr><td>#5:</td><td>2.0ch Vorbis @ 80.0 Kbps (Commentary by Thomas Rostock)</td></tr></tbody></table></td></tr></tbody></table><blockquote class="spoiler hidden">General<br>
+Unique ID                                : 197376933865096412228738368444596702904 (0x947D6A2B7F40E1EC8159F4471C1B4EB8)<br>
+Complete name                            : /Tenebre.1982.Wild.Side.1080p.Remux.AVC.FLAC.2.0-MIXMUX.mkv<br>
+Format                                   : Matroska<br>
+Format version                           : Version 2<br>
+File size                                : 26.1 GiB<br>
+Duration                                 : 1h 40mn<br>
+Overall bit rate                         : 37.0 Mbps<br>
+Encoded date                             : UTC 2013-07-10 19:36:36<br>
+Writing application                      : mkvmerge v5.8.0 ('No Sleep / Pillow') built on Sep  2 2012 15:37:04<br>
+Writing library                          : libebml v1.2.3 + libmatroska v1.3.0<br>
+<br>
+Video<br>
+ID                                       : 1<br>
+Format                                   : AVC<br>
+Format/Info                              : Advanced Video Codec<br>
+Format profile                           : High@L4.1<br>
+Format settings, CABAC                   : Yes<br>
+Format settings, ReFrames                : 4 frames<br>
+Muxing mode                              : Container profile=Unknown@0.0<br>
+Codec ID                                 : V_MPEG4/ISO/AVC<br>
+Duration                                 : 1h 40mn<br>
+Bit rate mode                            : Constant<br>
+Nominal bit rate                         : 37.0 Mbps<br>
+Width                                    : 1 920 pixels<br>
+Height                                   : 1 080 pixels<br>
+Display aspect ratio                     : 16:9<br>
+Frame rate                               : 24.000 fps<br>
+Standard                                 : NTSC<br>
+Color space                              : YUV<br>
+Chroma subsampling                       : 4:2:0<br>
+Bit depth                                : 8 bits<br>
+Scan type                                : Progressive<br>
+Bits/(Pixel*Frame)                       : 0.743<br>
+Language                                 : English<br>
+Color primaries                          : BT.709-5, BT.1361, IEC 61966-2-4, SMPTE RP177<br>
+Transfer characteristics                 : BT.709-5, BT.1361<br>
+Matrix coefficients                      : BT.709-5, BT.1361, IEC 61966-2-4 709, SMPTE RP177<br>
+<br>
+Audio #1<br>
+ID                                       : 2<br>
+Format                                   : FLAC<br>
+Format/Info                              : Free Lossless Audio Codec<br>
+Codec ID                                 : A_FLAC<br>
+Duration                                 : 1h 40mn<br>
+Bit rate mode                            : Variable<br>
+Channel(s)                               : 2 channels<br>
+Sampling rate                            : 48.0 KHz<br>
+Bit depth                                : 16 bits<br>
+Writing library                          : libFLAC 1.2.1 (UTC 2007-09-17)<br>
+Language                                 : English<br>
+<br>
+Audio #2<br>
+ID                                       : 3<br>
+Format                                   : FLAC<br>
+Format/Info                              : Free Lossless Audio Codec<br>
+Codec ID                                 : A_FLAC<br>
+Duration                                 : 1h 40mn<br>
+Bit rate mode                            : Variable<br>
+Channel(s)                               : 2 channels<br>
+Sampling rate                            : 48.0 KHz<br>
+Bit depth                                : 16 bits<br>
+Writing library                          : libFLAC 1.2.1 (UTC 2007-09-17)<br>
+Language                                 : Italian<br>
+<br>
+Audio #3<br>
+ID                                       : 4<br>
+Format                                   : Vorbis<br>
+Format settings, Floor                   : 1<br>
+Codec ID                                 : A_VORBIS<br>
+Duration                                 : 1h 40mn<br>
+Bit rate mode                            : Variable<br>
+Bit rate                                 : 80.0 Kbps<br>
+Channel(s)                               : 2 channels<br>
+Sampling rate                            : 48.0 KHz<br>
+Compression mode                         : Lossy<br>
+Delay relative to video                  : 5s 83ms<br>
+Stream size                              : 57.8 MiB (0%)<br>
+Title                                    : Commentary by Director Dario Argento, Composer Claudio Simonetti and Jounalist Loris Curci<br>
+Writing library                          : libVorbis (Omnipresent) (20120203 (Omnipresent))<br>
+<br>
+Audio #4<br>
+ID                                       : 5<br>
+Format                                   : Vorbis<br>
+Format settings, Floor                   : 1<br>
+Codec ID                                 : A_VORBIS<br>
+Duration                                 : 1h 40mn<br>
+Bit rate mode                            : Variable<br>
+Bit rate                                 : 80.0 Kbps<br>
+Channel(s)                               : 2 channels<br>
+Sampling rate                            : 48.0 KHz<br>
+Compression mode                         : Lossy<br>
+Delay relative to video                  : 5s 83ms<br>
+Stream size                              : 57.8 MiB (0%)<br>
+Title                                    : Commentary by Kim Newman and Alan Jones<br>
+Writing library                          : libVorbis (Omnipresent) (20120203 (Omnipresent))<br>
+<br>
+Audio #5<br>
+ID                                       : 6<br>
+Format                                   : Vorbis<br>
+Format settings, Floor                   : 1<br>
+Codec ID                                 : A_VORBIS<br>
+Duration                                 : 1h 40mn<br>
+Bit rate mode                            : Variable<br>
+Bit rate                                 : 80.0 Kbps<br>
+Channel(s)                               : 2 channels<br>
+Sampling rate                            : 48.0 KHz<br>
+Compression mode                         : Lossy<br>
+Delay relative to video                  : 5s 83ms<br>
+Stream size                              : 57.8 MiB (0%)<br>
+Title                                    : Commentary by Thomas Rostock<br>
+Writing library                          : libVorbis (Omnipresent) (20120203 (Omnipresent))<br>
+<br>
+Text #1<br>
+ID                                       : 7<br>
+Format                                   : UTF-8<br>
+Codec ID                                 : S_TEXT/UTF8<br>
+Codec ID/Info                            : UTF-8 Plain Text<br>
+Language                                 : English<br>
+<br>
+Text #2<br>
+ID                                       : 8<br>
+Format                                   : UTF-8<br>
+Codec ID                                 : S_TEXT/UTF8<br>
+Codec ID/Info                            : UTF-8 Plain Text<br>
+Language                                 : French<br>
+<br>
+Menu<br>
+00:00:00.000                             : en:Start Program/Main Titles<br>
+00:02:14.542                             : en:Carry-On Luggage<br>
+00:05:29.115                             : en:Murder In Rome<br>
+00:11:40.951                             : en:A Bag In Disarray<br>
+00:16:23.183                             : en:Passage From "Tenebre"<br>
+00:21:48.585                             : en:"One hell of a day!"<br>
+00:26:35.085                             : en:Chapter 2 - Murder<br>
+00:33:39.318                             : en:A Second Message<br>
+00:38:52.585                             : en:"Is that Jane?"<br>
+00:46:01.885                             : en:Doberman<br>
+00:56:39.619                             : en:"Soon 'The Corruptor'"<br>
+00:59:46.553                             : en:Witness To Murder<br>
+01:07:59.687                             : en:Secret Lovers<br>
+01:12:13.485                             : en:Return To The Murder Scene<br>
+01:16:19.355                             : en:The Red Shoes<br>
+01:20:36.183                             : en:Death Of The Eye Witness<br>
+01:26:16.890                             : en:A Call From Jane<br>
+01:29:55.957                             : en:A Tormented Peter Neal<br>
+01:36:43.091                             : en:A Shocking Twist<br>
+01:39:14.159                             : en:End Credits</blockquote>									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a> <span class="time" title="Jul 11 2013, 20:47">[ Jul 11 2013, 20:47 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post681806">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=681806#post681806">#681806</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=86443">Pirata00</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=86443"><img src="./MIXMUX_files/Rank6.png" class="award" title="Rank 6: 113 Awards"></a> (Vulgar Cinephile)</strong>
+			<span class="user_title"> (This is not a custom title) </span>
+			<span class="time" title="Jul 11 2013, 21:03">[ Jul 11 2013, 21:03 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;681806&#39;, &#39;Pirata00&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar681806" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=681806">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/w71n80.png" class="forum-post__avatar__image" alt="Pirata00&#39;s avatar" width="292" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content681806">
+				Awesome, FatherTimeline!							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post681808">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=681808#post681808">#681808</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 11 2013, 21:11">[ Jul 11 2013, 21:11 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;681808&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar681808" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=681808">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content681808">
+				1. <a href="https://passthepopcorn.me/torrents.php?id=7810&amp;torrentid=234704" class="torrent-info-link" title="26.08 GiB, 64 ↺, 9 ↑, 0 ↓">Tenebre [1982] - H.264 / MKV / Blu-ray / 1080p / Remux / Dual Audio / With Commentary</a>							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post681836">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=681836#post681836">#681836</a>
+			by <strong><a class="username username--legend" href="https://passthepopcorn.me/user.php?id=82919">crystal</a> (Legend)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jul 11 2013, 21:39">[ Jul 11 2013, 21:39 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;681836&#39;, &#39;crystal&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar681836" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=681836">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/htns5q.png" class="forum-post__avatar__image" alt="crystal&#39;s avatar" width="246" height="367">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content681836">
+				Stickied.<br>
+<br>
+Good luck!							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post681876">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=681876#post681876">#681876</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=78556">stevmor</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=78556"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 93 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<span style="color:#ff0000">✿</span> <span style="color:#00ff00">✿</span> <span style="color:#0000ff">✿</span>) </span>
+			<span class="time" title="Jul 11 2013, 22:30">[ Jul 11 2013, 22:30 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;681876&#39;, &#39;stevmor&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar681876" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=681876">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content681876">
+				Great job, FatherTimeline!							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post681905">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=681905#post681905">#681905</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=81399">FlashGit</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=81399"><img src="./MIXMUX_files/Rank6.png" class="award" title="Rank 6: 125 Awards"></a> (Custom Class)</strong>
+			<span class="user_title"> (<strong>Custom Title</strong> <img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://static.passthepopcorn.me/static/common/symbols/Rank6.png" src="./MIXMUX_files/Rank6(1).png">) </span>
+			<span class="time" title="Jul 11 2013, 23:25">[ Jul 11 2013, 23:25 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;681905&#39;, &#39;FlashGit&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar681905" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=681905">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/v401z3.png" class="forum-post__avatar__image" alt="FlashGit&#39;s avatar" width="1" height="1">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content681905">
+				Nice idea, what I do myself all ready.<br>
+<br>
+Comments:<br>
+You've not mentioned chapters at all<br>
+I wouldn't OCR any language I didn't speak because I wouldn't necessarily notice errors.<br>
+AAC &gt;&gt;&gt;&gt;&gt; OGG as it's supported on everything (not HE-AAC)<br>
+Best audio is often very debatable and we can only have one track in one language here, most people are going to pick whatever has the most channels<br>
+If this is intended as an encode source then I don't know if FLAC is ideal, encoders then have to encode the audio instead of grabbing a core track<br>
+<br>
+Audio is the main problem here, which track and which format.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post681913">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=681913#post681913">#681913</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 11 2013, 23:34">[ Jul 11 2013, 23:34 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;681913&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar681913" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=681913">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content681913">
+				Audio:<br>
+Well honestly, since all the encodes here use ogg primarily, I'll let it be.  Many times I have been unable to find any source with it, and have had to take it from an encode.  This is an exception, it will be allowed if necessary.  I would prefer untouched commentary, but its not a big deal.  FLAC has best compression, and we transcode to ac3 primarily.  So any HD content should have FLAC anyways if the size is decent.<br>
+<br>
+"most people are going to pick whatever has the most channels" I will review any main audio track selections.<br>
+<br>
+Chapters:<br>
+read 2.7<br>
+<br>
+Subs:<br>
+I am considering making it manditory to upload all subs to an external source.  If people notice errors, then allow it to be corrected and added as an external on ptp.									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a> <span class="time" title="Jul 12 2013, 00:00">[ Jul 12 2013, 00:00 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post681931">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=681931#post681931">#681931</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=91804">Nvious</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=91804"><img src="./MIXMUX_files/Rank3.png" class="award" title="Rank 3: 62 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<strong>Kaya Scodelario</strong>) </span>
+			<span class="time" title="Jul 12 2013, 00:47">[ Jul 12 2013, 00:47 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;681931&#39;, &#39;Nvious&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar681931" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=681931">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/rhv9xq.jpg" class="forum-post__avatar__image" alt="Nvious&#39;s avatar" width="236" height="359">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content681931">
+				Awesome! Can't wait to see more from this.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post682619">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=682619#post682619">#682619</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 13 2013, 03:52">[ Jul 13 2013, 03:52 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;682619&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar682619" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=682619">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content682619">
+				The rate of film is 23.976 and since it was filmed after 1990, the framerate of 25fps is incorrect to the original film.  That is why it was slowed by selective detelecine/deinterlacing. Obviously the audio is sped up as well... When you demuxed, was the audio a different length?  It probably was not, I don't know the best way of slowing audio, but mkvmerge allows it.  The framerate should not be 25fps though in my opinion.  I bet if you analyze those frames again you will see interlacing occurring much less frequently than usual, but i bet it is there.  That is a bluray error, fixing that is probably best if the results are not terrible.  I will approve it as it is still best source now.  But I hope these situations don't come up very often, cause this might be alot more work than I thought <img border="0" src="./MIXMUX_files/smile.gif" alt="">									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a> <span class="time" title="Jul 13 2013, 06:39">[ Jul 13 2013, 06:39 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post682840">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=682840#post682840">#682840</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=89623">erpel_</a><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=89623&amp;scene=3"><img src="./MIXMUX_files/encoder.png" title="Encoder"></a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=89623"><img src="./MIXMUX_files/Rank3.png" class="award" title="Rank 3: 56 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<strong>Elite</strong>) </span>
+			<span class="time" title="Jul 13 2013, 15:51">[ Jul 13 2013, 15:51 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;682840&#39;, &#39;erpel_&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar682840" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=682840">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content682840">
+				Film is 24fps. 23.976fps is the result of the NTSC Television standard, i.e. (24/1001)x1000.<br>
+<br>
+If you never see any combing with 25fps (24fps source), it's sped up by ~4%. If you see some, it's not sped up.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post683013">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=683013#post683013">#683013</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 13 2013, 20:48">[ Jul 13 2013, 20:48 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;683013&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar683013" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=683013">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content683013">
+				<strong>erpel_ wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=682840#post682840"><img class="view_post" alt="View Post" src="./MIXMUX_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>Film is 24fps. 23.976fps is the result of the NTSC Television standard, i.e. (24/1001)x1000.<br>
+<br>
+If you never see any combing with 25fps (24fps source), it's sped up by ~4%. If you see some, it's not sped up.</blockquote><br>
+<br>
+So are you saying that the film could be 25fps and be progressive?  It has to have some interlaced frames to reach 25fps... Am I wrong?									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a> <span class="time" title="Jul 14 2013, 00:11">[ Jul 14 2013, 00:11 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post683124">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=683124#post683124">#683124</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 14 2013, 00:11">[ Jul 14 2013, 00:11 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;683124&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar683124" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=683124">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content683124">
+				Ok I started some research on Dobermann (1997).  I found that the Japanese bluray has a higher bitrate for video and is superior.  Next step is commentary, I found two commentaries on a French bluray... Unfortunately I can't find a seeded source.  It may be on a French DVD as well.  I have a ton of subs already from another German sourced bluray.  So I should be set there.  If anyone else wants to lend a hand researching/helping me find a source for commentary, I would appreciate it.  Anything else I missed?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post683158">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=683158#post683158">#683158</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=81399">FlashGit</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=81399"><img src="./MIXMUX_files/Rank6.png" class="award" title="Rank 6: 125 Awards"></a> (Custom Class)</strong>
+			<span class="user_title"> (<strong>Custom Title</strong> <img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://static.passthepopcorn.me/static/common/symbols/Rank6.png" src="./MIXMUX_files/Rank6(1).png">) </span>
+			<span class="time" title="Jul 14 2013, 01:26">[ Jul 14 2013, 01:26 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;683158&#39;, &#39;FlashGit&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar683158" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=683158">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/v401z3.png" class="forum-post__avatar__image" alt="FlashGit&#39;s avatar" width="1" height="1">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content683158">
+				There's a seeded DVD with a commentary at 'Tik. It's a French commentary though.<br>
+Don't go too nuts with this dude. <img border="0" src="./MIXMUX_files/smile.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post683159">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=683159#post683159">#683159</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 14 2013, 01:28">[ Jul 14 2013, 01:28 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;683159&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar683159" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=683159">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content683159">
+				I changed my mind, I'm gonna go ape shit nutso on this.  Cause that's what it needs... a lunatic.									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a> <span class="time" title="Jul 15 2013, 23:15">[ Jul 15 2013, 23:15 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post683763">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=683763#post683763">#683763</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 15 2013, 13:05">[ Jul 15 2013, 13:05 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;683763&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar683763" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=683763">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content683763">
+				2. <a href="https://passthepopcorn.me/torrents.php?id=4524&amp;torrentid=235730">torrents.php?id=4524&amp;torrentid=235730</a>							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post684103">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=684103#post684103">#684103</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=78556">stevmor</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=78556"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 93 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<span style="color:#ff0000">✿</span> <span style="color:#00ff00">✿</span> <span style="color:#0000ff">✿</span>) </span>
+			<span class="time" title="Jul 16 2013, 06:10">[ Jul 16 2013, 06:10 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;684103&#39;, &#39;stevmor&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar684103" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=684103">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content684103">
+				1. <a href="https://passthepopcorn.me/torrents.php?id=1989&amp;torrentid=235933">torrents.php?id=1989&amp;torrentid=235933</a>							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post684241">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=684241#post684241">#684241</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=59015">alvareo</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=59015"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 91 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jul 16 2013, 15:17">[ Jul 16 2013, 15:17 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;684241&#39;, &#39;alvareo&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar684241" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=684241">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/z0j7uq.jpg" class="forum-post__avatar__image" alt="alvareo&#39;s avatar" width="225" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content684241">
+				Can I post requests here?<br>
+<br>
+<a href="https://passthepopcorn.me/torrents.php?id=8379&amp;torrentid=151706">torrents.php?id=8379&amp;torrentid=151706</a><br>
+<a href="https://passthepopcorn.me/requests.php?action=view&amp;id=29022">Requests &gt; Twin Peaks: Fire Walk with Me [1992]</a><br>
+<br>
+<img border="0" src="./MIXMUX_files/smile.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post684296">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=684296#post684296">#684296</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 16 2013, 17:34">[ Jul 16 2013, 17:34 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;684296&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar684296" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=684296">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content684296">
+				<strong>alvareo wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=684241#post684241"><img class="view_post" alt="View Post" src="./MIXMUX_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>Can I post requests here?<br>
+<br>
+<a href="https://passthepopcorn.me/torrents.php?id=8379&amp;torrentid=151706">torrents.php?id=8379&amp;torrentid=151706</a><br>
+<a href="https://passthepopcorn.me/requests.php?action=view&amp;id=29022">Requests &gt; Twin Peaks: Fire Walk with Me [1992]</a><br>
+<br>
+<img border="0" src="./MIXMUX_files/smile.gif" alt=""></blockquote><br>
+<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20526&amp;postid=684278#post684278" title="Forum Link">Request a MIXMUX - Post #684278</a>							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post684337">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=684337#post684337">#684337</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=59015">alvareo</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=59015"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 91 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jul 16 2013, 19:17">[ Jul 16 2013, 19:17 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;684337&#39;, &#39;alvareo&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar684337" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=684337">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/z0j7uq.jpg" class="forum-post__avatar__image" alt="alvareo&#39;s avatar" width="225" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content684337">
+				Alright! I'll research and request.<br>
+<br>
+Edit: Maybe add <a rel="noreferrer" target="_blank" href="http://blu-ray.com/">http://blu-ray.com</a> to the list of sites? They don't do direct comparisons but reviews, and sometimes they review more than one edition.									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=59015">alvareo</a> <span class="time" title="Jul 16 2013, 19:24">[ Jul 16 2013, 19:24 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post684410">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=684410#post684410">#684410</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 16 2013, 21:58">[ Jul 16 2013, 21:58 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;684410&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar684410" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=684410">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content684410">
+				<a href="https://passthepopcorn.me/torrents.php?id=4612&amp;torrentid=233170">torrents.php?id=4612&amp;torrentid=233170</a><br>
+<br>
+Is this the best out there?  I have looked and looked... Until a criterion of this is released I think i'm gonna upload it.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post684486">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=684486#post684486">#684486</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 17 2013, 00:40">[ Jul 17 2013, 00:40 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;684486&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar684486" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=684486">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content684486">
+				3. <a href="https://passthepopcorn.me/torrents.php?id=4612&amp;torrentid=236179">torrents.php?id=4612&amp;torrentid=236179</a>									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a> <span class="time" title="Jul 18 2013, 04:15">[ Jul 18 2013, 04:15 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post685189">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=685189#post685189">#685189</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 18 2013, 04:15">[ Jul 18 2013, 04:15 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;685189&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar685189" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=685189">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content685189">
+				Not sure what audio to use for <a href="https://passthepopcorn.me/torrents.php?id=22120">4 mosche di velluto grigio AKA 4 Flies on Grey Velvet [1971]</a> Remux<br>
+<br>
+<a rel="noreferrer" target="_blank" href="http://www.landofwhimsy.com/archives/2012/07/four-flies-on-grey-velvet-shameless-vs-koch-media/">http://www.landofwhimsy.com/archives/2012/07/four-flies-on-grey-velvet-shameless-vs-koch-media/</a><br>
+<br>
+Glitches with better sound?  Or no glitches and garbling...							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post688938">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494&amp;postid=688938#post688938">#688938</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a><img src="./MIXMUX_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=67193"><img src="./MIXMUX_files/Rank5.png" class="award" title="Rank 5: 106 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ff6347">★</span><span style="color:#ffa500">★</span><span style="color:#ffff00">★</span><span style="color:#adff2f">★</span><span style="color:#00ff7f">★</span><span style="color:#00ffff">★</span><span style="color:#48d1cc">★</span><span style="color:#9370d8">★</span><span style="color:#ee82ee">★</span><span style="color:#ff00ff">★</span>) </span>
+			<span class="time" title="Jul 24 2013, 22:16">[ Jul 24 2013, 22:16 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#quickpost" onclick="Quote( &#39;688938&#39;, &#39;FatherTimeline&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar688938" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=688938">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=20494#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./MIXMUX_files/899tr3.png" class="forum-post__avatar__image" alt="FatherTimeline&#39;s avatar" width="254" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content688938">
+				4. <a href="https://passthepopcorn.me/torrents.php?id=18284&amp;torrentid=238746">torrents.php?id=18284&amp;torrentid=238746</a>									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=67193">FatherTimeline</a> <span class="time" title="Aug 06 2013, 20:42">[ Aug 06 2013, 20:42 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="pagination pagination--bottom"><span class="pagination__current-page">1-25</span> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=20494" class="pagination__link pagination__link--page">26-50</a> | <a href="https://passthepopcorn.me/forums.php?page=3&amp;action=viewthread&amp;threadid=20494" class="pagination__link pagination__link--page">51-75</a> | <a href="https://passthepopcorn.me/forums.php?page=4&amp;action=viewthread&amp;threadid=20494" class="pagination__link pagination__link--page">76-94</a> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=20494" class="pagination__link pagination__link--next">Next &gt;</a> <a href="https://passthepopcorn.me/forums.php?page=4&amp;action=viewthread&amp;threadid=20494" class="pagination__link pagination__link--last"> Last &gt;&gt;</a></div>
+		
+	<h2 class="page__title">
+	<a href="https://passthepopcorn.me/forums.php">Forums</a> &gt;
+	<a href="https://passthepopcorn.me/forums.php?action=viewforum&amp;forumid=43">Encoding</a> &gt;
+	MIXMUX</h2>
+</div>
+
+<script>
+	function ToggleSearchThreadForm( clickedItem )
+	{
+		var searchForm = $jq( "#searchthread" );
+		searchForm.ToggleHC();
+
+		if ( !searchForm.hasClass( "hidden" ) )
+		{
+			$jq( clickedItem ).html( "[Hide Search]" );
+			$jq( "#searchbox" ).focus();
+		}
+		else
+		{
+			$jq( clickedItem ).html( "[Search this Thread]" );
+		}
+	}
+
+	var bbcodeToolbar = new BbcodeToolbar( "#quickpost" );
+	var youTubeQualityParameter = "";
+	RegisterGlobalAjaxCursorChange();
+	InitializeNewCommentValidator();
+
+						$jq('.forum-post__heading > span:first-of-type > a:first-of-type').next().addBack().hover(
+						function() {
+							$jq(this).parents('.forum-post').find('.forum-post__avatar__partyhat').stop().fadeTo(1000, 0.2);
+						},
+						function() {
+							$jq(this).parents('.forum-post').find('.forum-post__avatar__partyhat').stop().delay(300).fadeTo(1000, 1);
+						}
+					);</script>
+
+	</div>
+	
+</div>
+<div id="lightbox" class="lightbox hidden" tabindex="-1"></div>
+<div id="lightbox__shroud" class="lightbox__shroud hidden"></div>
+
+<!-- Extra divs, for stylesheet developers to add imagery -->
+<div id="extra1"><span></span></div>
+<div id="extra2"><span></span></div>
+<div id="extra3"><span></span></div>
+<div id="extra4"><span></span></div>
+<div id="extra5"><span></span></div>
+<div id="extra6"><span></span></div>
+
+
+</body></html>

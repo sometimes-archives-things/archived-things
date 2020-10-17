@@ -1,0 +1,98 @@
+function SubscribeToForumTopic( linkElement, topicId )
+{
+	var postData = { "action": "thread_subscribe", "topicid": topicId };
+
+	$jq.ajax(
+	{
+		url: "userhistory.php",
+		type: "POST",
+		data: AddAntiCsrfTokenToPostData( postData ),
+		success: function( responseData )
+        {
+			if ( responseData[ 'Result' ] == "Ok" )
+			{
+				if ( responseData[ 'Subscribed' ] )
+					$jq( linkElement ).html( "[Unsubscribe]" );
+				else
+					$jq( linkElement ).html( "[Subscribe]" );
+			}
+		}
+	} );
+}
+
+function SubscribeToForumForum( linkElement, forumId )
+{
+	var postData = { "action": "forum_subscribe", "forumid": forumId };
+
+    $jq.ajax(
+        {
+            url: "userhistory.php",
+            type: "POST",
+            data: AddAntiCsrfTokenToPostData( postData ),
+            success: function (responseData) {
+                if (responseData['Result'] == "Ok") {
+                    if (responseData['Subscribed'])
+                        $jq(linkElement).html("Unsubscribe");
+                    else
+                        $jq(linkElement).html("Subscribe");
+                }
+            }
+        });
+}
+
+function Collapse()
+{
+	var hide = $('#collapselink').raw().innerHTML.substr(0,1) == 'H';
+	if ( hide )
+	{
+		$('#collapselink').raw().innerHTML = 'Show post bodies';
+
+		$jq( '.js-forum-post' ).addClass( "forum-post--heading-only" );
+		$jq( '.js-forum-post__avatar-and-body' ).ToggleHC();
+	}
+	else
+	{
+		$('#collapselink').raw().innerHTML = 'Hide post bodies';
+
+		$jq( '.js-forum-post' ).removeClass( "forum-post--heading-only" );
+		$jq( '.js-forum-post__avatar-and-body' ).ToggleHC();
+	}
+}
+
+function CatchUp( action, redirectAction, time )
+{
+	var postData = { "action": action };
+
+	if ( typeof( time ) !== "undefined" )
+		postData[ "time" ] = time;
+
+	$jq.ajax(
+	{
+		url: "userhistory.php",
+		type: "POST",
+		data: AddAntiCsrfTokenToPostData( postData ),
+		success: function()
+		{
+			window.location = "userhistory.php?action=" + redirectAction;
+		}
+	} );
+}
+
+function CatchUpForum( forumId, time )
+{
+	var postData = { "action": "catchup", "forumid": forumId };
+
+	if ( typeof( time ) !== "undefined" )
+		postData[ "time" ] = time;
+
+	$jq.ajax(
+	{
+		url: "forums.php",
+		type: "POST",
+		data: AddAntiCsrfTokenToPostData( postData ),
+		success: function()
+		{
+			document.location.reload( false );
+		}
+	} );
+}

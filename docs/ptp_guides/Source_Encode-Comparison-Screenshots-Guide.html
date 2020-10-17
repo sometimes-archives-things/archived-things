@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://passthepopcorn.me/wiki.php?action=article&id=162 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge">
+		<meta name="referrer" content="no-referrer">
+	<meta name="referrer" content="same-origin">
+	<meta name="robots" content="noindex">
+		<title>Source/Encode Comparison Screenshots Guide :: PassThePopcorn</title>
+	<link rel="shortcut icon" href="https://passthepopcorn.me/favicon.ico">
+	<link rel="apple-touch-icon" href="https://passthepopcorn.me/static/common/touch-icon-iphone.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://passthepopcorn.me/static/common/touch-icon-ipad.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://passthepopcorn.me/static/common/touch-icon-iphone-retina.png?v=1514440441">
+	<link rel="search" type="application/opensearchdescription+xml" title="PassThePopcorn" href="https://passthepopcorn.me/static/opensearch.xml">
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+				<link href="./Source_Encode-Comparison-Screenshots-Guide_files/marcel.css" rel="stylesheet" type="text/css" media="screen">
+						<script src="./Source_Encode-Comparison-Screenshots-Guide_files/script_start.js.download" type="text/javascript"></script>
+						<script src="./Source_Encode-Comparison-Screenshots-Guide_files/class_ajax.js.download" type="text/javascript"></script>
+						<script src="./Source_Encode-Comparison-Screenshots-Guide_files/global.js.download" type="text/javascript"></script>
+							<script src="./Source_Encode-Comparison-Screenshots-Guide_files/jquery.js.download" type="text/javascript"></script>
+						<script src="./Source_Encode-Comparison-Screenshots-Guide_files/autocomplete.js.download" type="text/javascript"></script>
+					<script src="./Source_Encode-Comparison-Screenshots-Guide_files/wiki.js.download" type="text/javascript"></script>
+					<script src="./Source_Encode-Comparison-Screenshots-Guide_files/bbcode.js.download" type="text/javascript"></script>
+					<script src="./Source_Encode-Comparison-Screenshots-Guide_files/mousetrap.min.js.download" type="text/javascript"></script>
+		</head>
+<body id="wiki" data-anticsrftoken="9001" style="">
+<div id="wrapper">
+	<div id="header" class="header">
+		<div class="site-logo"><a class="site-logo__link" href="https://passthepopcorn.me/index.php"></a></div>
+				
+			<div class="main-menu">
+			<ul class="main-menu__list">
+				<li class="main-menu__item" id="nav_index"><a class="main-menu__link" href="https://passthepopcorn.me/index.php">Home</a></li>
+				<li class="main-menu__item" id="nav_torrents"><a class="main-menu__link" href="https://passthepopcorn.me/torrents.php">Movies</a></li>
+				<li class="main-menu__item" id="nav_collages"><a class="main-menu__link" href="https://passthepopcorn.me/collages.php">Collections</a></li>
+				<li class="main-menu__item" id="nav_requests"><a class="main-menu__link" href="https://passthepopcorn.me/requests.php">Requests</a></li>
+				<li class="main-menu__item" id="nav_forums"><a class="main-menu__link" href="https://passthepopcorn.me/forums.php">Forums</a></li>
+				<li class="main-menu__item" id="nav_irc"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php?action=article&amp;id=95">Chat</a></li>
+				<li class="main-menu__item" id="nav_top10"><a class="main-menu__link" href="https://passthepopcorn.me/top10.php">Top&nbsp;10</a></li>
+				<li class="main-menu__item" id="nav_rules"><a class="main-menu__link" href="https://passthepopcorn.me/rules.php">Rules</a></li>
+				<li class="main-menu__item" id="nav_wiki"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php">Wiki</a></li>
+				<li class="main-menu__item" id="nav_staff"><a class="main-menu__link" href="https://passthepopcorn.me/staff.php">Staff</a></li>
+			</ul>
+		</div>
+				<div class="search-bar">
+			<ul class="search-bar__list">
+				<li id="searchbar_torrents" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/torrents.php" method="get" class="search-bar__search-field__form">
+												<input type="hidden" name="order_by" value="relevance">
+						<input id="torrentssearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="m" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;torrents&#39;);" onblur="" placeholder="Movies" type="text" name="searchstr" size="17">
+						<ul id="torrentscomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_people" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/artist.php" method="get" class="search-bar__search-field__form">
+						<input id="artistsearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="p" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;artist&#39;);" placeholder="People" type="text" name="artistname" size="17">
+						<ul id="artistcomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_collections" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/collages.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="c" spellcheck="false" id="collectionsearch" placeholder="Collections" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_requests" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/requests.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="r" spellcheck="false" placeholder="Requests" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_forums" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/forums.php" method="get" class="search-bar__search-field__form">
+						<input value="search" type="hidden" name="action">
+						<input class="search-bar__search-field__input" accesskey="f" spellcheck="false" placeholder="Forums" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_log" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/log.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="l" spellcheck="false" placeholder="Log" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_users" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/user.php" method="get" class="search-bar__search-field__form">
+						<input type="hidden" name="action" value="search">
+						<input class="search-bar__search-field__input" accesskey="u" spellcheck="false" placeholder="Users" type="text" name="search" size="17">
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+		<div id="content" class="page__main-content">
+<div class="thin">
+	<h2 class="page__title">Source/Encode Comparison Screenshots Guide</h2>
+		<div class="linkbox">
+		<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=create">[Create]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=edit&amp;id=162">[Contribute]</a>
+<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=revisions&amp;id=162">[History]</a>
+	</div>
+	<div class="sidebar">
+		<div class="panel">
+			<div class="panel__body">
+				<form action="https://passthepopcorn.me/wiki.php" method="get">
+					<input type="hidden" name="action" value="search">
+					<input placeholder="Search articles" type="text" name="search" size="20">
+					<input value="Search" type="submit" class="hidden">
+				</form>
+				<br>
+				<a href="https://passthepopcorn.me/wiki.php?action=search&amp;type=Title&amp;order=Title&amp;way=Ascending">List all articles</a>
+			</div>
+		</div>
+		<div class="panel">
+			<div class="panel__body">
+				<ul class="list list--unstyled">
+					<li>
+						<strong>Protection:</strong>
+						<ul class="list--bulleted list--small-padding">
+							<li>Read: Abuser</li>
+							<li>Edit: Power User</li>
+						</ul>
+					 </li>
+					<li>
+						<strong>Details:</strong>
+						<ul class="list--bulleted list--small-padding">
+							<li>Version: 26</li>
+							<li>Last edited by: <a class="username" href="https://passthepopcorn.me/user.php?id=117061">sausagetree</a></li>
+							<li>Last updated: <span class="time" title="Oct 11 2018, 09:22">[ Oct 11 2018, 09:22 ]</span></li>
+						</ul>
+					</li>
+					<li>
+						<strong>Aliases:</strong>
+						<ul class="list--bulleted list--small-padding">
+																		<li id="alias_comparison">
+												<a href="https://passthepopcorn.me/wiki.php?action=article&amp;name=comparison">comparison</a>
+																							</li>
+																					<li id="alias_imagecomparison">
+												<a href="https://passthepopcorn.me/wiki.php?action=article&amp;name=imagecomparison">imagecomparison</a>
+																							</li>
+																					<li id="alias_screenshotguide">
+												<a href="https://passthepopcorn.me/wiki.php?action=article&amp;name=screenshotguide">screenshotguide</a>
+																							</li>
+																					<li id="alias_screenshots">
+												<a href="https://passthepopcorn.me/wiki.php?action=article&amp;name=screenshots">screenshots</a>
+																							</li>
+																					<li id="alias_sourceencodecomparisonscreenshotsguide">
+												<a href="https://passthepopcorn.me/wiki.php?action=article&amp;name=sourceencodecomparisonscreenshotsguide">sourceencodecomparis...</a>
+																							</li>
+																					<li id="alias_sourcevsencode">
+												<a href="https://passthepopcorn.me/wiki.php?action=article&amp;name=sourcevsencode">sourcevsencode</a>
+																							</li>
+																</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+					<div class="panel">
+				<div class="panel__body">
+					<form action="https://passthepopcorn.me/wiki.php" method="post">
+						<input type="hidden" name="AntiCsrfToken" value="9001">						<input type="hidden" name="action" value="add_alias">
+						<input type="hidden" name="article" value="162">
+						<input placeholder="Add alias" type="text" name="alias" size="20">
+						<input type="submit" value="+">
+					</form>
+				</div>
+			</div>
+			</div>
+	<div class="main-column">
+	<div class="panel">
+		<div class="panel__body"><div style="text-align:left">This guide assumes you already have and are using the following programs:<br>
+<ul><li><a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/Avisynth">AviSynth</a> (<a rel="noreferrer" target="_blank" href="https://mega.nz/file/TxUzySzS#adC8Um2XeEPHI5ycUUMOPyM7vbD8KuzTzvacprdqQyg">AviSynth plugins</a>)</li><li><a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/AvsP">AvsPMod</a></li><li><a rel="noreferrer" target="_blank" href="https://code.google.com/p/ffmpegsource/">FFMpegSource </a></li><li><a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/DGMPGDec">DGIndex</a></li></ul><br>
+____________________________________________________________________________________________________<br>
+<a href="https://passthepopcorn.me/wiki.php?action=article&amp;id=266">Software Setup and Configuration Guide</a> - This article will show you how to install and configure the software mentioned above.<br>
+_______________________________________________________________________________________________<br>
+<br>
+<span style="text-decoration: underline;"><strong>BluRay/HDDVD/HDTV</strong></span><br>
+<br>
+<strong>Basic Script</strong><br>
+1. Open AvsPMod and copy and paste in this script and save it. Open a new avs file and paste this in it:<br>
+<blockquote><pre class="preformatted-text--scrolled">FFVideosource("C:\Path\to\Remux.mkv") #Replace with the path of the source<br>
+Crop(2, 2, -2, -2) #use the cropping values you used for the encode - crop(left, up, -right, -down)<br>
+Spline36Resize(1024,556) #final width and height of the encode</pre></blockquote><br>
+2. Save that script as source.avs for example, it will be used for the next script.<br>
+<blockquote><pre class="preformatted-text--scrolled"><br>
+# path to the avisynth script used to make the encode<br>
+a=import("C:\Path\To\source.avs").subtitle("Source", align=9).ffinfo(framenum=true,frametype=true,cfrtime=false,vfrtime=false,version=false,cropping=false,colorrange=false,colorspace=false,sar=false) <br>
+# path to the encode<br>
+b=ffvideosource("C:\Path\To\encode.mkv").subtitle("Encode", align=9).ffinfo(framenum=true,frametype=true,cfrtime=false,vfrtime=false,version=false,cropping=false,colorrange=false,colorspace=false,sar=false)<br>
+interleave(a,b)<br>
+</pre></blockquote><br>
+<br>
+3. Hit F5 and AvsP will appear to freeze. This is normal while FFVideoSource is indexing the video. After indexing, you will see duplicate frames in the preview pane. Even numbered frames are from the source and the following odd numbered frames are from the encode. Navigate to the frames you wish to take screenshots of and right click in the preview pane to save your images as PNGs.<br>
+<br>
+<strong>Result</strong><br>
+<br>
+Source<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/0fRP8sp/456qri.png" src="./Source_Encode-Comparison-Screenshots-Guide_files/456qri.png"><br>
+<br>
+Encode<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/ZGRbRrM/x66s98.png" src="./Source_Encode-Comparison-Screenshots-Guide_files/x66s98.png"><br>
+<br>
+<strong>Source, Encode</strong>: <a href="https://passthepopcorn.me/wiki.php?action=article&amp;id=162#" onclick="BBCode.ScreenshotComparisonToggleShow( this, [&quot;Source&quot;,&quot; Encode&quot;], [&quot;https:\/\/i.ibb.co\/0fRP8sp\/456qri.png&quot;,&quot;https:\/\/i.ibb.co\/ZGRbRrM\/x66s98.png&quot;] ); return false;">Show comparison</a><br>
+<code>[comparison=Source, Encode]https://i.ibb.co/0fRP8sp/456qri.png https://i.ibb.co/ZGRbRrM/x66s98.png[/comparison]</code><br>
+<br>
+<hr><br>
+<br>
+<strong><span style="text-decoration: underline;">DVD/VHS</span></strong><br>
+<br>
+1. Open <a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/DGMPGDec">DGIndex</a>, Add the main feature DVD sequence (<a rel="noreferrer" target="_blank" href="https://i.ibb.co/yyJFVL2/y9lf87.png">Screenshot</a>). Click File -&gt; Save Project. You need the resulting .d2v file for the next script.<br>
+<br>
+2. Open AvsPMod and copy and paste in this script and save it. Open a new avs file and paste this in it:<br>
+<blockquote>Mpeg2Source("C:\Path\to\dgindex.d2v", info=0) #info=0 or info=1 turns off or on the frame information overlay<br>
+Crop(2, 2, -2, -2) #use the cropping values you used for the encode - crop(left, up, -right, -down)</blockquote><br>
+3. Save that script, it will be used for the next script. Save it as dvdsource.avs for example.<br>
+<blockquote><pre class="preformatted-text--scrolled">a=import("C:\Path\To\dvdsource.avs").subtitle("Source", align=9)<br>
+b=ffvideosource("C:\Path\To\encode.mkv").subtitle("Encode", align=9)<br>
+a=a.ffinfo(framenum=true,frametype=false,cfrtime=false,vfrtime=false,version=false,cropping=false,colorrange=false,colorspace=false,sar=false)<br>
+b=b.ffinfo(framenum=true,frametype=true,cfrtime=false,vfrtime=false,version=false,cropping=false,colorrange=false,colorspace=false,sar=false)<br>
+interleave(a,b)<br>
+spline36resize(converttorgb,ffsar&gt;1?round(width*ffsar):width,ffsar&lt;1?round(height/ffsar):height)<br>
+</pre></blockquote><br>
+<br>
+<strong>Important note</strong>: ffinfo can not detect frame types of DVDs correctly, which is why they are not displayed in this script. The info=1 part shows the real frame type, but it shows too much text over the screenshot (<a rel="noreferrer" target="_blank" href="https://whatimg.com/i/yMOGQl.png">example</a>), that's why you might want to disable or enable it.<br>
+<br>
+4. Hit F5 and AvsP will appear to freeze. This is normal while FFVideoSource is indexing the video. After indexing, you will see duplicate frames in the preview pane. Even numbered frames are from the source and the following odd numbered frames are from the encode. Navigate to the frames you wish to take screenshots of and right click in the preview pane to save your images as PNG. When saving comparison screens for upload, ensure you limit the source Picture Type to B or P and encode to B; never use I for either.<br>
+<br>
+<br>
+Result:<br>
+<strong>Source, Encode</strong>: <a href="https://passthepopcorn.me/wiki.php?action=article&amp;id=162#" onclick="BBCode.ScreenshotComparisonToggleShow( this, [&quot;Source&quot;,&quot; Encode&quot;], [&quot;https:\/\/ptpimg.me\/mlsili.png&quot;,&quot;https:\/\/ptpimg.me\/hqez7k.png&quot;] ); return false;">Show comparison</a><br>
+<br>
+<strong><span style="text-decoration: underline;">Other</span></strong><br>
+<br>
+<strong>Common Errors</strong><br>
+<br>
+<span style="text-decoration: underline;">Plugins won't load</span><br>
+Add these lines to the top of your script, pointing towards FFMS2.avsi and ffms2.dll in your directory respectively:<br>
+<blockquote>import("C:\Program Files\AviSynth\plugins64\FFMS2.avsi")<br>
+LoadPlugin("C:\Program Files\AviSynth\plugins64\ffms2.dll")</blockquote><br>
+<span style="text-decoration: underline;">Source and Encode are off by one frame</span><br>
+Handbrake sometimes drops the first frame so the resulting encode may be one frame shorter. To realign it with the source again, append .trim(1,framecount) at the end of the <span style="text-decoration: underline;">source</span> import line, e.g. <code>a=import("C:\Path\To\source.avs").subtitle("Source", align=9).trim(1,framecount)</code><br>
+<br>
+<span style="text-decoration: underline;">Encode has a different frame rate than Source</span><br>
+put <code>ChangeFPS("ntsc_film")</code> in your source.avs or <code>a=a.ChangeFPS("ntsc_film")</code> in the main avs file.<br>
+Change the frame rate accordingly to whatever different frame rate you are facing. AvsPMod will present you options.<br>
+<br>
+<strong>Test Encodes</strong><br>
+The script can be altered to be a very powerful tool when comparing screenshots from several different test encodes to the source.<br>
+<br>
+You can see we've input the source and three test encodes with varying CRF values, labeled them accordingly with Subtitle, and interleaved them in a way that allows a forward progressing comparison to the source...<br>
+<blockquote><pre class="preformatted-text--scrolled">a=import("C:\Path\To\source.avs").subtitle("Source", align=9)<br>
+b=ffvideosource("C:\Path\To\test1.mkv").subtitle("Test Encode 1 CRF 18", align=9)<br>
+c=ffvideosource("C:\Path\To\test2.mkv").subtitle("Test Encode 2 CRF 17", align=9)<br>
+d=ffvideosource("C:\Path\To\test3.mkv").subtitle("Test Encode 3 CRF 16", align=9)<br>
+interleave(a,b,a,c,a,d)<br>
+spline36resize(converttorgb,ffsar&gt;1?round(width*ffsar):width,ffsar&lt;1?round(height/ffsar):height)<br>
+ffinfo(framenum=true,frametype=true,cfrtime=false,vfrtime=false)</pre></blockquote><br>
+<br>
+<strong>Result</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Source<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/WxfPHWw/2hfnm4.png" src="./Source_Encode-Comparison-Screenshots-Guide_files/2hfnm4.png"><br>
+<br>
+Test Encode 1 CRF 17<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/w0qHPjR/ywa9b5.png" src="./Source_Encode-Comparison-Screenshots-Guide_files/ywa9b5.png"><br>
+<br>
+Source again<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/WxfPHWw/2hfnm4.png" src="./Source_Encode-Comparison-Screenshots-Guide_files/2hfnm4.png"><br>
+<br>
+Test Encode 2 CRF 16<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/RjgXY5t/lrv24q.png" src="./Source_Encode-Comparison-Screenshots-Guide_files/lrv24q.png"></blockquote><br>
+<br>
+<strong>Source, Test 1, Source, Test 2</strong>: <a href="https://passthepopcorn.me/wiki.php?action=article&amp;id=162#" onclick="BBCode.ScreenshotComparisonToggleShow( this, [&quot;Source&quot;,&quot; Test 1&quot;,&quot; Source&quot;,&quot; Test 2&quot;], [&quot;https:\/\/ptpimg.me\/2hfnm4.png&quot;,&quot;https:\/\/ptpimg.me\/ywa9b5.png&quot;,&quot;https:\/\/ptpimg.me\/2hfnm4.png&quot;,&quot;https:\/\/ptpimg.me\/lrv24q.png&quot;] ); return false;">Show comparison</a><br>
+<br>
+<br>
+<strong>Moving Text Position</strong><br>
+<br>
+You can move the position of your text you add ("Source", "Encode", "[Encoding Group]", etc.) by editing the align factor.<br>
+With align=1 until align=9 define the positioning at corners or at the middle.<br>
+With y= or x= you move the text on the y or x axis respectively.<br>
+Use align=7, y=35 for example to display the text right under the frame type.<br>
+<br>
+<br>
+<strong>Adding Colors</strong><br>
+<br>
+Open ffms2.avsi and replace it with <a rel="noreferrer" target="_blank" href="https://pastebin.com/zhm8RdwS">http://pastebin.com/zhm8RdwS</a>.<br>
+Now you can edit your script to display your text with colors.<br>
+<br>
+<blockquote><pre class="preformatted-text--scrolled">a=import("path\to\source.avs").subtitle("Source", align=9)<br>
+b=FFVideoSource("path\to\encode.mkv").subtitle("Encode",text_color=$cccccc,halo_color=$0b5394,align=9)<br>
+<br>
+a=a.ffinfo(framenum=true,frametype=true,cfrtime=false,vfrtime=false)<br>
+b=b.ffinfo(framenum=true,frametype=true,cfrtime=false,vfrtime=false,text_color=$0b5394,halo_color=$cccccc)<br>
+<br>
+interleave(a,b)</pre></blockquote><br>
+<br>
+<strong>Source, Encode</strong>: <a href="https://passthepopcorn.me/wiki.php?action=article&amp;id=162#" onclick="BBCode.ScreenshotComparisonToggleShow( this, [&quot;Source&quot;,&quot; Encode&quot;], [&quot;https:\/\/ptpimg.me\/qyv2ys.png&quot;,&quot;https:\/\/ptpimg.me\/fa4hlx.png&quot;] ); return false;">Show comparison</a></div></div>
+	</div>
+	</div>
+</div>
+	</div>
+	
+</div>
+<div id="lightbox" class="lightbox hidden" tabindex="-1"></div>
+<div id="lightbox__shroud" class="lightbox__shroud hidden"></div>
+
+<!-- Extra divs, for stylesheet developers to add imagery -->
+<div id="extra1"><span></span></div>
+<div id="extra2"><span></span></div>
+<div id="extra3"><span></span></div>
+<div id="extra4"><span></span></div>
+<div id="extra5"><span></span></div>
+<div id="extra6"><span></span></div>
+
+
+</body></html>

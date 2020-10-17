@@ -1,0 +1,969 @@
+var BBCode =
+{
+	spoiler: function(link) {
+		if ( $jq( link.nextSibling ).hasClass( "hidden" ) ) {
+			$jq(link.nextSibling).ShowHC();
+			$jq(link).html('Hide');
+		} else {
+			$jq(link.nextSibling).HideHC();
+			$jq(link).html('Show');
+		}
+	},
+
+	MediaInfoToggleShow: function( link )
+	{
+		if ( $jq( link.nextSibling.nextSibling ).hasClass( "hidden" ) )
+		{
+			$jq( link.nextSibling ).HideHC();
+			$jq( link.nextSibling.nextSibling ).ShowHC();
+		}
+		else
+		{
+			$jq( link.nextSibling ).ShowHC();
+			$jq( link.nextSibling.nextSibling ).HideHC();
+		}
+	},
+
+	ShowReplyPreview: function( previewHtml, previewElement, textareaContainerElement )
+	{
+		function IsElementFullyVisible( element )
+		{
+			var jqWindow = $jq( window );
+			var viewTop = jqWindow.scrollTop();
+			var viewBottom = viewTop + jqWindow.height();
+			var elementTop = element.offset().top;
+			var elementBottom = elementTop + element.height();
+
+			return elementTop >= viewTop && elementBottom <= viewBottom;
+		}
+
+		if ( typeof( previewElement ) === "undefined" ) 
+			previewElement = $jq( "#quickreplypreview" );
+
+		if ( typeof( textareaContainerElement ) === "undefined" ) 
+			textareaContainerElement = $jq( "#quickreplytext" );
+
+		// The order of the hidings, showings, height gettings and settings
+		// is important. Reflow is minimized so there is no scrollbar flickering.
+
+		$jq( "#reply_box" ).addClass( "forum-post--is-previewing" );
+
+		var height = textareaContainerElement.outerHeight( true );
+
+		previewElement.html( previewHtml );
+		previewElement.ShowHC();
+
+		// Try to set the height of the preview area that way that the edit
+		// button stays at the same position.
+		var previewElementOuterHeight = previewElement.outerHeight( true );
+		if ( previewElementOuterHeight < height && IsElementFullyVisible( previewElement ) )
+			previewElement.css( "min-height", height + "px" );
+
+		textareaContainerElement.HideHC();
+	},
+
+	HideReplyPreview: function( previewElement, textareaContainerElement )
+	{
+		if ( typeof( previewElement ) === "undefined" ) 
+			previewElement = $jq( "#quickreplypreview" );
+
+		if ( typeof( textareaContainerElement ) === "undefined" ) 
+			textareaContainerElement = $jq( "#quickreplytext" );
+
+		$jq( "#reply_box" ).removeClass( "forum-post--is-previewing" );
+
+		previewElement.HideHC();
+		previewElement.css( "min-height", "0" );
+
+		textareaContainerElement.ShowHC();
+	},
+
+	ScreenshotComparisonToggleShow: function( link, columnNames, images )
+	{
+		var screenshotComparison = new ScreenshotComparison( link );
+		screenshotComparison.Open( columnNames, images );
+	},
+
+	LightYouTubeEmbedClick: function( event, link, youtubeId )
+	{
+		if ( event.button != 0 )
+			return;
+
+		event.preventDefault();
+
+		// The extra div is needed because otherwise there would be a scrollbar.
+		// http://stackoverflow.com/a/19228136
+		var t = '<div style="width: 100%; height: 100%;"><iframe class="youtube-player" style="display: block;" type="text/html" width="100%" height="100%" src="https://www.youtube.com/embed/' + youtubeId + '?wmode=opaque&autoplay=1' + youTubeQualityParameter + '" allowfullscreen="1" frameborder="0"></iframe></div>';
+		$jq( t ).modal
+		(
+			{
+				overlayId: "simplemodal-overlay-pointer",
+				overlayClose: true,
+				maxWidth: "95%",
+				maxHeight: "95%"
+			}
+		);
+	}
+};
+
+var ScreenshotComparison = ( function()
+{
+	var module = function( openerLink )
+	{
+		this.OpenerLink = $jq( openerLink );
+		this.ComparisonNames = null;
+		this.ComparisonLabel = null;
+		this.LightBox = null;
+		this.SelectedColumn = 0;
+		this.SelectedRow = null;
+		this.IgnoreMouseEvents = 0;
+	};
+
+	module.prototype =
+	{
+		constructor: module,
+
+		Open: function( columnNames, images )
+		{
+			var instance = this;
+
+			// Disable background scrolling. http://stackoverflow.com/a/13891717
+			if ( $jq( document ).height() > $jq( window ).height() )
+				this.ScrollTop = ( $jq( "html" ).scrollTop() ) ? $jq( "html" ).scrollTop() : $jq( "body" ).scrollTop(); // Works for Chrome, Firefox, IE...
+			else
+				this.ScrollTop = 0;
+
+			this.LightBox = $jq( "<div class='screenshot-comparison__container'>" );
+
+			this.ComparisonLabel = $jq( "<span class='screenshot-comparison__label'></span>" );
+			this.ComparisonLabel.appendTo( this.LightBox );
+
+			this.MakeComparisonControl( columnNames, images );
+
+			this.LightBox.ShowHC();
+			this.LightBox.append( $jq( "<span class='screenshot-comparison__help'>Move your mouse over the images from the left to the right to toggle between the comparison sides. Each image is divided into sections: for a two-sided comparison the toggling happens when the cursor moves from from the left side of an image to its right side. You can also use the arrow keys to navigate: up and down jumps between rows; left and right toggles comparison sides. Comparison sides can also toggled by the number keys (1-9). Click anywhere or press Escape to close the comparison.</span>" ) );
+			this.LightBox.on( "scroll", function() { instance.UpdateLabel(); } );
+			this.LightBox.click( function( event )
+			{
+				if ( !$jq( event.target ).hasClass( "js-ignore-close-click" ) )
+					instance.Close();
+			} );
+
+			$jq( "#wrapper" ).HideHC();
+			this.LightBox.appendTo( $jq( "body" ) );
+
+			this.SelectedRow = $jq( ".js-screenshot-comparison__row" ).first();
+			this.UpdateLabel();
+
+			this.BindHotKey( "up",  function() { instance.ScrollToNextRow( false ); } );
+			this.BindHotKey( "down", function() { instance.ScrollToNextRow( true ); } );
+			this.BindHotKey( "left", function() { instance.ShowNextColumn( false ); } );
+			this.BindHotKey( "right", function() { instance.ShowNextColumn( true ); } );
+			this.BindHotKey( "escape", function() { instance.Close(); } );
+
+			function BindNumericHotKey( number )
+			{
+				instance.BindHotKey( String( number + 1 ), function() { instance.ShowColumn( number ); } );
+			}
+
+			for ( var i = 0; i < columnNames.length; ++i )
+				BindNumericHotKey( i );
+		},
+
+		Close: function()
+		{
+			// Unbind doesn't work
+			// https://github.com/ccampbell/mousetrap/issues/306
+
+			this.BindHotKey( "up", function() { } );
+			this.BindHotKey( "down", function() { } );
+			this.BindHotKey( "left", function() { } );
+			this.BindHotKey( "right", function() { } );
+			this.BindHotKey( "escape", function() { } );
+
+			for ( var i = 0; i < this.ComparisonNames.length; ++i )
+				this.BindHotKey( String( i + 1 ), function() { } );
+
+			$jq( "#wrapper" ).ShowHC();
+			this.LightBox.remove();
+
+			$jq( "html,body" ).scrollTop( this.ScrollTop );
+
+			this.ComparisonNames = null;
+			this.ComparisonLabel = null;
+			this.LightBox = null;
+			this.SelectedRow = null;
+		},
+
+		MakeComparisonControl: function( columnNames, images1d )
+		{
+			var instance = this;
+
+			var columnCount = columnNames.length;
+			for ( var i = 0; i < columnCount; ++i )
+				columnNames[ i ] = $jq.trim( columnNames[ i ] );
+
+			this.ComparisonNames = columnNames;
+
+			var images = [];
+			var imageCount = images1d.length;
+			for ( var index = 0; index < imageCount; ++index )
+			{
+				var column = index % columnCount;
+				if ( column == 0 )
+					images.push( [] );
+
+				images[ images.length - 1 ].push( images1d[ index ] );
+			}
+
+			var dynamicComparisonContainer = $jq( "<div>" );
+
+			var rowCount = images.length;
+			for ( var rowIndex = 0; rowIndex < rowCount; ++rowIndex )
+			{
+				var rowDiv = $jq( "<div class='screenshot-comparison__row js-screenshot-comparison__row'>" );
+				rowDiv.attr( "data-current_column", 0 );
+				rowDiv.on( "mousemove mouseenter mouseleave", function( event ) { instance.HandleMouseMove( event ); } );
+
+				var imageDiv = $jq( "<div>" );
+				var image = $jq( "<img style='visibility: hidden'>" );
+				image.attr( "src", images[ rowIndex ][ 0 ] );
+				image.appendTo( imageDiv );
+				imageDiv.appendTo( rowDiv );
+
+				for ( var columnIndex = 0; columnIndex < columnCount; ++columnIndex )
+				{
+					imageDiv = $jq( "<div class='screenshot-comparison__image-container'>" );
+
+					if ( columnIndex == 0 )
+						image = $jq( "<img class='screenshot-comparison__image js-screenshot-comparison__image'>" );
+					else
+						image = $jq( "<img class='screenshot-comparison__image js-screenshot-comparison__image' style='visibility: hidden;'>" );
+
+					image.attr( "src", images[ rowIndex ][ columnIndex ] );
+					image.appendTo( imageDiv );
+					imageDiv.appendTo( rowDiv );
+				}
+
+				rowDiv.appendTo( dynamicComparisonContainer );
+			}
+
+			dynamicComparisonContainer.appendTo( this.LightBox );
+
+			var oldSchoolComparisonContainer = $jq( "<div>" );
+
+			for ( var rowIndex = 0; rowIndex < rowCount; ++rowIndex )
+			{
+				for ( var columnIndex = 0; columnIndex < columnCount; ++columnIndex )
+				{
+					var link = $jq( "<a>" );
+					link.attr( "href", images[ rowIndex ][ columnIndex ] );
+					link.attr( "target", "_blank" );
+
+					var image = $jq( "<img class='screenshot-comparison__old-school-image'>" );
+					image.attr( "src", images[ rowIndex ][ columnIndex ] );
+					image.appendTo( link );
+
+					link.appendTo( oldSchoolComparisonContainer );
+				}
+
+				$jq( "<br>" ).appendTo( oldSchoolComparisonContainer );
+			}
+
+			var togglerDiv = $jq( "<div class='screenshot-comparison__old-school-toggler-container'>" );
+			var toggler = $jq( "<a href='#' class='js-ignore-close-click'>Old school</a>" );
+			toggler.click( function()
+			{
+				if ( instance.OpenerLink.data( "OldSchoolIsShown" ) !== true  )
+				{
+					instance.OpenerLink.data( "OldSchoolIsShown", true );
+					oldSchoolComparisonContainer.insertAfter( instance.OpenerLink );
+				}
+
+				instance.Close();
+				return false;
+			} );
+
+			toggler.appendTo( togglerDiv );
+			togglerDiv.appendTo( this.LightBox );
+		},
+
+		UpdateLabel: function()
+		{
+			if ( this.SelectedRow == null )
+				return;
+
+			var offset = this.ComparisonLabel.offset();
+			offset.top = Math.max( this.LightBox.offset().top, this.SelectedRow.offset().top );
+			this.ComparisonLabel.offset( offset );
+			this.ComparisonLabel.text( this.ComparisonNames[ this.SelectedColumn ] );
+		},
+
+		ShowColumn: function( column )
+		{
+			var currentColumn = this.SelectedRow.attr( "data-current_column" );
+			var images = $jq( ".js-screenshot-comparison__image", this.SelectedRow );
+			images.eq( currentColumn ).css( 'visibility', 'hidden' );
+			images.eq( column ).css( 'visibility', 'visible' );
+
+			this.SelectedRow.attr( "data-current_column", column );
+
+			this.SelectedColumn = column;
+			this.UpdateLabel();
+		},
+
+		HandleMouseMove: function( event )
+		{
+			if ( this.IgnoreMouseEvents > 0 )
+			{
+				--this.IgnoreMouseEvents;
+				return;
+			}
+
+			var rowDiv = $jq( event.currentTarget );
+			var hoverColumn = 0;
+			var parentOffset = rowDiv.offset();
+			var x = event.pageX - parentOffset.left - this.LightBox.scrollLeft();
+			var visibleWidth = Math.min( rowDiv.width(), this.LightBox.width() );
+
+			if ( x >= 0 && visibleWidth > 0 )
+			{
+				var columnCount = this.ComparisonNames.length;
+				hoverColumn = Math.floor( ( x * columnCount ) / visibleWidth );
+				if ( hoverColumn >= columnCount )
+					hoverColumn = 0;
+
+				this.SelectedRow = rowDiv;
+			}
+
+			this.ShowColumn( hoverColumn );
+		},
+
+		BindHotKey: function( hotkey, callback )
+		{
+			Mousetrap.bindGlobal( hotkey, callback, "keydown" );
+		},
+
+		ScrollToNextRow: function( scrollToNext )
+		{
+			var sibling = scrollToNext ? this.SelectedRow.next( '.js-screenshot-comparison__row' ) : this.SelectedRow.prev( '.js-screenshot-comparison__row' );
+			if ( sibling.length > 0 )
+			{
+				// If the mouse is over an image then we'll get unwanted mouse
+				// events and selected row could change to a different row, so
+				// we have to ignore the messages.
+				// Firefox: mouseleave, mouseenter. Chrome: mouseleave, mouseenter, mousemove.
+				this.IgnoreMouseEvents = 3;
+
+				var offset = sibling.position();
+				this.LightBox.scrollTop( this.LightBox.scrollTop() + offset.top );
+				this.SelectedRow = sibling;
+				this.UpdateLabel();
+			}
+		},
+
+		ShowNextColumn: function( showNext )
+		{
+			var column = showNext ? ( this.SelectedColumn + 1 ) : ( this.SelectedColumn - 1 );
+			if ( column >= this.ComparisonNames.length )
+				column = 0;
+			else if ( column < 0 )
+				column = this.ComparisonNames.length - 1;
+
+			this.ShowColumn( column );
+		}
+	};
+
+	return module;
+} )();
+
+var BbcodeToolbar = ( function()
+{
+	var module = function( textAreaId, toolbarElementId )
+	{
+		if ( typeof( toolbarElementId ) === "undefined" )
+			toolbarElementId = "Bbcode_Toolbar";
+
+		this.TextAreaId = textAreaId;
+		this.ToolbarElement = document.getElementById( toolbarElementId );
+
+		var toolbar = this;
+
+		$jq( ".js-bbcode-toolbar__bold-button", this.ToolbarElement ).click( function() { toolbar.BbCodeBold(); } );
+		this.BindHotKey( "ctrl+b", this.BbCodeBold );
+
+		$jq( ".js-bbcode-toolbar__italic-button", this.ToolbarElement ).click( function() { toolbar.BbCodeItalic(); } );
+		this.BindHotKey( "ctrl+i", this.BbCodeItalic);
+
+		$jq( ".js-bbcode-toolbar__underline-button", this.ToolbarElement ).click( function() { toolbar.BbCodeUnderline(); } );
+		this.BindHotKey( "ctrl+u", this.BbCodeUnderline );
+
+		$jq( ".js-bbcode-toolbar__strikethrough-button", this.ToolbarElement ).click( function() { toolbar.BbCodeStrikethrough(); } );
+		this.BindHotKey( "ctrl+s", this.BbCodeStrikethrough );
+
+		$jq( ".js-bbcode-toolbar__link-button", this.ToolbarElement ).click( function() { toolbar.BbCodeLink(); } );
+		this.BindHotKey( "ctrl+h", this.BbCodeLink ); // WhutBBCode
+		this.BindHotKey( "ctrl+k", this.BbCodeLink ); // Word, GMail
+
+		$jq( ".js-bbcode-toolbar__image-button", this.ToolbarElement ).click( function() { toolbar.BbCodeImage(); } );
+		this.BindHotKey( "ctrl+m", this.BbCodeImage );
+
+		$jq( ".js-bbcode-toolbar__list-button", this.ToolbarElement ).click( function() { toolbar.BbCodeList(); } );
+		$jq( ".js-bbcode-toolbar__size-button", this.ToolbarElement ).click( function() { toolbar.BbCodeSize(); } );
+		$jq( ".js-bbcode-toolbar__spoiler-button", this.ToolbarElement ).click( function() { toolbar.BbCodeSpoiler(); } );
+		$jq( ".js-bbcode-toolbar__hide-button", this.ToolbarElement ).click( function() { toolbar.BbCodeHide(); } );
+		$jq( ".js-bbcode-toolbar__quote-button", this.ToolbarElement ).click( function() { toolbar.BbCodeQuote(); } );
+		$jq( ".js-bbcode-toolbar__color-button", this.ToolbarElement ).click( function() { toolbar.BbCodeColor(); } );
+
+		$jq( ".js-bbcode-toolbar__align-center-button", this.ToolbarElement ).click( function() { toolbar.BbCodeAlignCenter(); } );
+		this.BindHotKey( "ctrl+shift+e", this.BbCodeAlignCenter );
+
+		$jq( ".js-bbcode-toolbar__align-right-button", this.ToolbarElement ).click( function() { toolbar.BbCodeAlignRight(); } );
+		this.BindHotKey( "ctrl+shift+r", this.BbCodeAlignRight );
+
+		$jq( ".js-bbcode-toolbar__code-button", this.ToolbarElement ).click( function() { toolbar.BbCodeCode(); } );
+		$jq( ".js-bbcode-toolbar__youtube-button", this.ToolbarElement ).click( function() { toolbar.BbCodeYoutube(); } );
+		$jq( ".js-bbcode-toolbar__mediainfo-button", this.ToolbarElement ).click( function() { toolbar.BbCodeMediainfo(); } );
+		$jq( ".js-bbcode-toolbar__staff-button", this.ToolbarElement ).click( function() { toolbar.BbCodeStaff(); } );
+		$jq( ".js-bbcode-toolbar__emoticon-button", this.ToolbarElement ).click( function() { toolbar.BbCodeEmoticon(); } );
+		$jq( ".js-bbcode-toolbar__comparison-button", this.ToolbarElement ).click( function() { toolbar.BbCodeComparison(); } );
+	};
+
+	module.prototype =
+	{
+		constructor: module,
+		GetSelectedText: function( textArea )
+		{
+			var selection = $jq( textArea ).getSelection();
+			return selection.text;
+		},
+
+		InsertText: function( textArea, newText )
+		{
+			var selection = $jq( textArea ).getSelection();
+			var selectedText = selection.text;
+			var text = textArea.value;
+			textArea.value = text.slice( 0, selection.start ) + selectedText + newText + text.slice( selection.end );
+
+			var index = selection.start + selectedText.length + newText.length;
+			$jq( textArea ).setSelection( index, index );
+
+			textArea.focus();
+		},
+
+		ReplaceSelectedText: function( textArea, newText )
+		{
+			var selection = $jq( textArea ).getSelection();
+			var text = textArea.value;
+			textArea.value = text.slice( 0, selection.start ) + newText + text.slice( selection.end );
+
+			var index = selection.start + newText.length;
+			$jq( textArea ).setSelection( index, index );
+
+			textArea.focus();
+		},
+
+		SurroundSelectedText: function( textArea, before, after )
+		{
+			var selection = $jq( textArea ).getSelection();
+			var selectedText = selection.text;
+			var text = textArea.value;
+			textArea.value = text.slice( 0, selection.start ) + before + selectedText + after + text.slice( selection.end );
+
+			var index = selection.start + before.length;
+			if ( selectedText.length > 0 )
+				index += selectedText.length + after.length;
+			$jq( textArea ).setSelection( index, index );
+
+			textArea.focus();
+		},
+
+		GetTextField: function()
+		{
+			if ( typeof( EditingPostId ) === "undefined" )
+				EditingPostId = 0;
+
+			var textFieldId = EditingPostId == 0 ? this.TextAreaId : ( "#editbox" + EditingPostId );
+			return $jq( textFieldId );
+		},
+
+		BbCodeBold: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[b]", "[/b]" );
+
+			return false;
+		},
+
+		BbCodeItalic: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[i]", "[/i]" );
+
+			return false;
+		},
+
+		BbCodeUnderline: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[u]", "[/u]" );
+
+			return false;
+		},
+
+		BbCodeStrikethrough: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[s]", "[/s]" );
+
+			return false;
+		},
+
+		BbCodeLink: function( event )
+		{
+			var toolbar = this;
+			
+			function OnOkPressed()
+			{
+				var textField = toolbar.GetTextField();
+				var link = $jq( "#BbcodePopupLink" ).val();
+				toolbar.SurroundSelectedText( textField.get( 0 ), "[url=" + link + "]", "[/url]" );
+				$jq( ".js-bbcode-toolbar__link-button", toolbar.ToolbarElement ).qtip( "hide" );
+			}
+
+			function OnCancelPressed()
+			{
+				$jq( ".js-bbcode-toolbar__link-button", toolbar.ToolbarElement ).qtip( "hide" );
+				toolbar.GetTextField().focus();
+			}
+
+			var dialog =
+				'<div>Link URL:<br>' +
+				'<input type="text" id="BbcodePopupLink" size="64" /><br>' +
+				'<input type="button" value="OK" id="BbcodePopupLinkOkButton" />' +
+				'<input type="button" value="Cancel" id="BbcodePopupLinkCancelButton"/>' +
+				'</div>';
+
+			$jq( ".js-bbcode-toolbar__link-button", toolbar.ToolbarElement ).qtip(
+			{
+				position:
+				{
+					at: "left bottom",
+					adjust: { method: "none none" },
+					viewport: $jq( window )
+				},
+				content: { text: dialog },
+				show: { event: false },
+				hide:
+				{
+					delay: 100,
+					event: 'unfocus',
+					fixed: true
+				},
+				style:
+				{
+					classes: 'qtip-ptp qtip-shadow',
+					tip: false
+				},
+				events:
+				{
+					hide: function ()
+					{
+						// This is needed to make sure that the tooltip contents get destroyed, so multiple toolbars
+						// can work. This wouldn't be needed if the tooltip contents didn't use IDs.
+						$jq( this ).qtip( "destroy" );
+					},
+
+					render: function( event, api )
+					{
+						$jq( "#BbcodePopupLinkOkButton" ).click( function()
+						{
+							OnOkPressed();
+							return false;
+						} );
+
+						$jq( "#BbcodePopupLinkCancelButton" ).click( function()
+						{
+							OnCancelPressed();
+							return false;
+						} );
+
+						$jq( "#BbcodePopupLink" ).keydown( function( event )
+						{
+							if ( event.which == 13 ) // Enter
+							{
+								OnOkPressed();
+								event.preventDefault();
+							}
+							else if ( event.which == 27 ) // Escape
+							{
+								OnCancelPressed();
+								event.preventDefault();
+							}
+						} );
+					}
+				}
+			} ).qtip( 'show' );
+
+			$jq( "#BbcodePopupLink" ).focus();
+
+			return false;
+		},
+
+		BbCodeImage: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[img]", "[/img]" );
+
+			return false;
+		},
+
+		BbCodeList: function( event )
+		{
+			var textField = this.GetTextField();
+			var listText = "";
+
+			// Each non-empty line will be a separate list item.
+			var selection = this.GetSelectedText( textField.get( 0 ) );
+			if ( selection.length > 0 )
+			{
+				var lines = selection.split( /\n/ );
+				for ( var i = 0; i < lines.length; ++i )
+				{
+					var line = $jq.trim( lines[ i ] );
+					if ( line.length > 0 )
+					{
+						if ( listText.length > 0 )
+							listText += "\n";
+						listText += "[*] " + line;
+					}
+				}
+
+			}
+			else
+			{
+				listText = "[*] ";
+			}
+
+			this.ReplaceSelectedText( textField.get( 0 ), listText ); 
+
+			return false;
+		},
+
+		BbCodeSize: function( event )
+		{
+			var toolbar = this;
+			
+			var dialog =
+				'<div>' +
+				'<div class="bbcode-toolbar__size-popup-row js-bbcode-toolbar__size-popup-row" data-size="1"><span class="bbcode-size-1">Size 1</span></div>' +
+				'<div class="bbcode-toolbar__size-popup-row js-bbcode-toolbar__size-popup-row" data-size="2"><span class="bbcode-size-2">Size 2 (normal)</span></div>' +
+				'<div class="bbcode-toolbar__size-popup-row js-bbcode-toolbar__size-popup-row" data-size="3"><span class="bbcode-size-3">Size 3</span></div>' +
+				'<div class="bbcode-toolbar__size-popup-row js-bbcode-toolbar__size-popup-row" data-size="4"><span class="bbcode-size-4">Size 4</span></div>' +
+				'<div class="bbcode-toolbar__size-popup-row js-bbcode-toolbar__size-popup-row" data-size="6"><span class="bbcode-size-6">Size 6</span></div>' +
+				'<div class="bbcode-toolbar__size-popup-row js-bbcode-toolbar__size-popup-row" data-size="8"><span class="bbcode-size-8">Size 8</span></div>' +
+				'<div class="bbcode-toolbar__size-popup-row js-bbcode-toolbar__size-popup-row" data-size="10"><span class="bbcode-size-10">Size 10</span></div>' +
+				'</div>';
+
+			$jq( ".js-bbcode-toolbar__size-button", toolbar.ToolbarElement ).qtip(
+			{
+				position:
+				{
+					at: "left bottom",
+					adjust: { method: "none none" },
+					viewport: $jq( window )
+				},
+				content: { text: dialog },
+				show: { event: false },
+				hide:
+				{
+					delay: 100,
+					event: 'unfocus',
+					fixed: true
+				},
+				style:
+				{
+					classes: 'qtip-ptp qtip-shadow',
+					tip: false
+				},
+				events:
+				{
+					render: function( event, api )
+					{
+						$jq( ".js-bbcode-toolbar__size-popup-row" ).click( function()
+						{
+							var textField = toolbar.GetTextField();
+							var size = $jq( this ).attr( "data-size" );
+							toolbar.SurroundSelectedText( textField.get( 0 ), "[size=" + size + "]", "[/size]" );
+							api.hide();
+							return false;
+						} );
+					}
+				}
+			} ).qtip( 'show' );
+
+			return false;
+		},
+
+		BbCodeSpoiler: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[spoiler]", "[/spoiler]" );
+
+			return false;
+		},
+
+		BbCodeHide: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[hide]", "[/hide]" );
+
+			return false;
+		},
+
+		BbCodeQuote: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[quote]", "[/quote]" );
+
+			return false;
+		},
+
+		BbCodeColor: function( event )
+		{
+			var toolbar = this;
+			
+			// The colors were taken from GMail.
+			var colors = [ "000000", "444444", "666666", "999999", "cccccc", "eeeeee", "f3f3f3", "ffffff", "ff0000", "ff9900", "ffff00", "00ff00", "00ffff", "0000ff", "9900ff", "ff00ff", "f4cccc", "fce5cd", "fff2cc", "d9ead3", "d0e0e3", "cfe2f3", "d9d2e9", "ead1dc", "ea9999", "f9cb9c", "ffe599", "b6d7a8", "a2c4c9", "9fc5e8", "b4a7d6", "d5a6bd", "e06666", "f6b26b", "ffd966", "93c47d", "76a5af", "6fa8dc", "8e7cc3", "c27ba0", "cc0000", "e69138", "f1c232", "6aa84f", "45818e", "3d85c6", "674ea7", "a64d79", "990000", "b45f06", "bf9000", "38761d", "134f5c", "0b5394", "351c75", "741b47", "660000", "783f04", "7f6000", "274e13", "0c343d", "073763", "20124d", "4c1130" ];
+			var dialog = "<div style='line-height: 0;'><div>";
+			for ( var i = 0; i < colors.length; ++i )
+			{
+				dialog += '<span class="bbcode-toolbar__color-popup-color js-bbcode-toolbar__color-popup-color" data-color="' + colors[ i ] + '" style="background-color: #' + colors[ i ] + '"></span>';
+				if ( ( ( i + 1 ) % 8 ) == 0 )
+				{
+					dialog += "</div>";
+					if ( i < 63 )
+						dialog += "<div>";
+				}
+			}
+			dialog += "</div>";
+
+			$jq( ".js-bbcode-toolbar__color-button", toolbar.ToolbarElement ).qtip(
+			{
+				position:
+				{
+					at: "left bottom",
+					adjust: { method: "none none" },
+					viewport: $jq( window )
+				},
+				content: { text: dialog },
+				show: { event: false },
+				hide:
+				{
+					delay: 100,
+					event: 'unfocus',
+					fixed: true
+				},
+				style:
+				{
+					classes: 'qtip-ptp qtip-shadow',
+					tip: false
+				},
+				events:
+				{
+					render: function( event, api )
+					{
+						$jq( ".js-bbcode-toolbar__color-popup-color" ).click( function()
+						{
+							var textField = toolbar.GetTextField();
+							var color = $jq( this ).attr( "data-color" );
+							toolbar.SurroundSelectedText( textField.get( 0 ), "[color=#" + color + "]", "[/color]" );
+							api.hide();
+							return false;
+						} );
+					}
+				}
+			} ).qtip( 'show' );
+
+			return false;
+		},
+
+		BbCodeAlignCenter: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[align=center]", "[/align]" );
+
+			return false;
+		},
+
+		BbCodeAlignRight: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[align=right]", "[/align]" );
+
+			return false;
+		},
+
+		BbCodeCode: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[code]", "[/code]" );
+
+			return false;
+		},
+
+		BbCodeYoutube: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[video]", "[/video]" );
+
+			return false;
+		},
+
+		BbCodeMediainfo: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[mediainfo]", "[/mediainfo]" );
+
+			return false;
+		},
+
+		BbCodeEmoticon: function( event )
+		{
+			function AddOne( imageName, code, title, width, height )
+			{
+				return '<img src="https://static.passthepopcorn.me/static/common/smileys/' + imageName + '"' +
+					' data-code="' + code + '"' +
+					' title="' + title + '"' +
+					' class="bbcode-toolbar__emoticon-popup-item js-bbcode-toolbar__emoticon-popup-item"' +
+					' style="width: ' + width + 'px; height: ' + height + 'px;" />';
+			}
+
+			var toolbar = this;
+
+			var dialog =
+				'<div>' +
+					'<div>' +
+						AddOne( "smile.gif", ":)", "Smile", 20, 20 ) +
+						AddOne( "sad.gif", ":(", "Sad", 20, 20 ) +
+						AddOne( "biggrin.gif", ":D", "Big grin", 20, 20 ) +
+						AddOne( "ohshit.gif", ":o", "Surprised", 20, 20 ) +
+						AddOne( "tongue.gif", ":P", "Tongue out", 20, 20 ) +
+						AddOne( "blank.gif", ":|", "Straight face", 20, 20 ) +
+					'</div>' +
+					'<div>' +
+						AddOne( "angry.gif", ":angry:", "Angry", 20, 20 ) +
+						AddOne( "blush.gif", ":blush:", "Blushing", 20, 20 ) +
+						AddOne( "cool.gif", ":cool:", "Cool", 20, 20 ) +
+						AddOne( "creepy.gif", ":creepy:", "Creepy", 20, 20 ) +
+						AddOne( "crying.gif", ":'(", "Crying", 20, 20 ) +
+						AddOne( "eyesright.gif", "&gt;.&gt;", "Eyes right", 20, 20 ) +
+					'</div>' +
+					'<div>' +
+						AddOne( "frown.gif", ":frown:", "Frowning", 20, 20 ) +
+						AddOne( "hmm.gif", ":unsure:", "Unsure", 20, 20 ) +
+						AddOne( "laughing.gif", ":lol:", "LOL", 20, 20 ) +
+						AddOne( "ninja.gif", ":ninja:", "Ninja", 20, 20 ) +
+						AddOne( "no.gif", ":no:", "No", 20, 20 ) +
+						AddOne( "nod.gif", ":nod:", "Nodding", 20, 20 ) +
+					'</div>' +
+					'<div>' +
+						AddOne( "ohnoes.gif", ":ohno:", "Oh, no!", 20, 20 ) +
+						AddOne( "omg.gif", ":omg:", "OMG!", 20, 20 ) +
+						AddOne( "shifty.gif", ":shifty:", "Shifty", 20, 20 ) +
+						AddOne( "sick.gif", ":sick:", "Sick", 20, 20 ) +
+						AddOne( "wink.gif", ":wink:", "Winking", 20, 20 ) +
+						AddOne( "worried.gif", ":worried:", "Worried", 20, 20 ) +
+					'</div>' +
+					'<div>' +
+						AddOne( "wtf.gif", ":wtf:", "WTF?!", 20, 20 ) +
+						AddOne( "wub.gif", ":wub:", "Wub", 20, 30 ) +
+						AddOne( "paddle.gif", ":paddle:", "Paddle", 28, 28 ) +
+						AddOne( "wave.gif", ":wave:", "Waves", 27, 21 ) +
+						AddOne("heart.gif", "&lt;3", "Heart", 21, 18) +
+					'</div>' +
+					'<div>' +
+						AddOne( "thanks.gif", ":thanks:", "Thanks!", 40, 31 ) +
+						AddOne("crom.gif", ":crom:", "Thanks!", 35, 29) +
+						AddOne("sorry.gif", ":sorry:", "Sorry!", 38, 31) +
+					'</div>' +
+				'</div>';
+
+			$jq( ".js-bbcode-toolbar__emoticon-button", toolbar.ToolbarElement ).qtip(
+			{
+				position:
+				{
+					at: "left bottom",
+					adjust: { method: "none none" },
+					viewport: $jq( window )
+				},
+				content: { text: dialog },
+				show: { event: false },
+				hide:
+				{
+					delay: 100,
+					event: 'unfocus',
+					fixed: true
+				},
+				style:
+				{
+					classes: 'qtip-ptp qtip-shadow',
+					tip: false
+				},
+				events:
+				{
+					render: function( event, api )
+					{
+						$jq( ".js-bbcode-toolbar__emoticon-popup-item" ).click( function()
+						{
+							var textField = toolbar.GetTextField();
+							var code = $jq( this ).attr( "data-code" );
+							toolbar.InsertText( textField.get( 0 ), " " + code );
+							api.hide();
+							return false;
+						} );
+					}
+				}
+			} ).qtip( 'show' );
+
+			return false;
+		},
+
+		BbCodeComparison: function( event )
+		{
+			var textField = this.GetTextField();
+			this.SurroundSelectedText( textField.get( 0 ), "[comparison=Source, Encode]", "[/comparison]" );
+
+			return false;
+		},
+
+		BbCodeStaff: function( event )
+		{
+			var textField = this.GetTextField();
+			var username = $jq( ".js-bbcode-toolbar__staff-button", this.ToolbarElement ).data( "username" );
+			this.SurroundSelectedText( textField.get( 0 ), "[staff=" + username + "]", "[/staff]" );
+
+			return false;
+		},
+
+		BindHotKey: function( hotkey, callback )
+		{
+			var toolbar = this;
+			
+			Mousetrap.bindGlobal( hotkey, function()
+			{
+				if ( toolbar.GetTextField().is( ":focus" ) )
+				{
+					// Must rebind because "this" must be the toolbar for the callback.
+					// See Function.prototype.call on MDN.
+					callback.call( toolbar, null );
+					return false;
+				}
+
+				return true;
+			}, "keydown" );
+		}
+	};
+
+	return module;
+} )();

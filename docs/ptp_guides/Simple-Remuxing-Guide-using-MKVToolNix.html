@@ -1,0 +1,1089 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://passthepopcorn.me/forums.php?action=viewthread&threadid=30767 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge">
+		<meta name="referrer" content="no-referrer">
+	<meta name="referrer" content="same-origin">
+	<meta name="robots" content="noindex">
+		<title>Simple Remuxing Guide using MKVToolNix :: PassThePopcorn</title>
+	<link rel="shortcut icon" href="https://passthepopcorn.me/favicon.ico">
+	<link rel="apple-touch-icon" href="https://passthepopcorn.me/static/common/touch-icon-iphone.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://passthepopcorn.me/static/common/touch-icon-ipad.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://passthepopcorn.me/static/common/touch-icon-iphone-retina.png?v=1514440441">
+	<link rel="search" type="application/opensearchdescription+xml" title="PassThePopcorn" href="https://passthepopcorn.me/static/opensearch.xml">
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+				<link href="./Simple-Remuxing-Guide-using-MKVToolNix_files/marcel.css" rel="stylesheet" type="text/css" media="screen">
+						<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/script_start.js.download" type="text/javascript"></script>
+						<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/class_ajax.js.download" type="text/javascript"></script>
+						<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/global.js.download" type="text/javascript"></script>
+							<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/jquery.js.download" type="text/javascript"></script>
+						<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/autocomplete.js.download" type="text/javascript"></script>
+					<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/comments.js.download" type="text/javascript"></script>
+					<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/subscriptions.js.download" type="text/javascript"></script>
+					<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/bbcode.js.download" type="text/javascript"></script>
+					<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/mousetrap.min.js.download" type="text/javascript"></script>
+					<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/jquery.rangyinputs.js.download" type="text/javascript"></script>
+					<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/jquery.qtip.min.js.download" type="text/javascript"></script>
+					<script src="./Simple-Remuxing-Guide-using-MKVToolNix_files/jquery.simplemodal.1.4.4.min.js.download" type="text/javascript"></script>
+		</head>
+<body id="forums" data-anticsrftoken="9001" style="">
+<div id="wrapper">
+	<div id="header" class="header">
+		<div class="site-logo"><a class="site-logo__link" href="https://passthepopcorn.me/index.php"></a></div>
+				
+			<div class="main-menu">
+			<ul class="main-menu__list">
+				<li class="main-menu__item" id="nav_index"><a class="main-menu__link" href="https://passthepopcorn.me/index.php">Home</a></li>
+				<li class="main-menu__item" id="nav_torrents"><a class="main-menu__link" href="https://passthepopcorn.me/torrents.php">Movies</a></li>
+				<li class="main-menu__item" id="nav_collages"><a class="main-menu__link" href="https://passthepopcorn.me/collages.php">Collections</a></li>
+				<li class="main-menu__item" id="nav_requests"><a class="main-menu__link" href="https://passthepopcorn.me/requests.php">Requests</a></li>
+				<li class="main-menu__item" id="nav_forums"><a class="main-menu__link" href="https://passthepopcorn.me/forums.php">Forums</a></li>
+				<li class="main-menu__item" id="nav_irc"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php?action=article&amp;id=95">Chat</a></li>
+				<li class="main-menu__item" id="nav_top10"><a class="main-menu__link" href="https://passthepopcorn.me/top10.php">Top&nbsp;10</a></li>
+				<li class="main-menu__item" id="nav_rules"><a class="main-menu__link" href="https://passthepopcorn.me/rules.php">Rules</a></li>
+				<li class="main-menu__item" id="nav_wiki"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php">Wiki</a></li>
+				<li class="main-menu__item" id="nav_staff"><a class="main-menu__link" href="https://passthepopcorn.me/staff.php">Staff</a></li>
+			</ul>
+		</div>
+				<div class="search-bar">
+			<ul class="search-bar__list">
+				<li id="searchbar_torrents" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/torrents.php" method="get" class="search-bar__search-field__form">
+												<input type="hidden" name="order_by" value="relevance">
+						<input id="torrentssearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="m" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;torrents&#39;);" onblur="" placeholder="Movies" type="text" name="searchstr" size="17">
+						<ul id="torrentscomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_people" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/artist.php" method="get" class="search-bar__search-field__form">
+						<input id="artistsearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="p" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;artist&#39;);" placeholder="People" type="text" name="artistname" size="17">
+						<ul id="artistcomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_collections" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/collages.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="c" spellcheck="false" id="collectionsearch" placeholder="Collections" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_requests" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/requests.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="r" spellcheck="false" placeholder="Requests" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_forums" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/forums.php" method="get" class="search-bar__search-field__form">
+						<input value="search" type="hidden" name="action">
+						<input class="search-bar__search-field__input" accesskey="f" spellcheck="false" placeholder="Forums" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_log" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/log.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="l" spellcheck="false" placeholder="Log" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_users" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/user.php" method="get" class="search-bar__search-field__form">
+						<input type="hidden" name="action" value="search">
+						<input class="search-bar__search-field__input" accesskey="u" spellcheck="false" placeholder="Users" type="text" name="search" size="17">
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+		<div id="content" class="page__main-content">
+<script type="text/javascript">var ThreadID='30767';</script>
+<div class="thin">
+	<h2 class="page__title">
+		<a href="https://passthepopcorn.me/forums.php">Forums</a> &gt;
+		<a href="https://passthepopcorn.me/forums.php?action=viewforum&amp;forumid=12">Tutorials</a> &gt;
+		Simple Remuxing Guide using MKVToolNix	</h2>
+	<div class="linkbox">
+		<a class="linkbox__link" href="https://passthepopcorn.me/reports.php?action=report&amp;type=thread&amp;id=30767">[Report Thread]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#" onclick="SubscribeToForumTopic( this, 30767 ); return false;">[Subscribe]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#" onclick="ToggleSearchThreadForm( this ); return false;">[Search this Thread]</a>
+	</div>
+	<div id="searchthread" class="hidden" style="text-align: center;">
+		<div class="panel" style="display: inline-block; text-align: left;">
+			<div class="panel__body">
+				<form action="https://passthepopcorn.me/forums.php" method="get">
+					<input type="hidden" name="action" value="search">
+					<input type="hidden" name="threadid" value="30767">
+					<div class="form__group">
+						<input type="text" id="searchbox" name="search" size="70" placeholder="Post" class="form__input">
+					</div>
+					<div class="form__group">
+						<input type="text" id="username" name="user" size="70" placeholder="Username" class="form__input">
+					</div>
+					<div class="form__group">
+						<input type="submit" name="submit" value="Search this thread" class="form__input">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		<div class="pagination pagination--top"><span class="pagination__current-page">1-25</span> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=30767" class="pagination__link pagination__link--page">26-42</a> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=30767" class="pagination__link pagination__link--next">Next &gt;</a> <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=30767" class="pagination__link pagination__link--last"> Last &gt;&gt;</a></div>
+
+	<div class="forum_post forum-post" id="post1318607">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1318607#post1318607">#1318607</a>
+			by <strong><a class="username username--legend" href="https://passthepopcorn.me/user.php?id=100620">Tamjuk</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=100620"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank5.png" class="award" title="Rank 5: 98 Awards"></a> (Legend)</strong>
+			<span class="user_title"> (<strong><span style="color:#38761d">タグチジャパン</span></strong>) </span>
+			<span class="time" title="Jan 18 2017, 17:00">[ Jan 18 2017, 17:00 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1318607&#39;, &#39;Tamjuk&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1318607" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1318607">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/TDI7GQZ.png" class="forum-post__avatar__image" alt="Tamjuk&#39;s avatar" width="163" height="250">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1318607">
+				A simple guide which shows you how to create a remux from a BluRay disc using <a rel="noreferrer" target="_blank" href="https://mkvtoolnix.download/downloads.html">MKVToolNix</a>. If MKVToolNix does not search for playlists, make an update.<br>
+MakeMKV is another method but has issues such as using lossy Audio by default and lack of labelling for tracks such as commentary.<br>
+The best method is using eac3to (<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=23460" title="Forum Link">MIXMUX Remuxing Guide</a>) since it can detect and fix source errors and convert audio when necessary.<br>
+<br>
+<br>
+1. First you add a .mpls file from the BluRay folder (/BDMV/PLAYLIST/0001.mpls), MKVToolNix will offer you to scan playlists which you should do. Also select it as option to use in the future. Do not add a M2TS file directly, the main feature could depend on multiple M2TS files so adding it by playlist is the safe method.<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/gtC0ckw/48314z.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/48314z.png"><br>
+<br>
+2. A list of playlists with its duration and size will be displayed. Select the one with the right movie length (most often on top) and click on add.<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/ZHszDXK/e57fdd.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/e57fdd.png"><br>
+<br>
+Optional:<br>
+<strong>Convert Audio using eac3to</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+1: Open CommandPrompt.exe<br>
+2: drag and drop the eac3to.exe into CommandPrompt window<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/phZGsBW/7513gm.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/7513gm.png"><br>
+<br>
+3: hit spacebar<br>
+4: drag and drop the film's BDMV folder into CommandPrompt window<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/SxFHXXt/yc879x.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/yc879x.png"><br>
+<br>
+5: hit enter<br>
+6: choose the 1) or corresponding number for the film (Usually it is "1)" and look for the longest version: "1:58:58"). Once that is chosen, press up to get the previously entered text.  Press spacebar and enter 1).  Press enter again.<br>
+7: Now you can demux individual streams. since eac3to is the best demuxing method, it's best to just hit -demux, convert the audio to FLAC if wished and load all corresponding streams to mkvmerge.<br>
+Type:  <blockquote>2: Film_Name.mkv 3: Main_Audio_Language.FLAC 4: Film_Name_Subtitle_Language.sup</blockquote><br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/dDPHDf2/v3j8p5.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/v3j8p5.png"><br>
+<br>
+9: Hit enter. You are now demuxing!<br>
+10: Once it finishes, it should look like this:<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/7KymLw2/mo8vkt.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/mo8vkt.png"><br>
+<br>
+11. Drag the resulting file(s) to MKVMerge and move the Audio to the second spot<br>
+<br>
+<span class="bbcode-size-1">written by FatherTimeline</span></blockquote><br>
+<br>
+<strong>Adding chapters</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">If you downloaded chapters from <a rel="noreferrer" target="_blank" href="http://chapterdb.org/browse">ChapterDB </a>for example, you can add the file to via MKVToolnix<br>
+Click on the "Output" tab and search for the file location at the Chapter file field, there is no file extension needed but it needs to be XML or OGM formatted<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/dMKBbVq/hoobd1.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/hoobd1.png"><br>
+<br>
+If you got chapter names but not ready in a file, you can create it yourself<br>
+Load the chapter at the Chapter Editor, click on a chapter and type in the name<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/nmWyNT3/a0b1a1.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/a0b1a1.png"><br>
+</blockquote><br>
+<br>
+3. Untick unnecessary tracks (dupe audio), set the language, move the tracks in <strong>preferred order</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">1. Video<br>
+2. Original Audio<br>
+3. English Dub<br>
+4. English Subtitles<br>
+5. Other Subtitles<br>
+6. Chapters</blockquote>, put tracks by default on or off, label them where necessary (Dub or Commentary with) and Start Multiplexing<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/X532SBx/p4v8v8.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/p4v8v8.png">									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=100620">Tamjuk</a> <span class="time" title="Oct 08 2017, 14:55">[ Oct 08 2017, 14:55 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1318610">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1318610#post1318610">#1318610</a>
+			by <strong><a class="username username--legend" href="https://passthepopcorn.me/user.php?id=100620">Tamjuk</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=100620"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank5.png" class="award" title="Rank 5: 98 Awards"></a> (Legend)</strong>
+			<span class="user_title"> (<strong><span style="color:#38761d">タグチジャパン</span></strong>) </span>
+			<span class="time" title="Jan 18 2017, 17:04">[ Jan 18 2017, 17:04 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1318610&#39;, &#39;Tamjuk&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1318610" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1318610">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/TDI7GQZ.png" class="forum-post__avatar__image" alt="Tamjuk&#39;s avatar" width="163" height="250">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1318610">
+				Feel free to make suggestions.									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=100620">Tamjuk</a> <span class="time" title="Nov 12 2017, 19:39">[ Nov 12 2017, 19:39 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1318881">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1318881#post1318881">#1318881</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=110560">f99z</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=110560"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank2.png" class="award" title="Rank 2: 51 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (<strong><span style="color:#ff0000">T</span><span style="color:#f0070f">H</span><span style="color:#e20f1e">E</span><span style="color:#d4172d">R</span><span style="color:#c61f3c">E</span> <span style="color:#a92f5a">I</span><span style="color:#9b3769">S</span> <span style="color:#7e4687">N</span><span style="color:#704e96">O</span> <span style="color:#545eb4">S</span><span style="color:#4566c3">P</span><span style="color:#376ed2">O</span><span style="color:#2976e1">O</span><span style="color:#1b7ef0">N</span></strong>) </span>
+			<span class="time" title="Jan 19 2017, 08:20">[ Jan 19 2017, 08:20 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1318881&#39;, &#39;f99z&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1318881" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1318881">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/6ixe32.jpg" class="forum-post__avatar__image" alt="f99z&#39;s avatar" width="150" height="150">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1318881">
+				This looks great and simple, Tamjuk. Bookmarked for later <img border="0" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/smile.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1323004">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1323004#post1323004">#1323004</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=108883">Chillyhead</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=108883"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank2.png" class="award" title="Rank 2: 50 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 29 2017, 21:30">[ Jan 29 2017, 21:30 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1323004&#39;, &#39;Chillyhead&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1323004" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1323004">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/q69t4d.jpg" class="forum-post__avatar__image" alt="Chillyhead&#39;s avatar" width="331" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1323004">
+				Works great, thanks!							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1341885">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1341885#post1341885">#1341885</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=109679">Forest</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=109679"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank3.png" class="award" title="Rank 3: 59 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<span style="color:#ffff00"><strong>Quis Custodiet Ipsos Custodes?</strong></span>) </span>
+			<span class="time" title="Mar 29 2017, 20:20">[ Mar 29 2017, 20:20 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1341885&#39;, &#39;Forest&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1341885" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1341885">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/NLNezJH.png" class="forum-post__avatar__image" alt="Forest&#39;s avatar" width="150" height="120">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1341885">
+				Side note: If you're on a Mac, the BDMV folder is not explorable by default. If you have the Bluray contents in a folder, rename the BDMV folder to "bdmv". Now it will be explorable like a normal folder.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1371192">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1371192#post1371192">#1371192</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=71846">Religion</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=71846"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank4.png" class="award" title="Rank 4: 86 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jul 09 2017, 15:58">[ Jul 09 2017, 15:58 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1371192&#39;, &#39;Religion&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1371192" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1371192">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/gc0lc3.jpg" class="forum-post__avatar__image" alt="Religion&#39;s avatar" width="318" height="320">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1371192">
+				Wow I found this guide because I wanted to remux this exact movie (Andrei Rublev)...what are the chances??<br>
+<br>
+If you're on a Mac, your other option is to right click the BDMV file and hit "Show Package Contents."							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1371654">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1371654#post1371654">#1371654</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=108109">MovieViewer</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=108109"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank4.png" class="award" title="Rank 4: 79 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<span style="color:#00ffff">¯\_(ツ)_/¯</span><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/3hN0HvJ/r4ar9a.gif" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/r4ar9a.gif"><span style="color:#00ffff">¯\(°_o)/¯</span>) </span>
+			<span class="time" title="Jul 11 2017, 07:01">[ Jul 11 2017, 07:01 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1371654&#39;, &#39;MovieViewer&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1371654" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1371654">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/2l160e.png" class="forum-post__avatar__image" alt="MovieViewer&#39;s avatar" width="300" height="225">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1371654">
+				Great tutorial thanks.<br>
+ <img border="0" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/thanks.gif" alt=""><br>
+what if the audio is DTS-MA 2.0, or, DTS-MA 5.1, or, DTS-MA 7.1, or, DTS 5.1?<br>
+do you still convert it to .flac?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1371681">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1371681#post1371681">#1371681</a>
+			by <strong><a class="username username--legend" href="https://passthepopcorn.me/user.php?id=100620">Tamjuk</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=100620"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank5.png" class="award" title="Rank 5: 98 Awards"></a> (Legend)</strong>
+			<span class="user_title"> (<strong><span style="color:#38761d">タグチジャパン</span></strong>) </span>
+			<span class="time" title="Jul 11 2017, 10:19">[ Jul 11 2017, 10:19 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1371681&#39;, &#39;Tamjuk&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1371681" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1371681">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/TDI7GQZ.png" class="forum-post__avatar__image" alt="Tamjuk&#39;s avatar" width="163" height="250">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1371681">
+				You should convert it if it's 2.0 especially yeah, but if it's 5.1/7.1 then keep it. DTS 5.1 is lossy and should only be kept if there is no lossless version and be included unconverted.									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=100620">Tamjuk</a> <span class="time" title="Jul 11 2017, 10:20">[ Jul 11 2017, 10:20 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1374156">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1374156#post1374156">#1374156</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=84726">medterm</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=84726"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank5.png" class="award" title="Rank 5: 104 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (Get on your knees and tell me you love me) </span>
+			<span class="time" title="Jul 22 2017, 00:53">[ Jul 22 2017, 00:53 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1374156&#39;, &#39;medterm&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1374156" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1374156">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/5x4na4.jpg" class="forum-post__avatar__image" alt="medterm&#39;s avatar" width="200" height="200">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1374156">
+				So perhaps you could pinpoint what I'm doing wrong.<br>
+<br>
+This is what MKVToolnix looks like<br>
+<strong>Spoiler</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://picload.org/image/rpwiaopw/untitled.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/untitled.png"></blockquote><br>
+<br>
+But this is how my file turns out<br>
+<br>
+<strong>Spoiler</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><a href="javascript:void(0);" onclick="BBCode.MediaInfoToggleShow( this );">Aloys.2016.1080p.BluRay.Remux.AVC-PtP.mkv</a><table class="mediainfo"><tbody><tr><td><table class="nobr mediainfo__section"><caption class="mediainfo__section__caption">General</caption><tbody><tr><td>Container:</td><td>Matroska</td></tr><tr><td>Runtime:</td><td>1h 30mn</td></tr><tr><td>Size:</td><td>25.6 GiB</td></tr><tr><td>DXVA:</td><td>Compatible</td></tr><tr title="me=hex (!= umh, esa or tesa). subme=6 (&lt; 7). trellis=1 (!= 2). deblock=1:0:0 (&gt;= 0, 0). ref=2 (!= 3, 4, 5 or 6). "><td>Minimum settings:</td><td>Not met</td></tr></tbody></table></td><td><table class="nobr mediainfo__section"><caption class="mediainfo__section__caption">Video</caption><tbody><tr><td>Codec:</td><td>x264</td></tr><tr><td>Resolution:</td><td>1920x1080</td></tr><tr><td>Aspect ratio:</td><td>16:9</td></tr><tr><td>Frame rate:</td><td>24.000 fps</td></tr><tr><td>Bit rate:</td><td>35.0 Mb/s</td></tr></tbody></table></td><td><table class="mediainfo__section"><caption class="mediainfo__section__caption">Audio</caption><tbody><tr><td>#1:</td><td>German 5.1ch DTS-HD MA @ 3 323 kb/s / 1 509 kb/s</td></tr><tr><td>#2:</td><td>German 2.0ch PCM @ 2 304 kb/s</td></tr></tbody></table></td></tr></tbody></table><blockquote class="spoiler hidden">General <br>
+Unique ID : 239678118000565903174190259104500566659 (0xB45053920AA0F3D3B8C4A18FA4624A83) <br>
+Complete name : Aloys.2016.1080p.BluRay.Remux.AVC-PtP.mkv <br>
+Format : Matroska <br>
+Format version : Version 4 / Version 2 <br>
+File size : 25.6 GiB <br>
+Duration : 1 h 30 min <br>
+Overall bit rate mode : Variable <br>
+Overall bit rate : 40.5 Mb/s <br>
+Encoded date : UTC 2017-07-21 01:21:05 <br>
+Writing application : mkvmerge v8.3.0 ('Over the Horizon') 32bit <br>
+Writing library : libebml v1.3.1 + libmatroska v1.4.2 <br>
+<br>
+Video <br>
+ID : 1 <br>
+Format : AVC <br>
+Format/Info : Advanced Video Codec <br>
+Format profile : High@L4.1 <br>
+Format settings, CABAC : Yes <br>
+Format settings, ReFrames : 3 frames <br>
+Codec ID : V_MPEG4/ISO/AVC <br>
+Duration : 1 h 30 min <br>
+Bit rate mode : Variable <br>
+Bit rate : 35.0 Mb/s <br>
+Maximum bit rate : 38.0 Mb/s <br>
+Width : 1 920 pixels <br>
+Height : 1 080 pixels <br>
+Display aspect ratio : 16:9 <br>
+Frame rate mode : Constant <br>
+Frame rate : 24.000 FPS <br>
+Color space : YUV <br>
+Chroma subsampling : 4:2:0 <br>
+Bit depth : 8 bits <br>
+Scan type : Progressive <br>
+Bits/(Pixel*Frame) : 0.703 <br>
+Stream size : 22.1 GiB (86%) <br>
+Writing library : x264 core 148 r2638 7599210 <br>
+Encoding settings : cabac=1 / ref=2 / deblock=1:0:0 / analyse=0x3:0x113 / me=hex / subme=6 / psy=1 / psy_rd=1.00:0.00 / mixed_ref=1 / me_range=16 / chroma_me=1 / trellis=1 / 8x8dct=1 / cqm=0 / deadzone=21,11 / fast_pskip=1 / chroma_qp_offset=-5 / threads=12 / lookahead_threads=2 / sliced_threads=0 / slices=4 / nr=0 / decimate=1 / interlaced=0 / bluray_compat=1 / constrained_intra=0 / bframes=3 / b_pyramid=1 / b_adapt=1 / b_bias=0 / direct=1 / weightb=1 / open_gop=1 / weightp=1 / keyint=24 / keyint_min=1 / scenecut=40 / intra_refresh=0 / rc_lookahead=24 / rc=2pass / mbtree=1 / bitrate=35000 / ratetol=0.1 / qcomp=0.00 / qpmin=0 / qpmax=69 / qpstep=4 / cplxblur=20.0 / qblur=0.5 / vbv_maxrate=38000 / vbv_bufsize=30000 / nal_hrd=vbr / filler=0 / ip_ratio=1.40 / aq=1:1.00 <br>
+Default : Yes <br>
+Forced : No <br>
+Color range : Limited <br>
+Color primaries : BT.709 <br>
+Transfer characteristics : BT.709 <br>
+Matrix coefficients : BT.709 <br>
+<br>
+Audio #1 <br>
+ID : 2 <br>
+Format : DTS <br>
+Format/Info : Digital Theater Systems <br>
+Format profile : MA / Core <br>
+Mode : 16 <br>
+Format settings, Endianness : Big <br>
+Codec ID : A_DTS <br>
+Duration : 1 h 30 min <br>
+Bit rate mode : Variable / Constant <br>
+Bit rate : 3 323 kb/s / 1 509 kb/s <br>
+Channel(s) : 6 channels <br>
+Channel positions : Front: L C R, Side: L R, LFE <br>
+Sampling rate : 48.0 kHz <br>
+Frame rate : 93.750 FPS (512 spf) <br>
+Bit depth : 24 bits <br>
+Compression mode : Lossless / Lossy <br>
+Stream size : 2.11 GiB (8%) <br>
+Language : German <br>
+Default : Yes <br>
+Forced : No <br>
+<br>
+Audio #2 <br>
+ID : 3 <br>
+Format : PCM <br>
+Format settings, Endianness : Big <br>
+Codec ID : A_PCM/INT/BIG <br>
+Duration : 1 h 30 min <br>
+Bit rate mode : Constant <br>
+Bit rate : 2 304 kb/s <br>
+Channel(s) : 2 channels <br>
+Sampling rate : 48.0 kHz <br>
+Frame rate : 200.000 FPS (240 spf) <br>
+Bit depth : 24 bits <br>
+Stream size : 1.46 GiB (6%) <br>
+Language : German <br>
+Default : No <br>
+Forced : No <br>
+<br>
+Text <br>
+ID : 4 <br>
+Format : PGS <br>
+Muxing mode : zlib <br>
+Codec ID : S_HDMV/PGS <br>
+Codec ID/Info : Picture based subtitle format used on BDs/HD-DVDs <br>
+Duration : 1 h 24 min <br>
+Bit rate : 4 490 b/s <br>
+Count of elements : 1058 <br>
+Stream size : 2.70 MiB (0%) <br>
+Language : English <br>
+Default : Yes <br>
+Forced : No</blockquote></blockquote>							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1374232">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1374232#post1374232">#1374232</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=89843">vdown</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=89843"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank2.png" class="award" title="Rank 2: 48 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jul 22 2017, 09:53">[ Jul 22 2017, 09:53 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1374232&#39;, &#39;vdown&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1374232" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1374232">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1374232">
+				You're adding the wrong file, you need to go to the PLAYLIST folder and add one of the .mpls files.<br>
+<br>
+<strong>Spoiler</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/Wg9p0hL/47d9ms.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/47d9ms.png"></blockquote><br>
+<br>
+Then follow the original guide. <br>
+<br>
+By not using a playlist and adding the m2ts file you'll lose the chapters and its possible the full film may be split over multiple m2ts files.<br>
+<br>
+Also if you have included the 5.1 DTS-HD MA track you don't need the 2.0 LPCM track (assuming its just a stereo version of the main movie audio). Finally that's a really old version of MKVToolNix.<br>
+<br>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1374276">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1374276#post1374276">#1374276</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=84726">medterm</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=84726"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank5.png" class="award" title="Rank 5: 104 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (Get on your knees and tell me you love me) </span>
+			<span class="time" title="Jul 22 2017, 15:50">[ Jul 22 2017, 15:50 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1374276&#39;, &#39;medterm&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1374276" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1374276">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/5x4na4.jpg" class="forum-post__avatar__image" alt="medterm&#39;s avatar" width="200" height="200">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1374276">
+				I update it, but must have saved in the wrong location. I'll re-dl updated version. What I've gleaned from your advice is that I should read the directions more closely haha. Thanks for the help							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1401174">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1401174#post1401174">#1401174</a>
+			by <strong><a class="username username--member" href="https://passthepopcorn.me/user.php?id=113536">Koh</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=113536"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank3.png" class="award" title="Rank 3: 59 Awards"></a> (Member)</strong>
+			<span class="user_title"> (<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.imgur.com/yS7FQj4.png" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/yS7FQj4.png">) </span>
+			<span class="time" title="Sep 27 2017, 01:28">[ Sep 27 2017, 01:28 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1401174&#39;, &#39;Koh&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1401174" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1401174">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/YKPU4Ly.jpg" class="forum-post__avatar__image" alt="Koh&#39;s avatar" width="400" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1401174">
+				My audio track doesnt show up, used a workaround with eac3to though, but any ideas? Also what do you do if the chapters have no names and chapterdb has nothing either?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1401250">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1401250#post1401250">#1401250</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=33039">BlackwatchPlaid</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=33039"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank4.png" class="award" title="Rank 4: 86 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Sep 27 2017, 05:37">[ Sep 27 2017, 05:37 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1401250&#39;, &#39;BlackwatchPlaid&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1401250" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1401250">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/lnmMKJz.jpg" class="forum-post__avatar__image" alt="BlackwatchPlaid&#39;s avatar" width="150" height="150">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1401250">
+				<strong>Koh wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1401174#post1401174"><img class="view_post" alt="View Post" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>Also what do you do if the chapters have no names and chapterdb has nothing either?</blockquote><br>
+Maybe watch the BD and copy them down from the menu?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1404135">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1404135#post1404135">#1404135</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=84726">medterm</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=84726"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank5.png" class="award" title="Rank 5: 104 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (Get on your knees and tell me you love me) </span>
+			<span class="time" title="Oct 04 2017, 01:28">[ Oct 04 2017, 01:28 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1404135&#39;, &#39;medterm&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1404135" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1404135">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/5x4na4.jpg" class="forum-post__avatar__image" alt="medterm&#39;s avatar" width="200" height="200">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1404135">
+				Is it okay for the format to come out as mpeg instead of h264?<br>
+<br>
+Source: <strong>Spoiler</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><a href="javascript:void(0);" onclick="BBCode.MediaInfoToggleShow( this );">00000.m2ts</a><table class="mediainfo"><tbody><tr><td><table class="nobr mediainfo__section"><caption class="mediainfo__section__caption">General</caption><tbody><tr><td>Container:</td><td>BDAV</td></tr><tr><td>Runtime:</td><td>1h 25mn</td></tr><tr><td>Size:</td><td>16.1 GiB</td></tr></tbody></table></td><td><table class="nobr mediainfo__section"><caption class="mediainfo__section__caption">Video</caption><tbody><tr><td>Codec:</td><td>MPEG-2</td></tr><tr><td>Resolution:</td><td>1920x1080</td></tr><tr><td>Aspect ratio:</td><td>16:9</td></tr><tr><td>Frame rate:</td><td>23.976 fps</td></tr><tr><td>Bit rate:</td><td>25.1 Mb/s</td></tr></tbody></table></td><td><table class="mediainfo__section"><caption class="mediainfo__section__caption">Audio</caption><tbody><tr><td>#1:</td><td>5.1ch AC-3 @ 448 kb/s</td></tr><tr><td>#2:</td><td>2.0ch AC-3 @ 224 kb/s</td></tr></tbody></table></td></tr></tbody></table><blockquote class="spoiler hidden">General <br>
+ID : 0 (0x0) <br>
+Complete name : The.Postal.Service.Everything.Will.Change.2013.1080p.BluRay.MPEG-2.DD5.1\BDMV\STREAM\00000.m2ts <br>
+Format : BDAV <br>
+Format/Info : Blu-ray Video <br>
+File size : 16.1 GiB <br>
+Duration : 1 h 25 min <br>
+Overall bit rate mode : Variable <br>
+Overall bit rate : 26.9 Mb/s <br>
+Maximum Overall bit rate : 48.0 Mb/s <br>
+<br>
+Video <br>
+ID : 4113 (0x1011) <br>
+Menu ID : 1 (0x1) <br>
+Format : MPEG Video <br>
+Format version : Version 2 <br>
+Format profile : Main@High <br>
+Format settings, BVOP : Yes <br>
+Format settings, Matrix : Default <br>
+Format settings, GOP : Variable <br>
+Codec ID : 2 <br>
+Duration : 1 h 25 min <br>
+Bit rate mode : Variable <br>
+Bit rate : 25.1 Mb/s <br>
+Maximum bit rate : 30.0 Mb/s <br>
+Width : 1 920 pixels <br>
+Height : 1 080 pixels <br>
+Display aspect ratio : 16:9 <br>
+Frame rate : 23.976 (24000/1001) FPS <br>
+Standard : NTSC <br>
+Color space : YUV <br>
+Chroma subsampling : 4:2:0 <br>
+Bit depth : 8 bits <br>
+Scan type : Progressive <br>
+Compression mode : Lossy <br>
+Bits/(Pixel*Frame) : 0.505 <br>
+Time code of first frame : 00:01:59:00 <br>
+Time code source : Group of pictures header <br>
+GOP, Open/Closed : Closed <br>
+Stream size : 15.0 GiB (93%) <br>
+Color primaries : BT.709 <br>
+Transfer characteristics : BT.709 <br>
+Matrix coefficients : BT.709 <br>
+<br>
+Audio #1 <br>
+ID : 4352 (0x1100) <br>
+Menu ID : 1 (0x1) <br>
+Format : AC-3 <br>
+Format/Info : Audio Coding 3 <br>
+Format settings, Endianness : Big <br>
+Codec ID : 129 <br>
+Duration : 1 h 25 min <br>
+Bit rate mode : Constant <br>
+Bit rate : 448 kb/s <br>
+Channel(s) : 6 channels <br>
+Channel positions : Front: L C R, Side: L R, LFE <br>
+Sampling rate : 48.0 kHz <br>
+Frame rate : 31.250 FPS (1536 spf) <br>
+Bit depth : 16 bits <br>
+Compression mode : Lossy <br>
+Stream size : 274 MiB (2%) <br>
+Service kind : Complete Main <br>
+<br>
+Audio #2 <br>
+ID : 4353 (0x1101) <br>
+Menu ID : 1 (0x1) <br>
+Format : AC-3 <br>
+Format/Info : Audio Coding 3 <br>
+Format settings, Endianness : Big <br>
+Codec ID : 129 <br>
+Duration : 1 h 25 min <br>
+Bit rate mode : Constant <br>
+Bit rate : 224 kb/s <br>
+Channel(s) : 2 channels <br>
+Channel positions : Front: L R <br>
+Sampling rate : 48.0 kHz <br>
+Frame rate : 31.250 FPS (1536 spf) <br>
+Bit depth : 16 bits <br>
+Compression mode : Lossy <br>
+Stream size : 137 MiB (1%) <br>
+Service kind : Complete Main</blockquote></blockquote><br>
+<br>
+Remux: <strong>Spoiler</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><a href="javascript:void(0);" onclick="BBCode.MediaInfoToggleShow( this );">The.Postal.Service.Everything.Will.Change.2014.1080p.BluRay-medterm.mkv</a><table class="mediainfo"><tbody><tr><td><table class="nobr mediainfo__section"><caption class="mediainfo__section__caption">General</caption><tbody><tr><td>Container:</td><td>Matroska</td></tr><tr><td>Runtime:</td><td>1h 25mn</td></tr><tr><td>Size:</td><td>15.2 GiB</td></tr></tbody></table></td><td><table class="nobr mediainfo__section"><caption class="mediainfo__section__caption">Video</caption><tbody><tr><td>Codec:</td><td>MPEG-2</td></tr><tr><td>Resolution:</td><td>1920x1080</td></tr><tr><td>Aspect ratio:</td><td>16:9</td></tr><tr><td>Frame rate:</td><td>23.976 fps</td></tr><tr><td>Bit rate:</td><td>25.0 Mb/s</td></tr></tbody></table></td><td><table class="mediainfo__section"><caption class="mediainfo__section__caption">Audio</caption><tbody><tr><td>English 5.1ch AC-3 @ 448 kb/s</td></tr></tbody></table></td></tr></tbody></table><blockquote class="spoiler hidden">General <br>
+Unique ID : 224468787316702235084844764464247593911 (0xA8DF1DAC1AB10B4EBD28EE9CDA09DBB7) <br>
+Complete name : The.Postal.Service.Everything.Will.Change.2014.1080p.BluRay-medterm.mkv <br>
+Format : Matroska <br>
+Format version : Version 4 / Version 2 <br>
+File size : 15.2 GiB <br>
+Duration : 1 h 25 min <br>
+Overall bit rate mode : Variable <br>
+Overall bit rate : 25.4 Mb/s <br>
+Movie name : The Postal Service: Everything Will Change [2014] 1080p BluRay - medterm <br>
+Encoded date : UTC 2017-10-04 01:01:18 <br>
+Writing application : mkvmerge v13.0.0 ('The Juggler') 64bit <br>
+Writing library : libebml v1.3.4 + libmatroska v1.4.5 <br>
+<br>
+Video <br>
+ID : 1 <br>
+Format : MPEG Video <br>
+Format version : Version 2 <br>
+Format profile : Main@High <br>
+Format settings, BVOP : Yes <br>
+Format settings, Matrix : Default <br>
+Format settings, GOP : Variable <br>
+Codec ID : V_MPEG2 <br>
+Codec ID/Info : MPEG 1 or 2 Video <br>
+Duration : 1 h 25 min <br>
+Bit rate mode : Variable <br>
+Bit rate : 25.0 Mb/s <br>
+Maximum bit rate : 30.0 Mb/s <br>
+Width : 1 920 pixels <br>
+Height : 1 080 pixels <br>
+Display aspect ratio : 16:9 <br>
+Frame rate mode : Constant <br>
+Frame rate : 23.976 (24000/1001) FPS <br>
+Standard : NTSC <br>
+Color space : YUV <br>
+Chroma subsampling : 4:2:0 <br>
+Bit depth : 8 bits <br>
+Scan type : Progressive <br>
+Compression mode : Lossy <br>
+Bits/(Pixel*Frame) : 0.502 <br>
+Time code of first frame : 00:01:59:00 <br>
+Time code source : Group of pictures header <br>
+GOP, Open/Closed : Closed <br>
+Stream size : 14.9 GiB (98%) <br>
+Default : Yes <br>
+Forced : No <br>
+Color primaries : BT.709 <br>
+Transfer characteristics : BT.709 <br>
+Matrix coefficients : BT.709 <br>
+<br>
+Audio <br>
+ID : 2 <br>
+Format : AC-3 <br>
+Format/Info : Audio Coding 3 <br>
+Format settings, Endianness : Big <br>
+Codec ID : A_AC3 <br>
+Duration : 1 h 25 min <br>
+Bit rate mode : Constant <br>
+Bit rate : 448 kb/s <br>
+Channel(s) : 6 channels <br>
+Channel positions : Front: L C R, Side: L R, LFE <br>
+Sampling rate : 48.0 kHz <br>
+Frame rate : 31.250 FPS (1536 spf) <br>
+Bit depth : 16 bits <br>
+Compression mode : Lossy <br>
+Stream size : 274 MiB (2%) <br>
+Language : English <br>
+Service kind : Complete Main <br>
+Default : Yes <br>
+Forced : No <br>
+<br>
+Menu <br>
+00:00:00.000 : en:Chapter 1 <br>
+00:04:18.258 : en:Chapter 2 <br>
+00:08:44.524 : en:Chapter 3 <br>
+00:14:22.862 : en:Chapter 4 <br>
+00:20:56.255 : en:Chapter 5 <br>
+00:24:40.479 : en:Chapter 6 <br>
+00:28:27.706 : en:Chapter 7 <br>
+00:33:04.983 : en:Chapter 8 <br>
+00:38:24.302 : en:Chapter 9 <br>
+00:43:21.599 : en:Chapter 10 <br>
+00:48:03.881 : en:Chapter 11 <br>
+00:54:13.875 : en:Chapter 12 <br>
+00:57:10.051 : en:Chapter 13 <br>
+01:03:03.780 : en:Chapter 14 <br>
+01:09:38.799 : en:Chapter 15 <br>
+01:16:00.556 : en:Chapter 16</blockquote></blockquote>							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1404153">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1404153#post1404153">#1404153</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=111472">nawhead</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=111472"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank2.png" class="award" title="Rank 2: 51 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Oct 04 2017, 02:03">[ Oct 04 2017, 02:03 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1404153&#39;, &#39;nawhead&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1404153" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1404153">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/pWSDrOs.jpg" class="forum-post__avatar__image" alt="nawhead&#39;s avatar" width="242" height="360">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1404153">
+				The source is mpeg2 so the remux will be mpeg2.  Nothing unusual about that.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1404154">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1404154#post1404154">#1404154</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=84726">medterm</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=84726"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank5.png" class="award" title="Rank 5: 104 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (Get on your knees and tell me you love me) </span>
+			<span class="time" title="Oct 04 2017, 02:06">[ Oct 04 2017, 02:06 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1404154&#39;, &#39;medterm&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1404154" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1404154">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/5x4na4.jpg" class="forum-post__avatar__image" alt="medterm&#39;s avatar" width="200" height="200">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1404154">
+				Lovely, thank you very much. Appreciate it.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1408775">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1408775#post1408775">#1408775</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=105594">dzonipascal</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/filmclub.png" alt="Film Club" title="Film Club" style="margin-bottom:-3px;"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=105594&amp;scene=3"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/encoder.png" title="Encoder"></a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=105594"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank5.png" class="award" title="Rank 5: 102 Awards"></a> (ThePascal)</strong>
+			<span class="user_title"> (<span style="color:#ffff00"><em>There's a Bad Moon On The Rise...</em></span>) </span>
+			<span class="time" title="Oct 13 2017, 14:05">[ Oct 13 2017, 14:05 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1408775&#39;, &#39;dzonipascal&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1408775" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1408775">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/9zcvlg.jpg" class="forum-post__avatar__image" alt="dzonipascal&#39;s avatar" width="150" height="160">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1408775">
+				Can somebody help me, please?<br>
+<br>
+I'm getting this error when trying to add the first audio track from the remux: The track number 1 from the file 'D:\MEAN GUNS_1997_GER\BDMV\PLAYLIST\..\STREAM\00001.m2ts' cannot be appended to the track number 1 from the file 'D:\MEAN GUNS_1997_GER\BDMV\PLAYLIST\..\STREAM\00000.m2ts'. The number of channels of the two audio tracks is different: 2 and 6<br>
+<br>
+What am I doing wrong? When I pick stereo audio track instead of surround one, it will remux, but I don't want to use the potentially worse track.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1414102">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1414102#post1414102">#1414102</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=99349">a_pylon</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=99349"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank3.png" class="award" title="Rank 3: 64 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<span style="color:red"><strong>✈ For relaxing times, make it Suntory time ✈</strong></span>) </span>
+			<span class="time" title="Oct 24 2017, 08:45">[ Oct 24 2017, 08:45 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1414102&#39;, &#39;a_pylon&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1414102" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1414102">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/48w461.gif" class="forum-post__avatar__image" alt="a_pylon&#39;s avatar" width="400" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1414102">
+				Thanks very much for this tutorial <img border="0" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/heart.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1414658">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1414658#post1414658">#1414658</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=114227">tranceTR</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/disabled.png" alt="Banned" title="Be good, and you won&#39;t end up like this user"> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Oct 25 2017, 08:42">[ Oct 25 2017, 08:42 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1414658&#39;, &#39;tranceTR&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1414658" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1414658">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/4s40vk.gif" class="forum-post__avatar__image" alt="tranceTR&#39;s avatar" width="200" height="200">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1414658">
+				Thanks ;)							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1443908">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1443908#post1443908">#1443908</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=115931">TheHungerGames</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=115931"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank2.png" class="award" title="Rank 2: 38 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Dec 26 2017, 01:36">[ Dec 26 2017, 01:36 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1443908&#39;, &#39;TheHungerGames&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1443908" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1443908">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1443908">
+				Thank you so much for this. Helped me a lot.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1518107">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1518107#post1518107">#1518107</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=117308">Parham</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=117308"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank2.png" class="award" title="Rank 2: 36 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jun 01 2018, 12:38">[ Jun 01 2018, 12:38 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1518107&#39;, &#39;Parham&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1518107" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1518107">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/0ts3gq.jpg" class="forum-post__avatar__image" alt="Parham&#39;s avatar" width="267" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1518107">
+				<a href="https://passthepopcorn.me/user.php?action=search&amp;search=Tamjuk">@Tamjuk</a><br>
+<br>
+thanks <br>
+but what if our source be an ISO?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1518112">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1518112#post1518112">#1518112</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=47009">Benutzer</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=47009&amp;scene=3"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/encoder.png" title="Encoder"></a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=47009"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank6.png" class="award" title="Rank 6: 115 Awards"></a> (Meister)</strong>
+			<span class="user_title"> (Please do not add tiny.hands or derogatory user tags to any more uploads.) </span>
+			<span class="time" title="Jun 01 2018, 12:45">[ Jun 01 2018, 12:45 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1518112&#39;, &#39;Benutzer&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1518112" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1518112">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/74c8r0.gif" class="forum-post__avatar__image" alt="Benutzer&#39;s avatar" width="299" height="276">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1518112">
+				<strong>Parham wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1518107#post1518107"><img class="view_post" alt="View Post" src="./Simple-Remuxing-Guide-using-MKVToolNix_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote><a href="https://passthepopcorn.me/user.php?action=search&amp;search=Tamjuk">@Tamjuk</a><br>
+<br>
+thanks <br>
+but what if our source be an ISO?</blockquote>You mount it with a virtual drive and use it the same way.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1584165">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1584165#post1584165">#1584165</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=70714">AWEdio</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=70714"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank4.png" class="award" title="Rank 4: 85 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (Soldato) </span>
+			<span class="time" title="Dec 18 2018, 12:42">[ Dec 18 2018, 12:42 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1584165&#39;, &#39;AWEdio&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1584165" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1584165">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/8t3dym.jpg" class="forum-post__avatar__image" alt="AWEdio&#39;s avatar" width="549" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1584165">
+				I just put together a REMUX using this guide. Should I have tagged my upload as x264 or H.264?<br>
+<br>
+<a href="https://passthepopcorn.me/torrents.php?id=182083&amp;torrentid=623654">torrents.php?id=182083&amp;torrentid=623654</a>							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1584169">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1584169#post1584169">#1584169</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=47009">Benutzer</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=47009&amp;scene=3"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/encoder.png" title="Encoder"></a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=47009"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank6.png" class="award" title="Rank 6: 115 Awards"></a> (Meister)</strong>
+			<span class="user_title"> (Please do not add tiny.hands or derogatory user tags to any more uploads.) </span>
+			<span class="time" title="Dec 18 2018, 12:48">[ Dec 18 2018, 12:48 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1584169&#39;, &#39;Benutzer&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1584169" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1584169">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/74c8r0.gif" class="forum-post__avatar__image" alt="Benutzer&#39;s avatar" width="299" height="276">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1584169">
+				x264 is correct. <br>
+There are quite a few remuxes that seem already encoded, when in fact they are not. <br>
+Just poorly mastered, so they don´t match the H.264 standard.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post1584484">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767&amp;postid=1584484#post1584484">#1584484</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=70714">AWEdio</a><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=70714"><img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/Rank4.png" class="award" title="Rank 4: 85 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (Soldato) </span>
+			<span class="time" title="Dec 19 2018, 11:44">[ Dec 19 2018, 11:44 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#quickpost" onclick="Quote( &#39;1584484&#39;, &#39;AWEdio&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1584484" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1584484">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=30767#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-Remuxing-Guide-using-MKVToolNix_files/8t3dym.jpg" class="forum-post__avatar__image" alt="AWEdio&#39;s avatar" width="549" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1584484">
+				Thanks, then I guess I don't understand the current settings for REMUX requests, because it seems they are H.264+							</div>
+		</div>
+	</div>
+</div>
+<div class="pagination pagination--bottom"><span class="pagination__current-page">1-25</span> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=30767" class="pagination__link pagination__link--page">26-42</a> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=30767" class="pagination__link pagination__link--next">Next &gt;</a> <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=30767" class="pagination__link pagination__link--last"> Last &gt;&gt;</a></div>
+		
+	<h2 class="page__title">
+	<a href="https://passthepopcorn.me/forums.php">Forums</a> &gt;
+	<a href="https://passthepopcorn.me/forums.php?action=viewforum&amp;forumid=12">Tutorials</a> &gt;
+	Simple Remuxing Guide using MKVToolNix</h2>
+</div>
+
+<script>
+	function ToggleSearchThreadForm( clickedItem )
+	{
+		var searchForm = $jq( "#searchthread" );
+		searchForm.ToggleHC();
+
+		if ( !searchForm.hasClass( "hidden" ) )
+		{
+			$jq( clickedItem ).html( "[Hide Search]" );
+			$jq( "#searchbox" ).focus();
+		}
+		else
+		{
+			$jq( clickedItem ).html( "[Search this Thread]" );
+		}
+	}
+
+	var bbcodeToolbar = new BbcodeToolbar( "#quickpost" );
+	var youTubeQualityParameter = "";
+	RegisterGlobalAjaxCursorChange();
+	InitializeNewCommentValidator();
+
+						$jq('.forum-post__heading > span:first-of-type > a:first-of-type').next().addBack().hover(
+						function() {
+							$jq(this).parents('.forum-post').find('.forum-post__avatar__partyhat').stop().fadeTo(1000, 0.2);
+						},
+						function() {
+							$jq(this).parents('.forum-post').find('.forum-post__avatar__partyhat').stop().delay(300).fadeTo(1000, 1);
+						}
+					);</script>
+
+	</div>
+	
+</div>
+<div id="lightbox" class="lightbox hidden" tabindex="-1"></div>
+<div id="lightbox__shroud" class="lightbox__shroud hidden"></div>
+
+<!-- Extra divs, for stylesheet developers to add imagery -->
+<div id="extra1"><span></span></div>
+<div id="extra2"><span></span></div>
+<div id="extra3"><span></span></div>
+<div id="extra4"><span></span></div>
+<div id="extra5"><span></span></div>
+<div id="extra6"><span></span></div>
+
+
+</body></html>

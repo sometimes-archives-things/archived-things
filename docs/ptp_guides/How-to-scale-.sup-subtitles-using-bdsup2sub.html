@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://passthepopcorn.me/wiki.php?action=article&id=236 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge">
+		<meta name="referrer" content="no-referrer">
+	<meta name="referrer" content="same-origin">
+	<meta name="robots" content="noindex">
+		<title>How to scale .sup subtitles using bdsup2sub :: PassThePopcorn</title>
+	<link rel="shortcut icon" href="https://passthepopcorn.me/favicon.ico">
+	<link rel="apple-touch-icon" href="https://passthepopcorn.me/static/common/touch-icon-iphone.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://passthepopcorn.me/static/common/touch-icon-ipad.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://passthepopcorn.me/static/common/touch-icon-iphone-retina.png?v=1514440441">
+	<link rel="search" type="application/opensearchdescription+xml" title="PassThePopcorn" href="https://passthepopcorn.me/static/opensearch.xml">
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+				<link href="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/marcel.css" rel="stylesheet" type="text/css" media="screen">
+						<script src="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/script_start.js.download" type="text/javascript"></script>
+						<script src="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/class_ajax.js.download" type="text/javascript"></script>
+						<script src="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/global.js.download" type="text/javascript"></script>
+							<script src="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/jquery.js.download" type="text/javascript"></script>
+						<script src="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/autocomplete.js.download" type="text/javascript"></script>
+					<script src="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/wiki.js.download" type="text/javascript"></script>
+					<script src="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/bbcode.js.download" type="text/javascript"></script>
+					<script src="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/mousetrap.min.js.download" type="text/javascript"></script>
+		</head>
+<body id="wiki" data-anticsrftoken="9001" style="">
+<div id="wrapper">
+	<div id="header" class="header">
+		<div class="site-logo"><a class="site-logo__link" href="https://passthepopcorn.me/index.php"></a></div>
+				
+			<div class="main-menu">
+			<ul class="main-menu__list">
+				<li class="main-menu__item" id="nav_index"><a class="main-menu__link" href="https://passthepopcorn.me/index.php">Home</a></li>
+				<li class="main-menu__item" id="nav_torrents"><a class="main-menu__link" href="https://passthepopcorn.me/torrents.php">Movies</a></li>
+				<li class="main-menu__item" id="nav_collages"><a class="main-menu__link" href="https://passthepopcorn.me/collages.php">Collections</a></li>
+				<li class="main-menu__item" id="nav_requests"><a class="main-menu__link" href="https://passthepopcorn.me/requests.php">Requests</a></li>
+				<li class="main-menu__item" id="nav_forums"><a class="main-menu__link" href="https://passthepopcorn.me/forums.php">Forums</a></li>
+				<li class="main-menu__item" id="nav_irc"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php?action=article&amp;id=95">Chat</a></li>
+				<li class="main-menu__item" id="nav_top10"><a class="main-menu__link" href="https://passthepopcorn.me/top10.php">Top&nbsp;10</a></li>
+				<li class="main-menu__item" id="nav_rules"><a class="main-menu__link" href="https://passthepopcorn.me/rules.php">Rules</a></li>
+				<li class="main-menu__item" id="nav_wiki"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php">Wiki</a></li>
+				<li class="main-menu__item" id="nav_staff"><a class="main-menu__link" href="https://passthepopcorn.me/staff.php">Staff</a></li>
+			</ul>
+		</div>
+				<div class="search-bar">
+			<ul class="search-bar__list">
+				<li id="searchbar_torrents" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/torrents.php" method="get" class="search-bar__search-field__form">
+												<input type="hidden" name="order_by" value="relevance">
+						<input id="torrentssearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="m" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;torrents&#39;);" onblur="" placeholder="Movies" type="text" name="searchstr" size="17">
+						<ul id="torrentscomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_people" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/artist.php" method="get" class="search-bar__search-field__form">
+						<input id="artistsearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="p" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;artist&#39;);" placeholder="People" type="text" name="artistname" size="17">
+						<ul id="artistcomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_collections" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/collages.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="c" spellcheck="false" id="collectionsearch" placeholder="Collections" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_requests" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/requests.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="r" spellcheck="false" placeholder="Requests" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_forums" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/forums.php" method="get" class="search-bar__search-field__form">
+						<input value="search" type="hidden" name="action">
+						<input class="search-bar__search-field__input" accesskey="f" spellcheck="false" placeholder="Forums" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_log" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/log.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="l" spellcheck="false" placeholder="Log" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_users" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/user.php" method="get" class="search-bar__search-field__form">
+						<input type="hidden" name="action" value="search">
+						<input class="search-bar__search-field__input" accesskey="u" spellcheck="false" placeholder="Users" type="text" name="search" size="17">
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+		<div id="content" class="page__main-content">
+<div class="thin">
+	<h2 class="page__title">How to scale .sup subtitles using bdsup2sub</h2>
+		<div class="linkbox">
+		<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=create">[Create]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=edit&amp;id=236">[Contribute]</a>
+<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=revisions&amp;id=236">[History]</a>
+	</div>
+	<div class="sidebar">
+		<div class="panel">
+			<div class="panel__body">
+				<form action="https://passthepopcorn.me/wiki.php" method="get">
+					<input type="hidden" name="action" value="search">
+					<input placeholder="Search articles" type="text" name="search" size="20">
+					<input value="Search" type="submit" class="hidden">
+				</form>
+				<br>
+				<a href="https://passthepopcorn.me/wiki.php?action=search&amp;type=Title&amp;order=Title&amp;way=Ascending">List all articles</a>
+			</div>
+		</div>
+		<div class="panel">
+			<div class="panel__body">
+				<ul class="list list--unstyled">
+					<li>
+						<strong>Protection:</strong>
+						<ul class="list--bulleted list--small-padding">
+							<li>Read: Abuser</li>
+							<li>Edit: Power User</li>
+						</ul>
+					 </li>
+					<li>
+						<strong>Details:</strong>
+						<ul class="list--bulleted list--small-padding">
+							<li>Version: 5</li>
+							<li>Last edited by: <a class="username" href="https://passthepopcorn.me/user.php?id=75308">pafnucy</a></li>
+							<li>Last updated: <span class="time" title="Nov 27 2016, 17:16">[ Nov 27 2016, 17:16 ]</span></li>
+						</ul>
+					</li>
+					<li>
+						<strong>Aliases:</strong>
+						<ul class="list--bulleted list--small-padding">
+																		<li id="alias_howtoscalesupsubtitlesusingbdsup2sub">
+												<a href="https://passthepopcorn.me/wiki.php?action=article&amp;name=howtoscalesupsubtitlesusingbdsup2sub">howtoscalesupsubtitl...</a>
+																							</li>
+																</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+					<div class="panel">
+				<div class="panel__body">
+					<form action="https://passthepopcorn.me/wiki.php" method="post">
+						<input type="hidden" name="AntiCsrfToken" value="9001">						<input type="hidden" name="action" value="add_alias">
+						<input type="hidden" name="article" value="236">
+						<input placeholder="Add alias" type="text" name="alias" size="20">
+						<input type="submit" value="+">
+					</form>
+				</div>
+			</div>
+			</div>
+	<div class="main-column">
+	<div class="panel">
+		<div class="panel__body"><span class="bbcode-size-4">Introduction</span><br>
+<br>
+If you encode SD content from Blu-ray and include .sup files for foreign languages which are difficult to rip (like Japanese or Hebrew) or which you cannot spellcheck, it can be a good idea to scale them down and save on file size. It will also ensure compatibility with obscure players that cannot scale down the subtitles correctly.<br>
+<br>
+<span class="bbcode-size-4">How to use bdsup2sub</span><br>
+<br>
+I'm going to use BDSup2Sub++ 1.02 which is a feature-identical implementation of BDSup2Sub in C++ so you don't need to install Java.<br>
+You can get it here: <a rel="noreferrer" target="_blank" href="http://www.videohelp.com/software/BDSup2Sub/version-history">http://www.videohelp.com/software/BDSup2Sub/version-history</a><br>
+<br>
+1. Start bdsup2sub and go to File - Load and select the .sup file you want to scale.<br>
+2. Tick 'Convert resolution' and select the resolution you want to scale to. Typically 720p for 720p and NTSC for 576p and below. Click OK.<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/R7yVKNL/6gpo05.png" src="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/6gpo05.png"><br>
+<blockquote><strong>Note:</strong> If you selected NTSC you will notice that the subtitle in the preview window appears squished. Don't worry about that though, on playback your player will scale it back correctly according to the aspect ratio of the video file.</blockquote><br>
+3. If you cropped black bars during encoding you may want to adjust the position of the subtitles on screen. Go to Edit - Move all captions.<br>
+Check Move from original X/Y position and adjust the offsets as necessary. Click Move all.<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/jy9jjPq/r856q2.png" src="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/r856q2.png"><br>
+<blockquote><strong>Note #2:</strong> Contrary to a popular belief, the Screen Ratio setting in this window does not affect the screen ratio of the subtitle bitmap. It's only meant to help you visualize the location where the subs are displayed on the screen. </blockquote><br>
+4. Select Output format - SUP(BD) and Filter - Lanczos3<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/LCV8ffy/7f4wz3.png" src="./How-to-scale-.sup-subtitles-using-bdsup2sub_files/7f4wz3.png"><br>
+<br>
+5. Go to File - Save/Export and save the scaled .sup file under a new name.<br>
+<br>
+6. Mux together your encode and subtitles and verify that they have the correct size and placement just like the original source.</div>
+	</div>
+	</div>
+</div>
+	</div>
+	
+</div>
+<div id="lightbox" class="lightbox hidden" tabindex="-1"></div>
+<div id="lightbox__shroud" class="lightbox__shroud hidden"></div>
+
+<!-- Extra divs, for stylesheet developers to add imagery -->
+<div id="extra1"><span></span></div>
+<div id="extra2"><span></span></div>
+<div id="extra3"><span></span></div>
+<div id="extra4"><span></span></div>
+<div id="extra5"><span></span></div>
+<div id="extra6"><span></span></div>
+
+
+</body></html>

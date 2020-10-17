@@ -1,0 +1,2287 @@
+/* ---------------------- Like I said, what the fuck are we supposed to do? ------------------------
+
+Marcel stylesheet for passthepopcorn
+by jimpalompa
+
+Stylesheet url: https://dl.dropboxusercontent.com/s/m65ut6546gpi7it/marcel.css
+Forum thread: http://passthepopcorn.me/forums.php?action=viewthread&threadid=25973
+Profile: http://passthepopcorn.me/user.php?id=53284
+
+------------------------------------------------------------------------------------------------- */
+
+/* -------------------------------------
+    IMPORT WEBFONTS
+------------------------------------- */
+
+@import url(//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i);
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('//dl.dropboxusercontent.com/s/t0ltzux7fklcshq/fontawesome-webfont.eot?v=4.3.0');
+  src: url('//dl.dropboxusercontent.com/s/t0ltzux7fklcshq/fontawesome-webfont.eot?#iefix&v=4.3.0') format('embedded-opentype'), url('//dl.dropboxusercontent.com/s/7i1za5ii75jkkmg/fontawesome-webfont.woff2?v=4.3.0') format('woff2'), url('//dl.dropboxusercontent.com/s/3xojnywpcvli60v/fontawesome-webfont.woff?v=4.3.0') format('woff'), url('//dl.dropboxusercontent.com/s/11rbnc4ruy5hjwu/fontawesome-webfont.ttf?v=4.3.0') format('truetype'), url('//dl.dropboxusercontent.com/s/3rw67yhln9btz1x/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.fa,
+.forum-topic__go-to-last-read:after,
+.torrent-info-link--user-snatched:after
+{
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+}
+
+.forum-topic__go-to-last-read:after {
+    content: "\f061";
+}
+
+/* -------------------------------------
+    BASIC STYLES
+------------------------------------- */
+
+html {
+    font-size: 62.5%;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-size: 14px;
+    font-size: 1.4rem;
+    width: 100%;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    border: none;
+}
+
+a:hover {
+    border: none;
+    text-decoration: none;
+}
+
+a:focus, a:active, a:hover {
+    outline: 0;
+}
+
+h1 {
+    font-size: 2.4rem;
+}
+
+h2 {
+    font-size: 2rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+h4 {
+    font-size: 1.4rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h6 {
+    font-size: 0.9rem;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+dfn {
+    font-style: italic;
+}
+
+hr {
+    height: 2px;
+    box-sizing: content-box;
+    border: 0;
+    width: 90%;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+code, kbd, pre, samp {
+    font-family: monospace, serif;
+    font-size: 1rem;
+}
+
+pre {
+    white-space: pre-wrap;
+    margin: 0;
+}
+
+q {
+    quotes: \201C \201D \2018 \2019;
+}
+
+small {
+    font-size: 0.8em;
+}
+
+sub, sup {
+    font-size: 0.75em;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -.5em;
+}
+
+sub {
+    bottom: -.25em;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 0;
+}
+
+fieldset {
+    border-color: silver;
+    border-style: solid;
+    border-width: .0625em;
+    margin: 0 2px;
+    padding: .4625em .875em .9125em;
+}
+
+button, input, select, textarea {
+    border: 0;
+    font-family: inherit;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+textarea {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
+button, input {
+    line-height: normal;
+}
+
+button, select {
+    text-transform: none;
+}
+
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    padding: 6px;
+    background: #797979;
+    color: #fff;
+    font-weight: 600;
+}
+
+input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td {
+    padding: 0;
+}
+
+*, :before, :after {
+    box-sizing: border-box;
+}
+
+blockquote {
+    border-style: dashed;
+    border-width: 2px;
+    font-style: italic;
+    margin: 10px;
+    padding: 10px;
+}
+
+/* -------------------------------------
+    HIDE ELEMENTS
+------------------------------------- */
+
+.huge-movie-list__movie__ratings__votes-column br,
+.huge-movie-list__movie__ratings__votes-column span.rating:nth-child(3n)
+{display: none !important;}
+
+[hidden], .hidden,
+.tabs__panel
+{display: none;}
+
+.huge-movie-list__movie__ratings__votes-column
+{color: transparent;}
+
+span.spoiler
+{background: #191919 !important; color: transparent !important;}
+
+span.spoiler:hover
+{background: transparent !important; color: inherit !important;}
+
+/* -------------------------------------
+    FONT SIZES
+------------------------------------- */
+
+/* Sizes */
+.huge-movie-list__movie__title
+{font-size: 2.4rem;}
+
+.huge-movie-list__movie__year
+{font-size: 2rem;}
+
+.huge-movie-list__movie__director-list,
+.huge-movie-list__movie__synopsis
+{font-size: 1.8rem;}
+
+blockquote,
+.sidebar,
+.alert-bar,
+.staff-toolbar,
+.qtip-content,
+.linkbox,
+.basic-movie-list__movie__tags
+{font-size: 1.3rem;}
+
+.search-bar__search-field__input,
+.search-bar__results,
+.footer,
+.cover-movie-list__movie__tags,
+.cover-movie-list__movie__year,
+.cover-movie-list__movie__new,
+.huge-movie-list__movie__torrent-summary,
+.basic-movie-list__movie__bookmark,
+.basic-movie-list__movie__rating-container,
+.basic-movie-list__torrent-row,
+.panel__heading__toggler
+{font-size: 1.2rem;}
+
+/* Weights & Styles */
+.main-menu,
+.cover-movie-list__movie__title,
+.cover-movie-list__movie__new,
+.huge-movie-list__movie__title,
+.huge-movie-list__movie__new,
+.basic-movie-list__movie__rating-container,
+.basic-torrent-list__movie__torrent-opener-link,
+.alert-bar,
+.staff-toolbar,
+.encoding-history-status--finished,
+.missing-torrent-status--exists,
+.encoding-history-status--canceled,
+.missing-torrent-status--trumpable,
+.torrent-info__trumpable,
+.torrent-info__reported,
+.table>thead>tr,
+.torrent-info-link--user-seeding,
+.torrent-info-link--user-leeching,
+.torrent-info-link--user-uploaded,
+.torrent-info-link--user-snatched,
+.torrent-info-link--user-downloaded,
+.panel__heading__title
+{font-weight: 600;}
+
+.alert--warning,
+.cover-movie-list__movie__tags,
+.huge-movie-list__movie__tag-list,
+.basic-movie-list__movie__tags
+{font-style: italic;}
+
+/* -------------------------------------
+    FONT COLORS
+------------------------------------- */
+
+/* Links & Headings */
+a,
+h2,
+.alert-bar,
+.alert-bar__link:hover,
+.alert--error,
+.alert--error .alert__link,
+.alert--error .alert__link:hover,
+.staff-toolbar,
+.search-bar__search-field__input:hover,
+.search-bar__search-field__input:focus,
+.cover-movie-list__movie__rating,
+.huge-movie-list__movie__ratings__votes-column span,
+.basic-movie-list__torrent-edition,
+.page__title,
+.table>thead>tr,
+.table>tbody>tr.inbox-message--unread>td,
+.bvalidator_errmsg,
+.main-menu__link, .main-menu__link:hover,
+.movie-tooltip__rating-container,
+.release-name-movie-list__movie__rating-container,
+.screenshot-comparison__label,
+.screenshot-comparison__help,
+.staff-toolbar__link--important,
+.inbox-message--unread a
+{color: #f7f7f7;}
+
+/* Body */
+body,
+h2 small a,
+.user-info-bar,
+.search-bar__search-field__input,
+.cover-movie-list__movie__tag,
+.huge-movie-list__movie__tag-list a,
+.basic-movie-list__movie__rating-container a,
+.basic-movie-list__movie__tag,
+.page__title a,
+.linkbox a,
+.torrent-info-link,
+.movie-tooltip__rating__title>a,
+.movie-tooltip__tag
+{color: #969696;}
+
+/* Accent */
+a:hover,
+a:focus,
+a:active,
+.cover-movie-list__movie__new,
+.huge-movie-list__movie__new,
+.huge-movie-list__movie__action-row a,
+.huge-movie-list__movie__torrent-summary a,
+.basic-movie-list__movie__new,
+.basic-torrent-list__movie__torrent-opener-link:focus,
+.release-name-movie-list__movie__new,
+.search-bar__results__list-item--is-highlighted .search-bar__results__link,
+.user-info-bar__link--highlighted,
+.forum-topic__new
+{color: #f7d584;}
+
+/* Red */
+.ratio-00,
+.ratio-01,
+.ratio-02,
+.ratio-03,
+.ratio-04,
+.bonus-point-history--sent,
+.no-seeders,
+.snatchlist-status--not-seeding,
+.snatchlist-status--hnr,
+.encoding-history-status--expired,
+.missing-torrent-status--missing,
+.torrent-info__reported,
+.torrent-info-link--user-leeching,
+.alert--error,
+.forum-post__id--staff-post
+{color: #d14841;}
+
+/* Orange */
+.ratio-05,
+.ratio-06,
+.ratio-07
+.snatchlist-status--removed-hnr,
+.encoding-history-status--canceled,
+.missing-torrent-status--trumpable,
+.torrent-info__trumpable
+{color: #f37934;}
+
+
+/* Yellow */
+.ratio-08,
+.ratio-09,
+.torrent-info-link--user-seeding
+{color: #f7da64;}
+
+/* Green */
+.ratio-10,
+.ratio-20,
+.ratio-50,
+.ratio-infinite,
+.bonus-point-history--received,
+.snatchlist-status--seeding,
+.snatchlist-status--not-hnr,
+.encoding-history-status--finished,
+.missing-torrent-status--exists,
+.torrent-info-link--user-downloaded
+{color: #41a85f;}
+
+/* Blue */
+a.torrent-info-link--user-snatched
+{color: #2c82c9;}
+
+/* Purple */
+a.torrent-info-link--user-uploaded
+{color: #9365b8;}
+
+/* -------------------------------------
+    CONTENT COLORS
+------------------------------------- */
+
+button, input, select, textarea
+{background: #f7f7f7;}
+
+body,
+.poll__bar,
+.tabs__bar__item--active>.tabs__bar__link,
+.tabs__bar__item--active>.tabs__bar__link:hover,
+.tabs__bar__item--active>.tabs__bar__link:active,
+.tabs__bar__item--active>.tabs__bar__link:focus
+{background: #191919;}
+
+.main-menu,
+.search-bar__search-field__input,
+.search-bar__results__list-item:hover,
+.search-bar__results__list-item--is-highlighted,
+.table__background-color--alternative,
+.forum-post,
+.cover-movie-list__movie,
+.huge-movie-list__movie,
+.site-debug,
+.panel,
+.qtip-ptp,
+.staff-toolbar,
+.user-info-bar__item--drop-down-menu-opener:hover,
+.user-info-bar__drop-down-menu__link:hover,
+.table>tbody>tr.basic-movie-list__details-row,
+.table>tbody>tr.release-name-movie-list__details-row,
+.table>tbody>tr,
+.footer,
+.mediainfo,
+.movie-page__torrent-report-description
+{background: #232323;}
+
+hr,
+blockquote,
+.alert-bar,
+.staff-toolbar,
+.movie-page__torrent__panel,
+.search-bar,
+.search-bar__results__list-item,
+.table--panel-like>thead>tr,
+.cover-movie-list__movie__cover-link,
+.cover-movie-list__movie__rating,
+.basic-movie-list__movie__rating-container,
+.forum-post__heading,
+.table>tbody>tr.inbox-message--unread>td,
+.main-menu__link:hover,
+.movie-tooltip__rating-container,
+.panel__heading,
+.release-name-movie-list__movie__release-category,
+.release-name-movie-list__movie__rating-container,
+.tabs__bar__link,
+.tabs__bar__link:hover,
+.tabs__bar__link:active,
+.tabs__bar__link:focus,
+.user-info-bar__drop-down-menu__item,
+.alert-bar,
+.staff-toolbar,
+.table>thead>tr,
+.poll__bar__center,
+.release-description-preview,
+#MovieTooltipVoteWindow
+{background: #323232;}
+
+.alert-bar,
+.js-basic-movie-list__table-body>tr.basic-movie-list__details-row,
+.panel__heading,
+.table--panel-like>thead>tr>td,
+.table--panel-like>thead>tr>th,
+.forum-post__heading
+{border-color: #191919;}
+
+blockquote
+{border-color: #232323;}
+
+.mediainfo,
+.movie-page__torrent-report-description,
+.tabs__bar__list,
+.tabs__bar__item--active>.tabs__bar__link,
+.tabs__bar__item--active>.tabs__bar__link:hover,
+.tabs__bar__item--active>.tabs__bar__link:active,
+.tabs__bar__item--active>.tabs__bar__link:focus
+{border-color: #323232;}
+
+.forum-post--unread
+{border-color: #f7d584;}
+
+/* -------------------------------------
+    MAIN DIVS
+------------------------------------- */
+
+.site-logo {
+    background: url(//dl.dropboxusercontent.com/s/e67054tos08mvui/logo-neutral.jpg) no-repeat;
+    background-size: 800px 125px;
+    width: 800px;
+    height: 125px;
+    margin: 0 auto;
+}
+
+.header {
+    padding-top: 50px;
+}
+
+.user-info-bar {
+    font-size: 1.2rem;
+    padding: 7px 0;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 0;
+}
+
+.main-menu {
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 200px;
+}
+
+.alert-bars {
+    margin: 0 auto 20px;
+    text-align: center;
+    position: relative;
+    top: 120px;
+    width: 960px;
+}
+
+.alert-bar, .staff-toolbar {
+    display: inline-block;
+    min-width: 50%;
+}
+
+.alert-bar__link {
+    display: inline-block;
+    padding: 10px;
+    width: 100%;
+}
+
+.search-bar {
+    padding: 4px 0;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    top: 237px;
+}
+
+.page__main-content {
+    margin: 0 auto;
+    position: relative;
+    top: 130px;
+    width: 960px;
+}
+
+.main-column {
+    width: 74.5%;
+}
+
+.sidebar {
+    float: right;
+    width: 24.5%;
+}
+
+.footer {
+    clear: both;
+    text-align: center;
+    position: relative;
+    top: 200px;
+    padding: 15px 0;
+}
+
+/* -------------------------------------
+    SHADOWS
+------------------------------------- */
+
+.main-menu,
+.footer
+{box-shadow: 0 -1px 3px 0 rgba(0,0,0,.25);}
+
+.search-bar,
+.lightbox img
+{box-shadow: 0 2px 5px rgba(0,0,0,.25);}
+
+.panel,
+.table--panel-like,
+.cover-movie-list__movie,
+.huge-movie-list__movie,
+.forum-post
+{box-shadow: 0 1px 3px rgba(0,0,0,.25);}
+
+/* -------------------------------------
+    IMAGES
+------------------------------------- */
+
+/* Movies browser views */
+img#browse_settings {
+    position: relative;
+    right: 70px;
+}
+
+.cover-movie-list {
+    display: flow-root;
+}
+
+/* Cover view */
+.cover-movie-list__movie {
+    float: left;
+    width: 19%;
+    margin: 10px 0 10px 1.25%;
+}
+
+.cover-movie-list__movie:nth-of-type(6n+1) {
+    margin-left: 0;
+}
+
+.cover-movie-list__movie__cover-link {
+    box-shadow: inset 0 0 2px 1px rgba(0,0,0,.1);
+    display: block;
+    width: 100%;
+    height: 265px;
+}
+
+.cover-movie-list--narrow .cover-movie-list__movie {
+    width: 24%;
+    margin: 10px 0 10px 1.25%;
+}
+
+.cover-movie-list--narrow .cover-movie-list__movie__cover-link {
+    height: 250px;
+}
+
+.cover-movie-list--narrow .cover-movie-list__movie:nth-of-type(5n+1) {
+    margin-left: 0;
+}
+
+.cover-movie-list__movie__undercover {
+    font-size: 1.3rem;
+    padding: 8px;
+    position: relative;
+}
+
+.cover-movie-list__movie__title-row {
+    margin-bottom: 5px;
+}
+
+.cover-movie-list__movie__rating-and-tags {
+    margin-top: 2px;
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cover-movie-list__movie__rating {
+    display: inline-block;
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* Huge view */
+.huge-movie-list__movie {
+    margin: 25px 0;
+    position: relative;
+}
+
+.huge-movie-list__movie__cover {
+    float: left;
+    width: 270px;
+}
+
+.huge-movie-list__movie__cover__link {
+    display: block;
+    width: 100%;
+    height: 400px;
+}
+
+.huge-movie-list__movie__details {
+    margin-left: 270px;
+    padding: 25px;
+}
+
+.huge-movie-list__movie__title-row {
+    margin-bottom: 5px;
+}
+
+.huge-movie-list__movie__director-list {
+    display: block;
+}
+
+.huge-movie-list__movie__new {
+    position: absolute;
+    bottom: 80px;
+    right: 25px;
+}
+
+.huge-movie-list__movie__ratings-and-synopsis {
+    margin-top: 8px;
+}
+
+.huge-movie-list__movie__ratings-and-synopsis>tbody>tr>td {
+    float: left;
+    width: 100%;
+}
+
+.huge-movie-list__movie__ratings {
+}
+
+.huge-movie-list__movie__ratings tr {
+    float: left;
+    width: 100px;
+}
+
+.huge-movie-list__movie__ratings__icon-column {
+    padding-right: 3px;
+}
+
+.huge-movie-list__movie__ratings__icon-column img {
+}
+
+.huge-movie-list__movie__ratings__votes-column span {
+    display: inline-block;
+    line-height: 32px;
+}
+
+.huge-movie-list__movie__synopsis {
+    font-weight: 300;
+    margin-top: 1.5em;
+}
+
+.huge-movie-list__movie__action-row {
+    position: absolute;
+    bottom: 25px;
+}
+
+.huge-movie-list__movie__torrent-summary {
+    text-align: right;
+    position: absolute;
+    bottom: 25px;
+    right: 25px;
+}
+
+/* List view */
+.basic-movie-list {
+
+}
+
+.basic-movie-list__details-row {
+    vertical-align: top;
+}
+
+.js-basic-movie-list__table-body>tr.basic-movie-list__details-row {
+    border-top-width: 2px;
+    border-top-style: solid;
+    display: table-row;
+}
+
+.basic-movie-list__movie__cover {
+    width: 90px;
+}
+
+.basic-movie-list__movie__rating-container {
+    display: inline-block;
+    text-align: center;
+    padding: 1px 5px;
+    margin: 5px 5px 5px 0;
+}
+
+.basic-torrent-list__movie__torrent-opener-link {
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.compact-movie-list__details-row .basic-torrent-list__movie__torrent-opener-link {
+    float: right;
+}
+
+.basic-movie-list__movie__category-icon {
+}
+
+.basic-movie-list__number {
+}
+
+.basic-movie-list__torrent-row {
+}
+
+.table>tbody>tr.basic-movie-list__torrent-row {
+}
+
+.basic-torrent-list__movie__additional-info {
+    margin-top: 25px;
+}
+
+/* Small view (user profile) */
+.small-cover-movie-list__movie {
+    float: left;
+    width: 19%;
+    margin: 10px 0 10px 1.25%;
+}
+
+.small-cover-movie-list__movie:nth-of-type(6n+1) {
+    margin-left: 0;
+}
+
+.small-cover-movie-list__movie__link {
+    display: block;
+    width: 100%;
+    height: 190px;
+}
+
+.small-cover-movie-list__movie__link--smaller {
+}
+
+.small-cover-movie-list__movie__title {
+    text-align: center;
+    padding: 5px 5px 0;
+}
+
+.small-cover-movie-list__movie__title:before {
+    content: '🏆';
+    padding-right: 2px;
+}
+
+/* Single movie */
+.movie-page__torrent__panel .bbcode__image {
+    margin: 0 auto;
+    display: block;
+}
+
+/* -------------------------------------
+    TABLES
+------------------------------------- */
+
+.table {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.panel__heading,
+.table--panel-like>thead>tr>td,
+.table--panel-like>thead>tr>th
+{
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    padding: 6px 15px;
+}
+
+.panel__heading__toggler {
+    float: right;
+}
+
+.panel__body {
+    padding: 15px;
+    margin-bottom: 20px;
+    overflow-wrap: break-word;
+}
+
+.table--bordered>tbody>tr>td {
+    padding: 5px 15px;
+}
+
+.last5-movies__link {
+    margin-bottom: 5px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    width: 95%;
+    height: 190px;
+}
+
+.table--bordered>tbody>tr.basic-movie-list__details-row>td {
+    padding: 10px 15px;
+}
+
+table#movie-ratings-table {
+    margin-bottom: 20px !important;
+}
+
+table#movie-ratings-table td {
+    width: 10% !important;
+}
+
+/* -------------------------------------
+    UGLY CSS
+------------------------------------- */
+
+.heading--no-margin {
+    margin: 0;
+}
+
+.table--bordered {
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+}
+
+.table thead:first-child tr:first-child th {
+    border-top: 0 none;
+}
+
+.table--panel-like>thead>tr>th {
+}
+
+.table--inplace-sortable>thead>tr>th {
+    cursor: pointer;
+}
+
+.table--inplace-sortable:last-child {
+    margin-bottom: 1em;
+}
+
+.sidebar img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    padding: 5px 0;
+}
+
+#top250 .panel__body, #bottom250 .panel__body {
+    padding-left: 5px;
+}
+
+#top250 img, #bottom250 img {
+    max-width: none;
+    margin-right: 5px;
+    padding: 0;
+}
+
+#userrecommended .user-recommendation {
+    background: #323232;
+    margin-bottom: 25px;
+}
+
+#userrecommended img {
+    padding: 0;
+}
+
+#userrecommended .user-recommendation__body {
+    padding: 5px;
+}
+
+/* -------------------------------------
+    ETC
+------------------------------------- */
+
+.list {
+    margin: 0 0 1em;
+}
+
+.list--unstyled {
+    list-style: none outside none;
+    padding-left: 0;
+}
+
+.list--max-count9 {
+    padding-left: 1em;
+}
+
+.list--max-count999 {
+    padding-left: 3em;
+}
+
+.list--max-count9999 {
+    padding-left: 4em;
+}
+
+.list--bulleted {
+    list-style-type: disc;
+}
+
+.list--form-column {
+    float: left;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-right: 1.5em;
+}
+
+.list--inline {
+    padding-left: 0;
+    list-style: none;
+}
+
+.list--inline>li {
+    display: inline-block;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.list--inline>li:first-child {
+    padding-left: 0;
+}
+
+.list--inline-full-width {
+    display: table;
+    width: 100%;
+    text-align: center;
+}
+
+.list--inline-full-width>li {
+    display: table-cell;
+}
+
+.list>li {
+    margin-top: 2px;
+}
+
+pre br {
+    display: none;
+    line-height: 0;
+}
+
+.preformatted-text--scrolled {
+    white-space: pre;
+    overflow-x: auto;
+    word-wrap: normal;
+}
+
+th {
+    text-align: left;
+}
+
+.nobr {
+    white-space: nowrap;
+}
+
+.clearfix:after, .forum-post__heading:after, .grid:after, .huge-movie-list__movie:after, .poll__bar:after, .sidebar:after, .tabs__bar__list:after {
+    content: "";
+    display: table;
+    clear: left;
+}
+
+.text--left {
+    text-align: left!important;
+}
+
+.text--center {
+    text-align: center!important;
+}
+
+.text--right {
+    text-align: right!important;
+}
+
+.alert {
+}
+
+.alert--warning {
+}
+
+.alert--error .alert__link {
+    font-weight: 600;
+}
+
+.alert-bar {
+    border-style: dashed;
+    border-width: 2px;
+    margin: 5px;
+}
+
+.table>tbody>tr.compact-movie-list__details-row--odd {
+}
+
+.cover-movie-list--narrow {
+}
+
+.bbcode-size-1 {
+    font-size: .75rem;
+}
+
+.bbcode-size-2 {
+    font-size: 1rem;
+}
+
+.bbcode-size-3 {
+    font-size: 1.25rem;
+}
+
+.bbcode-size-5 {
+    font-size: 1.75rem;
+}
+
+.bbcode-size-6 {
+    font-size: 2rem;
+}
+
+.bbcode-size-7 {
+    font-size: 2.25rem;
+}
+
+.bbcode-size-8 {
+    font-size: 2.5rem;
+}
+
+.bbcode-size-9 {
+    font-size: 2.75rem;
+}
+
+.bbcode-size-10 {
+    font-size: 3rem;
+}
+
+.bbcode__image {
+    max-width: 100%;
+    max-height: 720px;
+}
+
+.sidebar .bbcode__image {
+    max-width: 100%;
+}
+
+.bbcode-text-preview {
+    border: 1px solid #797979;
+    padding: .5em;
+}
+
+.bbcode-table-guard {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+.bbcode-toolbar__button {
+    width: 24px;
+    height: 24px;
+    background: #ddd url(//static.passthepopcorn.me/static/common/bbcode_buttons5.png) no-repeat center center;
+    border: 4px solid #ddd;
+    float: left;
+}
+
+.bbcode-toolbar__button:hover {
+    background: #f7f7f7 url(//static.passthepopcorn.me/static/common/bbcode_buttons5.png) no-repeat top left;
+    border: 4px solid #f7f7f7;
+}
+
+.bbcode-toolbar__size-popup-row {
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.bbcode-toolbar__size-popup-row:hover {
+    background: #ffffe1;
+}
+
+.bbcode-toolbar__color-popup-color {
+    cursor: pointer;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+.bbcode-toolbar__emoticon-popup-item {
+    cursor: pointer;
+    display: inline-block;
+    border: solid 2px transparent;
+}
+
+.footer__disclaimer {
+    display: inline-block;
+    width: 90%;
+    margin-bottom: 10px;
+}
+
+.form__input, .form__checkbox-label, .form__radio-label {
+    margin-bottom: 1em;
+    margin-right: 1em;
+}
+
+.generic-form, .search-form {
+    margin: 0 auto;
+    width: 920px;
+}
+
+.generic-form--narrow, .search-form--narrow {
+    width: 65%;
+}
+
+.toggleable-search-form__toggler-container {
+    text-align: center;
+    margin: 2em 0;
+}
+
+.toggleable-search-form__search-form {
+    margin-bottom: 15px;
+}
+
+.search-form__advanced-basic-toggler {
+    text-align: center;
+    padding-bottom: 8px;
+}
+
+.generic-form__footer, .search-form__footer {
+    padding-top: 8px;
+}
+
+.generic-form__footer--no-border, .search-form__footer--no-border {
+    border-top-style: none;
+}
+
+.forum-post {
+    display: table;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.forum-post--unread {
+    border-top-width: 5px;
+    border-top-style: solid;
+}
+
+.forum-post--is-reply {
+    margin-top: 30px;
+}
+
+.forum-post__heading {
+    padding: 7px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+}
+
+.forum-post__heading input[type="button"] {
+  margin-left: 0.5em;
+  padding: 3px 6px;
+  position: relative;
+  top: -3px;
+}
+
+.forum-post__avatar {
+    position: relative;
+    display: table-cell;
+}
+
+.forum-post__avatar__image {
+    display: block;
+    width: 160px;
+    height: auto;
+    max-height: 420px;
+}
+
+.forum-post__body {
+    display: table-cell;
+    width: 100%;
+    vertical-align: top;
+    word-wrap: break-word;
+    padding: 15px;
+}
+
+.forum-post__bodyguard {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.forum-post__edited {
+    margin-top: 20px;
+    font-style: italic;
+}
+
+.forum-post__textarea {
+    width: 100%;
+    resize: vertical;
+    border-radius: 0 0 3px 3px;
+    margin-bottom: 1em;
+}
+
+.forum-post--is-previewing .forum-post__preview {
+    padding-bottom: 20px;
+}
+
+.forum-topic--is-read {
+    background: url(//static.passthepopcorn.me/static/forums/read.png) no-repeat center center;
+    background-image: url(//static.passthepopcorn.me/static/forums/read.png);
+}
+
+.forum-topic--is-unread {
+    background: url(//static.passthepopcorn.me/static/forums/unread.png) no-repeat center center;
+    background-image: url(//static.passthepopcorn.me/static/forums/unread.png);
+}
+
+.forum-topic--is-read-locked-sticky {
+    background: url(//static.passthepopcorn.me/static/forums/locked_sticky_read.png) no-repeat center center;
+}
+
+.forum-topic--is-read-sticky {
+    background: url(//static.passthepopcorn.me/static/forums/sticky_read.png) no-repeat center center;
+}
+
+.forum-topic--is-read-locked {
+    background: url(//static.passthepopcorn.me/static/forums/locked_read.png) no-repeat center center;
+}
+
+.forum-topic--is-unread-locked-sticky {
+    background: url(//static.passthepopcorn.me/static/forums/locked_sticky_unread.png) no-repeat center center;
+}
+
+.forum-topic--is-unread-sticky {
+    background: url(//static.passthepopcorn.me/static/forums/sticky_unread.png) no-repeat center center;
+}
+
+.forum-topic--is-unread-locked {
+    background: url(//static.passthepopcorn.me/static/forums/locked_unread.png) no-repeat center center;
+}
+
+.forum-topic__go-to-last-read {
+    float: left;
+    margin-left: 0.5em;
+}
+
+.grid {
+    margin-left: -1em;
+}
+
+.grid__item {
+    float: left;
+    padding-left: 1em;
+}
+
+.grid-u-1-3 {
+    width: 33.3%;
+}
+
+.grid-u-1-10 {
+    width: 10%;
+}
+
+.grid-u-3-10 {
+    width: 30%;
+}
+
+.grid-u-4-10 {
+    width: 40%;
+}
+
+.grid-u-5-10 {
+    width: 50%;
+}
+
+.grid-u-6-10 {
+    width: 60%;
+}
+
+.grid-u-7-10 {
+    width: 70%;
+}
+
+.grid-u-8-10 {
+    width: 80%;
+}
+
+.grid-u-9-10 {
+    width: 90%;
+}
+
+.grid-offset-u-1-10 {
+    margin-left: 10%;
+}
+
+.grid-offset-u-2-10 {
+    margin-left: 20%;
+}
+
+.grid-offset-u-3-10 {
+    margin-left: 30%;
+}
+
+.grid-offset-u-4-10 {
+    margin-left: 40%;
+}
+
+.grid-offset-u-5-10 {
+    margin-left: 50%;
+}
+
+.grid-offset-u-6-10 {
+    margin-left: 60%;
+}
+
+.grid-offset-u-7-10 {
+    margin-left: 70%;
+}
+
+.grid-offset-u-8-10 {
+    margin-left: 80%;
+}
+
+.grid-offset-u-9-10 {
+    margin-left: 90%;
+}
+
+.heading--small-bottom-margin {
+    margin-bottom: .25em;
+}
+
+.bvalidator_errmsg {
+    display: none;
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: 600;
+    position: relative;
+    background: #d51111;
+    border: 3px solid #ddd;
+    padding: 4px 10px;
+}
+
+.bvalidator_errmsg:after, .bvalidator_errmsg:before {
+    top: 100%;
+    border: solid transparent;
+    content: "";
+    width: 0;
+    height: 0;
+    position: absolute;
+    pointer-events: none;
+}
+
+.bvalidator_errmsg:after {
+    border-top-color: #d51111;
+    left: 14px;
+    margin-left: -8px;
+    border-width: 8px;
+}
+
+.bvalidator_errmsg:before {
+    border-top-color: #ddd;
+    left: 14px;
+    margin-left: -12px;
+    border-width: 12px;
+}
+
+.bvalidator_errmsg .bvalidator_close_icon {
+    margin-left: 5px;
+    margin-top: -2px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bolder;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+#simplemodal-overlay {
+    background-color: #000;
+    cursor: wait;
+}
+
+#simplemodal-overlay-pointer {
+    background-color: #000;
+    cursor: pointer;
+}
+
+#simplemodal-container a.modalCloseImg {
+    background: url(//static.passthepopcorn.me/static/common/simplemodal_close.png) no-repeat;
+    width: 25px;
+    height: 29px;
+    display: inline;
+    z-index: 3200;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    cursor: pointer;
+}
+
+.last5-movies {
+}
+
+.last5-movies__table {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.last5-movies__table>tbody>tr>td {
+}
+
+.last5-movies__show-all-link {
+    display: inline-block;
+    margin: 15px 0;
+}
+
+.lightbox {
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    z-index: 1002;
+    overflow: auto;
+    top: 5%;
+    position: fixed;
+    text-align: center;
+}
+
+.lightbox__shroud {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1001;
+}
+
+.lightbox img {
+    max-width: 99%;
+    max-height: 99%;
+}
+
+.lightbox:focus {
+    outline: none;
+}
+
+html.lightbox__scroll-lock {
+    position: fixed;
+    overflow-y: scroll;
+    width: 100%;
+}
+
+.light-youtube-embed {
+    display: inline-block;
+    position: relative;
+    width: 480px;
+    height: 360px;
+}
+
+.light-youtube-embed__image {
+    width: 480px;
+    height: 360px;
+}
+
+.light-youtube-embed::after, .light-youtube-embed:hover::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 56px;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-image: url(//static.passthepopcorn.me/static/common/symbols/play-big.png);
+    margin: auto;
+}
+
+.light-youtube-embed:hover::after {
+    background-image: url(//static.passthepopcorn.me/static/common/symbols/play-big-hover.png);
+}
+
+.main-menu__list {
+    margin: 0;
+    padding: 0;
+}
+
+.main-menu__item {
+    display: inline;
+    margin: 5px 15px;
+}
+
+.main-menu__link, .main-menu__link:hover {
+    padding: 10px;
+}
+
+.mediainfo {
+    width: auto;
+    margin: 10px 0;
+    border-style: dashed;
+    border-width: 2px;
+}
+
+.mediainfo>tbody>tr, .mediainfo__section>tbody>tr {
+    vertical-align: top;
+}
+
+.mediainfo>tbody>tr>td {
+    padding: 10px;
+}
+
+.mediainfo__section {
+    margin: 0;
+    width: 100%;
+}
+
+.mediainfo__section>tbody>td {
+    border: none;
+    padding: 2px;
+}
+
+html.busy-cursor, html.busy-cursor * {
+    cursor: wait!important;
+}
+
+.label {
+    font-weight: 600;
+    text-align: right;
+}
+
+.linkbox {
+    text-align: center;
+    margin: 5px 5px 10px;
+}
+
+.large-torrent-list-group-opener {
+    background: url(//static.passthepopcorn.me/static/styles/corntacular/images/show.png) no-repeat center center;
+    width: 28px;
+    height: 28px;
+}
+
+.large-torrent-list-group-opener__link {
+    display: block;
+    width: 28px;
+    height: 28px;
+    border: none;
+}
+
+.release-description-preview {
+    padding: 10px;
+}
+
+.film-club-discuss-link {
+    padding-top: .5em;
+    text-align: center;
+}
+
+.site-debug {
+    margin-bottom: 15px;
+}
+
+.movie-page__torrent__panel {
+    margin: 15px;
+    padding: 15px;
+}
+
+.table>tbody>tr.movie-page__torrent--highlighted {
+    background-color: #ffffe1;
+}
+
+.movie-page__torrent-report-container {
+    margin-top: 8px;
+}
+
+.movie-page__torrent-report-date-and-reason {
+    padding: 5px;
+}
+
+.movie-page__torrent-report-description {
+    padding: 5px 10px;
+    border-style: dashed;
+    border-width: 2px;
+}
+
+.movie-page__torrent-report-staff-comment {
+    border-top: 1px dotted #757575;
+    background-color: #e4e4e4;
+    padding: 5px 1rem;
+}
+
+.movie-page__trailer {
+    margin-bottom: 14px;
+}
+
+.movie-page__actor-column {
+    text-align: right;
+    width: 50%;
+}
+
+.movie-tooltip__title-row {
+    font-weight: 600;
+}
+
+.movie-tooltip__director-list {
+    margin-top: 3px;
+}
+
+.movie-tooltip__ratings {
+    margin: 3px 0;
+}
+
+.movie-tooltip__rating-container {
+    margin-right: 4px;
+    display: inline-block;
+    width: 70px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.movie-tooltip__trailer {
+    position: relative;
+    margin-top: 10px;
+    width: 120px;
+    height: 90px;
+    cursor: pointer;
+}
+
+.movie-tooltip__trailer__image {
+    cursor: pointer;
+    border-color: #303030;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.movie-tooltip__trailer__play {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    cursor: pointer;
+}
+
+.movie-tooltip__synopsis {
+    margin-top: 10px;
+    line-height: 12px;
+}
+
+.movie-tooltip__action-row {
+    margin-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 4px;
+    font-weight: 600;
+    border-top: 2px solid silver;
+}
+
+.page__title {
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.pagination {
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+.pagination__link.pagination__link--first,
+.pagination__link.pagination__link--last {
+    margin: 0 15px;
+}
+
+.poll__title {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.poll__list {
+    list-style: none outside none;
+    padding: 1.5em;
+    margin: 0;
+}
+
+.poll__option--blank {
+    margin-top: 1em;
+}
+
+.poll__bar {
+    margin: 0.25em 0 1em;
+}
+
+.poll__bar__center {
+    float: left;
+    margin: 0;
+    padding: 0;
+    height: 0.5em;
+}
+
+.qtip {
+    position: absolute;
+    left: -9999px;
+    top: -9999px;
+    display: none;
+    margin-top: 13px;
+}
+
+.qtip-content {
+    padding: 10px;
+    line-height: 1.5em;
+}
+
+.qtip:not(.ie9haxors) div.qtip-content, .qtip:not(.ie9haxors) div.qtip-titlebar {
+    filter: none;
+    -ms-filter: none;
+}
+
+.qtip .qtip-tip {
+    z-index: 10;
+    margin: 0 auto;
+}
+
+.qtip .qtip-tip, .qtip .qtip-tip * {
+    position: absolute;
+    background: transparent;
+    border: 0 dashed transparent;
+}
+
+.qtip .qtip-tip canvas {
+    display: none;
+    top: 0;
+    left: 0;
+}
+
+.qtip-ptp {
+    border: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.75);
+}
+
+.release-name-movie-list__name {
+}
+
+.release-name-movie-list__movie__release-category {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.release-name-movie-list__movie__release-category__link {
+    white-space: nowrap;
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 1px 1px 1px rgba(5, 5, 5, 0.5);
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.release-name-movie-list__movie__rating-container {
+    margin-right: 4px;
+    display: inline-block;
+    width: 60px;
+    margin-bottom: 8px;
+    text-align: center;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+.screenshot-comparison__container {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    text-align: center;
+}
+
+.screenshot-comparison__row {
+    position: relative;
+    left: 0;
+    top: 0;
+}
+
+.screenshot-comparison__image-container {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+.screenshot-comparison__image {
+    border: 4px solid #404;
+}
+
+.screenshot-comparison__label {
+    position: fixed;
+    top: 0;
+    z-index: 2000;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-shadow: 0 0 4px #000, 0 0 4px #000, 0 0 4px #000, 0 0 4px #000;
+}
+
+.screenshot-comparison__old-school-toggler-container {
+    margin: 20px;
+}
+
+.screenshot-comparison__help {
+    display: inline-block;
+    margin-bottom: 20px;
+    max-width: 800px;
+    text-align: left;
+}
+
+.search-bar__list {
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.search-bar__search-field {
+    position: relative;
+    display: inline;
+    margin: 0 1px;
+}
+
+.search-bar__search-field__input {
+    padding: 3px 5px;
+    width: 110px;
+}
+
+.search-bar__results {
+    position: absolute;
+    top: 13px;
+    left: 0;
+    display: block;
+    width: 200px;
+    z-index: 1000;
+    margin: 10px 0 0;
+    padding: 0;
+    text-align: left;
+}
+
+.search-bar__results__list-item {
+    display: block;
+}
+
+.search-bar__results__link {
+    display: block;
+    padding: 6px 8px;
+}
+
+.site-logo__link {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.staff-toolbar {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    text-align: center;
+    font-weight: 600;
+    display: inline;
+    position: absolute;
+    top: 148px;
+    width: 40%;
+    left: 30%;
+    padding: 4px;
+}
+
+.staff-toolbar__link {
+    padding: 2px;
+}
+
+.staff-toolbar__link--important {
+    display: inline-block;
+    border-radius: 3px;
+    background-color: #ca2a43;
+    padding: 4px;
+}
+
+.star-rating-container {
+    display: inline-block;
+    padding-right: 5px;
+    cursor: pointer;
+}
+
+.star-rating {
+    display: inline-block;
+    width: 170px;
+    height: 20px;
+    list-style: none;
+    background: url(//static.passthepopcorn.me/static/common/stars/stars.png) repeat-x;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.star-rating--popup-starter:hover {
+    transform: scale(1.02);
+}
+
+.star-rating--with-inline-rating-display {
+    vertical-align: middle;
+}
+
+.star-rating__current-user, .star-rating__site {
+    display: block;
+    position: absolute;
+    float: left;
+    width: 170px;
+    height: 20px;
+    text-indent: -9999px;
+    font-size: 1rem;
+    z-index: 20;
+    margin: 0;
+    padding: 0;
+}
+
+.star-rating__current-user {
+    background: url(//static.passthepopcorn.me/static/common/stars/stars.png) left 125px;
+    z-index: 19;
+}
+
+.star-rating__site {
+    background: url(//static.passthepopcorn.me/static/common/stars/stars.png) left 100px;
+    z-index: 18;
+}
+
+.star-rating--big {
+    width: 300px;
+    height: 40px;
+    background: url(//static.passthepopcorn.me/static/common/stars/stars2_big_light_v2.png) repeat-x;
+    background-image: url(//static.passthepopcorn.me/static/common/stars/stars2_big_v2.png);
+}
+
+.star-rating__current-user--big {
+    width: 300px;
+    height: 40px;
+    background: url(//static.passthepopcorn.me/static/common/stars/stars2_big_light_v2.png) left 220px;
+    background-image: url(//static.passthepopcorn.me/static/common/stars/stars2_big_v2.png);
+}
+
+.star-rating-container--big {
+    cursor: pointer;
+    padding: 4px;
+}
+
+.tabs__panel--active {
+    display: block;
+}
+
+.tabs__bar__list {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 14px;
+    border-bottom-width: 2px;
+    border-bottom-style: solid;
+    list-style: none;
+    padding: 0;
+}
+
+.tabs__bar__item {
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+
+.tabs__bar__link, .tabs__bar__link:hover, .tabs__bar__link:active, .tabs__bar__link:focus {
+    display: block;
+    outline: 0;
+    padding: 8px;
+    margin-top: 6px;
+    border: 2px solid transparent;
+    border-bottom: none;
+}
+
+.tabs__bar__item--active>.tabs__bar__link, .tabs__bar__item--active>.tabs__bar__link:hover, .tabs__bar__item--active>.tabs__bar__link:active, .tabs__bar__item--active>.tabs__bar__link:focus {
+    margin-top: 0;
+    margin-bottom: -2px;
+    padding-top: 14px;
+    padding-bottom: 10px;
+    cursor: default;
+}
+
+.user-info-bar__link, .user-info-bar__link:hover, .user-info-bar__drop-down-menu__link, .user-info-bar__drop-down-menu__link:hover {
+}
+
+.user-info-bar__link--highlighted, .user-info-bar__link--highlighted:hover {
+    font-weight: 600;
+}
+
+.user-info-bar__list {
+    display: inline;
+    position: relative;
+    margin: 0 10px;
+    padding: 0;
+}
+
+.user-info-bar__item {
+    display: inline;
+    margin: 0 2px;
+}
+
+.user-info-bar__drop-down-menu {
+    display: block;
+    visibility: hidden;
+    position: absolute;
+    z-index: 10;
+    right: 1px;
+    margin: -10px;
+    padding: 10px;
+}
+
+.user-info-bar__drop-down-menu__item {
+    display: block;
+    float: none;
+}
+
+.user-info-bar__item--drop-down-menu-opener:hover>.user-info-bar__drop-down-menu {
+    visibility: visible;
+    top: 100%;
+}
+
+.user-info-bar__drop-down-menu__link {
+    text-align: left;
+    display: block;
+    position: relative;
+    white-space: nowrap;
+    padding: .4em 1.5em;
+}
+
+.user-page__recent-movie {
+    text-align: center;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.user-page__recent-movie__link {
+    height: 164px;
+    display: block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-bottom: 5px;
+}
+
+.wiki__diff--added {
+    color: green;
+    background: #dfd;
+}
+
+.wiki__diff--deleted {
+    color: red;
+    background: #fdd;
+}
+
+.missing-torrent-status--trumpable, .encoding-history-status--canceled {
+    color: #c07c00;
+}
+
+.list:last-child, p:last-child, .table:last-child, .alert:last-child, .search-form--toggleable, .forum-post--heading-only, .panel--no-margin, .poll__bar--no-margin {
+    margin-bottom: 0;
+}
+
+.list--max-count99, .list--small-padding {
+    padding-left: 2em;
+}
+
+p:first-child, .alert:first-child, .heading:first-child {
+    margin-top: 0;
+}
+
+.basic-movie-list__movie__bookmark, .basic-movie-list__torrent__action, .form--horizontal .form__label, .release-name-movie-list__movie__action-container {
+    float: right;
+}
+
+.basic-movie-list__movie__ratings-and-tags, .release-name-movie-list__movie__ratings-and-tags {
+    padding-top: 2px;
+}
+
+.basic-movie-list__movie__rating__title, .movie-tooltip__rating__title, .release-name-movie-list__movie__rating__title {
+    font-weight: 400;
+}
+
+.basic-movie-list__movie__tags, .release-name-movie-list__movie__tags {
+    display: block;
+}
+
+.bbcode-size-4 {
+    font-size: 1.5rem;
+}
+
+.bbcode-toolbar__color-popup-color:hover, .bbcode-toolbar__emoticon-popup-item:hover {
+    border: solid 2px #ff8040;
+}
+
+.generic-form--full-width, .grid-u-1, .mediainfo--in-release-description {
+    width: 100%;
+}
+
+.generic-form__footer--right-aligned, .search-form__footer--right-aligned, .last5-movies__show-all-row {
+    text-align: right;
+}
+
+.search-form__footer__results {
+    float: left;
+}
+
+.grid-u-2-10, .screenshot-comparison__old-school-image {
+    width: 20%;
+}
+
+.movie-tooltip__additional-info, .movie-tooltip__torrents {
+    margin-top: 10px;
+}
+
+.search-bar__search-field__form, .compact-movie-list__details-row .basic-movie-list__movie__tags {
+    display: inline;
+}
+
+.star-rating__inline-rating-display, .tabs__bar__item:first-child {
+    margin-left: 10px;
+}
+
+#Bbcode_Toolbar {
+    background: #ddd;
+}
+
+/* =============================================================================
+    RESPONSIVE LAYOUT
+============================================================================= */
+
+/* -----------------------------------------------
+    min-width 1280px, large screens
+----------------------------------------------- */
+@media only screen and (min-width: 1280px) {
+
+    .page__main-content,
+    .alert-bars
+    {
+        width: 1170px;
+    }
+
+    .last5-movies__link {
+        height: 236px;
+    }
+
+    .cover-movie-list__movie__cover-link {
+        height: 327px;
+    }
+
+    .cover-movie-list--narrow .cover-movie-list__movie__cover-link {
+        height: 308px;
+    }
+
+    .small-cover-movie-list__movie__link {
+        height: 235px;
+    }
+
+    .cover-movie-list__movie__undercover {
+        font-size: 1.4rem;
+    }
+
+    .cover-movie-list__movie__tags {
+        font-size: 1.3rem;
+    }
+
+}
+
+/* ------------------------ I think this just might be my masterpiece --------------------------- */

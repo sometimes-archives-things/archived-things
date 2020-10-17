@@ -1,0 +1,193 @@
+/*
+Spent hours debugging opera, turns out they reserve the global variable autocomplete. Bitches.
+*/
+"use strict";
+
+var autocomp = {
+	id: "",
+	value: "",
+	href: null,
+	timer: null,
+	input: null,
+	list: null,
+	pos: -1,
+	cache: [],
+	start: function (id) {
+		this.id = id;
+		this.cache[id] = ["",[],[],[]];
+		this.input = document.getElementById(id + "search");
+		this.list = document.getElementById(id + "complete");
+
+		$jq( document ).on( 'click', function()
+		{
+			autocomp.value = autocomp.input.value;
+			autocomp.end();
+		} );
+	},
+	end: function () {
+		//this.input.value = this.value;
+		this.href = null;
+		this.highlight(-1);
+		this.list.classList.add( "hidden" );
+
+		if ( this.timer !== null )
+			clearTimeout( this.timer );
+	},
+	keyup: function (e) {
+		if ( this.timer !== null )
+			clearTimeout( this.timer );
+
+		var key = (window.event)?window.event.keyCode:e.keyCode;
+		switch (key) {
+			case 27: //esc
+				break;
+			case 8: //backspace
+				this.href = null;
+				this.list.classList.add( "hidden" );
+				var inputValue1 = this.input.value;
+				this.timer = setTimeout( function() { autocomp.get( inputValue1 ); }, 200 );
+				break;
+			case 38: //up
+			case 40: //down
+				this.highlight(key);
+				if ( this.pos !== -1 )
+				{
+					this.href = this.list.children[this.pos].href;
+					this.input.value = this.list.children[this.pos].getAttribute( 'JustTheTitle' ) || this.list.children[this.pos].textContent || this.list.children[this.pos].innerText;
+				}
+				break;
+			case 13:
+				if(this.href != null) {
+					window.location = this.href;
+				}
+				return 0;
+			default:
+				this.href = null;
+				var inputValue2 = this.input.value;
+				this.timer = setTimeout( function() { autocomp.get( inputValue2 ); }, 100 );
+				return 1;
+		}
+		return 0;
+	},
+	keydown: function (e) {
+		switch ((window.event)?window.event.keyCode:e.keyCode) {
+			case 9: //tab
+				this.value = this.input.value;
+				this.end();
+				break;
+			case 27: //esc
+				this.end();
+				break;
+			case 38:
+				e.preventDefault();
+				break;
+			case 13: //enter
+				return 0;
+		}
+		return 1;
+	},
+	highlight: function(change) {
+		//No highlights on no list
+		if (this.list.children.length === 0) {
+			return;
+		}
+
+		//Show me the
+		this.list.classList.remove( "hidden" );
+
+		//Remove the previous highlight
+		if ( this.pos >= 0 && this.pos < this.list.children.length )
+			this.list.children[ this.pos ].classList.remove( "search-bar__results__list-item--is-highlighted" );
+
+		//Change position
+		if (change === 40) {
+			++this.pos;
+		} else if (change === 38) {
+			--this.pos;
+		} else {
+			this.pos = change;
+		}
+
+		//Wrap arounds
+		if (this.pos >= this.list.children.length) {
+			this.pos = -1;
+		} else if (this.pos < -1) {
+			this.pos = this.list.children.length-1;
+		}
+
+		if (this.pos !== -1) {
+			this.list.children[this.pos].classList.add( "search-bar__results__list-item--is-highlighted" );
+		} else {
+			this.href = null;
+			this.input.value = this.value;
+		}
+	},
+	get: function (value) {
+		this.pos = -1;
+		this.value = value;
+
+		if ( value.length <= 0 )
+		{
+			this.display( [] );
+			return;
+		}
+
+		if (typeof this.cache[this.id+value] === 'object') {
+			this.display(this.cache[this.id+value]);
+			return;
+		}
+
+		var url = this.id + '.php?action=autocomplete&' + this.input.name + '=' + encodeURIComponent( this.input.value );
+
+		ajax.get( url, function( jstr ) {
+			var data = JSON.parse( jstr );
+			autocomp.cache[autocomp.id+data[0]] = data;
+			autocomp.display(data);
+		});
+	},
+	display: function (data) {
+		this.list.innerHTML = '';
+
+		var i = 0;
+		var inputNode = this.input;
+		var titles = data.length > 1 ? data[ 1 ] : [];
+
+		for ( var il = titles.length; i < il; ++i )
+		{
+			var li = document.createElement('li');
+			var justTheTitle = html_entity_decode( titles[ i ] );
+			li.setAttribute( 'JustTheTitle', justTheTitle );
+			li.i = i;
+			li.href = data[ 2 ][ i ];
+			li.className = "search-bar__results__list-item";
+
+			var text;
+			if ( data[3] )
+				text = justTheTitle + ' [' + data[3][i] + ']';
+			else
+				text = justTheTitle;
+
+			var linkNode = document.createElement( "a" );
+			var linkTextNode = document.createTextNode( text );
+			linkNode.appendChild( linkTextNode );
+			linkNode.href = data[ 2 ][ i ];
+			linkNode.className = "search-bar__results__link";
+			li.appendChild( linkNode );
+
+			$jq( linkNode ).on( 'mouseup', function()
+			{
+				inputNode.focus();
+			} );
+
+			$jq( li ).on( 'mouseover', function()
+			{
+				autocomp.highlight( this.i );
+			} );
+
+			this.list.appendChild(li);
+		}
+
+		this.list.classList.toggle( "hidden", i <= 0 );
+	}
+};
+

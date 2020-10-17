@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://passthepopcorn.me/wiki.php?action=article&id=242 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge">
+		<meta name="referrer" content="no-referrer">
+	<meta name="referrer" content="same-origin">
+	<meta name="robots" content="noindex">
+		<title>How to encode AC3 with Sony Sound Forge :: PassThePopcorn</title>
+	<link rel="shortcut icon" href="https://passthepopcorn.me/favicon.ico">
+	<link rel="apple-touch-icon" href="https://passthepopcorn.me/static/common/touch-icon-iphone.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://passthepopcorn.me/static/common/touch-icon-ipad.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://passthepopcorn.me/static/common/touch-icon-iphone-retina.png?v=1514440441">
+	<link rel="search" type="application/opensearchdescription+xml" title="PassThePopcorn" href="https://passthepopcorn.me/static/opensearch.xml">
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+				<link href="./How-to-encode-AC3-with-Sony-Sound-Forge_files/marcel.css" rel="stylesheet" type="text/css" media="screen">
+						<script src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/script_start.js.download" type="text/javascript"></script>
+						<script src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/class_ajax.js.download" type="text/javascript"></script>
+						<script src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/global.js.download" type="text/javascript"></script>
+							<script src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/jquery.js.download" type="text/javascript"></script>
+						<script src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/autocomplete.js.download" type="text/javascript"></script>
+					<script src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/wiki.js.download" type="text/javascript"></script>
+					<script src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/bbcode.js.download" type="text/javascript"></script>
+					<script src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/mousetrap.min.js.download" type="text/javascript"></script>
+		</head>
+<body id="wiki" data-anticsrftoken="9001" style="">
+<div id="wrapper">
+	<div id="header" class="header">
+		<div class="site-logo"><a class="site-logo__link" href="https://passthepopcorn.me/index.php"></a></div>
+				
+			<div class="main-menu">
+			<ul class="main-menu__list">
+				<li class="main-menu__item" id="nav_index"><a class="main-menu__link" href="https://passthepopcorn.me/index.php">Home</a></li>
+				<li class="main-menu__item" id="nav_torrents"><a class="main-menu__link" href="https://passthepopcorn.me/torrents.php">Movies</a></li>
+				<li class="main-menu__item" id="nav_collages"><a class="main-menu__link" href="https://passthepopcorn.me/collages.php">Collections</a></li>
+				<li class="main-menu__item" id="nav_requests"><a class="main-menu__link" href="https://passthepopcorn.me/requests.php">Requests</a></li>
+				<li class="main-menu__item" id="nav_forums"><a class="main-menu__link" href="https://passthepopcorn.me/forums.php">Forums</a></li>
+				<li class="main-menu__item" id="nav_irc"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php?action=article&amp;id=95">Chat</a></li>
+				<li class="main-menu__item" id="nav_top10"><a class="main-menu__link" href="https://passthepopcorn.me/top10.php">Top&nbsp;10</a></li>
+				<li class="main-menu__item" id="nav_rules"><a class="main-menu__link" href="https://passthepopcorn.me/rules.php">Rules</a></li>
+				<li class="main-menu__item" id="nav_wiki"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php">Wiki</a></li>
+				<li class="main-menu__item" id="nav_staff"><a class="main-menu__link" href="https://passthepopcorn.me/staff.php">Staff</a></li>
+			</ul>
+		</div>
+				<div class="search-bar">
+			<ul class="search-bar__list">
+				<li id="searchbar_torrents" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/torrents.php" method="get" class="search-bar__search-field__form">
+												<input type="hidden" name="order_by" value="relevance">
+						<input id="torrentssearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="m" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;torrents&#39;);" onblur="" placeholder="Movies" type="text" name="searchstr" size="17">
+						<ul id="torrentscomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_people" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/artist.php" method="get" class="search-bar__search-field__form">
+						<input id="artistsearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="p" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;artist&#39;);" placeholder="People" type="text" name="artistname" size="17">
+						<ul id="artistcomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_collections" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/collages.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="c" spellcheck="false" id="collectionsearch" placeholder="Collections" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_requests" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/requests.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="r" spellcheck="false" placeholder="Requests" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_forums" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/forums.php" method="get" class="search-bar__search-field__form">
+						<input value="search" type="hidden" name="action">
+						<input class="search-bar__search-field__input" accesskey="f" spellcheck="false" placeholder="Forums" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_log" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/log.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="l" spellcheck="false" placeholder="Log" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_users" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/user.php" method="get" class="search-bar__search-field__form">
+						<input type="hidden" name="action" value="search">
+						<input class="search-bar__search-field__input" accesskey="u" spellcheck="false" placeholder="Users" type="text" name="search" size="17">
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+		<div id="content" class="page__main-content">
+<div class="thin">
+	<h2 class="page__title">How to encode AC3 with Sony Sound Forge</h2>
+		<div class="linkbox">
+		<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=create">[Create]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=edit&amp;id=242">[Contribute]</a>
+<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=revisions&amp;id=242">[History]</a>
+	</div>
+	<div class="sidebar">
+		<div class="panel">
+			<div class="panel__body">
+				<form action="https://passthepopcorn.me/wiki.php" method="get">
+					<input type="hidden" name="action" value="search">
+					<input placeholder="Search articles" type="text" name="search" size="20">
+					<input value="Search" type="submit" class="hidden">
+				</form>
+				<br>
+				<a href="https://passthepopcorn.me/wiki.php?action=search&amp;type=Title&amp;order=Title&amp;way=Ascending">List all articles</a>
+			</div>
+		</div>
+		<div class="panel">
+			<div class="panel__body">
+				<ul class="list list--unstyled">
+					<li>
+						<strong>Protection:</strong>
+						<ul class="list--bulleted list--small-padding">
+							<li>Read: Abuser</li>
+							<li>Edit: Power User</li>
+						</ul>
+					 </li>
+					<li>
+						<strong>Details:</strong>
+						<ul class="list--bulleted list--small-padding">
+							<li>Version: 6</li>
+							<li>Last edited by: <a class="username" href="https://passthepopcorn.me/user.php?id=102967">Hornet</a></li>
+							<li>Last updated: <span class="time" title="Jul 06 2020, 12:04">[ Jul 06 2020, 12:04 ]</span></li>
+						</ul>
+					</li>
+					<li>
+						<strong>Aliases:</strong>
+						<ul class="list--bulleted list--small-padding">
+																		<li id="alias_howtoencodeac3withsonysoundforge">
+												<a href="https://passthepopcorn.me/wiki.php?action=article&amp;name=howtoencodeac3withsonysoundforge">howtoencodeac3withso...</a>
+																							</li>
+																</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+					<div class="panel">
+				<div class="panel__body">
+					<form action="https://passthepopcorn.me/wiki.php" method="post">
+						<input type="hidden" name="AntiCsrfToken" value="9001">						<input type="hidden" name="action" value="add_alias">
+						<input type="hidden" name="article" value="242">
+						<input placeholder="Add alias" type="text" name="alias" size="20">
+						<input type="submit" value="+">
+					</form>
+				</div>
+			</div>
+			</div>
+	<div class="main-column">
+	<div class="panel">
+		<div class="panel__body"><em>I have split this out of parent's Advanced x264 Encoding Guide to make it easier to reference and keep up to date</em><br>
+<br>
+<span class="bbcode-size-4">Introduction</span><br>
+<br>
+AC3 also known as Dolby Digital is a widely supported multichannel audio codec. On PTP it is typically used for the main audio track of encodes with multi-channel audio.<br>
+<br>
+While eac3to can transcode to AC3 using the <a rel="noreferrer" target="_blank" href="http://aften.sourceforge.net/">aften</a> library, there are concerns that its implementation may not produce the optimal quality of sound. For the best results it is recommended to use Sony Sound Forge which includes a reference AC3 encoder.<br>
+<br>
+<span class="bbcode-size-4">Installation</span><br>
+<ul><li><a rel="noreferrer" target="_blank" href="http://madshi.net/eac3to.zip">eac3to</a></li><li>Sony Sound Forge (available on RED among other places). Note versions later than 11 reportedly have broken AC3 encoding.</li></ul><br>
+<span class="bbcode-size-4">Use</span><br>
+<br>
+1. Create a <a rel="noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/WAV#Limitations">.w64</a> file from your lossless audio track:<br>
+<br>
+<pre class="preformatted-text--scrolled">eac3to.exe  e:\example\BDMV\PLAYLIST\01000.mpls <br>
+M2TS, 2 video tracks, 3 audio tracks, 5 subtitle tracks, 1:42:55, 62.856p<br>
+1: Chapters, 20 chapters<br>
+2: h264/AVC, 1080p24 /1.001 (16:9)<br>
+3: h264/AVC, 480p24 /1.001 (20:11)<br>
+4: DTS Master Audio, English, 5.1 channels, 16 bits, 48kHz, -11ms<br>
+   (core: DTS, 5.1 channels, 1509kbps, 48kHz)<br>
+<br>
+eac3to e:\example\BDMV\PLAYLIST\01000.mpls 4: e:\example\source\output.w64<br>
+</pre><br>
+<br>
+2. Launch Sony Sound Forge and open the output.w64 file you just created.<br>
+It will take a few minutes for the audio to be processed. Once completed, go through the audio and highlight a region in the Center channel (usually the third stream in 5.1 sources) that has primarily dialogue (no music or sound effects). <br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/vV5BTWg/s70339.png" src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/s70339.png"><br>
+<br>
+Make sure to only select the center channel, otherwise all six channels will be averaged and you will get an inaccurate value. Then click Process-&gt;Normalize.<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/Z61My10/w52st6.png" src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/w52st6.png"><br>
+<br>
+ Click the Average RMS level (loudness) radio button and then press Scan Levels. After a few seconds, a value should show up for the RMS (undernearh the Scan Levels button). Write down/remember this value. Now click <strong>Cancel</strong>. Make sure to click Cancel and not OK, otherwise Sound Force will normalize the audio.<br>
+<br>
+Now click File-&gt;Save As. Make sure "Dolby Digital AC-3 Pro" is selected and the "5.1 Surround DVD" profile is selected.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/LgvKCQh/2qt9z3.png" src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/2qt9z3.png"><br>
+Now click the "Custom..." button.<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/cbPyVFZ/x0jcbs.png" src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/x0jcbs.png"><br>
+<br>
+On the first tab, make sure the settings match the image. Then set the Dialog normalization to the RMS value you wrote down earlier or -31 dB if it was lower. <span style="text-decoration: underline;">Select 640 kbps for a 1080p/720p encode or 448 kbps for an SD encod</span>e.<br>
+<br>
+Now go to the Preprocessing tab.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/r23ZFkK/ky07x6.png" src="./How-to-encode-AC3-with-Sony-Sound-Forge_files/ky07x6.png"><br>
+<br>
+Tick LFE low-pass filter, Bandwidth low-pass filter and uncheck all the other boxes. Make sure that RF overmodulation protection is unchecked. For the Line mode profile, the recommended value is "Film: Light". <br>
+<br>
+<blockquote><strong>Note:</strong> Line mode profile is a kind of Dynamic Range Control metadata. It doesn't modify the audio stream but embeds a flag in the audio stream suggesting which profile should be applied by the receiver.  Users with headphones and 2.0 systems which cannot comfortably render the full dynamic range will benefit from it if they choose to enable it, while users with 5.1 systems can choose to disable it in their AV receivers for the full cinematic experience. Note that the original audio track (eg. TrueHD) normally also includes a DRC flag which is discarded on transcoding with eac3to.<br>
+<br>
+<strong>Film Light Profile</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Max Boost: 6 dB (below –53 dB) <br>
+Boost Range: –53 to –41 dB (2:1 ratio) <br>
+Null Band Width: 20 dB (–41 to –21 dB) <br>
+Early Cut Range: –26 to –11 dB (2:1 ratio) <br>
+Cut Range: –11 to +4 dB (20:1 ratio) <br>
+www.dolby.com/us/en/technologies/a-guide-to-dolby-metadata.pdf<br>
+</blockquote> </blockquote></div>
+	</div>
+	</div>
+</div>
+	</div>
+	
+</div>
+<div id="lightbox" class="lightbox hidden" tabindex="-1"></div>
+<div id="lightbox__shroud" class="lightbox__shroud hidden"></div>
+
+<!-- Extra divs, for stylesheet developers to add imagery -->
+<div id="extra1"><span></span></div>
+<div id="extra2"><span></span></div>
+<div id="extra3"><span></span></div>
+<div id="extra4"><span></span></div>
+<div id="extra5"><span></span></div>
+<div id="extra6"><span></span></div>
+
+
+</body></html>

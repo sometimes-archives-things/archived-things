@@ -1,0 +1,393 @@
+function toggleChecks(formElem,masterElem) {
+	if (masterElem.checked) { checked=true; } else { checked=false; }
+	for(s=0; s<$('#'+formElem).raw().elements.length; s++) {
+		if ($('#'+formElem).raw().elements[s].type=="checkbox") {
+			$('#'+formElem).raw().elements[s].checked=checked;
+		}
+	}
+}
+
+function toggleChecks2( parentElementId, masterCheckbox )
+{
+	var checked = masterCheckbox.checked;
+	var inputElements = document.getElementById( parentElementId ).getElementsByTagName( 'input' );
+	for ( var i = 0; i < inputElements.length; ++i )
+		if ( inputElements[ i ].type.toUpperCase() == 'CHECKBOX' )
+			inputElements[ i ].checked = checked;
+}
+
+function toggleItem( element, settingName )
+{
+	if ( typeof( settingName ) === "undefined" )
+		settingName = element.substring( 1 );
+
+	$jq( element ).ToggleHC();
+
+	var postData = { "object": settingName };
+
+	$jq.ajax(
+	{
+		url: "index.php?action=toggle",
+		type: "POST",
+		data: AddAntiCsrfTokenToPostData( postData )
+	} );
+}
+
+//Lightbox stuff
+var lightbox =
+{
+	init: function( image, size )
+	{
+		lightbox.ShownImage = null;
+
+		if ( image.naturalWidth === undefined )
+		{
+			tmp = document.createElement('img');
+			tmp.style.visibility = 'hidden';
+			tmp.src = image.src;
+			image.naturalWidth = tmp.width;
+			tmp.parentNode.removeChild(tmp); //unset()
+		}
+		if ( image.naturalWidth > size )
+		{
+			lightbox.box(image);
+		}
+	},
+
+	box: function (image)
+	{
+		// Disable background scrolling. http://stackoverflow.com/a/13891717
+		if ( $jq( document ).height() > $jq( window ).height() )
+		{
+			var htmlNode = $jq( "html" );
+			var bodyNode = $jq( "body" );
+			var oldWidth = htmlNode.innerWidth();
+			lightbox.OriginalLeft = bodyNode.css( "left" );
+			lightbox.OriginalTop = bodyNode.css( "top" );
+			lightbox.OriginalScrollTop = htmlNode.scrollTop() ? htmlNode.scrollTop() : bodyNode.scrollTop(); // Works for Chrome, Firefox, IE...
+
+			bodyNode.addClass( "lightbox__scroll-lock" );
+			bodyNode.css( "top", -lightbox.OriginalScrollTop );
+
+			var newWidth = htmlNode.innerWidth();
+			bodyNode.css( "left", ( oldWidth - newWidth ) + "px" );
+		}
+
+		var lightboxNode = $jq( "#lightbox" );
+		lightboxNode.html( '<img src="' + image.src + '" />' );
+		lightboxNode.ShowHC();
+		lightboxNode.scrollTop( 0 );
+		lightboxNode.focus();
+		lightboxNode.click( lightbox.unbox );
+
+		$jq( "#lightbox__shroud" ).ShowHC().click( lightbox.unbox );
+
+		lightbox.ShownImage = image;
+		lightbox.BindHotKey( "up",  function() { return lightbox.ShowNextImage( false ); } );
+		lightbox.BindHotKey( "down", function() { return lightbox.ShowNextImage( true ); } );
+		lightbox.BindHotKey( "left", function() { return lightbox.ShowNextImage( false ); } );
+		lightbox.BindHotKey( "right", function() { return lightbox.ShowNextImage( true ); } );
+		lightbox.BindHotKey( "escape", function() { lightbox.unbox(); } );
+	},
+
+	unbox: function()
+	{
+		// Unbind doesn't work
+		// https://github.com/ccampbell/mousetrap/issues/306
+		lightbox.BindHotKey( "up", function() { } );
+		lightbox.BindHotKey( "down", function() { } );
+		lightbox.BindHotKey( "left", function() { } );
+		lightbox.BindHotKey( "right", function() { } );
+		lightbox.BindHotKey( "escape", function() { } );
+		lightbox.ShownImage = null;
+
+		$jq( "#lightbox__shroud" ).HideHC().off( "click" );
+		$jq( "#lightbox" ).HideHC().html( "" ).off( "click" );
+
+		var bodyNode = $jq( "body" );
+		bodyNode.removeClass( "lightbox__scroll-lock" );
+		bodyNode.css( "left", lightbox.OriginalLeft );
+		bodyNode.css( "top", lightbox.OriginalTop );
+		$jq( "html,body" ).scrollTop( lightbox.OriginalScrollTop );
+	},
+
+	BindHotKey: function( hotkey, callback )
+	{
+		Mousetrap.bindGlobal( hotkey, callback, "keydown" );
+	},
+
+	ShowNextImage: function( showNext )
+	{
+		var lightboxImgElement = $jq( "#lightbox > img" );
+		if ( lightboxImgElement.length !== 1 )
+			return false;
+
+		lightboxImgElement = lightboxImgElement.get( 0 );
+
+		var image;
+		if ( showNext )
+			image = $jq( lightbox.ShownImage ).nextAll( ".bbcode__image" ).first();
+		else
+			image = $jq( lightbox.ShownImage ).prevAll( ".bbcode__image" ).first();
+
+		if ( image.length === 0 )
+			return false;
+
+		lightbox.ShownImage = image.get( 0 );
+		lightboxImgElement.src = lightbox.ShownImage.src;
+
+		return false;
+	},
+
+	ShownImage: null
+};
+
+function toggleImage(id,link) {
+	var image = document.getElementById('img_'+id);
+	if ($jq('#img_'+id).hasClass('hidden')) {
+		image.src = link;
+		$jq('#img_' + id).ShowHC();
+		$jq('#imglinktoggle_' + id).text('(Hide Image)');
+	} else {
+		$jq('#img_' + id).HideHC();
+		$jq('#imglinktoggle_' + id).text('(Show Image)');
+	}
+}
+
+function resize(id)
+{
+	var textarea = document.getElementById(id);
+	if (textarea.scrollHeight > textarea.clientHeight)
+	{
+		textarea.style.overflowY = 'hidden';
+		// + 16 = compensate for the innacuracy of the height calculation...
+		// The only correct solution is to clone the textarea and get the
+		// height from there.
+		textarea.style.height = textarea.scrollHeight + 16 + 'px';
+	}
+}
+
+function ShowBusyCursor()
+{
+	$jq( "html" ).addClass( "busy-cursor" );
+}
+
+function HideBusyCursor()
+{
+	$jq( "html" ).removeClass( "busy-cursor" );
+}
+
+function RegisterGlobalAjaxCursorChange()
+{
+	var jqBody = $jq( "body" );
+	if ( jqBody.data( "GlobalAjaxCursorChangeRegistered" ) )
+		return;
+
+	jqBody.data( "GlobalAjaxCursorChangeRegistered", true );
+
+	$jq( document )
+		.bind( 'ajaxStart.GlobalAjaxCursorChange', function()
+			{
+				$jq( "html" ).addClass( "busy-cursor" );
+			} )
+		.bind( 'ajaxStop.GlobalAjaxCursorChange', function()
+			{
+				$jq( "html" ).removeClass( "busy-cursor" );
+			} );
+}
+
+function UnregisterGlobalAjaxCursorChange()
+{
+	$jq( document )
+		.unbind( "ajaxStart.GlobalAjaxCursorChange" )
+		.unbind( "ajaxStop.GlobalAjaxCursorChange" );
+}
+
+function HighlightElement( jqueryElement )
+{
+	// From: http://stackoverflow.com/questions/848797/yellow-fade-effect-with-jquery/13106698#13106698
+	jqueryElement.each( function ()
+	{
+		var currentElement = $jq( this );
+		$jq( "<div/>" )
+			.width( currentElement.outerWidth() )
+			.height( currentElement.outerHeight() )
+			.css(
+				{
+					"position": "absolute",
+					"left": currentElement.offset().left,
+					"top": currentElement.offset().top,
+					"background-color": "#ffff99",
+					"opacity": ".7",
+					"z-index": "9999999"
+				} )
+			.appendTo( "body" )
+			.fadeOut( 1000 )
+			.queue( function () { $jq( this ).remove(); } );
+	} );
+}
+
+function GetLocalStorageItem( key )
+{
+	if ( typeof( LocalStorageFallback ) !== "undefined" )
+		return LocalStorageFallback[ key ];
+
+	if ( window.localStorage )
+		return window.localStorage.getItem( key );
+
+	return null;
+}
+
+function SetLocalStorageItem( key, value )
+{
+	if ( window.localStorage )
+	{
+		try
+		{
+			window.localStorage.setItem( key, value );
+			return;
+		}
+		catch ( e )
+		{
+			// Safari's Private Browsing mode is retarded, it makes setItem
+			// always fail with this exception.
+			// See: http://stackoverflow.com/q/14555347
+			if ( e.code !== DOMException.QUOTA_EXCEEDED_ERR )
+				throw e;
+		}
+	}
+
+	if ( typeof( LocalStorageFallback ) === "undefined" )
+		LocalStorageFallback = {};
+
+	LocalStorageFallback[ key ] = value;
+}
+
+function RemoveLocalStorageItem( key )
+{
+	if ( typeof( LocalStorageFallback ) !== "undefined" )
+	{
+		delete LocalStorageFallback[ key ];
+		return;
+	}
+
+	if ( window.localStorage )
+		window.localStorage.removeItem( key );
+}
+
+function InitializeSimpleTabControl( tabControl )
+{
+	var tabLinks = $jq( ".simple-tabs__link", tabControl );
+
+	tabLinks.click( function( event )
+	{
+		event.preventDefault();
+
+		tabLinks.removeClass( "simple-tabs__link--active" );
+		$jq( this ).addClass( "simple-tabs__link--active" );
+
+		tabLinks.each( function()
+		{
+			var tabTarget = $jq( this ).attr( "data-tab-target" );
+			var show = $jq( this ).hasClass( "simple-tabs__link--active" );
+			$jq( tabTarget ).ToggleHC( show );
+		} );
+	} );
+}
+
+function SwitchToTab( tabBarLinkElement )
+{
+	tabBarLinkElement = $jq( tabBarLinkElement );
+	var tabBarItemElement = $jq( tabBarLinkElement ).parent();
+
+	$jq( ".tabs__bar__item", tabBarItemElement.parent() ).removeClass( "tabs__bar__item--active" );
+	tabBarItemElement.addClass( "tabs__bar__item--active" );
+
+	var tabPanelId = tabBarLinkElement.attr( "href" ).substring( 1 );
+	var tabsElement = tabBarLinkElement.closest( ".tabs" );
+	$jq( ".tabs__panel", tabsElement ).removeClass( "tabs__panel--active" );
+	$jq( "#" + tabPanelId ).addClass( "tabs__panel--active" );
+
+	return tabPanelId;
+}
+
+function ShouldLogJavascriptError( uniqueData )
+{
+	if ( !Array.isArray( uniqueData.stack ) || uniqueData.stack.length === 0 )
+		return true;
+
+	var stack0 = uniqueData.stack[ 0 ];
+
+	if ( stack0.url.indexOf( "chrome://greasemonkey-modules/" ) === 0 )
+		return false;
+
+	if ( uniqueData.stack.length === 1
+		&& uniqueData.message === "Script error."
+		&& stack0.url.length === 0
+		&& stack0.line === 0
+		&& stack0.func === "?"
+		&& stack0.context === null )
+	{
+		return false;
+	}
+
+	return true;
+}
+
+function HandleJavascriptError( uniqueData )
+{
+	// Avoid flooding.
+	if ( typeof( firstJavascriptError ) !== "undefined" )
+		return;
+	firstJavascriptError = false;
+
+	try
+	{
+		if ( !uniqueData.stack )
+		{
+			uniqueData.stack = ( new Error( "make stack" ) ).stack;
+			if ( uniqueData.stack )
+				uniqueData.stack = uniqueData.stack.toString();
+		}
+	}
+	catch ( e )
+	{
+	}
+
+	if ( typeof( uniqueData ) !== "object" )
+		return;
+
+	if ( !ShouldLogJavascriptError( uniqueData ) )
+		return;
+
+	var formData = new FormData();
+	formData.append( "AntiCsrfToken", GetAntiCsrfToken() );
+	formData.append( "Url", window.location.href );
+	formData.append( "Data", JSON.stringify( uniqueData ) );
+
+	var xhr = new XMLHttpRequest();
+	xhr.open( "POST", "ajax.php?action=js_error", true );
+	xhr.send( formData );
+}
+
+function OnSubmit( button ) {
+	button.disabled = true;
+	button.value = 'Processing...';
+	button.form.submit();
+	return false;
+}
+
+function NotificationsClearUserFreeleech(potId) {
+    var postData = {"action": "notify_clearuserfreeleech", "potid": potId};
+    console.log("Got clear for "+potId);
+    $jq.ajax(
+        {
+            url: "ajax.php",
+            type: "POST",
+            data: AddAntiCsrfTokenToPostData(postData),
+            success: function () {
+                $('#potid_' + potId).closest('div').remove();
+            }
+        });
+    return false;
+}

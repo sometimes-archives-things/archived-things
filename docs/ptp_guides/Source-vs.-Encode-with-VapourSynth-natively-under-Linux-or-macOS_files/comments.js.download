@@ -1,0 +1,353 @@
+var username;
+var postid;
+var EditingPostId = 0;
+var QuotePostId = 0;
+
+function Quote( post, user )
+{
+	username = user;
+	postid = post;
+	$jq.get( "?action=get_post&post=" + postid, function( response )
+	{
+		var quoteText = "";
+		response = html_entity_decode(response);
+		if (typeof ThreadID != 'undefined')
+			quoteText = "[quote=" + username + ":f" + ThreadID + ":" + postid + "]" + response + "[/quote]";
+		else if (( typeof TGroupID != 'undefined' ))
+			quoteText = "[quote=" + username + ":t" + TGroupID + ":" + postid + "]" + response + "[/quote]";
+		else if (typeof RequestID != 'undefined')
+			quoteText = "[quote=" + username + ":r" + RequestID + ":" + postid + "]" + response + "[/quote]";
+		else
+			quoteText = "[quote=" + username + "]" + response + "[/quote]";
+
+		var editFieldId = EditingPostId == 0 ? "quickpost" : ( "editbox" + EditingPostId );
+		var editField = $("#" + editFieldId);
+
+		if (typeof editField.raw() != 'undefined')
+			Quote_EditField(editField, editFieldId, quoteText);
+		else // We must be in a locked thread, as there is no quickpost textarea
+			Quote_Quickpost(quoteText, postid);
+	});
+}
+
+function Quote_EditField(editField, editFieldId, quoteText) {
+	if (editField.raw().value !== '')
+		editField.raw().value = editField.raw().value + "\n\n";
+
+	if (typeof ThreadID != 'undefined')
+		editField.raw().value = editField.raw().value + quoteText;
+	else if (( typeof TGroupID != 'undefined' ))
+		editField.raw().value = editField.raw().value + quoteText;
+	else if (typeof RequestID != 'undefined')
+		editField.raw().value = editField.raw().value + quoteText;
+	else
+		editField.raw().value = editField.raw().value + quoteText;
+
+	resize( editFieldId );
+	location.hash = "#" + editFieldId;
+}
+
+function Quote_Quickpost(quoteText, postid) {
+	if (QuotePostId != 0)
+		Cancel_Quote(QuotePostId);
+
+	QuotePostId = postid;
+
+	$('#bar' + postid).raw().cancel = $('#content' + postid).raw().innerHTML;
+	$('#bar' + postid).raw().oldbar = $('#bar' + postid).raw().innerHTML;
+	$('#content' + postid).raw().innerHTML = "<textarea id=\"quotebox" + postid + "\" onkeyup=\"resize('quotebox" + postid + "');\" rows=\"10\" style=\"width: 100%;\">" + quoteText + "</textarea>";
+	resize('quotebox' + postid);
+	$('#bar' + postid).raw().innerHTML = "<input type=\"button\" value=\"Cancel\" onclick=\"Cancel_Quote(" + postid + ");\" />";
+}
+
+function Cancel_Quote(postid) {
+	$('#bar' + postid).raw().innerHTML = $('#bar' + postid).raw().oldbar;
+	$('#content' + postid).raw().innerHTML = $('#bar' + postid).raw().cancel;
+	QuotePostId = 0;
+}
+
+function Edit_Form(post,key)
+{
+	if ( EditingPostId != 0 )
+		Cancel_Edit( EditingPostId );
+
+	postid = post;
+	EditingPostId = post;
+
+	$('#bar' + postid).raw().cancel = $('#content' + postid).raw().innerHTML;
+	$('#bar' + postid).raw().oldbar = $('#bar' + postid).raw().innerHTML;
+	$('#content' + postid).raw().innerHTML =
+		"<div id=\"preview" + postid + "\"></div>" +
+		"<form id=\"form" + postid + "\" method=\"post\">" +
+		"<input type='hidden' name='AntiCsrfToken' value='" + GetAntiCsrfToken() + "' />" +
+		"<input type=\"hidden\" name=\"key\" value=\"" + key + "\" />" +
+		"<input type=\"hidden\" name=\"post\" value=\"" + postid + "\" />" +
+		"<textarea id=\"editbox" + postid + "\" onkeyup=\"resize('editbox" + postid + "');\" name=\"body\" rows=\"10\" style=\"width: 100%;\"></textarea>" +
+		"</form>";
+	$('#bar' + postid).raw().innerHTML = "<input type=\"button\" value=\"Preview\" onclick=\"Preview_Edit(" + postid + ");\" /><input type=\"button\" value=\"Post\" onclick=\"Save_Edit(" + postid + ")\" /><input type=\"button\" value=\"Cancel\" onclick=\"Cancel_Edit(" + postid + ");\" />";
+	ajax.get("?action=get_post&post=" + postid, function(response){
+		$('#editbox' + postid).raw().value = html_entity_decode(response);
+		resize('editbox' + postid);
+	});
+
+	$jq( "#reply_box" ).HideHC();
+	$jq( "#Bbcode_Toolbar" ).insertBefore( "#editbox" + postid );
+}
+
+function Cancel_Edit(postid) {
+	$jq( "#Bbcode_Toolbar" ).insertBefore( "#quickpost" ).ShowHC();
+
+	$('#bar' + postid).raw().innerHTML = $('#bar' + postid).raw().oldbar;
+	$('#content' + postid).raw().innerHTML = $('#bar' + postid).raw().cancel;
+
+	EditingPostId = 0;
+	$jq( "#reply_box" ).ShowHC();
+}
+
+function Preview_Edit(postid)
+{
+	var allowMentions = typeof( ThreadID ) !== "undefined"
+		|| typeof( TGroupID ) !== "undefined"
+		|| typeof( RequestID ) !== "undefined";
+
+	$('#bar' + postid).raw().innerHTML = "<input type=\"button\" value=\"Make changes\" onclick=\"Cancel_Preview(" + postid + ");\" /><input type=\"button\" value=\"Post\" onclick=\"Save_Edit(" + postid + ")\" /><input type=\"button\" value=\"Cancel\" onclick=\"Cancel_Edit(" + postid + ");\" />";
+
+	var postData = {
+		"action": "preview",
+		"body": $jq( "#editbox" + postid ).val()
+	};
+
+	if ( allowMentions )
+		postData[ "allow_mentions" ] = true;
+
+	$jq.post(
+		"ajax.php",
+		AddAntiCsrfTokenToPostData( postData ),
+		function( response )
+		{
+			$('#preview' + postid).raw().innerHTML = response;
+			$jq( "#Bbcode_Toolbar" ).HideHC();
+			$jq('#editbox' + postid).HideHC();
+		}
+	);
+}
+
+function Cancel_Preview(postid) {
+	$('#bar' + postid).raw().innerHTML = "<input type=\"button\" value=\"Preview\" onclick=\"Preview_Edit(" + postid + ");\" /><input type=\"button\" value=\"Post\" onclick=\"Save_Edit(" + postid + ")\" /><input type=\"button\" value=\"Cancel\" onclick=\"Cancel_Edit(" + postid + ");\" />";
+	$('#preview' + postid).raw().innerHTML = "";
+	$jq( "#Bbcode_Toolbar" ).ShowHC();
+	$jq('#editbox' + postid).ShowHC();
+}
+
+function Save_Edit(postid)
+{
+	var url;
+	if ( location.href.match( /forums\.php/ ) )
+		url = "forums.php?action=takeedit";
+	else if ( location.href.match( /requests\.php/ ) )
+		url = "requests.php?action=takeedit_comment";
+	else
+		url = "torrents.php?action=takeedit_post";
+
+	ajax.post( url, "form" + postid, function( response )
+	{
+		$( '#bar' + postid ).raw().innerHTML = $( '#bar' + postid ).raw().oldbar;
+		$( '#preview' + postid ).raw().innerHTML = response;
+		$jq( '#editbox' + postid ).HideHC();
+
+		EditingPostId = 0;
+		$jq( "#Bbcode_Toolbar" ).insertBefore( "#quickpost" ).ShowHC();
+		$jq( "#reply_box" ).ShowHC();
+	} );
+}
+
+function Delete( post )
+{
+	postid = post;
+	if ( !confirm( 'Are you sure you wish to delete this post?' ) )
+		return;
+
+	if ( location.href.match( /forums\.php/ ) )
+	{
+		var postData = { "action": "delete", "postid": postid };
+		$jq.post(
+			"forums.php",
+			AddAntiCsrfTokenToPostData( postData ),
+			function()
+			{
+				$jq( '#post' + postid ).HideHC();
+			}
+		);
+	}
+	else if ( location.href.match( /requests\.php/ ) )
+	{
+		var postData = { "action": "delete_comment", "postid": postid };
+
+		$jq.post(
+			"requests.php",
+			AddAntiCsrfTokenToPostData( postData ),
+			function()
+			{
+				$jq( '#post' + postid ).HideHC();
+			}
+		);
+	}
+	else
+	{
+		var postData = { "action": "delete_post", "postid": postid };
+
+		$jq.post(
+			"torrents.php",
+			AddAntiCsrfTokenToPostData( postData ),
+			function()
+			{
+				$jq( '#post' + postid ).HideHC();
+			}
+		);
+	}
+}
+
+function NewCommentPreviewClick( forceShowEdit, allowMentions )
+{
+	forceShowEdit = typeof( forceShowEdit ) !== "undefined" && forceShowEdit;
+	allowMentions = typeof( allowMentions ) === "undefined" || allowMentions;
+	var previewButton = $jq( "#post_preview" );
+
+	if ( forceShowEdit || previewButton.val() == "Make changes" )
+	{
+		previewButton.val( "Preview" );
+		BBCode.HideReplyPreview();
+	}
+	else
+	{
+		previewButton.val( "Make changes" );
+
+		var postData = {
+			"action": "preview",
+			"body": $jq( "#quickpost" ).val(),
+		};
+
+		if ( allowMentions )
+			postData[ "allow_mentions" ] = true;
+
+		$jq.post(
+			"ajax.php",
+			AddAntiCsrfTokenToPostData( postData ),
+			function( response )
+			{
+				BBCode.ShowReplyPreview( response );
+			}
+		);
+	}
+}
+
+function InitializeNewCommentValidator( allowMentions )
+{
+	var quickPostForm = $jq( "#quickpostform" );
+	var submitButton = $jq( quickPostForm ).find( "input[type='submit']" );
+
+	submitButton.click( function()
+	{
+		// We must reveal the textarea otherwise the native validation pop-up displays at wrong location in Firefox,
+		// and it doesn't display at all in Chrome.
+		if ( !quickPostForm.get( 0 ).checkValidity() )
+			NewCommentPreviewClick( true, allowMentions );
+	} );
+
+	quickPostForm.submit( function()
+	{
+		return OnSubmit( submitButton.get( 0 ) );
+	} );
+}
+
+function LoadEdit(type, post, depth) {
+	ajax.get("forums.php?action=ajax_get_edit&postid=" + post + "&depth=" + depth + "&type=" + type, function(response) {
+			$('#content' + post).raw().innerHTML = response;
+		}
+	);
+}
+
+function AddPollOption(id)
+{
+	var list = $('#poll_options').raw();
+	var item = document.createElement("li");
+	var form = document.createElement("form");
+	form.method = "POST";
+
+	var action = document.createElement("input");
+	action.type = "hidden";
+	action.name = "action";
+	action.value = "add_poll_option";
+	form.appendChild(action);
+
+	var antiCsrfTokenNode = document.createElement( "input" );
+	antiCsrfTokenNode.type = "hidden";
+	antiCsrfTokenNode.name = "AntiCsrfToken";
+	antiCsrfTokenNode.value = GetAntiCsrfToken();
+	form.appendChild( antiCsrfTokenNode );
+
+	var threadid = document.createElement("input");
+	threadid.type = "hidden";
+	threadid.name = "threadid";
+	threadid.value = id;
+	form.appendChild(threadid);
+
+	var input = document.createElement("input");
+	input.type = "text";
+	input.name = "new_option";
+	input.size = "50";
+	form.appendChild(input);
+
+	var submit = document.createElement("input");
+	submit.type = "submit";
+	submit.id = "new_submit";
+	submit.value = "Add";
+	form.appendChild(submit);
+
+	item.appendChild(form);
+	list.appendChild(item);
+}
+
+function VoteSuggestionPoll()
+{
+	var data = $jq( "#suggestion-poll__form" ).serialize();
+
+	$jq.post( "forums.php", data, function( response )
+	{
+		$jq( "#suggestion-poll" ).replaceWith( response );
+	} );
+}
+
+function RemoveVoteFromSuggestionPoll( topicId )
+{
+	var postData = { "action": "vote_suggestion_poll", "topicid": topicId, "vote": "remove" };
+
+	$jq.post(
+		"forums.php",
+		AddAntiCsrfTokenToPostData( postData ),
+		function( response )
+		{
+			$jq( "#suggestion-poll" ).replaceWith( response );
+		}
+	);
+}
+
+// Jump to the anchor of the last read post.
+// Changing window.location.hash adds the page to the history, it would require navigating back twice, so instead of
+// that the current entry is replaced in the history.
+function GoToLastReadPost( lastReadPostId )
+{
+	window.History.replaceState( null, document.title, "#post" + lastReadPostId );
+
+	$jq( window ).ready( function()
+	{
+		var offset = $jq( "#post" + lastReadPostId ).offset();
+		window.scrollTo( offset.left, offset.top );
+	} );
+
+	$jq( window ).load( function()
+	{
+		var offset = $jq( "#post" + lastReadPostId ).offset();
+		window.scrollTo( offset.left, offset.top );
+	} );
+}

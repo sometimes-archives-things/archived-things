@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://passthepopcorn.me/wiki.php?action=article&id=243 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge">
+		<meta name="referrer" content="no-referrer">
+	<meta name="referrer" content="same-origin">
+	<meta name="robots" content="noindex">
+		<title>Audio bit-depth reduction and sample rate conversion :: PassThePopcorn</title>
+	<link rel="shortcut icon" href="https://passthepopcorn.me/favicon.ico">
+	<link rel="apple-touch-icon" href="https://passthepopcorn.me/static/common/touch-icon-iphone.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://passthepopcorn.me/static/common/touch-icon-ipad.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://passthepopcorn.me/static/common/touch-icon-iphone-retina.png?v=1514440441">
+	<link rel="search" type="application/opensearchdescription+xml" title="PassThePopcorn" href="https://passthepopcorn.me/static/opensearch.xml">
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+				<link href="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/marcel.css" rel="stylesheet" type="text/css" media="screen">
+						<script src="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/script_start.js.download" type="text/javascript"></script>
+						<script src="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/class_ajax.js.download" type="text/javascript"></script>
+						<script src="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/global.js.download" type="text/javascript"></script>
+							<script src="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/jquery.js.download" type="text/javascript"></script>
+						<script src="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/autocomplete.js.download" type="text/javascript"></script>
+					<script src="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/wiki.js.download" type="text/javascript"></script>
+					<script src="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/bbcode.js.download" type="text/javascript"></script>
+					<script src="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/mousetrap.min.js.download" type="text/javascript"></script>
+		</head>
+<body id="wiki" data-anticsrftoken="9001" style="">
+<div id="wrapper">
+	<div id="header" class="header">
+		<div class="site-logo"><a class="site-logo__link" href="https://passthepopcorn.me/index.php"></a></div>
+				
+			<div class="main-menu">
+			<ul class="main-menu__list">
+				<li class="main-menu__item" id="nav_index"><a class="main-menu__link" href="https://passthepopcorn.me/index.php">Home</a></li>
+				<li class="main-menu__item" id="nav_torrents"><a class="main-menu__link" href="https://passthepopcorn.me/torrents.php">Movies</a></li>
+				<li class="main-menu__item" id="nav_collages"><a class="main-menu__link" href="https://passthepopcorn.me/collages.php">Collections</a></li>
+				<li class="main-menu__item" id="nav_requests"><a class="main-menu__link" href="https://passthepopcorn.me/requests.php">Requests</a></li>
+				<li class="main-menu__item" id="nav_forums"><a class="main-menu__link" href="https://passthepopcorn.me/forums.php">Forums</a></li>
+				<li class="main-menu__item" id="nav_irc"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php?action=article&amp;id=95">Chat</a></li>
+				<li class="main-menu__item" id="nav_top10"><a class="main-menu__link" href="https://passthepopcorn.me/top10.php">Top&nbsp;10</a></li>
+				<li class="main-menu__item" id="nav_rules"><a class="main-menu__link" href="https://passthepopcorn.me/rules.php">Rules</a></li>
+				<li class="main-menu__item" id="nav_wiki"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php">Wiki</a></li>
+				<li class="main-menu__item" id="nav_staff"><a class="main-menu__link" href="https://passthepopcorn.me/staff.php">Staff</a></li>
+			</ul>
+		</div>
+				<div class="search-bar">
+			<ul class="search-bar__list">
+				<li id="searchbar_torrents" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/torrents.php" method="get" class="search-bar__search-field__form">
+												<input type="hidden" name="order_by" value="relevance">
+						<input id="torrentssearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="m" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;torrents&#39;);" onblur="" placeholder="Movies" type="text" name="searchstr" size="17">
+						<ul id="torrentscomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_people" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/artist.php" method="get" class="search-bar__search-field__form">
+						<input id="artistsearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="p" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;artist&#39;);" placeholder="People" type="text" name="artistname" size="17">
+						<ul id="artistcomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_collections" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/collages.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="c" spellcheck="false" id="collectionsearch" placeholder="Collections" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_requests" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/requests.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="r" spellcheck="false" placeholder="Requests" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_forums" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/forums.php" method="get" class="search-bar__search-field__form">
+						<input value="search" type="hidden" name="action">
+						<input class="search-bar__search-field__input" accesskey="f" spellcheck="false" placeholder="Forums" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_log" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/log.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="l" spellcheck="false" placeholder="Log" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_users" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/user.php" method="get" class="search-bar__search-field__form">
+						<input type="hidden" name="action" value="search">
+						<input class="search-bar__search-field__input" accesskey="u" spellcheck="false" placeholder="Users" type="text" name="search" size="17">
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+		<div id="content" class="page__main-content">
+<div class="thin">
+	<h2 class="page__title">Audio bit-depth reduction and sample rate conversion</h2>
+		<div class="linkbox">
+		<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=create">[Create]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=edit&amp;id=243">[Contribute]</a>
+<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=revisions&amp;id=243">[History]</a>
+	</div>
+	<div class="sidebar">
+		<div class="panel">
+			<div class="panel__body">
+				<form action="https://passthepopcorn.me/wiki.php" method="get">
+					<input type="hidden" name="action" value="search">
+					<input placeholder="Search articles" type="text" name="search" size="20">
+					<input value="Search" type="submit" class="hidden">
+				</form>
+				<br>
+				<a href="https://passthepopcorn.me/wiki.php?action=search&amp;type=Title&amp;order=Title&amp;way=Ascending">List all articles</a>
+			</div>
+		</div>
+		<div class="panel">
+			<div class="panel__body">
+				<ul class="list list--unstyled">
+					<li>
+						<strong>Protection:</strong>
+						<ul class="list--bulleted list--small-padding">
+							<li>Read: Abuser</li>
+							<li>Edit: Power User</li>
+						</ul>
+					 </li>
+					<li>
+						<strong>Details:</strong>
+						<ul class="list--bulleted list--small-padding">
+							<li>Version: 16</li>
+							<li>Last edited by: <a class="username" href="https://passthepopcorn.me/user.php?id=113128">Gurdil</a></li>
+							<li>Last updated: <span class="time" title="Dec 28 2019, 02:10">[ Dec 28 2019, 02:10 ]</span></li>
+						</ul>
+					</li>
+					<li>
+						<strong>Aliases:</strong>
+						<ul class="list--bulleted list--small-padding">
+																		<li id="alias_howtoreducebitdepthofflacaudio">
+												<a href="https://passthepopcorn.me/wiki.php?action=article&amp;name=howtoreducebitdepthofflacaudio">howtoreducebitdeptho...</a>
+																							</li>
+																</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+					<div class="panel">
+				<div class="panel__body">
+					<form action="https://passthepopcorn.me/wiki.php" method="post">
+						<input type="hidden" name="AntiCsrfToken" value="9001">						<input type="hidden" name="action" value="add_alias">
+						<input type="hidden" name="article" value="243">
+						<input placeholder="Add alias" type="text" name="alias" size="20">
+						<input type="submit" value="+">
+					</form>
+				</div>
+			</div>
+			</div>
+	<div class="main-column">
+	<div class="panel">
+		<div class="panel__body"><span class="bbcode-size-4">Introduction</span><br>
+<br>
+LPCM audio on Blu-rays is often stored at 24 bits of precision. For encodes which include FLAC audio (mostly concerts and 2.0 1080p encodes) it is recommended to perform bit-depth reduction from 24 to 16 bits, saving 1/3 on file size with no perceptible reduction in quality. This process involves dithering, which adds a very small amount of noise. Normally that noise cannot be distinguished at the typical volume levels or drowns in the noise already present in the recording, but to be on the safe side we will perform noise shaping as well.<br>
+<br>
+Similarly, concert audio may be sampled at 96kHz or 192kHz and should be converted to 48kHz without a perceptible loss in quality. <br>
+<br>
+<strong>What is noise shaping?</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Dithering adds a small amount of noise (~3-5 dB) across the entire frequency spectrum to prevent quantization errors resulting in audible distortion. However, the human ear is the most sensitive at the frequencies around 3kHz and much less at frequencies over 14kHz.<br>
+<br>
+The purpose of noise shaping is to move the noise added in the dithering process out of the low frequencies where it is more noticeable. Note that it only applies to the noise added in the dithering, and does not affect the noise already present in the recording. <br>
+<br>
+SSRC noise shaper: <img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://shibatch.sourceforge.net/ssrc/X1.png" src="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/X1.png"><br>
+<br>
+SoX noise shaping filters: <img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://sox.sourceforge.net/noise-shape.png" src="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/noise-shape.png"> <img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://sox.sourceforge.net/noise-shape2.png" src="./Audio-bit-depth-reduction-and-sample-rate-conversion_files/noise-shape2.png"></blockquote><br>
+<br>
+<span class="bbcode-size-4">Installation</span><br>
+<ul><li><a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=125966">eac3to</a></li><li><a rel="noreferrer" target="_blank" href="https://github.com/shibatch/SSRC/raw/master/bin/ssrc_hp.exe">ssrc_hp 1.33</a></li><li>or <a rel="noreferrer" target="_blank" href="https://mega.nz/file/StFxwYwL#VnyBi7soSpVFA7mPuYVHGBZMjZ3r-IZYSzd9AHZ3mvk">SoX</a> (built with libsndfile for .w64 support)</li></ul><br>
+<strong>Note:</strong> <span style="color:#ff0000">If your wav file would exceed 4 GiB you need to follow the SoX section described below!</span><br>
+<br>
+<span class="bbcode-size-4">SSRC</span><br>
+<br>
+1. Extract the desired audio track as .wav :<br>
+<code>eac3to e:\example\BDMV\PLAYLIST\01000.mpls 4: e:\example\output24.wav -simple</code><br>
+<blockquote><strong>Note:</strong> <code>-simple</code> ensures .wav header compatibility with ssrc</blockquote>2. Dither the track to 16 bits and apply a mild noise shaping filer:<br>
+<code>ssrc_hp.exe --bits 16 --dither 2 --pdf 1 e:\example\output24.wav e:\example\output16.wav</code><br>
+<br>
+3. Prepare a FLAC file for muxing the audio track with your video encode:<br>
+<code>eac3to e:\example\output16.wav e:\example\output16.flac</code><br>
+<br>
+<span class="bbcode-size-4">SoX</span><br>
+<br>
+1. Extract the desired audio track as .w64 :<br>
+<code>eac3to e:\example\BDMV\PLAYLIST\01000.mpls 4: e:\example\output24.w64</code><br>
+<br>
+2. Dither the track to 16 bits and apply a mild noise shaping filer:<br>
+<code>sox -S E:\example\output24.w64 -b 16 e:\example\output16.w64 dither -s -f low-shibata </code><br>
+<blockquote><strong>Note:</strong> If you want to perform sample rate conversion in the same step add <code>rate -v 48k</code> after the output file path</blockquote><br>
+<br>
+3. Prepare a FLAC file for muxing the audio track with your video encode:<br>
+<code>eac3to e:\example\output16.w64 e:\example\output16.flac</code><br>
+<br>
+<span class="bbcode-size-4">Resources</span><br>
+<br>
+<br>
+<a rel="noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Dither#Digital_audio">https://en.wikipedia.org/wiki/Dither#Digital_audio</a><br>
+<a rel="noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Noise_shaping">https://en.wikipedia.org/wiki/Noise_shaping</a><br>
+<a rel="noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Absolute_threshold_of_hearing">https://en.wikipedia.org/wiki/Absolute_threshold_of_hearing</a><br>
+<a rel="noreferrer" target="_blank" href="https://xiph.org/~xiphmont/demo/neil-young.html#toc_1bv2b">https://xiph.org/~xiphmont/demo/neil-young.html#toc_1bv2b</a><br>
+<a rel="noreferrer" target="_blank" href="http://sox.sourceforge.net/sox.html">http://sox.sourceforge.net/sox.html</a><br>
+<a rel="noreferrer" target="_blank" href="http://shibatch.sourceforge.net/ssrc/">http://shibatch.sourceforge.net/ssrc/</a></div>
+	</div>
+	</div>
+</div>
+	</div>
+	
+</div>
+<div id="lightbox" class="lightbox hidden" tabindex="-1"></div>
+<div id="lightbox__shroud" class="lightbox__shroud hidden"></div>
+
+<!-- Extra divs, for stylesheet developers to add imagery -->
+<div id="extra1"><span></span></div>
+<div id="extra2"><span></span></div>
+<div id="extra3"><span></span></div>
+<div id="extra4"><span></span></div>
+<div id="extra5"><span></span></div>
+<div id="extra6"><span></span></div>
+
+
+</body></html>

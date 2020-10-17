@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<!-- saved from url=(0068)https://passthepopcorn.me/forums.php?action=viewthread&threadid=5663 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge">
+		<meta name="referrer" content="no-referrer">
+	<meta name="referrer" content="same-origin">
+	<meta name="robots" content="noindex">
+		<title>Simple x264 Encoding Guide for Handbrake (Mar '13) :: PassThePopcorn</title>
+	<link rel="shortcut icon" href="https://passthepopcorn.me/favicon.ico">
+	<link rel="apple-touch-icon" href="https://passthepopcorn.me/static/common/touch-icon-iphone.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://passthepopcorn.me/static/common/touch-icon-ipad.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://passthepopcorn.me/static/common/touch-icon-iphone-retina.png?v=1514440441">
+	<link rel="search" type="application/opensearchdescription+xml" title="PassThePopcorn" href="https://passthepopcorn.me/static/opensearch.xml">
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+				<link href="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/marcel.css" rel="stylesheet" type="text/css" media="screen">
+						<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/script_start.js.download" type="text/javascript"></script>
+						<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/class_ajax.js.download" type="text/javascript"></script>
+						<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/global.js.download" type="text/javascript"></script>
+							<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/jquery.js.download" type="text/javascript"></script>
+						<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/autocomplete.js.download" type="text/javascript"></script>
+					<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/comments.js.download" type="text/javascript"></script>
+					<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/subscriptions.js.download" type="text/javascript"></script>
+					<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/bbcode.js.download" type="text/javascript"></script>
+					<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/mousetrap.min.js.download" type="text/javascript"></script>
+					<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/jquery.rangyinputs.js.download" type="text/javascript"></script>
+					<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/jquery.qtip.min.js.download" type="text/javascript"></script>
+					<script src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/jquery.simplemodal.1.4.4.min.js.download" type="text/javascript"></script>
+		</head>
+<body id="forums" data-anticsrftoken="9001" style="">
+<div id="wrapper">
+	<div id="header" class="header">
+		<div class="site-logo"><a class="site-logo__link" href="https://passthepopcorn.me/index.php"></a></div>
+				
+			<div class="main-menu">
+			<ul class="main-menu__list">
+				<li class="main-menu__item" id="nav_index"><a class="main-menu__link" href="https://passthepopcorn.me/index.php">Home</a></li>
+				<li class="main-menu__item" id="nav_torrents"><a class="main-menu__link" href="https://passthepopcorn.me/torrents.php">Movies</a></li>
+				<li class="main-menu__item" id="nav_collages"><a class="main-menu__link" href="https://passthepopcorn.me/collages.php">Collections</a></li>
+				<li class="main-menu__item" id="nav_requests"><a class="main-menu__link" href="https://passthepopcorn.me/requests.php">Requests</a></li>
+				<li class="main-menu__item" id="nav_forums"><a class="main-menu__link" href="https://passthepopcorn.me/forums.php">Forums</a></li>
+				<li class="main-menu__item" id="nav_irc"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php?action=article&amp;id=95">Chat</a></li>
+				<li class="main-menu__item" id="nav_top10"><a class="main-menu__link" href="https://passthepopcorn.me/top10.php">Top&nbsp;10</a></li>
+				<li class="main-menu__item" id="nav_rules"><a class="main-menu__link" href="https://passthepopcorn.me/rules.php">Rules</a></li>
+				<li class="main-menu__item" id="nav_wiki"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php">Wiki</a></li>
+				<li class="main-menu__item" id="nav_staff"><a class="main-menu__link" href="https://passthepopcorn.me/staff.php">Staff</a></li>
+			</ul>
+		</div>
+				<div class="search-bar">
+			<ul class="search-bar__list">
+				<li id="searchbar_torrents" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/torrents.php" method="get" class="search-bar__search-field__form">
+												<input type="hidden" name="order_by" value="relevance">
+						<input id="torrentssearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="m" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;torrents&#39;);" onblur="" placeholder="Movies" type="text" name="searchstr" size="17">
+						<ul id="torrentscomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_people" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/artist.php" method="get" class="search-bar__search-field__form">
+						<input id="artistsearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="p" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;artist&#39;);" placeholder="People" type="text" name="artistname" size="17">
+						<ul id="artistcomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_collections" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/collages.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="c" spellcheck="false" id="collectionsearch" placeholder="Collections" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_requests" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/requests.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="r" spellcheck="false" placeholder="Requests" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_forums" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/forums.php" method="get" class="search-bar__search-field__form">
+						<input value="search" type="hidden" name="action">
+						<input class="search-bar__search-field__input" accesskey="f" spellcheck="false" placeholder="Forums" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_log" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/log.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="l" spellcheck="false" placeholder="Log" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_users" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/user.php" method="get" class="search-bar__search-field__form">
+						<input type="hidden" name="action" value="search">
+						<input class="search-bar__search-field__input" accesskey="u" spellcheck="false" placeholder="Users" type="text" name="search" size="17">
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+		<div id="content" class="page__main-content">
+<script type="text/javascript">var ThreadID='5663';</script>
+<div class="thin">
+	<h2 class="page__title">
+		<a href="https://passthepopcorn.me/forums.php">Forums</a> &gt;
+		<a href="https://passthepopcorn.me/forums.php?action=viewforum&amp;forumid=12">Tutorials</a> &gt;
+		Simple x264 Encoding Guide for Handbrake (Mar '13)	</h2>
+	<div class="linkbox">
+		<a class="linkbox__link" href="https://passthepopcorn.me/reports.php?action=report&amp;type=thread&amp;id=5663">[Report Thread]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#" onclick="SubscribeToForumTopic( this, 5663 ); return false;">[Subscribe]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#" onclick="ToggleSearchThreadForm( this ); return false;">[Search this Thread]</a>
+	</div>
+	<div id="searchthread" class="hidden" style="text-align: center;">
+		<div class="panel" style="display: inline-block; text-align: left;">
+			<div class="panel__body">
+				<form action="https://passthepopcorn.me/forums.php" method="get">
+					<input type="hidden" name="action" value="search">
+					<input type="hidden" name="threadid" value="5663">
+					<div class="form__group">
+						<input type="text" id="searchbox" name="search" size="70" placeholder="Post" class="form__input">
+					</div>
+					<div class="form__group">
+						<input type="text" id="username" name="user" size="70" placeholder="Username" class="form__input">
+					</div>
+					<div class="form__group">
+						<input type="submit" name="submit" value="Search this thread" class="form__input">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		<div class="pagination pagination--top"><span class="pagination__current-page">1-25</span> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">26-50</a> | <a href="https://passthepopcorn.me/forums.php?page=3&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">51-75</a> | <a href="https://passthepopcorn.me/forums.php?page=4&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">76-100</a> | <a href="https://passthepopcorn.me/forums.php?page=5&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">101-125</a> | <a href="https://passthepopcorn.me/forums.php?page=6&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">126-150</a> | <a href="https://passthepopcorn.me/forums.php?page=7&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">151-175</a> | <a href="https://passthepopcorn.me/forums.php?page=8&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">176-200</a> | <a href="https://passthepopcorn.me/forums.php?page=9&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">201-225</a> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--next">Next &gt;</a> <a href="https://passthepopcorn.me/forums.php?page=17&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--last"> Last &gt;&gt;</a></div>
+
+	<div class="forum_post forum-post" id="post95220">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95220#post95220">#95220</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=21464">coj</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=21464"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 46 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 13 2010, 06:42">[ Jan 13 2010, 06:42 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95220&#39;, &#39;coj&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95220" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95220">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95220">
+				----------------------------<br>
+<strong><span class="bbcode-size-4">Handbrake 0.9.4/5 Simple Encoding Guide</span></strong> (Updated Mar '13)<br>
+<br>
+<em><strong>Changes:</strong><br>
+- added reference to HANDJOB Guide for the anamorphic picture setting; changed recommendations for media players (2017-11-20)<br>
+- expanded framerate setting recommendation because of too many cases of incorrect framerates<br>
+- x264 setting commandline now contains ref=9 instead of ref=6<br>
+- replaced recommendation of TDMaker with MediaInfo<br>
+- fixed images to use the ones hosted on ptpimg.me<br>
+- added recommendation to 9 reference frames to meet the PtP's new high-quality minimum settings<br>
+- lowered recommended RF range to 17.5 - 19.5, reflecting possible changes in x264's RF scale<br>
+- now recommending "b-pyramid=2" since compatibility should not be an issue for MKV-capable players<br>
+- added warning against transcoding<br>
+- "b-pyramid=1" added to commandlines, mistake on my part; this improves quality/efficiency<br>
+- updated link to TDMaker download page, since v2.0 has been released.<br>
+- changed Handbrake snapshot link to nightly build<br>
+- added recommendations for playback codecs/players<br>
+- added faster commandlines (for people with slow computers) and HD commandlines<br>
+- corrected passthepopcorn.me links to passthepopcorn.me<br>
+- added note about changing aq-strength to 0.8-1.0 on noisy, low-quality sources<br>
+</em><br>
+<br>
+<em><strong><span style="color:red">WARNING</span></strong>: Do <strong>not</strong> re-encode an already-compressed source like an XviD/AVI file. This is transcoding, and is specifically banned (see <a href="https://passthepopcorn.me/rules.php?p=upload#h1.1">rule 1.1.6 of the Uploading Rules</a>). Re-encoding only <strong>significantly worsens quality</strong>. You should only encode from original sources, i.e. DVDs/DVD-ISOs and Blu-Ray ISOs/M2TS). {Exception: you can transcode a high-quality source like a 1080p BDRip to a standard-definition (~400p - 576p) file; these are called BRRips.}</em><br>
+<br>
+<strong><span style="color:#ff0000">Staff edit:</span></strong> 1.2.11. Transcodes are not allowed. The source for all rips must be a movie's full untouched form (this includes BRRips and recompressed DVD5s). Please ignore the exception above and refer to <a href="https://passthepopcorn.me/wiki.php?action=article&amp;id=263" title="Wiki Article">Wiki &gt; The HANDJOB Guide</a>. -- 06/25/2020<br>
+<br>
+Handbrake is an easy-to-use application for encoding your DVDs, available for Windows, Linux and Mac. It relies on the x264 encoder. Like most other all-in-one programs, it doesn't offer you the tools to achieve the best quality, but it will do if you aren't picky. If you want to learn to do a proper, high-quality encode, see echohead's excellent <strong><a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=3857">Advanced x264 Encoding Guide</a></strong>.<br>
+<br>
+This guide was written to correct a few of the settings in the old Handbrake guide, and to better match the current version of Handbrake (which does not offer XviD-in-AVI encoding any longer).<br>
+<br>
+Handbrake's encodes are H.264 (AVC) video in MKV container files. They will play on properly-configured PCs, modern standalone media players (like the WD TV Live, Asus O!Play, etc.), and certain Blu-ray players and HDTVs with H.264/MKV support. Note that standalone DVD players will generally <strong>not</strong> be able to play H.264.<br>
+<br>
+Download Handbrake at either of these pages:<br>
+<br>
+<a rel="noreferrer" target="_blank" href="https://build.handbrake.fr/">Current nightly build</a> (improved video quality and many other fixes)<br>
+<a rel="noreferrer" target="_blank" href="https://handbrake.fr/downloads.php">Stable release (0.9.5)</a><br>
+<br>
+I suggest using the nightly build for the many improvements it offers. If you encounter problems with it, then try the stable release. Windows users should grab the <span style="text-decoration: underline;">WindowsGUI</span> build and not the WindowsCLI one.<br>
+<br>
+Remember to <strong>upgrade</strong> your version of Handbrake if you haven't in a while! Quite a few people seem to still be using 0.9.3, which is positively ancient.<br>
+<br>
+<br>
+----------------------------<br>
+<span class="bbcode-size-3"><strong><span style="color:#ff6633">Ripping the DVD</span></strong></span><br>
+<br>
+You generally need to rip the DVD to your hard drive and <strong>remove copy-protection like CSS, since Handbrake can't bypass it</strong>. The result will be a VIDEO_TS folder on your hard drive, an exact copy of the DVD but with the protection removed. Make sure you have enough free hard drive space before you rip! If you don't want to keep this ripped DVD-backup, remember to delete the VIDEO_TS folder after you've finished encoding.<br>
+<br>
+(<span style="text-decoration: underline;">Note:</span> If you are encoding from a pre-ripped ISO or VIDEO_TS folder that has already been stripped of copy-protection, then you can skip this entire section and go directly to the <em>Encoding with Handbrake</em> section. If using an ISO, make sure you mount it first using software like Daemon Tools.)<br>
+<br>
+Mac users should probably look at <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=900">How to rip DVD using MacTheRipper (Mac OS X)</a> (will only work for older DVD protection systems i.e. 2005 and before). <em>Transmition notes that Handbrake on OS X will directly decrypt DVDs (straight from the disc) as long as VLC is installed. Handbrake on Linux will also decrypt DVDs if libdvdcss is installed.</em><br>
+<br>
+Windows users: here I quote from <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=3857">echohead's guide</a>:<br>
+<br>
+<blockquote><em>(Download and install these 2 applications)</em><br>
+<strong><a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/RipIt4Me">RipIt4Me</a></strong> - Extract the .zip to %programfiles%\RipIt4Me and place a shortcut to RipIt4Me.exe somewhere convenient<br>
+<strong><a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/DVD_Decrypter">DVD Decrypter</a></strong><br>
+<br>
+<span style="text-decoration: underline;">1. Setup RipIt4Me and DVD Decrypter</span><br>
+(This only needs to be done once.) <br>
+<br>
+-Open RipIt4Me and click Logs/Settings --&gt; Preferences.<br>
+<span id="imglink_httpsptpimgmepp0yvnpng14129"><a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#" id="imglinktoggle_httpsptpimgmepp0yvnpng14129" onclick="toggleImage(&#39;httpsptpimgmepp0yvnpng14129&#39;,&#39;https://i.ibb.co/d5kHTGF/pp0yvn.png&#39;);return false;">(Show Image)</a></span><br><img id="img_httpsptpimgmepp0yvnpng14129" class="hidden bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/d5kHTGF/pp0yvn.png"><br>
+^your settings should look like this, with the exception that your install location for DVD Decrypter (that you'll have to point RipIt4Me to) may not be the same as mine.<br>
+<br>
+-Next, open DVD Decrypter. Go to Tools --&gt; Settings. They should look like this:<br>
+<span id="imglink_httpsptpimgme5f9f97png32493"><a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#" id="imglinktoggle_httpsptpimgme5f9f97png32493" onclick="toggleImage(&#39;httpsptpimgme5f9f97png32493&#39;,&#39;https://i.ibb.co/LPdBsyp/5f9f97.png&#39;);return false;">(Show Image)</a></span><br><img id="img_httpsptpimgme5f9f97png32493" class="hidden bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/LPdBsyp/5f9f97.png"><br>
+<br>
+<br>
+<span style="text-decoration: underline;">2. Rip the DVD</span><br>
+<br>
+-Insert your DVD in your DVD Drive (duh)<br>
+<br>
+-Open RipIt4Me, click "1-Click Mode", then click "Next".<br>
+<span id="imglink_httpsptpimgmeh790wrpng21152"><a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#" id="imglinktoggle_httpsptpimgmeh790wrpng21152" onclick="toggleImage(&#39;httpsptpimgmeh790wrpng21152&#39;,&#39;https://i.ibb.co/wrJYKDp/h790wr.png&#39;);return false;">(Show Image)</a></span><br><img id="img_httpsptpimgmeh790wrpng21152" class="hidden bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/wrJYKDp/h790wr.png"><br>
+<br>
+-Once you've clicked "Next", wait a few seconds for RipIt4Me to open DVD Decrypter. Don't touch ANYTHING on your computer until you see this window and the progress bar indicating that the rip has started:<br>
+<span id="imglink_httpsptpimgmerm8773png5862"><a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#" id="imglinktoggle_httpsptpimgmerm8773png5862" onclick="toggleImage(&#39;httpsptpimgmerm8773png5862&#39;,&#39;https://i.ibb.co/0CZ9rXX/rm8773.png&#39;);return false;">(Show Image)</a></span><br><img id="img_httpsptpimgmerm8773png5862" class="hidden bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/0CZ9rXX/rm8773.png"><br>
+<br>
+-After DVD Decrypter is done, RipIt4Me will take a few minutes to clean the files you've ripped. When that is done (you'll know because the DVD will be ejected from your drive), you should have a folder on the root of your hard drive with the same name as the DVD, and a <strong>VIDEO_TS</strong> folder.<br>
+</blockquote><br>
+<br>
+----------------------------<br>
+<span class="bbcode-size-3"><strong><span style="color:#ff6633">Encoding with Handbrake</span></strong></span><br>
+<br>
+1. Start Handbrake.<br>
+<br>
+2. Click <strong>Source</strong> &gt; <strong>DVD/VIDEO_TS Folder</strong> on the top toolbar. Select the VIDEO_TS folder on your hard drive that you just ripped. Handbrake will scan and identify the main video track.<br>
+<br>
+3. Select <strong>MKV file</strong> as <strong>Container</strong> under <span style="text-decoration: underline;">Output Settings</span>. Enter a folder/filename for your encode under <span style="text-decoration: underline;">Destination</span>.<br>
+<br>
+4. Select <strong>High Profile</strong> in the <span style="text-decoration: underline;">Presets</span> box on the right.<br>
+<br>
+5. In the <span style="text-decoration: underline;">Picture</span> tab, set <strong>Anamorphic</strong> to <strong>Strict</strong>, which avoids resizing the video. Leave <strong>Cropping</strong> as <strong>Automatic</strong> to let Handbrake crop away any black borders. (You can also determine better cropping values with another program like MeGUI or AvsP if you know how to use them, but then you wouldn't be using this guide). <em>Transmition says: In the Mac version, picture settings are accessed by going to Window -&gt; Picture settings (or pressing Shift-Command-P).</em><br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/8MD3dJF/05ms7f.png" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/05ms7f.png"><br>
+(click image to enlarge)<br>
+<br>
+<em>(Update Nov 2017):</em> Recent versions of Handbrake have removed the 'Strict' option. Please check the section "Setting up a DVD Encode - Picture" in <a href="https://passthepopcorn.me/wiki.php?action=article&amp;id=263#section4">the HANDJOB Guide</a> if you're using a recent version.<br>
+<br>
+6. In the <span style="text-decoration: underline;">Video Filters</span> tab, make sure <strong>Detelecine</strong> and <strong>Decomb</strong> are set to <strong>Default</strong>. This ensures your DVD will be properly inverse telecined or deinterlaced as the case might be. (If you are encoding troublesome sources like certain anime DVDs, you may not get satisfactory results.) You may choose to use <strong>Weak Denoising</strong> if your DVD is noisy, but in general you should probably leave <strong>Denoising Off</strong>.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/BZ88428/kt1prw.png" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/kt1prw.png"><br>
+(click image to enlarge)<br>
+<br>
+7. (a) In the <span style="text-decoration: underline;">Video</span> tab, make sure <strong>Video Codec</strong> is set to <strong>H.264 (x264)</strong>. <strong>Constant Quality</strong> (aka CRF) should be selected, with the <strong>RF</strong> value set between 17.5 and 19.5. The <em>lower</em> the RF value, the higher the video quality and the bigger the encode. I recommend <strong>18.5</strong> for a decent quality-size tradeoff.<br>
+<br>
+Note: these values are for standard definition sources, e.g. DVDs. High def sources will be fine with RF values of 19.5 - 21.5.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/RgJ1xdj/ds7yht.png" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/ds7yht.png"><br>
+(click image to enlarge)<br>
+<br>
+7. (b) <span style="text-decoration: underline;">Note:</span> In the past this guide recommended the setting "Same as source", but people have repeatedly said they got incorrect framerates from this setting. To do things right, first make a preview with <strong>Same as source</strong> selected. Then follow ScreaminJay's advice here:<br>
+<blockquote><strong>Determine the Framerate</strong>: For <strong>some</strong> NTSC sources you need to move the framerate to 23.976 FPS with "Constant". To determine if you need to manually change it to 23.976, you simply need to make a preview. Once the preview is done, check with Mediainfo that the framerate is 23.976 and not 29.970. If it is the former it’s OK, the latter needs some more testing.<br>
+<br>
+Go through the preview frame by frame (arrowkey in MPC). If in every 5 frames there is a double frame, change the framerate manually to 23.976 and use constant framerate. If there’s no double frames, leave it at 29.970 fps.</blockquote><br>
+PAL DVDs should be fine on the <strong>Same as source</strong> framerate setting, but please let me know if you get a strange framerate.<br>
+<br>
+<span style="text-decoration: underline;">Further info:</span> Generally, NTSC DVDs which are sourced from film will give you 23.976fps encodes, and those sourced from video will give you 29.970fps. PAL DVDs will give you 25fps encodes in both cases. Make a preview and check the framerates and frames manually, and ask in an encoding thread if you aren't sure.<br>
+<br>
+8. In the <span style="text-decoration: underline;">Audio</span> tab, an audio track may already be listed in the tracklist. Select it and click <strong>Remove</strong>. Then, in the <strong>Source dropdown box</strong>, select the best audio track (e.g. the 5-channel track), which will usually be the first one. In the <strong>Audio Codec dropdown box</strong>, select <strong>AC3 Passthru</strong>, then click <strong>Add Track</strong>. This makes Handbrake include the original audio track from the DVD in the final output file (the mux).<br>
+<br>
+(Don't use anything besides <strong>AC3 Passthru</strong> because your rip will then risk being trumped by another with untouched audio.)<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/symJLZJ/2kp6cm.png" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/2kp6cm.png"><br>
+(click image to enlarge)<br>
+<br>
+In the <strong>Source dropdown box</strong>, there may be other tracks listed besides the main/first track, such as 2-channel or commentary tracks. You may choose to <strong>Add</strong> any commentary track that is present, either using AC3 Passthru or encoding it in AAC (faac) at a low bitrate in the range of 64-96 kbps. (Mac OS X users should use the Core Audio AAC option instead, because of its superior quality to faac.)<br>
+<br>
+9. If your DVD has subtitles you wish to include, go to the <span style="text-decoration: underline;">Subtitles</span> tab. Select the subtitle track you want from the <strong>Track dropdown box</strong>. Check <strong>Default</strong>; do <strong>not</strong> check <strong>Forced Only</strong> and <strong>Burned In</strong>. Then click <strong>Add</strong> to add the track.<br>
+<br>
+If there's a second or third subtitle track you wish to include, you can select it and <strong>Add</strong> it to the tracklist as well (but do <em>not</em> check <strong>Default</strong> for it, since only one subtitle track can be the default).<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/Dfjf5Hz/09qic8.png" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/09qic8.png"><br>
+(click image to enlarge)<br>
+<br>
+If you have separate SRT subtitles for the movie, you can use the <strong>Import SRT</strong> button to include them. (You can find SRT subtitles on sites like <a rel="noreferrer" target="_blank" href="http://www.opensubtitles.org/">OpenSubtitles</a> and <a rel="noreferrer" target="_blank" href="https://subscene.com/">Subscene</a>, but then you have to make sure they match up with the DVD's video and audio with a tool like Aegisub.)<br>
+<br>
+10. In the <span style="text-decoration: underline;">Chapters</span> tab, <strong>Create chapter markers</strong> should be checked.<br>
+<br>
+11. In the <span style="text-decoration: underline;">Advanced</span> tab, copy and paste one of the following commandlines into the box at the bottom. (These commandlines fully override the GUI settings, so you needn't worry about the latter.)<br>
+<br>
+<span style="text-decoration: underline;">for normal live action material and complex animation/CGI:</span><br>
+<blockquote>ref=9:mixed-refs=1:b-adapt=2:bframes=6:weightb=1:direct=auto:me=umh:subq=9:analyse=all:8x8dct=1:trellis=2:no-fast-pskip=1:psy-rd=1,0:merange=24:deblock=-2,-2:rc-lookahead=50:aq-strength=1.2:b-pyramid=2</blockquote><br>
+<em><strong>Note</strong>: PtP's high-quality minimum encoding settings (for standard definition rips) now specify a minimum of 9 reference frames, so "ref=9" is specified in the above settings. If you aren't encoding for PtP, you may wish to change "ref=9" to "ref=6" (my original recommendation) and save a bit of time at little cost to quality.</em><br>
+<br>
+<span style="text-decoration: underline;">for simpler animation, cartoons and CGI:</span><br>
+<blockquote>ref=9:mixed-refs=1:b-adapt=2:bframes=7:weightb=1:direct=auto:me=umh:subq=9:analyse=all:8x8dct=1:trellis=2:no-fast-pskip=1:psy-rd=0.7,0:merange=24:deblock=0,0:rc-lookahead=50:b-pyramid=2</blockquote><br>
+<br>
+These are slow, high-quality settings for the x264 encoder, intended for SD material.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/MpV9PJt/8wryvq.png" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/8wryvq.png"><br>
+(click image to enlarge)<br>
+<br>
+<strong>Faster settings</strong><br>
+If your computer is slow and your encodes are taking 20+ hours, you may want to consider using the following somewhat-faster, slightly-lower-quality commandline:<br>
+<br>
+<span style="text-decoration: underline;">for faster SD encoding:</span><br>
+<blockquote>ref=5:mixed-refs=1:b-adapt=2:bframes=5:weightb=1:direct=auto:me=umh:subq=8:8x8dct=1:trellis=1:psy-rd=1,0:deblock=-2,-2:rc-lookahead=40:aq-strength=1.2:b-pyramid=2</blockquote><br>
+<br>
+<em>Note: If your film is old, low-quality, or very noisy/grainy, you may want to <strong>increase the RF value to 20 or 21</strong>. This will reduce the size of the final encode. If you use lower RF values, you're likely to end up with very large files, since a lot of bits are being spent on preserving difficult-to-encode noise and artifacts.<br>
+<br>
+You should also change the <strong>aq-strength</strong> setting in the above commandlines to somewhere between <strong>0.8 to 1.0</strong>, which should reduce x264's emphasis on noise preservation.</em><br>
+<br>
+<strong>HD encodes (slow)</strong><br>
+For 720p and 1080p encodes, RF values should be raised slightly. Values in the 20-22 range are reasonable. (The higher the resolution, the more RF can be raised without compromising image quality significantly.)<br>
+<br>
+<span style="text-decoration: underline;">for 720p encodes:</span><br>
+<blockquote>ref=6:mixed-refs=1:b-adapt=2:bframes=6:weightb=1:direct=auto:me=umh:subq=9:analyse=all:8x8dct=1:trellis=2:no-fast-pskip=1:psy-rd=1,0:merange=28:deblock=-2,-2:rc-lookahead=50:aq-strength=1.0:b-pyramid=2</blockquote><br>
+<br>
+<span style="text-decoration: underline;">for 1080p encodes:</span><br>
+<blockquote>ref=4:mixed-refs=1:b-adapt=2:bframes=5:weightb=1:direct=auto:me=umh:subq=9:analyse=all:8x8dct=1:trellis=2:no-fast-pskip=1:psy-rd=1,0:merange=32:deblock=-3,-3:rc-lookahead=50:aq-strength=1.0:b-pyramid=2</blockquote><br>
+<br>
+<br>
+12. At this point, I recommend you save your settings by clicking <strong>Add</strong> in the <span style="text-decoration: underline;">Presets</span> box and entering a name for them. You can use this preset in future - but remember to configure the <span style="text-decoration: underline;">Subtitles</span> and <span style="text-decoration: underline;">Audio</span> tabs each time.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/262yfGr/7s5v6a.png" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/7s5v6a.png"><br>
+(click image to enlarge)<br>
+<br>
+13. Hit <strong>Preview</strong> on the top toolbar. Choose a preview besides 1 in the <strong>Start at Preview dropdown box</strong> and click <strong>Play with QT</strong> or <strong>Play with VLC</strong>. Handbrake will make a short encode with your settings and play it back with either QT or VLC. Make sure the correct video, audio and subtitles tracks are present, the video looks fine, and the audio is in sync.<br>
+<br>
+14. Hit <strong>Start</strong> on the top toolbar to begin encoding. Encoding can take anything from a few hours to a whole day depending on how fast your computer is - expect about 8-12 hours for dual core CPUs. You can leave it to run overnight. <em>(hayling notes that encoding can be paused by pressing 'p' and resumed by pressing 'r' - quite a handy tip.)</em><br>
+<br>
+<br>
+----------------------------<br>
+<span class="bbcode-size-3"><strong><span style="color:#ff6633">Finishing Up</span></strong></span><br>
+<br>
+<span style="text-decoration: underline;">Check your encode.</span>  After you're done encoding, it goes without saying that you should skim through your encode to make sure everything is fine. Test all audio and subtitle tracks to make sure they show up properly.<br>
+<br>
+Try pausing at a few motion scenes in the video and stepping forward 6 frames frame-by-frame to see if there's any residual combing (horizontal lines) or blending (ghost images) while objects are moving on-screen. Make sure there are no duplicate frames, i.e. successive frames that are exactly identical. These are problems that indicate that Handbrake did not decomb or detelecine the source properly, so if you see them, check that your <strong>Decomb</strong> and <strong>Detelecine</strong> settings were <strong>Default</strong>. If you don't know why you're getting combs or blends, post in the Encoding subforum with a few screenshots of the issue.<br>
+<br>
+<span style="text-decoration: underline;">Get media information and screenshots.</span>  Use the program <strong>MediaInfo</strong> to create media information for your encode. This is required by current site rules. You also have to take a few screenshots of your encode and host them on an image host like <a rel="noreferrer" target="_blank" href="https://ptpimg.me/">http://ptpimg.me/</a>. This media information and the screenshots should be entered in the appropriate fields when you use the Upload a Torrent page on PtP. (You may also choose to use <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=7005">TDMaker</a>, a program that automatically does the above tasks for you, but you must select its MediaInfo media output option).<br>
+<br>
+Mac users should use <a rel="noreferrer" target="_blank" href="http://mediainfo.massanti.com/">MediaInfo Mac</a> instead.<br>
+<br>
+<span style="text-decoration: underline;">Indicate the source.</span>  In your media information, state the details and release studio of the source DVD if possible (e.g. Source info: DVD9 R1 NTSC, Criterion).<br>
+<br>
+<span style="text-decoration: underline;">Cleanup.</span>  Remember to delete the VIDEO_TS folder after you've finished encoding if you don't want to keep it.<br>
+<br>
+Have fun encoding!<br>
+<br>
+<br>
+----------------------------<br>
+<span class="bbcode-size-3"><strong><span style="color:#ff6633">Additional topics</span></strong></span><br>
+<br>
+<span style="text-decoration: underline;">Saving your log.</span>  If you need to retain the encoding log (e.g. for submission in the <strong><a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=9499">SD x264 upload contest</a></strong>), click on <strong>Activity Window</strong> on the top toolbar and copy the log from there.<br>
+<br>
+<span style="text-decoration: underline;">Oversized encodes.</span>  Certain DVD sources, like old films with a lot of noise and grain, will result in large encodes because noise is demanding to encode well (e.g. your encode ends up at 3GB, or at &gt;45% of the source DVD size/bitrate). In such cases, you can choose to re-encode with a higher RF value (probably going no higher than 21), do a 2-pass encode with a specified bitrate (probably between 2000-3000kbps; please be generous), or do careful corrective filtering with Avisynth if you know how (far beyond the scope of this guide).<br>
+<br>
+<span style="text-decoration: underline;">Encoding DVD extras.</span>  If your DVD has extras, you can use Handbrake to encode them as well, as videos separate from the movie itself. Simply select the extra in the <strong>Title dropdown box</strong> in the <span style="text-decoration: underline;">Source</span> section. If you really want to keep the size of the encoded extra down, you can consider increasing the <strong>Constant Quality RF value</strong> under the <span style="text-decoration: underline;">Video</span> tab, and/or re-encoding the extra's audio track to 64-96 kbps <strong>AAC</strong> instead of using <strong>AC3 Passthru</strong>. But generally I suggest preserving it in as high a quality as is practical.<br>
+<br>
+<span style="text-decoration: underline;">The purpose of RipIt4Me.</span>  RipIt4Me is able to decrypt more recent DVDs with newer copy protection systems. DVD-Decrypter, being older, isn't capable of dealing with these. Since using RipIt4Me will guarantee decryption of newer DVDs, I think it's a fair time investment to install it. It doesn't add much time to the ripping process.<br>
+<br>
+If you've been using DVD-Decrypter alone, there's no problem as long as your final encode looks fine. If it can't handle the disc, it'll give you an error, or you'll get corruption in the video.<br>
+<br>
+<span style="text-decoration: underline;">Playback.</span>  For Windows, I recommend the <a rel="noreferrer" target="_blank" href="http://www.cccp-project.net/">Combined Community Codec Pack</a> as a full playback solution, which contains the player MPC-HomeCinema. If you choose to install CCCP, ensure the "H.264 MT" box in CCCP Setup is checked, which enables multithreaded decoding if you have a multi-core computer. (DivX H.264 and CoreAVC Professional are also good multithreaded H.264 decoders.)<br>
+<br>
+<em>(The following information on playback software is out of date.)</em><br>
+<br>
+(Update Nov 2017: Likely outdated) I don't recommend VLC, because it used to (and may still) sometimes glitch on H.264 material. It also can't do multithreaded H.264 decoding, which is necessary to take full advantage of modern multi-core CPUs, so you may have problems watching HD H.264 video (especially high-bitrate 1080p stuff). Finally, its brightness levels seemed to be mis-set, making videos look washed out - colors are duller than they should be.<br>
+<br>
+(Update Nov 2017: VLC and mpv are now the recommended players for Macs) <span style="text-decoration: line-through">For Mac OS X, I recommend <a rel="noreferrer" target="_blank" href="http://mplayerosx.sttz.ch/">MPlayer OSX Extended</a>, which offers multithreaded decoding and is a great player all-around.</span><br>
+<br>
+For Linux, I recommend a very recent development/git build of MPlayer, combined with a recent build of SMPlayer. For Ubuntu, the 'mplayer-build' package on <a rel="noreferrer" target="_blank" href="https://launchpad.net/~ripps818/+archive/coreavc">this Launchpad page (ripps818)</a> is a good option, since it has multithreaded decoding and ASS subtitle support built in.<br>
+<br>
+If your existing playback solution works fine, I recommend sticking to it and not fixing what ain't broke.<br>
+<br>
+<br>
+<br>
+<em>Suggestions for improving this <span style="text-decoration: line-through">draft</span> guide are welcome.</em><br>
+<br>
+-									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=124802">ServusDei</a> <span class="time" title="Jun 25 2020, 19:11">[ Jun 25 2020, 19:11 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post95641">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95641#post95641">#95641</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=21464">coj</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=21464"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 46 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 14 2010, 16:49">[ Jan 14 2010, 16:49 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95641&#39;, &#39;coj&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95641" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95641">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95641">
+				-reserved just in case-							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post95801">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95801#post95801">#95801</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=43992">walkingdork</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=43992"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 44 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (It feels like somebody with a fever is yelling at my pants!) </span>
+			<span class="time" title="Jan 15 2010, 01:32">[ Jan 15 2010, 01:32 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95801&#39;, &#39;walkingdork&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95801" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95801">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/VBavatar.gif" class="forum-post__avatar__image" alt="walkingdork&#39;s avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95801">
+				Oh man, it says it is going to take 9 hours!?! And it is running at &lt;4 fps. <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/sad.gif" alt=""><br>
+<br>
+My processor is running at 90-100% and according to taskmanager it is solely because of Handbrake. My process is an AMD Athon 64 X2 Dual Core 3800+, I have 5GB of RAM, and I am running Win7. Is my computer that crappy or am I doing something wrong?<br>
+<br>
+I made all of my handbrake settings exactly the same as the examples above. Should I not have changed all the defaults to match yours in the Advanced tab?<br>
+<br>
+Any help would be great. Thanks! <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/smile.gif" alt="">									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=43992">walkingdork</a> <span class="time" title="Jan 15 2010, 01:33">[ Jan 15 2010, 01:33 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post95802">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95802#post95802">#95802</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=9397">daybrinjer</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=9397"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank3.png" class="award" title="Rank 3: 70 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<span style="color:yellow"><strong><em>Fighter of the night man<em><strong></strong></em></em></strong></span>) </span>
+			<span class="time" title="Jan 15 2010, 01:37">[ Jan 15 2010, 01:37 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95802&#39;, &#39;daybrinjer&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95802" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95802">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/hunanq.jpg" class="forum-post__avatar__image" alt="daybrinjer&#39;s avatar" width="306" height="200">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95802">
+				<strong>walkingdork wrote: </strong><blockquote>Oh man, it says it is going to take 9 hours!?! And it is running at &lt;4 fps. <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/sad.gif" alt=""><br>
+<br>
+My processor is running at 90-100% and according to taskmanager it is solely because of Handbrake. My process is an AMD Athon 64 X2 Dual Core 3800+, I have 5GB of RAM, and I am running Win7. Is my computer that crappy or am I doing something wrong?<br>
+<br>
+I made all of my handbrake settings exactly the same as the examples above. Should I not have changed all the defaults to match yours in the Advanced tab?<br>
+<br>
+Any help would be great. Thanks! <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/smile.gif" alt=""></blockquote><br>
+<br>
+Sounds about right, a faster processor would do work, are you encoding high def or standard?  I'm running about 15FPS on my core 2 quad (which is about twice my phenom at the same clock rate).							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post95807">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95807#post95807">#95807</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=43992">walkingdork</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=43992"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 44 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (It feels like somebody with a fever is yelling at my pants!) </span>
+			<span class="time" title="Jan 15 2010, 01:44">[ Jan 15 2010, 01:44 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95807&#39;, &#39;walkingdork&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95807" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95807">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/VBavatar.gif" class="forum-post__avatar__image" alt="walkingdork&#39;s avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95807">
+				I'm encoding SD. Well if it sounds right to you then I feel better about it. Thanks for your quick replay <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/biggrin.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post95821">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95821#post95821">#95821</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=21464">coj</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=21464"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 46 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 15 2010, 02:03">[ Jan 15 2010, 02:03 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95821&#39;, &#39;coj&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95821" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95821">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95821">
+				<strong>walkingdork wrote: </strong><blockquote>I'm encoding SD. Well if it sounds right to you then I feel better about it. Thanks for your quick replay <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/biggrin.gif" alt=""></blockquote><br>
+Yeah, it's about right. You're not really in slow territory until you start measuring in seconds per frame instead of frames per second.<br>
+<br>
+Thanks to hayling and Transmition for suggested changes.									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=21464">coj</a> <span class="time" title="Jan 15 2010, 02:45">[ Jan 15 2010, 02:45 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post95830">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95830#post95830">#95830</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=43992">walkingdork</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=43992"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 44 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (It feels like somebody with a fever is yelling at my pants!) </span>
+			<span class="time" title="Jan 15 2010, 02:32">[ Jan 15 2010, 02:32 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95830&#39;, &#39;walkingdork&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95830" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95830">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/VBavatar.gif" class="forum-post__avatar__image" alt="walkingdork&#39;s avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95830">
+				<strong>coj wrote: </strong><blockquote><strong>walkingdork wrote: </strong><blockquote>Thanks to hayling for the note that encoding can be paused and resumed by pressing 'p' and 'r' respectively.</blockquote><br>
+<br>
+Wow, good to know. <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/biggrin.gif" alt=""></blockquote>							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post95838">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95838#post95838">#95838</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=33458">Renegade9</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=33458"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank3.png" class="award" title="Rank 3: 65 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<a href="https://passthepopcorn.me/collages.php?id=1138">Official #drive-in Movie Collection</a>) </span>
+			<span class="time" title="Jan 15 2010, 02:46">[ Jan 15 2010, 02:46 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95838&#39;, &#39;Renegade9&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95838" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95838">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/cYhQ3Ci.png" class="forum-post__avatar__image" alt="Renegade9&#39;s avatar" width="286" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95838">
+				mines taking me about 2 hrs and its almost done, going around 30ish frames per seconds							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post95851">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95851#post95851">#95851</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=43992">walkingdork</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=43992"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 44 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (It feels like somebody with a fever is yelling at my pants!) </span>
+			<span class="time" title="Jan 15 2010, 03:36">[ Jan 15 2010, 03:36 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95851&#39;, &#39;walkingdork&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95851" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95851">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/VBavatar.gif" class="forum-post__avatar__image" alt="walkingdork&#39;s avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95851">
+				<strong>Renegade9 wrote: </strong><blockquote>mines taking me about 2 hrs and its almost done, going around 30ish frames per seconds</blockquote><br>
+<br>
+Wow, what kind of processor do you have? <br>
+<br>
+By the way, <strong>coj</strong>, very nice tutorial. It was definitely helpful and easy to follow.<img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/biggrin.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post95855">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95855#post95855">#95855</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=33458">Renegade9</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=33458"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank3.png" class="award" title="Rank 3: 65 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<a href="https://passthepopcorn.me/collages.php?id=1138">Official #drive-in Movie Collection</a>) </span>
+			<span class="time" title="Jan 15 2010, 03:40">[ Jan 15 2010, 03:40 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95855&#39;, &#39;Renegade9&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95855" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95855">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/cYhQ3Ci.png" class="forum-post__avatar__image" alt="Renegade9&#39;s avatar" width="286" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95855">
+				AMD Phenom II X4 955 Quadcore Processor running at 3.2 GHz and 6 Gbs of RAM with win 7 x64<br>
+<br>
+sux on that lol!							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post95859">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95859#post95859">#95859</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=29249">tDM</a><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=29249"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank3.png" class="award" title="Rank 3: 63 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (<a href="https://passthepopcorn.me/user.php?id=29249">I</a> <img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://i166.photobucket.com/albums/u87/princesme/pixel/heart.png" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/heart.png"> <a href="https://passthepopcorn.me/user.php?id=50133">paperk</a>) </span>
+			<span class="time" title="Jan 15 2010, 03:50">[ Jan 15 2010, 03:50 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95859&#39;, &#39;tDM&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95859" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95859">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/kLWfl.png" class="forum-post__avatar__image" alt="tDM&#39;s avatar" width="150" height="217">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95859">
+				<strong>coj wrote: </strong><blockquote>After DVD Decrypter is done, RipIt4Me will take a few minutes <strong>to clean the files you've ripped.</strong></blockquote><br>
+<br>
+What exactly does this mean?<br>
+When ripping DVDs I usually <em>just</em> use DVDDecrypter...<br>
+Could you outline the benefits of using RipIt4Me?<br>
+Can only using DVDDecrypter cause problems?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post95870">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=95870#post95870">#95870</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=21464">coj</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=21464"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 46 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 15 2010, 04:25">[ Jan 15 2010, 04:25 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;95870&#39;, &#39;coj&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar95870" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=95870">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content95870">
+				<strong>walkingdork wrote: </strong><blockquote><br>
+By the way, <strong>coj</strong>, very nice tutorial. It was definitely helpful and easy to follow.<img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/biggrin.gif" alt=""></blockquote><br>
+Thanks!<br>
+<br>
+<strong>tDM wrote: </strong><blockquote><br>
+When ripping DVDs I usually <em>just</em> use DVDDecrypter...<br>
+Could you outline the benefits of using RipIt4Me?<br>
+Can only using DVDDecrypter cause problems?</blockquote><br>
+To be honest I don't use RipIt4Me, because I've not dealt with newer DVDs yet. As I understand it, RipIt4Me is able to decrypt more recent DVDs with newer copy protection systems. DVD-Decrypter, being older, isn't capable of dealing with these.<br>
+<br>
+Since using RipIt4Me will guarantee decryption of newer DVDs, I think it's a fair time investment to install it. It doesn't add much time to the ripping process.<br>
+<br>
+If you've been using DVD-Decrypter alone like me, there's no problem as long as your final encode looks fine. If it can't handle the disc, it'll give you an error, or you'll get corruption in the video.<br>
+<br>
+(Admittedly, RipIt4Me is getting old as well - last updated in 2007 - but I suspect DVD encryption hasn't gone forward so quickly of late, so it still works fine.)									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=21464">coj</a> <span class="time" title="Jan 15 2010, 04:26">[ Jan 15 2010, 04:26 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post96028">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=96028#post96028">#96028</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=29249">tDM</a><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=29249"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank3.png" class="award" title="Rank 3: 63 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (<a href="https://passthepopcorn.me/user.php?id=29249">I</a> <img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://i166.photobucket.com/albums/u87/princesme/pixel/heart.png" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/heart.png"> <a href="https://passthepopcorn.me/user.php?id=50133">paperk</a>) </span>
+			<span class="time" title="Jan 15 2010, 12:15">[ Jan 15 2010, 12:15 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;96028&#39;, &#39;tDM&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar96028" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=96028">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/kLWfl.png" class="forum-post__avatar__image" alt="tDM&#39;s avatar" width="150" height="217">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content96028">
+				Thanks for the speedy response.<br>
+I'll continue on until I encounter a problem.<br>
+<img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/smile.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post97020">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=97020#post97020">#97020</a>
+			by <strong><a class="username username--member" href="https://passthepopcorn.me/user.php?id=43517">Ufoeke</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=43517"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 53 Awards"></a> (Member)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 18 2010, 02:12">[ Jan 18 2010, 02:12 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;97020&#39;, &#39;Ufoeke&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar97020" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=97020">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content97020">
+				how do i take comparison screenshots?									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=43517">Ufoeke</a> <span class="time" title="Jan 18 2010, 02:16">[ Jan 18 2010, 02:16 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post97041">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=97041#post97041">#97041</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=21464">coj</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=21464"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 46 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 18 2010, 03:09">[ Jan 18 2010, 03:09 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;97041&#39;, &#39;coj&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar97041" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=97041">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content97041">
+				<strong>Ufoeke wrote: </strong><blockquote>how do i take comparison screenshots?</blockquote><br>
+Short answer: you can't, not easily anyway.<br>
+<br>
+Long: In order to take them easily, you'll need to take some steps and learn some things that will set you on the road to more advanced encoding.<br>
+<br>
+Basic outline:<br>
+1. Install DGIndex, Avisynth and AvsP.<br>
+2. Use DGIndex to index the first VOB file of the movie (results in a .d2v file).<br>
+3. Open 2 tabs in AvsP and write 2 scripts: one to display the encoded MKV, and the other to load the .d2v file, crop it and IVTC it (to match the preprocessing done to the MKV).<br>
+4. Skip around the movie and right-click-&gt;Save Image to take matching screenshots for both tabs.<br>
+<br>
+As you can see, it's not easy if you're using a simple GUI like Handbrake. It <em>is</em> easy if you're using an Avisynth-based encoding workflow (e.g. MeGUI, or the process outlined in echohead's Advanced x264 Encoding Guide). Handbrake, on the other hand, handles all the tasks internally and you can't get screenshots from its intermediate output.<br>
+<br>
+If you really want to do it, you should get started on the Advanced x264 Encoding Guide linked in my signature and ask in that thread.									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=21464">coj</a> <span class="time" title="Jan 18 2010, 03:10">[ Jan 18 2010, 03:10 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post97053">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=97053#post97053">#97053</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=29249">tDM</a><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=29249"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank3.png" class="award" title="Rank 3: 63 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (<a href="https://passthepopcorn.me/user.php?id=29249">I</a> <img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://i166.photobucket.com/albums/u87/princesme/pixel/heart.png" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/heart.png"> <a href="https://passthepopcorn.me/user.php?id=50133">paperk</a>) </span>
+			<span class="time" title="Jan 18 2010, 03:33">[ Jan 18 2010, 03:33 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;97053&#39;, &#39;tDM&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar97053" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=97053">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/kLWfl.png" class="forum-post__avatar__image" alt="tDM&#39;s avatar" width="150" height="217">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content97053">
+				<strong>CMD wrote: </strong><blockquote><br>
+Encoding: task 1 of 1, 28.03% &lt;1.52 fps, avg 1.39 fps, ETA 23h50m52s&gt;<br>
+Encoding Paused by user command, 'r' to resume<br>
+</blockquote><br>
+<br>
+Woooooo! Encoding on a 2.4GHz P4 is great!<br>
+<img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/laughing.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post97111">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=97111#post97111">#97111</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=21464">coj</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=21464"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 46 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 18 2010, 05:12">[ Jan 18 2010, 05:12 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;97111&#39;, &#39;coj&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar97111" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=97111">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content97111">
+				<strong>tDM wrote: </strong><blockquote><strong>CMD wrote: </strong><blockquote><br>
+Encoding: task 1 of 1, 28.03% &lt;1.52 fps, avg 1.39 fps, ETA 23h50m52s&gt;<br>
+Encoding Paused by user command, 'r' to resume<br>
+</blockquote><br>
+<br>
+Woooooo! Encoding on a 2.4GHz P4 is great!<br>
+<img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/laughing.gif" alt=""></blockquote><br>
+Time to upgrade ;)							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post97347">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=97347#post97347">#97347</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=29249">tDM</a><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=29249"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank3.png" class="award" title="Rank 3: 63 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (<a href="https://passthepopcorn.me/user.php?id=29249">I</a> <img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://i166.photobucket.com/albums/u87/princesme/pixel/heart.png" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/heart.png"> <a href="https://passthepopcorn.me/user.php?id=50133">paperk</a>) </span>
+			<span class="time" title="Jan 18 2010, 22:49">[ Jan 18 2010, 22:49 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;97347&#39;, &#39;tDM&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar97347" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=97347">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/kLWfl.png" class="forum-post__avatar__image" alt="tDM&#39;s avatar" width="150" height="217">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content97347">
+				<strong>coj wrote: </strong><blockquote>Time to <span style="text-decoration: line-through">upgrade</span> to get a job. ;)</blockquote><br>
+<br>
+ftfy. <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/smile.gif" alt="">									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=29249">tDM</a> <span class="time" title="Jan 18 2010, 22:49">[ Jan 18 2010, 22:49 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post99042">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=99042#post99042">#99042</a>
+			by <strong><a class="username username--legend" href="https://passthepopcorn.me/user.php?id=21490">Halfang</a><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=21490"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank4.png" class="award" title="Rank 4: 78 Awards"></a> (Legend)</strong>
+			<span class="user_title"> (ლ(ಠ益ಠლ <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=12424">The Official PTP Personal Jeeves. Ask Away!</a> ლ(ಠ益ಠლ) </span>
+			<span class="time" title="Jan 22 2010, 13:51">[ Jan 22 2010, 13:51 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;99042&#39;, &#39;Halfang&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar99042" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=99042">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/TwFId.png" class="forum-post__avatar__image" alt="Halfang&#39;s avatar" width="241" height="209">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content99042">
+				<strong>tDM wrote: </strong><blockquote><strong>CMD wrote: </strong><blockquote><br>
+Encoding: task 1 of 1, 28.03% &lt;1.52 fps, avg 1.39 fps, ETA 23h50m52s&gt;<br>
+Encoding Paused by user command, 'r' to resume<br>
+</blockquote><br>
+<br>
+Woooooo! Encoding on a 2.4GHz P4 is great!<br>
+<img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/laughing.gif" alt=""></blockquote><br>
+Reason why I stopped encoding :/<br>
+<br>
+That, and filesizes almost as big as the original lol							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post99044">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=99044#post99044">#99044</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=40584">McArty</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=40584"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank3.png" class="award" title="Rank 3: 59 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (The Master of Suspensors) </span>
+			<span class="time" title="Jan 22 2010, 14:13">[ Jan 22 2010, 14:13 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;99044&#39;, &#39;McArty&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar99044" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=99044">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/83xx5z.png" class="forum-post__avatar__image" alt="McArty&#39;s avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content99044">
+				<strong>Halfang wrote: </strong><blockquote><br>
+Reason why I stopped encoding :/<br>
+<br>
+That, and filesizes almost as big as the original lol</blockquote><br>
+Encoding to xvid with that specs can be pretty quick. And an x264 with reasonable parameters too.<br>
+Filesizes: my last x264 encode was a dvd9 (5.82gb); the resulting encode with audio commentary and all extras: 1.36 gb. and the quality was pretty decent.<br>
+<br>
+From my point of view is madness what a lot of ppl do: use the laptop to encode; there is a big risk of frying the cpu or the motherboard.<br>
+<br>
+BTW coj, thank you very much for your guide. I know there is a lot of ppl using it for their first encodes :.)									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=40584">McArty</a> <span class="time" title="Jan 22 2010, 14:17">[ Jan 22 2010, 14:17 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post99418">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=99418#post99418">#99418</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=43992">walkingdork</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=43992"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 44 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (It feels like somebody with a fever is yelling at my pants!) </span>
+			<span class="time" title="Jan 23 2010, 06:21">[ Jan 23 2010, 06:21 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;99418&#39;, &#39;walkingdork&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar99418" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=99418">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/VBavatar.gif" class="forum-post__avatar__image" alt="walkingdork&#39;s avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content99418">
+				I've set this up on two computers and had no problems. Thanks, Coj! I could teach my grandpa to make x264 encodes with this tutorial. Nice work. <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/biggrin.gif" alt=""><br>
+<br>
+<strong>McArty wrote: </strong><blockquote>From my point of view is madness what a lot of ppl do: use the laptop to encode; there is a big risk of frying the cpu or the motherboard.</blockquote><br>
+<br>
+I'm guilty of that. I was encoding 233MB XVIDs on my brand new laptop. The speed was great but I got a lot of Blue Screens of Death because of overheating. Stupid me, I didn't take the hint, I just placed the laptop right in front of the A/C to keep it cool. <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/sad.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post99419">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=99419#post99419">#99419</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=33458">Renegade9</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=33458"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank3.png" class="award" title="Rank 3: 65 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<a href="https://passthepopcorn.me/collages.php?id=1138">Official #drive-in Movie Collection</a>) </span>
+			<span class="time" title="Jan 23 2010, 06:23">[ Jan 23 2010, 06:23 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;99419&#39;, &#39;Renegade9&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar99419" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=99419">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/cYhQ3Ci.png" class="forum-post__avatar__image" alt="Renegade9&#39;s avatar" width="286" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content99419">
+				try a cooling mat if ur going to do stuff like that at least							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post99420">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=99420#post99420">#99420</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=43992">walkingdork</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=43992"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 44 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (It feels like somebody with a fever is yelling at my pants!) </span>
+			<span class="time" title="Jan 23 2010, 06:26">[ Jan 23 2010, 06:26 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;99420&#39;, &#39;walkingdork&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar99420" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=99420">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/VBavatar.gif" class="forum-post__avatar__image" alt="walkingdork&#39;s avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content99420">
+				<strong>Renegade9 wrote: </strong><blockquote>try a cooling mat if ur going to do stuff like that at least</blockquote><br>
+<br>
+Oh, I haven't done that in years. My friend caught me doing it and I got the "WTF is wrong with you" speech.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post99421">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=99421#post99421">#99421</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=33458">Renegade9</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=33458"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank3.png" class="award" title="Rank 3: 65 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<a href="https://passthepopcorn.me/collages.php?id=1138">Official #drive-in Movie Collection</a>) </span>
+			<span class="time" title="Jan 23 2010, 06:28">[ Jan 23 2010, 06:28 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;99421&#39;, &#39;Renegade9&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar99421" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=99421">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/cYhQ3Ci.png" class="forum-post__avatar__image" alt="Renegade9&#39;s avatar" width="286" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content99421">
+				well there are some new ones out now that actually work that should help some what on the heat problem							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post99441">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663&amp;postid=99441#post99441">#99441</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=21464">coj</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=21464"><img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/Rank2.png" class="award" title="Rank 2: 46 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 23 2010, 08:02">[ Jan 23 2010, 08:02 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#quickpost" onclick="Quote( &#39;99441&#39;, &#39;coj&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar99441" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=99441">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=5663#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content99441">
+				<strong>McArty wrote: </strong><blockquote><br>
+BTW coj, thank you very much for your guide. I know there is a lot of ppl using it for their first encodes :.)</blockquote><br>
+<strong>walkingdork wrote: </strong><blockquote>I've set this up on two computers and had no problems. Thanks, Coj! I could teach my grandpa to make x264 encodes with this tutorial. Nice work. <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/biggrin.gif" alt=""><br>
+</blockquote><br>
+Thanks <img border="0" src="./Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13)_files/smile.gif" alt=""> I only wanted to update the old tutorial.<br>
+<br>
+Honestly, I'd rather write a guide to MeGUI, which gives you more capabilities and full access to Avisynth, but I thought it might be too involved for people used to Handbrake. Better to cover something that everyone uses before something that more people ought to use.							</div>
+		</div>
+	</div>
+</div>
+<div class="pagination pagination--bottom"><span class="pagination__current-page">1-25</span> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">26-50</a> | <a href="https://passthepopcorn.me/forums.php?page=3&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">51-75</a> | <a href="https://passthepopcorn.me/forums.php?page=4&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">76-100</a> | <a href="https://passthepopcorn.me/forums.php?page=5&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">101-125</a> | <a href="https://passthepopcorn.me/forums.php?page=6&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">126-150</a> | <a href="https://passthepopcorn.me/forums.php?page=7&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">151-175</a> | <a href="https://passthepopcorn.me/forums.php?page=8&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">176-200</a> | <a href="https://passthepopcorn.me/forums.php?page=9&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--page">201-225</a> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--next">Next &gt;</a> <a href="https://passthepopcorn.me/forums.php?page=17&amp;action=viewthread&amp;threadid=5663" class="pagination__link pagination__link--last"> Last &gt;&gt;</a></div>
+		
+	<h2 class="page__title">
+	<a href="https://passthepopcorn.me/forums.php">Forums</a> &gt;
+	<a href="https://passthepopcorn.me/forums.php?action=viewforum&amp;forumid=12">Tutorials</a> &gt;
+	Simple x264 Encoding Guide for Handbrake (Mar '13)</h2>
+</div>
+
+<script>
+	function ToggleSearchThreadForm( clickedItem )
+	{
+		var searchForm = $jq( "#searchthread" );
+		searchForm.ToggleHC();
+
+		if ( !searchForm.hasClass( "hidden" ) )
+		{
+			$jq( clickedItem ).html( "[Hide Search]" );
+			$jq( "#searchbox" ).focus();
+		}
+		else
+		{
+			$jq( clickedItem ).html( "[Search this Thread]" );
+		}
+	}
+
+	var bbcodeToolbar = new BbcodeToolbar( "#quickpost" );
+	var youTubeQualityParameter = "";
+	RegisterGlobalAjaxCursorChange();
+	InitializeNewCommentValidator();
+
+						$jq('.forum-post__heading > span:first-of-type > a:first-of-type').next().addBack().hover(
+						function() {
+							$jq(this).parents('.forum-post').find('.forum-post__avatar__partyhat').stop().fadeTo(1000, 0.2);
+						},
+						function() {
+							$jq(this).parents('.forum-post').find('.forum-post__avatar__partyhat').stop().delay(300).fadeTo(1000, 1);
+						}
+					);</script>
+
+	</div>
+	
+</div>
+<div id="lightbox" class="lightbox hidden" tabindex="-1"></div>
+<div id="lightbox__shroud" class="lightbox__shroud hidden"></div>
+
+<!-- Extra divs, for stylesheet developers to add imagery -->
+<div id="extra1"><span></span></div>
+<div id="extra2"><span></span></div>
+<div id="extra3"><span></span></div>
+<div id="extra4"><span></span></div>
+<div id="extra5"><span></span></div>
+<div id="extra6"><span></span></div>
+
+
+</body></html>

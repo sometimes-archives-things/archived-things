@@ -1,0 +1,123 @@
+"use strict";
+
+/* Prototypes */
+String.prototype.trim = function () {
+	return ( this + "" ).replace(/^\s+|\s+$/g, '');
+};
+
+/* Site wide functions */
+
+//PHP ports
+function isset(variable) {
+	return (typeof(variable) === 'undefined') ? false : true;
+}
+
+function is_array(input) {
+	return typeof(input) === 'object' && input instanceof Array;
+}
+
+function html_entity_decode(str) {
+    var el = document.createElement("div");
+    el.innerHTML = str;
+    for(var i = 0, ret = ''; i < el.childNodes.length; i++) {
+    	ret += el.childNodes[i].nodeValue;
+    }
+    return ret;
+}
+
+function get_size(size, decimals = 2)
+{
+	var negative = false;
+	if ( size < 0 )
+	{
+		size = -size;
+		negative = true;
+	}
+
+	var steps = 0;
+	while(size>=1024) {
+		steps++;
+		size=size/1024;
+	}
+	var ext;
+	switch(steps) {
+		case 1: ext = ' KiB'; break;
+		case 2: ext = ' MiB'; break;
+		case 3: ext = ' GiB'; break;
+		case 4: ext = ' TiB'; break;
+		case 5: ext = ' PiB'; break;
+		case 6: ext = ' EiB'; break;
+		case 7: ext = ' ZiB'; break;
+		case 8: ext = ' EiB'; break;
+
+		default:
+			decimals = 0;
+			ext = " B";
+	}
+
+	if ( negative )
+		return "-" + size.toFixed( decimals ) + ext;
+	else
+		return size.toFixed( decimals ) + ext;
+}
+
+function get_ratio_color(ratio) {
+	if (ratio < 0.1) { return 'ratio-00'; }
+	if (ratio < 0.2) { return 'ratio-01'; }
+	if (ratio < 0.3) { return 'ratio-02'; }
+	if (ratio < 0.4) { return 'ratio-03'; }
+	if (ratio < 0.5) { return 'ratio-04'; }
+	if (ratio < 0.6) { return 'ratio-05'; }
+	if (ratio < 0.7) { return 'ratio-06'; }
+	if (ratio < 0.8) { return 'ratio-07'; }
+	if (ratio < 0.9) { return 'ratio-08'; }
+	if (ratio < 1) { return 'ratio-09'; }
+	if (ratio < 2) { return 'ratio-10'; }
+	if (ratio < 5) { return 'ratio-20'; }
+	return 'ratio-50';
+}
+
+function ratio(dividend, divisor, color) {
+	if(!color) {
+		color = true;
+	}
+	if(divisor == 0 && dividend == 0) {
+		return '--';
+	} else if(divisor == 0) {
+		return '<span class="ratio-infinite">∞</span>';
+	}
+	var rat = Math.max( ( dividend / divisor ) - 0.005, 0 ).toFixed( 2 ); //Subtract .005 to floor to 2 decimals
+	if(color) {
+		var col = get_ratio_color(rat);
+		if(col) {
+			rat = '<span class="'+col+'">'+rat+'</span>';
+		}
+	}
+	return rat;
+}
+
+
+function save_message(message) {
+	var messageDiv = document.createElement("div");
+	messageDiv.className = "alert alert--warning text--center";
+	messageDiv.innerHTML = message;
+	$("#content").raw().insertBefore(messageDiv,$("#content").raw().firstChild);
+}
+
+function error_message(message) {
+	var messageDiv = document.createElement("div");
+	messageDiv.className = "alert alert--error text--center";
+	messageDiv.innerHTML = message;
+	$("#content").raw().insertBefore(messageDiv,$("#content").raw().firstChild);
+}
+
+function GetAntiCsrfToken()
+{
+	return document.body.getAttribute( "data-AntiCsrfToken" );
+}
+
+function AddAntiCsrfTokenToPostData( postData )
+{
+	postData[ "AntiCsrfToken" ] = GetAntiCsrfToken();
+	return postData;
+}

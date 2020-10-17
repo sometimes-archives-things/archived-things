@@ -1,0 +1,45 @@
+function Remove_Alias( alias )
+{
+	var postData = { "action": "delete_alias", "alias": alias };
+
+	$jq.ajax(
+	{
+		url: "wiki.php",
+		type: "POST",
+		data: AddAntiCsrfTokenToPostData( postData ),
+		success: function()
+		{
+			$jq( "#alias_" + alias ).HideHC();
+		}
+	} );
+}
+
+function Wiki_Preview()
+{
+	$( '#post_preview' ).raw().value = 'Make changes';
+	$( '#post_preview' ).raw().preview = true;
+
+	var postData =
+	{
+		"action": "preview",
+		"body": document.getElementById( "quickpost" ).value,
+		"allow_anchors": true
+	};
+
+	$jq.post(
+		"ajax.php",
+		AddAntiCsrfTokenToPostData( postData ),
+		function( response )
+		{
+			BBCode.ShowReplyPreview( response );
+		}
+	);
+}
+
+function Wiki_Edit()
+{
+	$( '#post_preview' ).raw().value = 'Preview';
+	$( '#post_preview' ).raw().preview = false;
+	
+	BBCode.HideReplyPreview();
+}

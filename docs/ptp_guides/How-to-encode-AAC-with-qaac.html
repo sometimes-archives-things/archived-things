@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)https://passthepopcorn.me/wiki.php?action=article&id=240 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge">
+		<meta name="referrer" content="no-referrer">
+	<meta name="referrer" content="same-origin">
+	<meta name="robots" content="noindex">
+		<title>How to encode AAC with qaac :: PassThePopcorn</title>
+	<link rel="shortcut icon" href="https://passthepopcorn.me/favicon.ico">
+	<link rel="apple-touch-icon" href="https://passthepopcorn.me/static/common/touch-icon-iphone.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://passthepopcorn.me/static/common/touch-icon-ipad.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://passthepopcorn.me/static/common/touch-icon-iphone-retina.png?v=1514440441">
+	<link rel="search" type="application/opensearchdescription+xml" title="PassThePopcorn" href="https://passthepopcorn.me/static/opensearch.xml">
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+				<link href="./How-to-encode-AAC-with-qaac_files/marcel.css" rel="stylesheet" type="text/css" media="screen">
+						<script src="./How-to-encode-AAC-with-qaac_files/script_start.js.download" type="text/javascript"></script>
+						<script src="./How-to-encode-AAC-with-qaac_files/class_ajax.js.download" type="text/javascript"></script>
+						<script src="./How-to-encode-AAC-with-qaac_files/global.js.download" type="text/javascript"></script>
+							<script src="./How-to-encode-AAC-with-qaac_files/jquery.js.download" type="text/javascript"></script>
+						<script src="./How-to-encode-AAC-with-qaac_files/autocomplete.js.download" type="text/javascript"></script>
+					<script src="./How-to-encode-AAC-with-qaac_files/wiki.js.download" type="text/javascript"></script>
+					<script src="./How-to-encode-AAC-with-qaac_files/bbcode.js.download" type="text/javascript"></script>
+					<script src="./How-to-encode-AAC-with-qaac_files/mousetrap.min.js.download" type="text/javascript"></script>
+		</head>
+<body id="wiki" data-anticsrftoken="9001" style="">
+<div id="wrapper">
+	<div id="header" class="header">
+		<div class="site-logo"><a class="site-logo__link" href="https://passthepopcorn.me/index.php"></a></div>
+				
+			<div class="main-menu">
+			<ul class="main-menu__list">
+				<li class="main-menu__item" id="nav_index"><a class="main-menu__link" href="https://passthepopcorn.me/index.php">Home</a></li>
+				<li class="main-menu__item" id="nav_torrents"><a class="main-menu__link" href="https://passthepopcorn.me/torrents.php">Movies</a></li>
+				<li class="main-menu__item" id="nav_collages"><a class="main-menu__link" href="https://passthepopcorn.me/collages.php">Collections</a></li>
+				<li class="main-menu__item" id="nav_requests"><a class="main-menu__link" href="https://passthepopcorn.me/requests.php">Requests</a></li>
+				<li class="main-menu__item" id="nav_forums"><a class="main-menu__link" href="https://passthepopcorn.me/forums.php">Forums</a></li>
+				<li class="main-menu__item" id="nav_irc"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php?action=article&amp;id=95">Chat</a></li>
+				<li class="main-menu__item" id="nav_top10"><a class="main-menu__link" href="https://passthepopcorn.me/top10.php">Top&nbsp;10</a></li>
+				<li class="main-menu__item" id="nav_rules"><a class="main-menu__link" href="https://passthepopcorn.me/rules.php">Rules</a></li>
+				<li class="main-menu__item" id="nav_wiki"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php">Wiki</a></li>
+				<li class="main-menu__item" id="nav_staff"><a class="main-menu__link" href="https://passthepopcorn.me/staff.php">Staff</a></li>
+			</ul>
+		</div>
+				<div class="search-bar">
+			<ul class="search-bar__list">
+				<li id="searchbar_torrents" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/torrents.php" method="get" class="search-bar__search-field__form">
+												<input type="hidden" name="order_by" value="relevance">
+						<input id="torrentssearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="m" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;torrents&#39;);" onblur="" placeholder="Movies" type="text" name="searchstr" size="17">
+						<ul id="torrentscomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_people" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/artist.php" method="get" class="search-bar__search-field__form">
+						<input id="artistsearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="p" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;artist&#39;);" placeholder="People" type="text" name="artistname" size="17">
+						<ul id="artistcomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_collections" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/collages.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="c" spellcheck="false" id="collectionsearch" placeholder="Collections" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_requests" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/requests.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="r" spellcheck="false" placeholder="Requests" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_forums" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/forums.php" method="get" class="search-bar__search-field__form">
+						<input value="search" type="hidden" name="action">
+						<input class="search-bar__search-field__input" accesskey="f" spellcheck="false" placeholder="Forums" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_log" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/log.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="l" spellcheck="false" placeholder="Log" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_users" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/user.php" method="get" class="search-bar__search-field__form">
+						<input type="hidden" name="action" value="search">
+						<input class="search-bar__search-field__input" accesskey="u" spellcheck="false" placeholder="Users" type="text" name="search" size="17">
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+		<div id="content" class="page__main-content">
+<div class="thin">
+	<h2 class="page__title">How to encode AAC with qaac</h2>
+		<div class="linkbox">
+		<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=create">[Create]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=edit&amp;id=240">[Contribute]</a>
+<a class="linkbox__link" href="https://passthepopcorn.me/wiki.php?action=revisions&amp;id=240">[History]</a>
+	</div>
+	<div class="sidebar">
+		<div class="panel">
+			<div class="panel__body">
+				<form action="https://passthepopcorn.me/wiki.php" method="get">
+					<input type="hidden" name="action" value="search">
+					<input placeholder="Search articles" type="text" name="search" size="20">
+					<input value="Search" type="submit" class="hidden">
+				</form>
+				<br>
+				<a href="https://passthepopcorn.me/wiki.php?action=search&amp;type=Title&amp;order=Title&amp;way=Ascending">List all articles</a>
+			</div>
+		</div>
+		<div class="panel">
+			<div class="panel__body">
+				<ul class="list list--unstyled">
+					<li>
+						<strong>Protection:</strong>
+						<ul class="list--bulleted list--small-padding">
+							<li>Read: Abuser</li>
+							<li>Edit: Power User</li>
+						</ul>
+					 </li>
+					<li>
+						<strong>Details:</strong>
+						<ul class="list--bulleted list--small-padding">
+							<li>Version: 17</li>
+							<li>Last edited by: <a class="username" href="https://passthepopcorn.me/user.php?id=75308">pafnucy</a></li>
+							<li>Last updated: <span class="time" title="Feb 23 2017, 12:36">[ Feb 23 2017, 12:36 ]</span></li>
+						</ul>
+					</li>
+					<li>
+						<strong>Aliases:</strong>
+						<ul class="list--bulleted list--small-padding">
+																		<li id="alias_howtoencodeaacwithqaac">
+												<a href="https://passthepopcorn.me/wiki.php?action=article&amp;name=howtoencodeaacwithqaac">howtoencodeaacwithqa...</a>
+																							</li>
+																</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+					<div class="panel">
+				<div class="panel__body">
+					<form action="https://passthepopcorn.me/wiki.php" method="post">
+						<input type="hidden" name="AntiCsrfToken" value="9001">						<input type="hidden" name="action" value="add_alias">
+						<input type="hidden" name="article" value="240">
+						<input placeholder="Add alias" type="text" name="alias" size="20">
+						<input type="submit" value="+">
+					</form>
+				</div>
+			</div>
+			</div>
+	<div class="main-column">
+	<div class="panel">
+		<div class="panel__body"><span class="bbcode-size-4">Introduction</span><br>
+<br>
+AAC is an advanced lossy audio codec which is well-suited for encoding 2.0 audio, achieving transparency at around 180 kbps. It can be used to encode lossless 1.0 and 2.0 main audio tracks for 720p and SD encodes, as well as all stereo commentary tracks.<br>
+<br>
+Qaac uses Apple's implemetation of the AAC encoder, which is currently considered to be superior to Nero's AAC encoder at low bitrates. This makes qaac especially desirable for encoding commentary tracks.<br>
+<br>
+<span class="bbcode-size-4">Installation</span><br>
+<ul><li><a rel="noreferrer" target="_blank" href="https://mega.nz/file/uxEX1K7Y#2bNwhG8rTqoDmR1Ycy8VC_IQz4OdqjPaO61IMjGMsSo">Apple Application Support x86 (updated: Feb 2017)</a> (You can also extract it from the <a rel="noreferrer" target="_blank" href="https://www.apple.com/itunes/download/">iTunes Installer</a> yourself using <a rel="noreferrer" target="_blank" href="https://www.7-zip.org/">7-zip</a>.)</li><li><a rel="noreferrer" target="_blank" href="https://sites.google.com/site/qaacpage/cabinet/qaac_2.62.zip?attredirects=0&amp;d=1">qaac</a> x86</li><li>(optional) <a rel="noreferrer" target="_blank" href="http://www.rarewares.org/files/lossless/flac_dll-1.3.1-icl.zip">libFLAC x86</a> x86</li></ul><br>
+Install Apple Application Support first. This will enable qaac to use Apple's official library to encode AAC files.<br>
+<br>
+<strong>Optional: FLAC input</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Extracting libFLAC_dynamic.dll to qaac/x86 will enable qaac to directly use FLAC files for input. </blockquote><br>
+<br>
+After extracting qaac it is a good idea to add it to your system PATH so it can be called from any directory. On Windows 10:<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/tK39swJ/738628.png" src="./How-to-encode-AAC-with-qaac_files/738628.png"><br>
+Click OK to save the settings.<br>
+<blockquote><strong>Note:</strong> If you haven't already, it's a good idea to add eac3to to your PATH as well by clicking Edit.</blockquote><br>
+Test if qaac is correctly installed and added to your PATH by opening the command prompt (cmd.exe) and typing <code> qaac --check</code>.<br>
+If you see <code>qaac 2.58, CoreAudioToolbox 7.xx.x.x</code> then it has been installed correctly.<br>
+<br>
+<span class="bbcode-size-4">Use</span><br>
+<br>
+Qaac can be used in a single step with eac3to, for example to encode track 4 from BDMV:<br>
+<code>eac3to BDMV/ 4:stdout.wav | qaac -V 63 -i --no-delay -o commentary-eng.m4a -</code><br>
+<br>
+You can also use it on a previously demuxed audio track, for example:<br>
+<code>eac3to commentary.ac3 stdout.wav | qaac -V 63 -i --no-delay -o commentary-eng.m4a -</code><br>
+<br>
+If you followed the optional step, qaac can be also run directly on a FLAC file obtained from a remux.<br>
+<code> qaac -V 109 --no-delay -o stereo-eng.m4a main-stereo.flac</code><br>
+<br>
+-V parameter determines the variable bitrate and therefore quality. There are 15 settings for this parameter, 127 being the highest quality setting:<br>
+<br>
+<code>0 	9 	18 	27 	36 	45 	54 	63 	73 	82 	91 	100 	109 	118 	127 </code><br>
+<br>
+For main audio, you can use -V 127 for 720p or -V 109 for SD encodes (or adjust to ~180 kbps for 2.0 audio)<br>
+For the commentary tracks, you can use <code>-V 63</code> or less (adjust to ~70 kbps for stereo audio).<br>
+<br>
+Setting <code>--no-delay</code> obviates the need for a container delay.<br>
+<br>
+The resulting .m4a file containing the AAC track can be muxed in using mkvmerge as usual.</div>
+	</div>
+	</div>
+</div>
+	</div>
+	
+</div>
+<div id="lightbox" class="lightbox hidden" tabindex="-1"></div>
+<div id="lightbox__shroud" class="lightbox__shroud hidden"></div>
+
+<!-- Extra divs, for stylesheet developers to add imagery -->
+<div id="extra1"><span></span></div>
+<div id="extra2"><span></span></div>
+<div id="extra3"><span></span></div>
+<div id="extra4"><span></span></div>
+<div id="extra5"><span></span></div>
+<div id="extra6"><span></span></div>
+
+
+</body></html>

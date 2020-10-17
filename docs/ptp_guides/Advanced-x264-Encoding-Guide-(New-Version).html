@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://passthepopcorn.me/forums.php?action=viewthread&threadid=14481 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge">
+		<meta name="referrer" content="no-referrer">
+	<meta name="referrer" content="same-origin">
+	<meta name="robots" content="noindex">
+		<title>Advanced x264 Encoding Guide (New Version) :: PassThePopcorn</title>
+	<link rel="shortcut icon" href="https://passthepopcorn.me/favicon.ico">
+	<link rel="apple-touch-icon" href="https://passthepopcorn.me/static/common/touch-icon-iphone.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://passthepopcorn.me/static/common/touch-icon-ipad.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://passthepopcorn.me/static/common/touch-icon-iphone-retina.png?v=1514440441">
+	<link rel="search" type="application/opensearchdescription+xml" title="PassThePopcorn" href="https://passthepopcorn.me/static/opensearch.xml">
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+				<link href="./Advanced-x264-Encoding-Guide-(New-Version)_files/marcel.css" rel="stylesheet" type="text/css" media="screen">
+						<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/script_start.js.download" type="text/javascript"></script>
+						<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/class_ajax.js.download" type="text/javascript"></script>
+						<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/global.js.download" type="text/javascript"></script>
+							<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/jquery.js.download" type="text/javascript"></script>
+						<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/autocomplete.js.download" type="text/javascript"></script>
+					<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/comments.js.download" type="text/javascript"></script>
+					<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/subscriptions.js.download" type="text/javascript"></script>
+					<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/bbcode.js.download" type="text/javascript"></script>
+					<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/mousetrap.min.js.download" type="text/javascript"></script>
+					<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/jquery.rangyinputs.js.download" type="text/javascript"></script>
+					<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/jquery.qtip.min.js.download" type="text/javascript"></script>
+					<script src="./Advanced-x264-Encoding-Guide-(New-Version)_files/jquery.simplemodal.1.4.4.min.js.download" type="text/javascript"></script>
+		</head>
+<body id="forums" data-anticsrftoken="9001" style="">
+<div id="wrapper">
+	<div id="header" class="header">
+		<div class="site-logo"><a class="site-logo__link" href="https://passthepopcorn.me/index.php"></a></div>
+				
+			<div class="main-menu">
+			<ul class="main-menu__list">
+				<li class="main-menu__item" id="nav_index"><a class="main-menu__link" href="https://passthepopcorn.me/index.php">Home</a></li>
+				<li class="main-menu__item" id="nav_torrents"><a class="main-menu__link" href="https://passthepopcorn.me/torrents.php">Movies</a></li>
+				<li class="main-menu__item" id="nav_collages"><a class="main-menu__link" href="https://passthepopcorn.me/collages.php">Collections</a></li>
+				<li class="main-menu__item" id="nav_requests"><a class="main-menu__link" href="https://passthepopcorn.me/requests.php">Requests</a></li>
+				<li class="main-menu__item" id="nav_forums"><a class="main-menu__link" href="https://passthepopcorn.me/forums.php">Forums</a></li>
+				<li class="main-menu__item" id="nav_irc"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php?action=article&amp;id=95">Chat</a></li>
+				<li class="main-menu__item" id="nav_top10"><a class="main-menu__link" href="https://passthepopcorn.me/top10.php">Top&nbsp;10</a></li>
+				<li class="main-menu__item" id="nav_rules"><a class="main-menu__link" href="https://passthepopcorn.me/rules.php">Rules</a></li>
+				<li class="main-menu__item" id="nav_wiki"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php">Wiki</a></li>
+				<li class="main-menu__item" id="nav_staff"><a class="main-menu__link" href="https://passthepopcorn.me/staff.php">Staff</a></li>
+			</ul>
+		</div>
+				<div class="search-bar">
+			<ul class="search-bar__list">
+				<li id="searchbar_torrents" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/torrents.php" method="get" class="search-bar__search-field__form">
+												<input type="hidden" name="order_by" value="relevance">
+						<input id="torrentssearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="m" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;torrents&#39;);" onblur="" placeholder="Movies" type="text" name="searchstr" size="17">
+						<ul id="torrentscomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_people" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/artist.php" method="get" class="search-bar__search-field__form">
+						<input id="artistsearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="p" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;artist&#39;);" placeholder="People" type="text" name="artistname" size="17">
+						<ul id="artistcomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_collections" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/collages.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="c" spellcheck="false" id="collectionsearch" placeholder="Collections" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_requests" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/requests.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="r" spellcheck="false" placeholder="Requests" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_forums" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/forums.php" method="get" class="search-bar__search-field__form">
+						<input value="search" type="hidden" name="action">
+						<input class="search-bar__search-field__input" accesskey="f" spellcheck="false" placeholder="Forums" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_log" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/log.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="l" spellcheck="false" placeholder="Log" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_users" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/user.php" method="get" class="search-bar__search-field__form">
+						<input type="hidden" name="action" value="search">
+						<input class="search-bar__search-field__input" accesskey="u" spellcheck="false" placeholder="Users" type="text" name="search" size="17">
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+		<div id="content" class="page__main-content">
+<script type="text/javascript">var ThreadID='14481';</script>
+<div class="thin">
+	<h2 class="page__title">
+		<a href="https://passthepopcorn.me/forums.php">Forums</a> &gt;
+		<a href="https://passthepopcorn.me/forums.php?action=viewforum&amp;forumid=12">Tutorials</a> &gt;
+		Advanced x264 Encoding Guide (New Version)	</h2>
+	<div class="linkbox">
+		<a class="linkbox__link" href="https://passthepopcorn.me/reports.php?action=report&amp;type=thread&amp;id=14481">[Report Thread]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#" onclick="SubscribeToForumTopic( this, 14481 ); return false;">[Subscribe]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#" onclick="ToggleSearchThreadForm( this ); return false;">[Search this Thread]</a>
+	</div>
+	<div id="searchthread" class="hidden" style="text-align: center;">
+		<div class="panel" style="display: inline-block; text-align: left;">
+			<div class="panel__body">
+				<form action="https://passthepopcorn.me/forums.php" method="get">
+					<input type="hidden" name="action" value="search">
+					<input type="hidden" name="threadid" value="14481">
+					<div class="form__group">
+						<input type="text" id="searchbox" name="search" size="70" placeholder="Post" class="form__input">
+					</div>
+					<div class="form__group">
+						<input type="text" id="username" name="user" size="70" placeholder="Username" class="form__input">
+					</div>
+					<div class="form__group">
+						<input type="submit" name="submit" value="Search this thread" class="form__input">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		<div class="pagination pagination--top"><span class="pagination__current-page">1-25</span> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">26-50</a> | <a href="https://passthepopcorn.me/forums.php?page=3&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">51-75</a> | <a href="https://passthepopcorn.me/forums.php?page=4&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">76-100</a> | <a href="https://passthepopcorn.me/forums.php?page=5&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">101-125</a> | <a href="https://passthepopcorn.me/forums.php?page=6&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">126-150</a> | <a href="https://passthepopcorn.me/forums.php?page=7&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">151-175</a> | <a href="https://passthepopcorn.me/forums.php?page=8&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">176-200</a> | <a href="https://passthepopcorn.me/forums.php?page=9&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">201-225</a> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--next">Next &gt;</a> <a href="https://passthepopcorn.me/forums.php?page=37&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--last"> Last &gt;&gt;</a></div>
+
+	<div class="forum_post forum-post" id="post417783">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417783#post417783">#417783</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=57598">parent5446</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=57598"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 74 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 19 2012, 09:27">[ Jan 19 2012, 09:27 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;417783&#39;, &#39;parent5446&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar417783" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=417783">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content417783">
+				Note: <span class="bbcode-size-4"><span style="color:#ff0000">The arcsoft decoder is no longer needed with the new version of eac3to.</span></span><br>
+<br>
+<strong>Preface and License</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+<em>Reading this isn't mandatory for the guide, but should provide a nice introduction into what this guide is for and how to use it.</em><br>
+<br>
+This guide is an attempt at an all-inclusive layman's explanation to high quality x264 encoding from an original retail source. The purpose of this guide is to explain how to create a transcode of a DVD or Blu-ray such that no significant quality is lost when compared to the original source, even if preserving such quality is at the expense of file size. If you are looking to encode to or under a specific size, this is not the guide for you.<br>
+<br>
+This guide is intended to replace and combine the <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=3857"> Advanced x264 Encoding guide</a>, <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=8810">HD x264 Encoding guide</a>, and <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=9156">Source/Encoding Comparison guide</a>.<br>
+<br>
+This guide is Windows-specific and uses programs such as Avisynth and AvsPmod that do not work under non-Windows systems and programs such as RipIt4Me and DVD Decrypter which work under Linux with limited support using wine. A Linux guide is in the making, so stay tuned (though that guide will require more CLI knowledge).<br>
+<br>
+It is recommended you read this guide in its entirety before actually following the instructions so that you have an idea of the process. The guide describes the process in a very linear order, but in reality many steps in this guide can be done while another process is taking place (such as dealing with audio while video is encoding). This guide also benefits from a powerful computer, primarily in terms of CPU speed.<br>
+<br>
+This guide was originally written by parent5446 and is licensed under the Creative Commons Attribution-ShareAlike 3.0 United States license, meaning you are free to copy, alter, and distribute this guide for whatever purposes and without my permission so long as you provide attribution and keep the license. (See <a rel="noreferrer" target="_blank" href="https://creativecommons.org/licenses/by-sa/3.0/us/">http://creativecommons.org/licenses/by-sa/3.0/us/</a> for more details.)<br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">0. <span style="text-decoration: underline;">Setting Up the Encoding Environment</span></span><br>
+<em>This section only needs to be followed once.</em><br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+So first you need to figure out what you're going to be encoding from: Blu-ray, DVD, or both. Open the sections relevant to what you will be encoding from and follow the necessary instructions. Note that encoding from Blu-ray is always preferred and will result in a much higher quality encode, primarily because DVD is at a lower resolution than Blu-ray and will result in more apparent artifacting in the source that cannot be removed.<br>
+<br>
+<strong>Setting Up for DVD Sources</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Programs You Will Need:<br>
+<ul><li><a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/DVD_Decrypter">DVD Decrypter</a></li><li><a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/RipIt4Me">RipIt4Me</a></li><li><a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/Subrip">SubRip</a></li></ul><br>
+<br>
+Download both programs. DVD Decrypter comes with an installer, but RipIt4Me does not. Feel free to extract RipIt4Me to your Program Files directory or any place that is convenient for you to access it. Note that unless you have your Windows installation set to index your Program Files folder (which is not the default setting), you will have to navigate to RipIt4Me manually or put a shortcut on your desktop in order to find the program.<br>
+<br>
+Now launch RipIt4Me, and click Logs/Settings -&gt; Preferences.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://i32.tinypic.com/vx1dev.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/vx1dev.png"><br>
+Make your settings look like the above picture. Then press OK and close RipIt4Me.<br>
+<br>
+Now launch DVD Decrypter, and go to Tools -&gt; Settings.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://i30.tinypic.com/o9nx2g.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/o9nx2g.png"><br>
+Make your settings look like the above picture. Then press OK and close DVD Decrypter.<br>
+<br>
+</blockquote><br>
+<strong>Setting Up for Blu-ray Sources</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Programs You Will Need:<br>
+<ul><li>Microsoft Visual C 2010 Redistributable Package - <a rel="noreferrer" target="_blank" href="https://www.microsoft.com/downloads/en/details.aspx?FamilyID=A7B7A05E-6DE6-4D3A-A423-37BF0912DB84">x86</a> and <a rel="noreferrer" target="_blank" href="https://www.microsoft.com/downloads/en/details.aspx?FamilyID=bd512d9e-43c8-4655-81bf-9350143d5867">x64</a> versions</li><li><a rel="noreferrer" target="_blank" href="http://exar.ch/suprip/">SupRip</a></li><li><a rel="noreferrer" target="_blank" href="http://haali.su/mkv/">Haali Media Splitter</a></li><li><a rel="noreferrer" target="_blank" href="http://d-h.st/5pq">AnyDVD HD</a></li></ul><br>
+<strong>If you cannot/do not want to get a copy of AnyDVD HD</strong><br>
+<ul><li><a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?p=993782">DumpVID</a></li><li><a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=123311">AACSKeys</a></li><li><a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=129663">Blu-ray Disc Ripper</a></li><li><a rel="noreferrer" target="_blank" href="http://cyberside.net.ee/ripping/BD_DeviceKeys/ProcessingDeviceKeysSimple.txt">ProcessingDeviceKeysSimple.txt</a></li></ul><br>
+<br>
+Many of these programs do not come with installers. Simply extract them to wherever is convenient for you. Just make sure to put the ProcessingDeviceKeysSimple.txt in AACSKeys's installation folder.<br>
+</blockquote><br>
+<br>
+After setting up the programs necessary for ripping from your source, now it's time to set up the encoding environment.<br>
+<br>
+Programs You Will Need:<br>
+<ul><li><a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=125966">eac3to</a></li><li><a rel="noreferrer" target="_blank" href="https://sourceforge.net/projects/avisynth2/">Avisynth</a></li><li><a rel="noreferrer" target="_blank" href="http://d-h.st/0EG">Avisynth Plugins</a></li><li><a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/AvsP">AvsPmod</a></li><li><a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/DGMPGDec">DGMPGDec</a></li><li><a rel="noreferrer" target="_blank" href="http://virtualdub.sourceforge.net/">VirtualDub</a></li><li><a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?p=1234822">Mulder's x264 Launcher</a></li><li><a rel="noreferrer" target="_blank" href="http://mirror01.x264.nl/">x264</a></li><li><a rel="noreferrer" target="_blank" href="http://www.rarewares.org/ogg-oggenc.php">oggenc2</a></li><li><a rel="noreferrer" target="_blank" href="http://chapterdb.org/software">Chapter Grabber</a></li><li><a rel="noreferrer" target="_blank" href="http://www.videohelp.com/tools/MKVtoolnix/old-versions#download">MKVMerge v5.8.0</a> (no later versions until further notice)</li></ul><br>
+<br>
+Read these installation instructions for installing these programs.<br>
+<strong>Installation Instructions</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+For eac3to, simply unpack it where you like. After setting up eac3to, follow the instructions in the Arcsoft Decoder zip file. Then install 32-bit Avisynth and unpack the plugins into the plugins/ folder in the installation directory. Next install DGMPGDec. Then open DGIndex, click Video -&gt; iDCT Algorithm -&gt; IEEE-1180 References, and close the program.<br>
+<br>
+Now install Mulder's x264 Launcher. After running the installation, download both the 32-bit and 64-bit versions of x264 with 8-bit depth and use them to replace the versions in the Mulder Launcher's directory. The rest of the programs require no special installation instructions. Some have installers, some do not. Simply put everything wherever is most convenient for you.<br>
+</blockquote><br>
+<br>
+Finally, if you are extracting from Blu-ray source, there are two more programs you will need for audio processing:<br>
+<strong>Blu-ray Only Audio Programs</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Programs Needed:<br>
+<ul><li><a rel="noreferrer" target="_blank" href="http://d-h.st/cKG">Sony Sound Force with Dolby Digital Encoder</a></li><li>DTS-HD Master Audio Suite</li></ul><br>
+<br>
+Simply install. No special instructions.<br>
+</blockquote><br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">1. <span style="text-decoration: underline;">Ripping the Source</span></span><br>
+If you don't have a physical disc, i.e., you downloaded the DVD/Blu-ray from somewhere, skip this section.<br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Ripping from source obviously depends on what source you are ripping from. If you are ripping a Blu-ray using AnyDVD HD, the program is self-explanatory and no instructions will be provided here. Otherwise, follow the appropriate instructions below.<br>
+<br>
+<em>If you are encoding from an already decrypted DVD or Blu-ray (meaning you do not have the physical disc), then the ripping step is not necessary and you can skip down to the demuxing.</em><br>
+<br>
+<strong>Ripping from DVD</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Insert your DVD into you drive and open RipIt4Me. Click "1-Click Mode" and then click Next. RipIt4Me will launch DVD Decrypter automatically. <strong>Do not touch or move ANYTHING on your computer until DVD Decrypter has started the rip (not just after it opens but after it starts).</strong><br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://i34.tinypic.com/xdhtzs.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/xdhtzs.png"><br>
+<br>
+DVD Decrypter and RipIt4Me will run automatically and it will take a while. The result will be a VIDEO_TS folder with the decrypted DVD inside. You will be using the VIDEO_TS folder, not the physical DVD, from now on.<br>
+</blockquote><br>
+<strong>Ripping from Blu-Ray w/o AnyDVD</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+<em>If you're wondering exactly what protection is used on a Blu-ray, it is recommended you read <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=122363">Doom9's thread on the subject</a>. Overall I have found it is useful to know what and why you are doing when performing an encode rather than just the how, but of course that's up to you.</em><br>
+<br>
+First open up a command line and navigate to the folder where DumpVID and AACSKeys is installed. Then run the command:<br>
+<blockquote>dumpvid d</blockquote><br>
+Where "d" is the letter of your Blu-ray drive the disc is in. A screen will come up saying "Press Enter to start hammering."<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/ydKWmLf/41485l.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/41485l.png"><br>
+You are going to press Enter then open up the Blu-ray in a media player of your choice (such as Arcsoft TotalMedia). The player must be capable of playing encrypted Blu-rays on its own. <strong>Make sure to press Enter and start hammering before you open the player.</strong> After the Blu-ray starts playing, DumpVID should display the VID for the disc. Copy the VID and save it somewhere.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/yg69kxb/w3424r.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/w3424r.png"><br>
+<br>
+Now run the following command:<br>
+<blockquote>aacskeys d 40000918200608410020202020200000</blockquote><br>
+Replace the "d" with your drive letter like before and replace the string of numbers afterward with the VID you copied from DumpVID. The output should look something like this:<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/LgLdzgs/2khpcj.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/2khpcj.png"><br>
+Copy and save the Volume Unique Key (VUK) and then close the terminal.<br>
+<br>
+Finally, open up the Blu-ray Ripper. Pick the drive as your sources, your folder of choice as the destination, and enter the VUK into the appropriate field. Make sure the decrypt and copy radio button is selected and press start. This will take a while.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/PQNmcxK/m9fz1b.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/m9fz1b.png"><br>
+</blockquote><br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">2. <span style="text-decoration: underline;">Demuxing the Source</span></span><br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Now that you have the source, it's time to separate all the tracks. Previously for DVDs demuxing was done with DGIndex, which you can do, but it is of my opinion that you get more control over exactly what you want to extract with eac3to, so this guide is going to use that for all audio demuxing.<br>
+<br>
+The first step is to figure out what your source files are. Unfortunately, this is different between Blu-ray and DVD:<br>
+<ul><li>For DVD, go into VIDEO_TS/ and look at the file list. The file name format is VTS_xx_y.VOB, where xx is the title number and y is the file number. Find the title number with the most files, and all files starting from 1 (not 0) will be your source. Your eac3to command line will be <span style="color:red">eac3to VTS_xx_1.VOB+VTS_xx_2.VOB+VTS_xx_3.VOB...</span>, with all the filenames concatenated with plus signs.</li><li>For Blu-ray, eac3to figures out the files automatically. Run <span style="color:red">eac3to path/to/bluray</span> and you will get a list of titles on the Blu-ray. Find the main titles, and then add it to your command line like so <span style="color:red">eac3to path/to/bluray 1)</span>, where "1" is the number of the title.</li></ul><br>
+Now run eac3to with the source files or title as your arguments. The output will be what video and audio stream are in your source.<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/zHCgSbx/rf0u36.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/rf0u36.png"><br>
+<br>
+Now from here you are going to construct your command line based on a number of different conditions depending on the DVD/Blu-ray you are using and the type of encode you want. Below is a list of conditions describing what you may see. Follow <strong>all applicable instructions</strong> below to build up your command line.<br>
+<br>
+<strong>You have either a DVD or a Blu-ray with MPEG-2 video.</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">For MPEG-2 video, you are going to put aside your terminal temporarily, as you will not be using eac3to for this. Open up DGIndex and then click and drag the media files from Windows Explorer into DGIndex. (Note that for Blu-ray sources this means going into the BDMV/STREAM folder and figuring out which m2ts files are in your main playlist.)<br>
+<br>
+If you are demuxing from a Blu-ray, first click Stream -&gt; Detect PIDs: PAT/PMT. After that, regardless of source, press File -&gt; Save Project, and save to a d2v file somewhere.<br>
+<br>
+DGIndex will index the file and save the d2v file. <strong>Do not deleted the original source folder.</strong> The d2v file will only contain an index and will not have the actual video, which means you cannot move or delete the original ripped source folder.</blockquote><br>
+<strong>You have a Blu-ray and the video is NOT MPEG-2.</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">In this case, you will want to demux the video into an MKV file, so add <span style="color:red">1: main_video.mkv</span> onto the end of your command line, replacing "1" with the stream number of your video as determined by the eac3to output.</blockquote><br>
+<strong>You have a Blu-ray or concert DVD with lossless main audio track (PCM/DTS MA-HD/TrueHD).</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">OK, so in this case it get's a little complicated, because it depends on what you want and what is on the disc.<br>
+<ul><li>If the audio is DTS MA-HD, you are making an HD encode, and you want to keep the lossless audio, add <span style="color:red">3: main_audio.dtshd</span> onto the end of your command line, replacing "3" with the number of the audio track.</li><li>If you want the encode to have DTS audio, add <span style="color:red">3: main_audio.wavs</span> onto the end of your command line, replacing "3" with the number of the audio track.</li><li>If you want the encode to have AC3 audio, add <span style="color:red">3: main_audio.w64</span> onto the end of your command line, replacing "3" with the number of the audio track.</li><li>If you want the encode to have AAC audio, add <span style="color:red">3: main_audio.aac</span> onto the end of your command line, replacing "3" with the number of the audio track.</li><li>If you want the encode to have FLAC audio, add <span style="color:red">3: main_audio.flac</span> onto the end of your command line, replacing "3" with the number of the audio track.</li></ul><br>
+<br>
+Also, if the audio is greater than 5.1 surround and your final audio format is not lossless, i.e., you are converting 7.1 PCM/DTS MA-HD/TrueHD to 5.1 AC3/DTS, there are some additional options you need to add to downmix the audio when decoding.<br>
+<ul><li>If the audio is 7.1, add <span style="color:red">-down6</span> after whatever you added to the command line above, e.g. <span style="color:red">3: main_audio.w64 -down6</span>.</li><li>If the audio is 6.1, add <span style="color:red">-down6 -0,1,2,3,5,6,4</span> after whatever you added to the command line above, e.g. <span style="color:red">3: main_audio.w64 -down6 -0,1,2,3,5,6,4</span>.</li></ul></blockquote><br>
+<strong>You have a disc with no lossless main audio track.</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">This will almost always be the case with DVD sources, though rare with Blu-ray sources. In this case, you want to demux the audio <em>as is</em> and use that demuxed file directly. So add on to your command line <span style="color:red">3: main_audio.ac3</span>, replacing "3" with the number of your audio track and <strong>replacing ac3 with whatever your disc's audio format is</strong>.</blockquote><br>
+<strong>You have a disc with commentary tracks or similar secondary audio.</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Add onto your command line <span style="color:red">5: commentary.wav</span>, replacing "5" with the number of the commentary track. If eac3to says the commentary track is more than two channels, add <span style="color:red">-down2 -mixlfe</span> right after that as well.</blockquote><br>
+<strong>You have a Blu-ray with subtitles.</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">For each subtitle, add onto your command line <span style="color:red">7: subs-english.sup</span>, replacing "7" with the number of the commentary track and English with the appropriate language.</blockquote><br>
+<br>
+You should now have a final command line that looks something like below (the below example was a Blu-ray with lossless audio, commentary, and subtitles).<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/5TGQvNw/gyl5sd.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/gyl5sd.png"><br>
+Press Enter and let the demuxing begin.<br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">3. <span style="text-decoration: underline;">Transcoding Lossless Audio</span></span><br>
+<br>
+<em><strong>This is only if your Blu-ray/concert DVD has lossless audio (PCM/DTS MA-HD/TrueHD) and you want the final encode to have wither AC3 or DTS audio. </strong></em><br>
+<br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><em><strong><br>
+This section assumes you followed the instructions for demuxing properly and thus have a resulting .w64 or set of .wav files for use in this section. If not, skip this section entirely.</strong> This means you should have created a .w64 or .wavs file(s) somewhere in your eac3to command line.</em><br>
+<br>
+At this point the process is dependent on whether you decided you wanted DTS audio for your encode (usually for HD encodes) or AC3 audio (usually for SD encodes). If you decided you wanted AAC audio, the encoding was done above, so you can skip this section as well.<br>
+<br>
+<strong>Encoding DTS Audio</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Take the many WAV files for the main audio and put them into the Encoder Suite like this (each WAV file is a channel):<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/7RJ91xL/2x544s.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/2x544s.png"><br>
+<br>
+Take note that the Dialog Normalization box is set to <em>-31 dBFS (No Attenuation)</em>. This means no dialog normalization will be applied. Also note that the encoder is set to output a .cpt file. If you are performing an HD encode and want lossless audio, change this to a .dtshd file. Otherwise, when the encoding process has finished, change the .cpt extension to .dts.</blockquote><br>
+<strong>Encoding AC3 Audio</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Open up Sound Sound Forge and open the .w64 file you created with eac3to. It will take a few minutes for the audio to be processed. Once completed, go through the audio and highlight a region in the Center channel (usually the third stream in 5.1 sources) that has primarily dialogue (no music or sound effects). Make sure to only select the center channel, otherwise all six channels will be averaged and you will get an inaccurate value. Then click <span style="color:red">Process-&gt;Normalize</span>. Click the <span style="color:red">Average RMS level (loudness)</span> radio button and then press <span style="color:red">Scan Levels</span>. <br>
+<br>
+After a few seconds, a value should show up for the RMS (undernearh the Scan Levels button). Write down/remember this value. Now click Cancel. <span style="color:red">Make sure to click Cancel and not OK, otherwise Sound Force will normalize the audio.</span><br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/NxPCtVT/p5138g.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/p5138g.png"><br>
+<br>
+Now click File-&gt;Save As. Make sure "Dolby Digital AC-3 Pro" is selected and the "5.1 Surround DVD" profile is selected. Now click the Custom... button. On the first tab, make sure the settings match below. Change the "Audio coding mode" setting to match your audio, e.g., pick 2/0 for stereo audio. Also make sure the "Data rate" is set to your desired bitrate. Stereo audio is often encoded at 192kbps, and surround audio is often encoded at 448kbps for SD encodes and 640kbps for HD encodes. Then set the <span style="color:red">Dialog normalization</span> to the value you wrote down earlier. (In some cases, the value you calculated before may be below -31 dB. In this case just choose -31 dB in the dialog.)<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/r4ZGPCD/6wo73g.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/6wo73g.png"><br>
+<br>
+Now go to the Preprocessing tab. Uncheck all input filtering and surround channel processing. Make sure that <span style="color:red">RF overmodulation protection</span> is unchecked. For the <span style="color:red">Line mode profile</span>, the recommended value is "Film: Light".<br>
+<br>
+Some people do not like the idea of compressing the dyanmic range of the audio, and will recommend choosing None for the Line mode profile. The concern is understandable, but in most cases encodes are going to be viewed on computer speakers or in an amateur home theater (especially considering this is an SD encode if you're using Sound Force). Having the full dynamic range is unnecessary and will make the film unpleasant to listen to if there are any loud/soft noises. The choice is ultimately yours. (Note that most Hollywood DVDs use "Film Light" anyway.) You can read <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=56020">this article</a> for more information<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/y4xKSZd/03274r.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/03274r.png"><br>
+<br>
+Finally, press OK and then Save the .ac3 file to the folder of your choice.</blockquote><br>
+<br>
+The resulting file will be your final main audio to be used later on down the line in muxing.<br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">4. <span style="text-decoration: underline;">Transcoding Commentary Audio</span></span><br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Open another command prompt, and use oggenc2 to transcode that .wav file you created after demuxing to an .ogg stream using the following command.<br>
+<br>
+<blockquote>oggenc2 commentary.wav -q 1.0 -o commentary.ogg</blockquote><br>
+<br>
+The resulting .ogg file is what you will use to mux into the final encode.<br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">5. <span style="text-decoration: underline;">Preparing the Video</span>:</span><br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+<strong>Quick Video Primer</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Most of the information in this section has to do with processing the video before it is compressed. Unfortunately, DVD authors hate following standards for some godforsaken reason and make DVD video of all shapes and sizes. Here are a few terms you should know:<br>
+<br>
+<ul><li>Hard Telecine - Standard film is shot at 23.976 fps, but the standard for video broadcast when DVDs were created was 29.97 fps. If you calculate it out, that means there needs to be an extra 1 for every 4 frames in order to get the framerate up to par. So what DVD authors did was use telecining, where in every four frames, a fifth frame is generated by splitting one frame into two. So if you have frames A, B, C, and D, telecining will generate the frames A, AB, BC, C, and D, where frames AB and BC have half taken from one frame and half taken from another. (<a rel="noreferrer" target="_blank" href="https://trac.handbrake.fr/wiki/Telecine">More Info</a>)</li><li>Soft Telecine - This is similar to hard telecine, but the actual video is not telecined. Rather markers are just added to the video that tells the DVD player where to split frames and telecine on the fly.</li><li>Double Hard Telecine - This is when two different telecine patters are applied to the same section of video. This is often found in animated videos.</li><li>Interlacing - Progressive video is taken in frames per second, i.e., the camera captures an entire frame of video in one instant, waits, and then repeats. Interlaced video is different in that the camera captures half of a frame (every other line of pixels), waits, captures the other half, waits, and repeats. Interlacing was created because even though the resolution of the video is the same, only half of a frame needs to be transferred at once, allowing for easier streaming over low-bandwidth lines. Unfortunately, you cannot simply pair up the two half-frames (or fields), because remember that they were captured by the camera at different times, so you need to actually guess and interpolate what the other half of each field is.</li></ul><br>
+<br>
+All of these conditions need to be removed and fixed so that you end up with a purely progressive video stream.</blockquote><br>
+<br>
+Open AvsPmod. If you used DGIndex to index the file, drag the .d2v file into AvsPmod. Otherwise, drag the .mkv that eac3to created for you into AvsPmod and change DirectShowSource to FFVideoSource and hit F5 to refresh. At this point AvsPmod will <span style="text-decoration: underline;">appear</span> to be frozen. This is normal -- ffvideosource is indexing the video so it can be displayed properly. The process takes quite a while to finish. <strong>If you get an error saying FFVideoSource does not exist</strong>, then AviSynth is not loading all of your plugins. You may try working around this by adding the following to the top of your AviSynth script:<br>
+<br>
+<span style="color:red"><br>
+import("C:\Program Files (x86)\AviSynth 2.5\plugins\ffms2.avsi")<br>
+LoadCPlugin("C:\Program Files (x86)\AviSynth 2.5\plugins\ffms2.dll")<br>
+</span><br>
+<br>
+Before you finalize your AviSynth script, you need to run some tests to figure out what type of video you are dealing with. This is usually very easy with Blu-ray sources as it is almost always pure progressive or pure interlaced video. With DVD's, however, it is not as easy. <strong>The only reliable way to figure out the type of video is to look at it yourself!</strong> With the video in AvsPmod, step frame by frame through the source and see what it looks like. If the video looks like one half of the frame doesn't match up with the other, i.e., the even lines are different from the odd, then it is probably interlaced. If the video looks fine most of the time, but then every two out of five frames looks interlaced, it is probably telecined. In some cases, it might even be a combination of the two, meaning the video looks interlaced, and after you deinterlace it looks telecined.<br>
+<br>
+From here, parts of your script depend on your source and what you want to do with your video. As with before, read and follow any and all sections that apply to your encode. <strong>Read and follow the sections that apply to you in the order listed here.</strong><br>
+<br>
+<strong>The video is entirely telecined (usually NTSC live-action DVDs).</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">If you have an NTSC DVD or the video is otherwise telecined, add the following line to your script <span style="color:red">TFM(d2v="my_project.d2v", clip2=QTGMC().SelectEven()).TDecimate()</span> If you are encoding an anime or cartoon source, add <span style="color:red">mode=1</span> to TDecimate.</blockquote><br>
+<strong>The video is entirely interlaced.</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Add the following line to your script: <span style="color:red">QTGMC().SelectEven()</span>. If you want, you may tweak QTGMC's settings. For slow computers, setting the option Preset="Ultra Fast" will cause QTGMC to use YADIF (Yet Another Deinterlacing Filter), which is much faster and will reduce encoding time, though this is not recommended unless your computer really cannot handle the quality deinterlacing.<br>
+<br>
+Generally for HD sources, i.e., Blu-ray, you do not need heavy-duty placebo-level deinterlacing, so using Preset="Medium" or similar may increase encoding speed by a lot without any reduction in quality. For DVD sources, though, high quality deinterlacing is needed more. See the <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=156028">QTGMC page</a> for a more complete explanation.</blockquote><br>
+<strong>The video is a hybrid of telecine with something else.</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Add the line <span style="color:red">AnimeIVTC(mode=4, ifade=true, omode=2, pass=1)</span> to your .avs file. Now open VirtualDub, select the video file, and run File -&gt; Run video analysis pass, just like before. Then change <span style="color:red">pass=1</span> to <span style="color:red">pass=2</span> and leave it at that. It is <strong>strongly recommended</strong> you look into AnimeIVTC and understand its options before using it.</blockquote><br>
+<strong>The video has different progressive/interlaced/telecined sections (such as interlaced credits in a telecined movie).</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">The first step is to separate the sections. Start at the beginning, note whether the video is progressive/interlaced/telecined, and then find the frame number where that section ends. Repeat this process until you have a list of all the sections, what type of video the sections are, and the frame number where the section ends.<br>
+<br>
+Start by adding the following line to your .avs file: <span style="color:red">AnimeIVTC(mode=4, ifade=true, omode=2, pass=1)</span>. Now you need to specify the sections. For interlaced sections, set <span style="color:red">i1=</span>, replacing frame with the frame number where the section <strong>ends</strong>. For progressive sections, set <span style="color:red">p1=</span>, replacing frame with the frame number where the section <strong>ends</strong>. For telecined, etc. sections, set <span style="color:red">e1=</span>, replacing frame with the frame number where the section <strong>ends</strong>. Note that you can use i1, i2, p1, p2, e1, e2, and e3, which means you can specify up to two interlaced section, up to two progressive sections, and up to three telecined sections. You do not have to use them all.<br>
+<br>
+An example of what you would use if a video has interlaced opening credits, a telecined movie, and then interlaced closing credits:<br>
+<span style="color:red">AnimeIVTC(mode=4, ifade=true, omode=2, pass=1, i1=4301, e1=221321, i2=228488)</span><br>
+<br>
+ Now go open VirtualDub, select the video file, and run File -&gt; Run video analysis pass, just like before. Then change <span style="color:red">pass=1</span> to <span style="color:red">pass=2</span> and leave it at that.</blockquote><br>
+<br>
+After handling telecining and interlacing, you may need to crop or resize your video. Always crop first then resize. Follow all instructions below that apply to your video and encode:<br>
+<br>
+<strong>The video has black bars on the top or sides (even small bars of one pixel).</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Click Video-&gt;Crop Editor. When cropping the video:<br>
+<ul><li>Remove all black bars from the top, bottom, left and right sides.</li><li>Make sure both the horizontal and vertical resolutions are even numbers (mod 2).</li><li>Overcrop onto the movie itself only to satisfy the above rule.</li></ul></blockquote><br>
+<strong>I have an HD source and want to resize to a different resolution.</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">To resize, click Tools-&gt;Resize calculator. The Video resolution should already match the source resolution of the video. Take note of the value in the "Pixel aspect ratio" box (or PAR for short). Click Configure and set the "Target PAR" to whatever PAR you just saw. Make sure the "Resize block constraints" are 2x2, and the "Max search aspect ratio error" is 0.3%. Then, in "Avisynth resize", replace LanczoResize with Spline36Resize. Press OK.<br>
+<br>
+Now use the left and right arrow buttons to find a new resolution that matches your desired resolution. Note that with standard resolutions, such as 480p/576p/720p/1080p, for widescreen films (16:9 or greater) you want a resolution that is 854/1024/1280/1920 pixels wide respectively, but for fullscreen films (less than 16:9), you want a resolution that is 480/576/720/1080 pixels high respectively. Once you have found a good resolution, press Apply.</blockquote><br>
+<br>
+I should emphasize that inverse telecine and deinterlacing should be done <strong>before</strong> cropping and anything else. This is an absolute requirement and doing otherwise may end up in really bad results. Also, make sure not to inverse telecine or deinterlace unless it actually applies. Doing so without the video being telecined or interlaced  will result in a lower quality encode.<br>
+<br>
+Finally, add the line <span style="color:red">SelectRangeEvery(20000, 500, 10000)</span> to the end of your script in AvsPmod. <span style="color:red">SelectRangeEvery</span> tells AviSynth to only select certain frames. The syntax is as follows:<br>
+<br>
+<span style="color:red">SelectRangeEvery(interval, length, offset)</span><br>
+<br>
+First, Avisynth skips <span style="color:red">offset</span> frames at the beginning. From there, it will select the first <span style="color:red">length</span> frames every <span style="color:red">interval</span> frames. In other words, for all frames after the offset, Avisynth splits the film into even intervals, and then takes a certain number of frames from the beginning of each interval.<br>
+<br>
+In the example given, with the numbers 20000, 500, and 10000, Avisynth will first skip 10,000 frames, then take 500 frames at each 20,000 frame mark. If you do the calculations, that means it takes frame 10000-10500, 30000-30500, 50000-50500, etc.<br>
+<br>
+These numbers can be changed if needed. The goal is to have x264 encode between 1,000 and 5,000 frames from your source for use with testing different x264 parameters. The first 10,000 frames were skipped here because the beginning frames are often the opening credits - black background with white text - and are not useful in determining what x264 settings to use. You shouldn't have to do any math; just mess around with the numbers until the total frame count in Avisynth is a good number.<br>
+<br>
+You should now have something that looks like this:<br>
+<br>
+<span style="color:red">ffvideosource("C:\Users\Root\Documents\FEAR_AND_LOATHING_IN_LAS_VEGAS\00010.mkv")<br>
+Crop(0, 132, -0, -132)<br>
+SelectRangeEvery(20000,500,10000)</span><br>
+<br>
+Make sure to save. If you're not encoding from DVD, you may close AvsPMod if you want, but I recommend you keep it open anyway. If you are encoding from DVD, you have to keep it open as you will doing some stuff with it later.<br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">6. <span style="text-decoration: underline;">x264 Settings</span>:</span><br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Open the x264 Launcher:<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/Dk646Tx/j4jovu.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/j4jovu.png"><br>
+<br>
+Make sure Mode is set to <span style="color:red">CRF</span>, Preset is set to <span style="color:red">Placebo</span>, Tuning is set to <span style="color:red">Film</span> and Profile is set to <span style="color:red">High</span>. Then add <span style="color:red">--aq-mode 2 --merange 32</span> in the Custom x264 Parameters box. Your input will be the .avs test script you just created.<br>
+<br>
+First you need to find out the SAR of your source. If you are encoding from Blu-ray or HD-DVD, you can safely assume your SAR is 1:1 and skip this part. Otherwise, click Tools -&gt; Resize calculator, and next to the "Pixel aspect ratio" box click "..." and click "compute from .d2v". Take note of the values in the "Pixel aspect ratio" boxes, as that is your SAR. Add <span style="color:red">--sar x:y</span> in the Custom x264 Parameters box.<br>
+<br>
+The primary setting to be tested is the value in the CRF box, but before you test for that you should know about other possible settings that must be tested and tuned.<br>
+<br>
+<strong>--ref</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Use the equation <span style="color:red">Floor( 32,768 / ( Ceil( final_width / 16 ) * Ceil( final_height / 16 ) ) )</span> where Floor means round down to the nearest integer and Ceil means round up. That is the --ref value you should use. Increasing refs past that will break compatibility on some standalone devices. If you know specifically what devices you are encoding for, and what they can support, you may change the ref value to what is appropriate. The above equation is for Level 4.1. To get --ref values for other levels, replace "32,768" in the equation with the proper value from the Wikipedia page on H.264. For SD encodes, you can leave --ref out, which will default to 16 because of the Placebo preset, or you can lower it if your computer is too slow.</blockquote><br>
+<strong>--bframes</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">This setting determines the maximum number of bframes x264 is allowed to use in a row. This does not mean it will use them all, as x264 will decide during encoding what is optimal. This setting is merely a maximum to cut off x264 for speed purposes.<br>
+<br>
+The best setting for this would be to just leave it out and use the default Placebo of --bframes 16, which is the maximum and lets x264 have free reign over how many bframes to use. However, this can cause encodes to become time consuming, especially for slower computers.<br>
+<br>
+To determine the optimal value for this setting, first adjust the <span style="color:red">SelectRangeEvery</span> line in your Avisynth script so that test encodes have 10,000 frames or so, then use <span style="color:red">--bframes 16</span> on a test encode and look at the stats output after the encode has finished. Thee will be a line that looks like this:<br>
+<span style="color:red">x264 [info]: consecutive B-frames:  0.5%  1.1%  3.6% 24.0% 14.4% 43.3%  4.0%  3.4%  1.1%  1.4%  0.5%  0.9%  0.3%  0.3%  0.2%  0.9%  0.1%</span><br>
+<br>
+There are 17 values listed. Each one represents a specific number of consecutive b-frames, from 0 to 16. Each value shows the percentage of total frames that were able to make use of that number of consecutive b-frames. From these numbers choose the largest number of bframes whose percentage is &gt;= 1.0%. In the above example, use --bframes 9. Make sure to change back your <span style="color:red">SelectRangeEvery</span> line after testing bframes so that you can test faster.</blockquote><br>
+<strong>--me/--merange</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">The --me and --merange options determine the methods of motion estimation. When compressing, x264 will scan the video and try and determine motion patterns in the video. By finding these "motion vectors", x264 is able to compress further between frames.<br>
+<br>
+The --me option sets the algorithm x264 uses for motion estimation. When using the settings mentioned above (i.e., Preset set to Placebo), this setting is set to "tesa", the most intense setting. The --merange option sets how many frames x264 will scan. The above default settings sets this to 32.<br>
+<br>
+<strong>Higher --me settings are very slow.</strong> Sometimes it may be in your best interest to lower the --me setting and, as compensation, raise the --merange setting. Firstly, <strong>never set --me to anything below "umh".</strong> Below is explanation of the different --me modes, and why/when you should use them:<br>
+<ul><li><span style="color:red">--me umh --merange 32/48</span> - This much faster than other settings. Additionally, for movies with <strong>lots of motion</strong>, e.g., action movies, the motion in the video is obvious enough where you don't need to go any higher than this setting.</li><li><span style="color:red">--me esa --merange 32</span> - Basically a faster version of the defaults given before. The --merange setting is the same, but --me is set to "esa", which is one step lower than "tesa" (the default). Use this if your CPU sucks.</li><li><span style="color:red">--me tesa --merange 16</span> - This uses "tesa", just like the default, but lowers the --merange value. This is useful for low motion films, where an increase in the amount of frames analyzed will not help.</li><li><span style="color:red">--me tesa --merange 32</span> - This is the <strong>default</strong> value. If you were to just use the settings given in this guide and not change anything, this is equivalent. It is very slow, but covers all cases.</li></ul></blockquote><br>
+<strong>--vf</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><strong>If your video is not progressive, you cannot use this option.</strong> This allows you to crop and/or resize your source video without the need for using an AviSynth script. <span style="color:red">Do not use this parameter in your test encodes, only for the full encode.</span> When you perform the full encode, copy the crop and resize numbers to x264. Remember to crop before resizing. The syntax is as follows:<br>
+<br>
+<span style="color:red">--vf crop:{left},{top},{right},{bottom}/resize:{width},{height},{sar},method=spline</span><br>
+<br>
+Replace the {left}, {top}, {right} and {bottom} with your crop settings and {width}, {height}, and {sar} with your resize values and SAR. (If you are encoding from Blu-ray, make the SAR "1:1".)</blockquote><br>
+<strong>--psy-rd</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">This is a bit of a hack option and plays upon a feature of the human eye: we prefer an image that is distorted from the original but has the same grain and complexity over an image that is blurred or softened but not distorted at all. Play with this setting only if you want your encodes perfect.<br>
+<br>
+If you do adjust this setting, first test for CRF (described later) and add <span style="color:red">--no-psy</span> while testing CRF. Once you have a CRF value, you can test this parameter. --psy-rd takes two arguments (see <a rel="noreferrer" target="_blank" href="https://forum.doom9.org/showthread.php?t=138293">this explanation</a> to learn more about what they are). First make test encodes with the first setting by starting and <span style="color:red">--psy-rd 1.0:unset</span> and changing the value +/- 0.1 to 0.3 or so. Then change the second value, starting at 0.0 and adjusting.</blockquote><br>
+<strong>--aq-strength</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Sometimes you might want to play with AQ strength in order to optimize even further. Adaptive Quantization (AQ) adjusts the video by using more bits in areas of the video that are more complex and taking away from areas that are simpler. The downside of this is that if it's too strong, then background areas of the encode will show too much quality degradation, even when other parts look just fine. So if it looks like faces and details are fine but the background areas are losing quality, you can try lowering the --aq-strength option.</blockquote><br>
+<strong>Animation-specific Options</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Some options may help specifically with animated or CGI movies.<br>
+<ul><li>--trellis - Changing this from <span style="color:red">2</span> to <span style="color:red">0</span> <em>might</em> help with cartoon, animated and CGI sources.</li><li>--no-dct-decimate - Adding this parameter can help with very sharp/detailed sources. Only for use with CGI and highly detailed animation.</li><li>--no-weightb - Can help your encode retain a bit more detail. Only for use with CGI.</li></ul></blockquote><br>
+<strong>Slow Computer Options</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Not everybody has the fastest computer in the world. And the default encoding settings in this guide are <strong>really</strong> slow. If you don't feel like waiting that long, you can set <span style="color:red">--me umh</span> in the custom encoding options. You may also lower the --ref, --merange, and/or --rc-lookahead values to speed up encodes.</blockquote><br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">7. <span style="text-decoration: underline;">Test Encodes</span>:</span><br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Test Encodes are probably the most important, yet most subjective, part of the entire encoding process. Once you have your Avisynth script and x264 settings good to go, this is the last thing you need to do for the video.<br>
+<br>
+How test encodes work is that you take your Avisynth script and x264 settings and then make a number of encodes, varying a certain setting each time while keeping everything else constant. In other words, encode, tweak, encode, tweak, etc. Then you take all your test encodes and use AvsP to compare them side-by-side, at which point you pick the best one.<br>
+<br>
+Generally, test encodes use only a part of the entire film, which is the purpose of the <span style="color:red">SelectRangeEvery</span> line added in the Avisynth script earlier. Also, unless you want to really get intense, the only parameter you will be modifying and testing for is CRF, which is the primary determinant in video quality when you encode.<br>
+<br>
+The general strategy for most movies when performing test encodes is the following:<br>
+<ul><li>Test whole-numbered CRFs. (I usually do between 15 and 25 just so that I know that my last test encode will always have clear quality loss.)</li><li>Determine when quality begins to degrade.</li><li>Test fractional CRFs in between the value you found above.</li><li>Determine when quality begins to degrade.</li></ul><br>
+...<br>
+<br>
+For each test encode, paste your desired commandline parameters into the bottom line of the launcher. Make sure you have set an output directory and file name. Then click the Start! button and wait for the test encode to finish. Then change the CRF to the next value, rinse and repeat.<br>
+<br>
+Once done, open AvsPmod. In a new tab, enter the script:<br>
+<br>
+<span style="color:red">a=import("C:\Users\Root\Documents\loathing_test.avs").subtitle("Source", align=9)<br>
+b=ffvideosource("C:\Users\Root\Documents\test_001.mkv").subtitle("Encode", align=9)<br>
+c=ffvideosource("C:\Users\Root\Documents\test_002.mkv").subtitle("Encode", align=9)<br>
+...<br>
+interleave(a, b, c, ...)<br>
+spline36resize(converttorgb,ffsar&gt;1?round(width*ffsar):width,ffsar&lt;1?round(height/ffsar):height)<br>
+ffinfo(framenum=true,frametype=true,cfrtime=false,vfrtime=false)</span><br>
+<br>
+Make sure to specify the paths to <em>your</em> source and encodes. The first line is the source Avisynth script you used to make the test encodes and the subsequent are test encodes. The last line adds the red text to the top-left corner of the screenshot, displaying the current and total number of frames as well as the frame type.<br>
+<br>
+Use the left and right arrow keys to cycle through the frames. Pay close attention to frame transitions; there is a clear difference between varying compression applied to the same frame, and entirely different frames.<br>
+<br>
+A few tips:<br>
+<ul><li>Quality degradation is most apparent in grain loss, which is when the fine grain that you see in the video becomes "flattened" by compression. If you see any quality loss worse than grain loss (such as blatant artifacting), then your CRF value is way too high.</li><li>Ignore I-frames here since they are the least reliable indicator of quality retention.</li><li>Be aware that scenes with a lot of motion will have more quality degradation. <strong>This is done on purpose.</strong> The human eye cannot see quality degradation as well in high motion scenes.</li><li>Look more for grain loss than grain shift. The human eye prefers an image that is distorted yet still grainy over one that is blurred yet not distorted.</li><li>Do not consider your resolution. A high quality encode should stand the test of time, and in the future 1080p will be today's 480p, so don't think it's OK to get away with something because nobody will notice it on today's screens.</li><li>Try going forward and backwards. Sometimes it is easier to see when quality stops degrading rather than when it starts, so going from your lowest quality test encode and scrolling up may make it easier.</li></ul><br>
+<br>
+Don't get stuck on comparing the same two frames when deciding what encding parameters should be changed. You're looking for quality loss across the entire movie as represented by the test encode. <strong>Remember, the goal is to retain as much perceivable quality as possible, not retain every last speck from the source.</strong><br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">8. <span style="text-decoration: underline;">Encoding the Entire Movie</span>:</span><br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+If your video is ONLY being cropped and/or resized and NOT inverse telecined or deinterlaced, add the parameters to crop and resize your video into the x264 options and change the input to the .mkv that eac3to created earlier rather than the .avs script. This will bypass Avisynth and make things a lot faster.<br>
+<br>
+However, if the source is telecined or interlaced, then Avisynth is still needed to get rid of that. In these cases, keep everything how it was and just remove the SelectRangeEvery() line from the Avisynth script.<br>
+<br>
+Finally, click the Start! button:<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/55ncvN4/710bb3.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/710bb3.png"><br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">9. <span style="text-decoration: underline;">Extracting Chapter Markers</span>:</span><br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Open Chapter Grabber and select <span style="color:red">File --&gt; Open Disc</span>. From there, pick the folder for your source disc. Once the chapter timecodes show up in Chapter Grabber, fill in the name of the film. Now open the actual Blu-ray disc or DVD in the player of your choice and find the list of chapters in the menu. Then copy the names into ChapterGrabber. <strong>Do not use ChapterGrabber alone to get the chapter names. Check the actual disc and menu for the chapter names.</strong> You should end up with something that looks like this:<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/h8XQbyt/94b7nn.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/94b7nn.png"><br>
+<br>
+Save the result as an .xml file.<br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">10. <span style="text-decoration: underline;">Ripping Subtitles</span></span><br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Subtitles on DVDs and Blu-rays are stored as bitmap images, which are very large and take up unnecessary space. Therefore it is best to OCR the subtitles into text form. However, depending on whether you are ripping from Blu-ray or DVD, the process is different due to different formats.<br>
+<br>
+<strong>Ripping DVD Subtitles</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Open up SubRip and click File -&gt; Open VOB(s). Then click Open Dir. Find your VIDEO_TS/ folder and pick a VOB file that is part of your main movie. SubRip will auto-select the rest. You know you picked the right one if subtitle listings show up in the Language stream list.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://i45.tinypic.com/166eon6.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/166eon6.png"><br>
+<br>
+Select a subtitle track and press Start. SubRip will ask for character it cannot identify automatically, so enter in each letter it asks.<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="http://i49.tinypic.com/2uen3tt.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/2uen3tt.png"><br>
+<br>
+Once complete, click Corrections -&gt; Post OCR Correction. Check everything except "Try to correct orthography" and "Convert all text to LowerCase before". Also make sure to pick the correct language if it is listed, otherwise leave it as English. Press OK.<br>
+<br>
+Finally, save the subtitle file and save it as Unicode if asked. It is recommended you copy/paste the final file into a word processor and check spelling and whatnot to fix occasional mistakes.<br>
+</blockquote><br>
+<strong>Ripping Blu-ray Subtitles</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler">Open Suprip and click Open to select the .sup file demuxed from eac3to. Press Ctrl-O and SupRip will begin OCRing and asking for any characters it does not know.<br>
+<br>
+Type in the letters it asks and make use of the Italic checkbox.<br>
+<br>
+Finally, click the SRT tab and save the subtitle file. It is recommended you copy/paste the final file into a word processor and check spelling and whatnot to fix occasional mistakes.<br>
+</blockquote><br>
+</blockquote><br>
+<br>
+<span class="bbcode-size-5">11. <span style="text-decoration: underline;">Muxing Everything Together</span></span><br>
+<strong> </strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+Open MKVmerge. Click File-&gt;Options, and in the Options dialog make sure <span style="color:red">Disable header removal compression for audio and video tracks by default</span> is checked,<br>
+<br>
+Now drag all necessary files - the video you encoded, main audio stream, commentary audio, and subtitles - into the <span style="color:red">Input files</span> box.<br>
+<br>
+<ul><li>Each track should have the correct <span style="color:red">language</span> set.</li><li>Commentary audio and <a rel="noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Subtitle_(captioning)#SDH">SDH</a> subtitle tracks should be given an appropriate <span style="color:red">track name</span>.</li><li>If your encode has commentary audio, make sure <span style="color:red">Default track flag</span> is set to <span style="color:red">yes</span> for the main audio stream.</li><li>Unless the movie is in a language other than English, <span style="color:red">Default track flag</span> should be set to <span style="color:red">no</span> for all subtitle tracks.</li><li>All video and audio tracks should have Compression set to none in the Extra options tab. If you checked off the option mentioned above, it should already be preset to that by default.</li></ul><br>
+<br>
+<strong>Important</strong>: If you were told to use <span style="color:red">AnimeIVTC</span> with <span style="color:red">pass=1</span> and then <span style="color:red">pass=2</span>, there will be a "timecodes.txt" file in your source directory. In MKVMerge, select your video stream, press Browse next to the Timecodes text box, and select that file.<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/H7D7Gq7/4u16ad.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/4u16ad.png"><br>
+<br>
+Now go to the Global tab and enter the name of the Movie in "File/segment title". Under Chapters, click Browse and select the .xml file you created with ChapterGrabber. Set the language and Charset appropriately (usually eng and UTF-8, respectively).<br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="./Advanced-x264-Encoding-Guide-(New-Version)_files/m50es8.png" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/m50es8.png"><br>
+<br>
+Name your output file, and click <span style="color:red">Start muxing</span>. The muxing process will take several minutes.<br>
+</blockquote><br>
+<br>
+Last but not least, <strong>play your file</strong>. If it's a good movie, consider watching the whole thing. <img border="0" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/smile.gif" alt=""> Just make sure no problems occurred and that the movie looks like it is supposed to.<br>
+<br>
+<strong>To Do</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="hidden spoiler"><br>
+1) Change eac3to command line over to GUI if possible for easier use.<br>
+2) Describe how to detect field blending, double telecine, repetition upconverted, and PAL's fake interlaced.<br>
+3) Use multi-threaded Avisynth.<br>
+</blockquote>									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=44384">Nuked</a> <span class="time" title="Apr 29 2016, 19:15">[ Apr 29 2016, 19:15 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post417822">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417822#post417822">#417822</a>
+			by <strong><a class="username username--torrent-king" href="https://passthepopcorn.me/user.php?id=54427">Ruinpeople</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=54427"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank5.png" class="award" title="Rank 5: 105 Awards"></a> (Torrent King)</strong>
+			<span class="user_title"> (<a href="https://passthepopcorn.me/torrents.php?id=248">Now Benson, I'm going to have to turn you into a dog for a while</a>) </span>
+			<span class="time" title="Jan 19 2012, 13:30">[ Jan 19 2012, 13:30 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;417822&#39;, &#39;Ruinpeople&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar417822" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=417822">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/f5i59d.gif" class="forum-post__avatar__image" alt="Ruinpeople&#39;s avatar" width="150" height="200">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content417822">
+				This looks Great ! <br>
+<br>
+Will give it a try someday.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post417839">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417839#post417839">#417839</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=41268">brownt0wn</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=41268"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank5.png" class="award" title="Rank 5: 96 Awards"></a> (Stalky Stalkerton)</strong>
+			<span class="user_title"> (Gettin my ass whooped by Fluffles on the reg.) </span>
+			<span class="time" title="Jan 19 2012, 14:58">[ Jan 19 2012, 14:58 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;417839&#39;, &#39;brownt0wn&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar417839" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=417839">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/s97c74.png" class="forum-post__avatar__image" alt="brownt0wn&#39;s avatar" width="296" height="384">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content417839">
+				lol at the license.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post417914">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417914#post417914">#417914</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=64380">stachio</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=64380"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank1.png" class="award" title="Rank 1: 31 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 19 2012, 17:05">[ Jan 19 2012, 17:05 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;417914&#39;, &#39;stachio&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar417914" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=417914">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content417914">
+				A few clarifications,<br>
+<strong>parent5446 wrote: </strong><blockquote><br>
+The video is telecined (2 out of 5 frames looks interlaced).: <br>
+Add the following line to your script TFM().TDecimate().<br>
+<br>
+The video is interlaced: Use<br>
+QTGMC()<br>
+SelectEven()<br>
+</blockquote><br>
+<br>
+In the guide written by echohead it was mentioned to add  TFM().TDecimate() if the source was NTSC, as it reduces fps from 29.97 to 23.97, maybe you could add this to remove any ambiguity and confusion to newbies. My reasoning is that most of the people trying their hand first time might not know what the terms telecine or interlaced mean or not know how to detect it.<br>
+<br>
+<br>
+I use YADIFMod(edeint=NNEDI3()) for interlaced sources, is there any difference/ which one is better if given an option?<br>
+Also, are you planning to provide a rough template regarding various parameters to be used for Film, Animation, CGI, Rotoscopic sources etc..?<br>
+<br>
+Thanks for rewriting the guide to combine DVD and Blu-ray encoding processes in a single place <img border="0" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/smile.gif" alt=""><br>
+<br>
+<br>
+Edit: As Mushhead mentioned below, is resizing required in AvSP?									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=64380">stachio</a> <span class="time" title="Jan 19 2012, 17:27">[ Jan 19 2012, 17:27 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post417918">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417918#post417918">#417918</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=63703">mushhead</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=63703"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank6.png" class="award" title="Rank 6: 121 Awards"></a> (salty suck my balls)</strong>
+			<span class="user_title"> (DENMARK) </span>
+			<span class="time" title="Jan 19 2012, 17:16">[ Jan 19 2012, 17:16 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;417918&#39;, &#39;mushhead&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar417918" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=417918">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/34676b.jpg" class="forum-post__avatar__image" alt="mushhead&#39;s avatar" width="235" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content417918">
+				<strong>stachio wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417914#post417914"><img class="view_post" alt="View Post" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>A few clarifications,<br>
+<strong>parent5446 wrote: </strong><blockquote><br>
+The video is telecined (2 out of 5 frames looks interlaced).: <br>
+Add the following line to your script TFM().TDecimate().<br>
+<br>
+The video is interlaced: Use<br>
+QTGMC()<br>
+SelectEven()<br>
+</blockquote><br>
+<br>
+In the guide written by echohead it was mentioned to add  TFM().TDecimate() if the source was NTSC, as it reduces fps from 29.97 to 23.97, maybe you could add this to remove any ambiguity and confusion to newbies. My reasoning is that most of the people trying their hand first time might not know what the terms telecine or interlaced mean or not know how to detect it.<br>
+<br>
+<br>
+I use YADIFMod(edeint=NNEDI3()) for interlaced sources, is there any difference/ which one is better if given an option?<br>
+Also, are you planning to provide a rough template regarding various parameters to be used for Film, Animation, CGI, Rotoscopic sources etc..?<br>
+<br>
+Thanks for rewriting the guide to combine DVD and Blu-ray encoding processes in a single place <img border="0" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/smile.gif" alt=""></blockquote><br>
+I also use NNEDI3 for deinterlacing and I'd have to agree that your description of telecining needs some expansion/explanation.<br>
+I also don't use the resize in AvsP							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post417960">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417960#post417960">#417960</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=57598">parent5446</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=57598"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 74 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 19 2012, 19:25">[ Jan 19 2012, 19:25 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;417960&#39;, &#39;parent5446&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar417960" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=417960">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content417960">
+				<strong>stachio wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417914#post417914"><img class="view_post" alt="View Post" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>A few clarifications,<br>
+<strong>parent5446 wrote: </strong><blockquote><br>
+The video is telecined (2 out of 5 frames looks interlaced).: <br>
+Add the following line to your script TFM().TDecimate().<br>
+<br>
+The video is interlaced: Use<br>
+QTGMC()<br>
+SelectEven()<br>
+</blockquote><br>
+<br>
+In the guide written by echohead it was mentioned to add  TFM().TDecimate() if the source was NTSC, as it reduces fps from 29.97 to 23.97, maybe you could add this to remove any ambiguity and confusion to newbies. My reasoning is that most of the people trying their hand first time might not know what the terms telecine or interlaced mean or not know how to detect it.<br>
+<br>
+<br>
+I use YADIFMod(edeint=NNEDI3()) for interlaced sources, is there any difference/ which one is better if given an option?<br>
+Also, are you planning to provide a rough template regarding various parameters to be used for Film, Animation, CGI, Rotoscopic sources etc..?<br>
+<br>
+Thanks for rewriting the guide to combine DVD and Blu-ray encoding processes in a single place <img border="0" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/smile.gif" alt=""><br>
+<br>
+<br>
+Edit: As Mushhead mentioned below, is resizing required in AvSP?</blockquote><br>
+<br>
+You can use Yadifmod with NNEDI3, and I will add it in as an option. QTGMC is just a lot more intense and higher quality deinterlacer. I just figured since Yadif is what Handbrake uses we should be stepping up our game a little bit. <img border="0" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/smile.gif" alt=""><br>
+<br>
+As for the telecine explanation, I totally see what you mean and will expand upon that promptly.<br>
+<br>
+And for the resizing part, it was not mentioned in echohead's guide, but it is crucial that the final storage resolution of the video right before encoding is mod16. It generally does not affect quality, but when the resolution is not mod16, x264 will pad the video with its own data to get it to mod16, which usually results in a loss of compression. If you guys really feel that mod16 isn't worth it, I can make it optional or something, but it is something to think about as it does affect the final encode.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post417967">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417967#post417967">#417967</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=63703">mushhead</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=63703"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank6.png" class="award" title="Rank 6: 121 Awards"></a> (salty suck my balls)</strong>
+			<span class="user_title"> (DENMARK) </span>
+			<span class="time" title="Jan 19 2012, 19:37">[ Jan 19 2012, 19:37 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;417967&#39;, &#39;mushhead&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar417967" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=417967">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/34676b.jpg" class="forum-post__avatar__image" alt="mushhead&#39;s avatar" width="235" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content417967">
+				I'm all for increasing quality but I was just using the settings agreed upon. If the consensus is to implement these additions then I'm all for it but what is the consequence as far as encoding time etc? As far as I'm aware there are only 3 of us with really powerful computers in the group that will remain able to do any encodes in a reasonable time with all of the higher settings.<br>
+I'm not sure if any of the changes will increase the time taken but it must be a consideration							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post417973">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417973#post417973">#417973</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=74187">rik81h</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=74187"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 83 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/XyLNXjF/3z1ycx.gif" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/3z1ycx.gif">) </span>
+			<span class="time" title="Jan 19 2012, 19:57">[ Jan 19 2012, 19:57 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;417973&#39;, &#39;rik81h&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar417973" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=417973">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/e073vf.jpg" class="forum-post__avatar__image" alt="rik81h&#39;s avatar" width="150" height="150">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content417973">
+				Well i've just used:- QTGMC() SelectEven()on a 22 minute clip and only got like just under 4fps, normally i'd get just under 7-8fps with yadifmod. I run an amd b55 <a href="https://passthepopcorn.me/user.php?action=search&amp;search=3">@3</a>.6ghz for ref.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post417977">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417977#post417977">#417977</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=57598">parent5446</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=57598"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 74 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 19 2012, 20:01">[ Jan 19 2012, 20:01 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;417977&#39;, &#39;parent5446&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar417977" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=417977">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content417977">
+				Just a quite note: I removed the "--engage keep_bitstream_ar_info" from the MKVMerge CLI options. It seems from <a rel="noreferrer" target="_blank" href="http://lists.matroska.org/pipermail/matroska-users/2009-April/001858.html">version 2.7.0 on</a> that this has been changed to the default functionality and is no longer necessary.<br>
+<br>
+<strong>rik81h wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=417973#post417973"><img class="view_post" alt="View Post" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>Well i've just used:- QTGMC() SelectEven()on a 22 minute clip and only got like just under 4fps, normally i'd get just under 7-8fps with yadifmod. I run an amd b55 <a href="https://passthepopcorn.me/user.php?action=search&amp;search=3">@3</a>.6ghz for ref.</blockquote><br>
+<br>
+Try running Preset="Ultra Fast" (this actually causes QTGMC to use yadif as its deinterlacer <img border="0" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/tongue.gif" alt="">)									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=57598">parent5446</a> <span class="time" title="Jan 19 2012, 20:31">[ Jan 19 2012, 20:31 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post418064">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=418064#post418064">#418064</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=63703">mushhead</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=63703"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank6.png" class="award" title="Rank 6: 121 Awards"></a> (salty suck my balls)</strong>
+			<span class="user_title"> (DENMARK) </span>
+			<span class="time" title="Jan 19 2012, 22:41">[ Jan 19 2012, 22:41 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;418064&#39;, &#39;mushhead&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar418064" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=418064">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/34676b.jpg" class="forum-post__avatar__image" alt="mushhead&#39;s avatar" width="235" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content418064">
+				I've just run through a few test encodes with the resize in place and when I play the outputs they are all stretched. That can't be right so obviously this doesn't work for me							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post418282">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=418282#post418282">#418282</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=57598">parent5446</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=57598"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 74 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 20 2012, 05:46">[ Jan 20 2012, 05:46 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;418282&#39;, &#39;parent5446&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar418282" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=418282">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content418282">
+				<strong>mushhead wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=418064#post418064"><img class="view_post" alt="View Post" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>I've just run through a few test encodes with the resize in place and when I play the outputs they are all stretched. That can't be right so obviously this doesn't work for me</blockquote><br>
+<br>
+It has to do with a small mistake in the guide that I forgot to fix when copying stuff from my rewrite of the HD encoding guide. For DVD-sourced encodes, you have to one of two things: 1) change the target PAR in the resize calculator configuration so it resizes to the same SAR or 2) don't use the --sar option in x264. The difference is whether you want to convert the DVD to square pixels, though from what I'm found it is unnecessary and misleading to do so, so I put the first method in the guide. The guide now has the correct instructions.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post418832">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=418832#post418832">#418832</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=48383">MailCook</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=48383"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 81 Awards"></a> (Power User)</strong>
+			<span class="user_title"> (I'm calm.) </span>
+			<span class="time" title="Jan 21 2012, 12:32">[ Jan 21 2012, 12:32 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;418832&#39;, &#39;MailCook&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar418832" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=418832">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/1nieyvQ.png" class="forum-post__avatar__image" alt="MailCook&#39;s avatar" width="263" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content418832">
+				I think this yadifmod thing should be eyes only test.<br>
+If picture looks interlaced then it should be applied.<br>
+Even on NTSC sources decimating filter is enough most of the time.<br>
+Really, DGIndex is almost never correct about interlaced source.<br>
+Most of the time there's no need for yadifmod.<br>
+I applied it on my 20000 leagues encode as DGIndex showed it was interlaced on a batch of test frames.<br>
+And it ruined the picture when the shiny treasure was shown. It looked like it interlaced(yes, interlaced) the picture which wasn't interlaced.									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=48383">MailCook</a> <span class="time" title="Jan 21 2012, 12:32">[ Jan 21 2012, 12:32 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post418877">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=418877#post418877">#418877</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=74187">rik81h</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=74187"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 83 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/XyLNXjF/3z1ycx.gif" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/3z1ycx.gif">) </span>
+			<span class="time" title="Jan 21 2012, 16:30">[ Jan 21 2012, 16:30 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;418877&#39;, &#39;rik81h&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar418877" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=418877">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/e073vf.jpg" class="forum-post__avatar__image" alt="rik81h&#39;s avatar" width="150" height="150">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content418877">
+				<a href="https://passthepopcorn.me/user.php?action=search&amp;search=mailcook">@mailcook</a> I have since taken your advice about visually checking instead of just believing dg index and it is apparent on some of the material i've been doing-extras and concerts							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post418911">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=418911#post418911">#418911</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=57598">parent5446</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=57598"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 74 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 21 2012, 17:59">[ Jan 21 2012, 17:59 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;418911&#39;, &#39;parent5446&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar418911" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=418911">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content418911">
+				<strong>MailCook wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=418832#post418832"><img class="view_post" alt="View Post" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>I think this yadifmod thing should be eyes only test.<br>
+If picture looks interlaced then it should be applied.<br>
+Even on NTSC sources decimating filter is enough most of the time.<br>
+Really, DGIndex is almost never correct about interlaced source.<br>
+Most of the time there's no need for yadifmod.<br>
+I applied it on my 20000 leagues encode as DGIndex showed it was interlaced on a batch of test frames.<br>
+And it ruined the picture when the shiny treasure was shown. It looked like it interlaced(yes, interlaced) the picture which wasn't interlaced.</blockquote><br>
+<br>
+Oh I totally agree. And it's not just DGIndex. There was a Blu-ray (yes Blu-ray, as in a BD50), where eac3to said the video was interlaced, yet when you bring it into Avisynth, it's perfectly progressive. XD							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post419054">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419054#post419054">#419054</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=73699">dot_commie</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=73699"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank2.png" class="award" title="Rank 2: 42 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 21 2012, 23:33">[ Jan 21 2012, 23:33 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;419054&#39;, &#39;dot_commie&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar419054" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=419054">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/906vda.png" class="forum-post__avatar__image" alt="dot_commie&#39;s avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content419054">
+				Crossposting from a TBB thread:<br>
+<br>
+Here's just one comparison between yadifmod(edeint=NNEDI3()) and QTGMC()<br>
+<br>
+You decide:<br>
+Nothing vs QTGMC: <a rel="noreferrer" target="_blank" href="http://screenshotcomparison.com/comparison/104102">http://screenshotcomparison.com/comparison/104102</a><br>
+Nothing vs YADIF: <a rel="noreferrer" target="_blank" href="http://screenshotcomparison.com/comparison/104104">http://screenshotcomparison.com/comparison/104104</a><br>
+QTGMC vs YADIF: <a rel="noreferrer" target="_blank" href="http://screenshotcomparison.com/comparison/104105">http://screenshotcomparison.com/comparison/104105</a>							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post419247">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419247#post419247">#419247</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=57598">parent5446</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=57598"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 74 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 22 2012, 06:51">[ Jan 22 2012, 06:51 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;419247&#39;, &#39;parent5446&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar419247" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=419247">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content419247">
+				Note: I've changed the resizing section. Lately I've been reading that the mod16 resolution, while it does provide better compression, is not worth the scaling artifacts caused by resizing. I've kept information about resizing for those making HD-sourced SD encodes, but it is no longer part of every encode.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post419253">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419253#post419253">#419253</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=53787">zaplinaki</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=53787"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 84 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (I don't know how to hat) </span>
+			<span class="time" title="Jan 22 2012, 07:03">[ Jan 22 2012, 07:03 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;419253&#39;, &#39;zaplinaki&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar419253" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=419253">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/vx06mJE.jpg" class="forum-post__avatar__image" alt="zaplinaki&#39;s avatar" width="407" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content419253">
+				this looks great, thanks parent5446. Can we have a seperate guide for SD and HD, this might confuse loads of people. 									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=53787">zaplinaki</a> <span class="time" title="Jan 22 2012, 07:05">[ Jan 22 2012, 07:05 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post419258">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419258#post419258">#419258</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=57598">parent5446</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=57598"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 74 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 22 2012, 07:22">[ Jan 22 2012, 07:22 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;419258&#39;, &#39;parent5446&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar419258" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=419258">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content419258">
+				<strong>zaplinaki wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419253#post419253"><img class="view_post" alt="View Post" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>this looks great, thanks parent5446. Can we have a seperate guide for SD and HD, this might confuse loads of people.</blockquote><br>
+<br>
+Honestly, I think the idea of a combined guide is better. The problem with the two separate encoding guides is that people were only reading the one applicable to them, and then getting confused and asking questions that could have been answered by content included in the opposite guide. By having one central guide, information is centralized and standardized. Also, having two guides is a little redundant since 70% of the encoding process is exactly the same for SD and HD encodes.<br>
+<br>
+If PTP really does want two separate guides, though, it shouldn't be hard. It would just mean copying and pasting this guide twice and then removing anything not necessary for the respective guide.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post419264">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419264#post419264">#419264</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=63703">mushhead</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=63703"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank6.png" class="award" title="Rank 6: 121 Awards"></a> (salty suck my balls)</strong>
+			<span class="user_title"> (DENMARK) </span>
+			<span class="time" title="Jan 22 2012, 07:31">[ Jan 22 2012, 07:31 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;419264&#39;, &#39;mushhead&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar419264" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=419264">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/34676b.jpg" class="forum-post__avatar__image" alt="mushhead&#39;s avatar" width="235" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content419264">
+				I think it may be better to have two separate guides. You can always link to each other in the OP.<br>
+<br>
+mushedit: Spelling!									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=63703">mushhead</a> <span class="time" title="Jan 22 2012, 07:32">[ Jan 22 2012, 07:32 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post419362">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419362#post419362">#419362</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=74187">rik81h</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=74187"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 83 Awards"></a> (Elite)</strong>
+			<span class="user_title"> (<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://i.ibb.co/XyLNXjF/3z1ycx.gif" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/3z1ycx.gif">) </span>
+			<span class="time" title="Jan 22 2012, 14:49">[ Jan 22 2012, 14:49 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;419362&#39;, &#39;rik81h&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar419362" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=419362">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/e073vf.jpg" class="forum-post__avatar__image" alt="rik81h&#39;s avatar" width="150" height="150">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content419362">
+				My first thoughts (being someone who is learning this lot) was to have it separate, but then i worked through it all and to be honest it does flow properly when you're actually applying what you're reading. So my vote is one guide.....to rule them all lol							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post419433">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419433#post419433">#419433</a>
+			by <strong><a class="username username--torrent-king" href="https://passthepopcorn.me/user.php?id=54344">pledgewise</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/disabled.png" alt="Banned" title="Be good, and you won&#39;t end up like this user"> (Torrent King)</strong>
+			<span class="user_title"> (You can't hurt me, not with my cheese helmet! ) </span>
+			<span class="time" title="Jan 22 2012, 17:46">[ Jan 22 2012, 17:46 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;419433&#39;, &#39;pledgewise&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar419433" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=419433">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="https://s1.postimg.org/51s5xz9b3/4083_2.jpg" class="forum-post__avatar__image" alt="pledgewise&#39;s avatar" width="54" height="100">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content419433">
+				Nice guide. Thanks<br>
+Typo:  <span style="color:yellow">TFM().TDecimate().</span><br>
+correction:  <span style="color:yellow">TFM().TDecimate()</span><br>
+<br>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post419461">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419461#post419461">#419461</a>
+			by <strong><a class="username username--legend" href="https://passthepopcorn.me/user.php?id=75467">Voltaire</a> (Legend)</strong>
+			<span class="user_title"> (Put out to pasture) </span>
+			<span class="time" title="Jan 22 2012, 18:28">[ Jan 22 2012, 18:28 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;419461&#39;, &#39;Voltaire&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar419461" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=419461">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/a1929i.gif" class="forum-post__avatar__image" alt="Voltaire&#39;s avatar" width="186" height="200">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content419461">
+				I was just mentioning how we could use an updated guide, and lo and behold you've already written it!  Great work parent5446.  It looks fantastic.  Well laid out, and informative.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post419504">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419504#post419504">#419504</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=57598">parent5446</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=57598"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank4.png" class="award" title="Rank 4: 74 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 22 2012, 19:50">[ Jan 22 2012, 19:50 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;419504&#39;, &#39;parent5446&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar419504" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=419504">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content419504">
+				<strong>pledgewise wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419433#post419433"><img class="view_post" alt="View Post" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>Nice guide. Thanks<br>
+Typo:  <span style="color:yellow">TFM().TDecimate().</span><br>
+correction:  <span style="color:yellow">TFM().TDecimate()</span></blockquote><br>
+<br>
+Fixed.<br>
+<br>
+<strong>Voltaire wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419461#post419461"><img class="view_post" alt="View Post" src="./Advanced-x264-Encoding-Guide-(New-Version)_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>I was just mentioning how we could use an updated guide, and lo and behold you've already written it!  Great work parent5446.  It looks fantastic.  Well laid out, and informative.</blockquote><br>
+<br>
+Thanks. Hopefully we'll end up with less confused encoders with this guide.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post419513">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419513#post419513">#419513</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=73699">dot_commie</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=73699"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank2.png" class="award" title="Rank 2: 42 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 22 2012, 20:18">[ Jan 22 2012, 20:18 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;419513&#39;, &#39;dot_commie&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar419513" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=419513">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/906vda.png" class="forum-post__avatar__image" alt="dot_commie&#39;s avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content419513">
+				Can you explain more about sar? How to find it, what values to put in, etc. How does this relate to the ITU/Non-ITU as listed in echohead's tutorial?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post" id="post419523">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481&amp;postid=419523#post419523">#419523</a>
+			by <strong><a class="username username--member" href="https://passthepopcorn.me/user.php?id=49441">jmanrob</a><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=49441"><img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/Rank1.png" class="award" title="Rank 1: 24 Awards"></a> (Member)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jan 22 2012, 20:48">[ Jan 22 2012, 20:48 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#quickpost" onclick="Quote( &#39;419523&#39;, &#39;jmanrob&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar419523" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=419523">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=14481#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Advanced-x264-Encoding-Guide-(New-Version)_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content419523">
+				First off nice guide, lord mulders launcher works great on both 32-bit and 64-bits OS. I prefer using this over cmd .bat encoding.<br>
+<br>
+--rc-lookahead 250<br>
+<br>
+I've read somewhere, maybe Doom9... Setting this too high can be potentially bad, it provides basically zero benefit besides making you feel better.<br>
+<br>
+maybe keep this at the default of 60<br>
+<br>
+<br>
+Thx for the guides							</div>
+		</div>
+	</div>
+</div>
+<div class="pagination pagination--bottom"><span class="pagination__current-page">1-25</span> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">26-50</a> | <a href="https://passthepopcorn.me/forums.php?page=3&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">51-75</a> | <a href="https://passthepopcorn.me/forums.php?page=4&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">76-100</a> | <a href="https://passthepopcorn.me/forums.php?page=5&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">101-125</a> | <a href="https://passthepopcorn.me/forums.php?page=6&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">126-150</a> | <a href="https://passthepopcorn.me/forums.php?page=7&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">151-175</a> | <a href="https://passthepopcorn.me/forums.php?page=8&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">176-200</a> | <a href="https://passthepopcorn.me/forums.php?page=9&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--page">201-225</a> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--next">Next &gt;</a> <a href="https://passthepopcorn.me/forums.php?page=37&amp;action=viewthread&amp;threadid=14481" class="pagination__link pagination__link--last"> Last &gt;&gt;</a></div>
+		
+	<h2 class="page__title">
+	<a href="https://passthepopcorn.me/forums.php">Forums</a> &gt;
+	<a href="https://passthepopcorn.me/forums.php?action=viewforum&amp;forumid=12">Tutorials</a> &gt;
+	Advanced x264 Encoding Guide (New Version)</h2>
+</div>
+
+<script>
+	function ToggleSearchThreadForm( clickedItem )
+	{
+		var searchForm = $jq( "#searchthread" );
+		searchForm.ToggleHC();
+
+		if ( !searchForm.hasClass( "hidden" ) )
+		{
+			$jq( clickedItem ).html( "[Hide Search]" );
+			$jq( "#searchbox" ).focus();
+		}
+		else
+		{
+			$jq( clickedItem ).html( "[Search this Thread]" );
+		}
+	}
+
+	var bbcodeToolbar = new BbcodeToolbar( "#quickpost" );
+	var youTubeQualityParameter = "";
+	RegisterGlobalAjaxCursorChange();
+	InitializeNewCommentValidator();
+
+						$jq('.forum-post__heading > span:first-of-type > a:first-of-type').next().addBack().hover(
+						function() {
+							$jq(this).parents('.forum-post').find('.forum-post__avatar__partyhat').stop().fadeTo(1000, 0.2);
+						},
+						function() {
+							$jq(this).parents('.forum-post').find('.forum-post__avatar__partyhat').stop().delay(300).fadeTo(1000, 1);
+						}
+					);</script>
+
+	</div>
+	
+</div>
+<div id="lightbox" class="lightbox hidden" tabindex="-1"></div>
+<div id="lightbox__shroud" class="lightbox__shroud hidden"></div>
+
+<!-- Extra divs, for stylesheet developers to add imagery -->
+<div id="extra1"><span></span></div>
+<div id="extra2"><span></span></div>
+<div id="extra3"><span></span></div>
+<div id="extra4"><span></span></div>
+<div id="extra5"><span></span></div>
+<div id="extra6"><span></span></div>
+
+
+</body></html>

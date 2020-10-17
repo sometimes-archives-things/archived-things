@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://passthepopcorn.me/forums.php?action=viewthread&threadid=35933 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta http-equiv="X-UA-Compatible" content="chrome=1;IE=edge">
+		<meta name="referrer" content="no-referrer">
+	<meta name="referrer" content="same-origin">
+	<meta name="robots" content="noindex">
+		<title>Hardsub OCR Guide :: PassThePopcorn</title>
+	<link rel="shortcut icon" href="https://passthepopcorn.me/favicon.ico">
+	<link rel="apple-touch-icon" href="https://passthepopcorn.me/static/common/touch-icon-iphone.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="72x72" href="https://passthepopcorn.me/static/common/touch-icon-ipad.png?v=1514440441">
+	<link rel="apple-touch-icon" sizes="114x114" href="https://passthepopcorn.me/static/common/touch-icon-iphone-retina.png?v=1514440441">
+	<link rel="search" type="application/opensearchdescription+xml" title="PassThePopcorn" href="https://passthepopcorn.me/static/opensearch.xml">
+	
+	
+	
+		
+	
+	
+	
+	
+	
+	
+	
+	
+				<link href="./Hardsub-OCR-Guide_files/marcel.css" rel="stylesheet" type="text/css" media="screen">
+						<script src="./Hardsub-OCR-Guide_files/script_start.js.download" type="text/javascript"></script>
+						<script src="./Hardsub-OCR-Guide_files/class_ajax.js.download" type="text/javascript"></script>
+						<script src="./Hardsub-OCR-Guide_files/global.js.download" type="text/javascript"></script>
+							<script src="./Hardsub-OCR-Guide_files/jquery.js.download" type="text/javascript"></script>
+						<script src="./Hardsub-OCR-Guide_files/autocomplete.js.download" type="text/javascript"></script>
+					<script src="./Hardsub-OCR-Guide_files/comments.js.download" type="text/javascript"></script>
+					<script src="./Hardsub-OCR-Guide_files/subscriptions.js.download" type="text/javascript"></script>
+					<script src="./Hardsub-OCR-Guide_files/bbcode.js.download" type="text/javascript"></script>
+					<script src="./Hardsub-OCR-Guide_files/mousetrap.min.js.download" type="text/javascript"></script>
+					<script src="./Hardsub-OCR-Guide_files/jquery.rangyinputs.js.download" type="text/javascript"></script>
+					<script src="./Hardsub-OCR-Guide_files/jquery.qtip.min.js.download" type="text/javascript"></script>
+					<script src="./Hardsub-OCR-Guide_files/jquery.simplemodal.1.4.4.min.js.download" type="text/javascript"></script>
+		</head>
+<body id="forums" data-anticsrftoken="9001" style="">
+<div id="wrapper">
+	<div id="header" class="header">
+		<div class="site-logo"><a class="site-logo__link" href="https://passthepopcorn.me/index.php"></a></div>
+				
+			<div class="main-menu">
+			<ul class="main-menu__list">
+				<li class="main-menu__item" id="nav_index"><a class="main-menu__link" href="https://passthepopcorn.me/index.php">Home</a></li>
+				<li class="main-menu__item" id="nav_torrents"><a class="main-menu__link" href="https://passthepopcorn.me/torrents.php">Movies</a></li>
+				<li class="main-menu__item" id="nav_collages"><a class="main-menu__link" href="https://passthepopcorn.me/collages.php">Collections</a></li>
+				<li class="main-menu__item" id="nav_requests"><a class="main-menu__link" href="https://passthepopcorn.me/requests.php">Requests</a></li>
+				<li class="main-menu__item" id="nav_forums"><a class="main-menu__link" href="https://passthepopcorn.me/forums.php">Forums</a></li>
+				<li class="main-menu__item" id="nav_irc"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php?action=article&amp;id=95">Chat</a></li>
+				<li class="main-menu__item" id="nav_top10"><a class="main-menu__link" href="https://passthepopcorn.me/top10.php">Top&nbsp;10</a></li>
+				<li class="main-menu__item" id="nav_rules"><a class="main-menu__link" href="https://passthepopcorn.me/rules.php">Rules</a></li>
+				<li class="main-menu__item" id="nav_wiki"><a class="main-menu__link" href="https://passthepopcorn.me/wiki.php">Wiki</a></li>
+				<li class="main-menu__item" id="nav_staff"><a class="main-menu__link" href="https://passthepopcorn.me/staff.php">Staff</a></li>
+			</ul>
+		</div>
+				<div class="search-bar">
+			<ul class="search-bar__list">
+				<li id="searchbar_torrents" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/torrents.php" method="get" class="search-bar__search-field__form">
+												<input type="hidden" name="order_by" value="relevance">
+						<input id="torrentssearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="m" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;torrents&#39;);" onblur="" placeholder="Movies" type="text" name="searchstr" size="17">
+						<ul id="torrentscomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_people" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/artist.php" method="get" class="search-bar__search-field__form">
+						<input id="artistsearch" class="search-bar__search-field__input" onkeyup="autocomp.keyup(event);" onkeydown="autocomp.keydown(event);" accesskey="p" spellcheck="false" autocomplete="off" onfocus="autocomp.start(&#39;artist&#39;);" placeholder="People" type="text" name="artistname" size="17">
+						<ul id="artistcomplete" class="search-bar__results hidden"></ul>
+					</form>
+				</li>
+				<li id="searchbar_collections" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/collages.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="c" spellcheck="false" id="collectionsearch" placeholder="Collections" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_requests" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/requests.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="r" spellcheck="false" placeholder="Requests" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_forums" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/forums.php" method="get" class="search-bar__search-field__form">
+						<input value="search" type="hidden" name="action">
+						<input class="search-bar__search-field__input" accesskey="f" spellcheck="false" placeholder="Forums" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_log" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/log.php" method="get" class="search-bar__search-field__form">
+						<input class="search-bar__search-field__input" accesskey="l" spellcheck="false" placeholder="Log" type="text" name="search" size="17">
+					</form>
+				</li>
+				<li id="searchbar_users" class="search-bar__search-field">
+					<form action="https://passthepopcorn.me/user.php" method="get" class="search-bar__search-field__form">
+						<input type="hidden" name="action" value="search">
+						<input class="search-bar__search-field__input" accesskey="u" spellcheck="false" placeholder="Users" type="text" name="search" size="17">
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+		<div id="content" class="page__main-content">
+<script type="text/javascript">var ThreadID='35933';</script>
+<div class="thin">
+	<h2 class="page__title">
+		<a href="https://passthepopcorn.me/forums.php">Forums</a> &gt;
+		<a href="https://passthepopcorn.me/forums.php?action=viewforum&amp;forumid=43">Encoding</a> &gt;
+		Hardsub OCR Guide	</h2>
+	<div class="linkbox">
+		<a class="linkbox__link" href="https://passthepopcorn.me/reports.php?action=report&amp;type=thread&amp;id=35933">[Report Thread]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#" onclick="SubscribeToForumTopic( this, 35933 ); return false;">[Subscribe]</a>
+		<a class="linkbox__link" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#" onclick="ToggleSearchThreadForm( this ); return false;">[Search this Thread]</a>
+	</div>
+	<div id="searchthread" class="hidden" style="text-align: center;">
+		<div class="panel" style="display: inline-block; text-align: left;">
+			<div class="panel__body">
+				<form action="https://passthepopcorn.me/forums.php" method="get">
+					<input type="hidden" name="action" value="search">
+					<input type="hidden" name="threadid" value="35933">
+					<div class="form__group">
+						<input type="text" id="searchbox" name="search" size="70" placeholder="Post" class="form__input">
+					</div>
+					<div class="form__group">
+						<input type="text" id="username" name="user" size="70" placeholder="Username" class="form__input">
+					</div>
+					<div class="form__group">
+						<input type="submit" name="submit" value="Search this thread" class="form__input">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+		<div class="pagination pagination--top"><span class="pagination__current-page">1-25</span> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--page">26-50</a> | <a href="https://passthepopcorn.me/forums.php?page=3&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--page">51-75</a> | <a href="https://passthepopcorn.me/forums.php?page=4&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--page">76-100</a> | <a href="https://passthepopcorn.me/forums.php?page=5&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--page">101-104</a> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--next">Next &gt;</a> <a href="https://passthepopcorn.me/forums.php?page=5&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--last"> Last &gt;&gt;</a></div>
+
+	<div class="forum_post forum-post forum-post--unread" id="post1665904">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1665904#post1665904">#1665904</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=90296&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a> <img src="./Hardsub-OCR-Guide_files/badge_checker.png" title="Torrent Checker"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=90296"><img src="./Hardsub-OCR-Guide_files/Rank6.png" class="award" title="Rank 6: 109 Awards"></a> (Torrent Queen)</strong>
+			<span class="user_title"> (OCD about OCR) </span>
+			<span class="time" title="Jul 19 2019, 20:53">[ Jul 19 2019, 20:53 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1665904&#39;, &#39;johnnydeep&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1665904" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1665904">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/i31bbt.jpg" class="forum-post__avatar__image" alt="johnnydeep&#39;s avatar" width="150" height="285">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1665904">
+				Here's a lil guide I decided to create on how to extract hardcoded subtitles with relatively few manual fixes, which mostly depends on the picture quality, but still it's very effective. Until now, I used AVISubDetector to detect subtitles and enter the text manually, but that's so 2006.<br>
+<span class="bbcode-size-1">The guide is based on a couple of other guides I've had a chance to study and try out. I'm not claiming the settings described in either of the guides below to be the best out there, but I personally saw great results that I'm really happy with.</span> <br>
+<br>
+You'll need:<br>
+<ul><li><a rel="noreferrer" target="_blank" href="https://sourceforge.net/projects/videosubfinder/">VideoSubFinder</a></li><li><a rel="noreferrer" target="_blank" href="https://mega.nz/#!removed_link">FineReader 15</a></li><li><a rel="noreferrer" target="_blank" href="https://daumpotplayer.com/download/">PotPlayer</a> (optional)</li><li><a rel="noreferrer" target="_blank" href="https://www.nikse.dk/subtitleedit/">Subtitle Edit</a> (optional)</li></ul><br>
+<hr><span style="color:#ffe599">1. Open your video in VideoSubFinder. Set the working area by moving the upper edge of the Video Box. Hit 'Run Search' for the program to scan the video and save the screenshots of the frames containing subtitles. The image filenames will contain the timecode and duration info, which will be used by the program later.<br>
+2. Go to the VideoSubFinder's RGBImages subfolder, skim through the files and delete the ones that do not contain subtitles.<br>
+3. Go back to VideoSubFinder's OCR tab and hit 'Create Cleared TXT Images', which will launch the process of cleaning up the images in the RGBImages folder.<br>
+4. Once the process is over, import the collection of generated images from the TXTImages folder to FineReader to be OCR'd (see the </span><span style="color:#e06666">FR guide</span> <span style="color:#ffe599">below if you are new to the program).<br>
+5. Save the OCR result in .txt format in the VideoSubFinder's TXTResults subfolder.<br>
+<span class="bbcode-size-1">.txt doesn't preserve formatting, but we got no choice really, VideoSubFinder only works with .txt.</span><br>
+6. Launch VideoSubFinder, go to the OCR tab and hit 'Create Sub From TXT Results' to merge the saved .txt files into a single .srt file.<br>
+7. Open the .srt file in <a rel="noreferrer" target="_blank" href="https://notepad-plus-plus.org/">Notepad++</a>, select 'Encode in ANSI' in Encoding menu, replace <code>ï»¿</code> with blank, select 'Encode in UTF-8' in Encoding menu, save.<strong>*</strong> <br>
+8. Watch the hardsubbed version with external soft subs to detect any errors &amp; OCR mishaps, retrieve formatting and make sure nothing is missing.<strong>**</strong><br>
+9.</span> [if you want to sync the subs to other source] <span style="color:#ffe599">Change the framerate of the subs in SubtitleEdit to match the other video's framerate, if needed.<br>
+9.1. Import the video in SubtitleEdit, enable the Waveform and Video options on the main panel, open the subtitles.<br>
+9.2. Adjust the timecodes using the waveform. Save.</span><br>
+<br>
+*The <a rel="noreferrer" target="_blank" href="https://en.wikipedia.org/wiki/Byte_order_mark">BOM</a>-characters are added by <span style="color:#e06666">FineReader</span> when saving in UTF-8, and it seems like there's no way around this little snag. If you don't get rid of them, they'll get in the way of automated formatting fixes, say, in SubtitleEdit. Also, these crappy characters may look differently when you open the subtitle in <span style="color:#b6d7a8">Notepad++</span>. Just look for a bunch of weird characters at the beginning of all lines and replace them with blank.<br>
+**I do this in PotPlayer, which is pretty handy when it comes to subtitle adjustment, e.g. you can manually set the subtitle position on the screen to make the comparison with the hardsub as comfortable as possible.<br>
+<br>
+<hr><br>
+Here's a lil guide to setting up and using <span style="color:#e06666">FineReader 15</span>.<br>
+<br>
+<hr><span style="color:#e06666">1. Launch FineReaderOCR.exe, go to Tools -&gt; Options, do this:</span><br>
+<br>
+<strong>Spoiler</strong>: <a href="javascript:void(0);" onclick="BBCode.spoiler(this);">Show</a><blockquote class="spoiler hidden"><img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://jerking.empornium.ph/images/2020/07/13/1.png" src="./Hardsub-OCR-Guide_files/1.png"><br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://jerking.empornium.ph/images/2020/07/13/2.png" src="./Hardsub-OCR-Guide_files/2.png"><br>
+<br>
+<img class="bbcode__image" onclick="lightbox.init(this,500);" alt="https://jerking.empornium.ph/images/2020/07/13/3.png" src="./Hardsub-OCR-Guide_files/3.png"></blockquote><br>
+<br>
+<span style="color:#e06666">2. Add images from the VideoSubFinder's TXTImages folder to FR.<br>
+3. Select text language or several languages (depending on the subtitle language) on the main panel, right next to 'Read' button.<br>
+4. Find a bigger image, select its whole area (there's just text in it, so we're safe), go to Area menu, click on 'Save Area Template' and save it! Then go back to Area menu, hit on 'Load Area Template', select the file you just saved, select 'Apply to all pages' and hit 'Open'.<br>
+<span class="bbcode-size-1">You can use this template for your future projects since FineReader's automated area detection tends to mess up and leave parts of text outside the working area. You may need to use a different area size template depending on the images you will be working with in the future.</span><br>
+5. Hit 'Recognize'.<br>
+6. Save the result as .txt in the TXTResults subfolder in VideoSubFinder's folder. When saving, make sure you select 'Create a separate file for each source file' at the bottom of the 'Save document as' window.<br>
+7. See Step 6 of the</span> <span style="color:#ffe599">guide</span> <span style="color:#e06666">above.</span><br>
+<br>
+<hr><span style="color:#6fa8dc">Last modified on: July 30, 2020</span><br>
+<hr><br>
+Feel free to share the guide if you think it's worth sharing.<br>
+<br>
+Thx to <a href="https://passthepopcorn.me/user.php?action=search&amp;search=Elheym">@Elheym</a>, <a href="https://passthepopcorn.me/user.php?action=search&amp;search=DonLK">@DonLK</a>, <a href="https://passthepopcorn.me/user.php?action=search&amp;search=HyerrDoktyer">@HyerrDoktyer</a>, <a href="https://passthepopcorn.me/user.php?action=search&amp;search=SlappyTime">@SlappyTime</a> for all sorts of useful tips and info about subtitles and stuff.									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a> <span class="time" title="Jul 30 2020, 04:07">[ Jul 30 2020, 04:07 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1665921">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1665921#post1665921">#1665921</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=120891">DonLK</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=120891"><img src="./Hardsub-OCR-Guide_files/Rank3.png" class="award" title="Rank 3: 65 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (مفتي التلفزيون‎) </span>
+			<span class="time" title="Jul 19 2019, 21:40">[ Jul 19 2019, 21:40 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1665921&#39;, &#39;DonLK&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1665921" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1665921">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/71bum6.gif" class="forum-post__avatar__image" alt="DonLK&#39;s avatar" width="90" height="125">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1665921">
+				This is a great guide, thanks for sharing <a href="https://passthepopcorn.me/user.php?action=search&amp;search=johnnydeep">@johnnydeep</a><br>
+<br>
+your secret plan to demote me to power user is going nicely <img border="0" src="./Hardsub-OCR-Guide_files/biggrin.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1665997">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1665997#post1665997">#1665997</a>
+			by <strong><a class="username username--torrent-king" href="https://passthepopcorn.me/user.php?id=26412">zoocey</a><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=26412&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=26412"><img src="./Hardsub-OCR-Guide_files/Rank3.png" class="award" title="Rank 3: 64 Awards"></a> (Torrent King)</strong>
+			<span class="user_title"> (<strong><span style="color:#ffaf0f">M</span><span style="color:#ff8d25">e</span><span style="color:#ff6c3c">o</span><span style="color:#ff4a52">w</span></strong>) </span>
+			<span class="time" title="Jul 20 2019, 05:46">[ Jul 20 2019, 05:46 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1665997&#39;, &#39;zoocey&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1665997" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1665997">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/bj0556.jpg" class="forum-post__avatar__image" alt="zoocey&#39;s avatar" width="150" height="179">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1665997">
+				I tried AVISubDetector and SubRip years ago to try to OCR SBS Australia videos (they have a large collection of foreign films with hard-coded subs and abysmal video quality) with very limited success. I'll have to give this a try, thanks. 							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1666009">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1666009#post1666009">#1666009</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=120891">DonLK</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=120891"><img src="./Hardsub-OCR-Guide_files/Rank3.png" class="award" title="Rank 3: 65 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (مفتي التلفزيون‎) </span>
+			<span class="time" title="Jul 20 2019, 07:31">[ Jul 20 2019, 07:31 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1666009&#39;, &#39;DonLK&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1666009" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1666009">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/71bum6.gif" class="forum-post__avatar__image" alt="DonLK&#39;s avatar" width="90" height="125">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1666009">
+				<strong>zoocey wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1665997#post1665997"><img class="view_post" alt="View Post" src="./Hardsub-OCR-Guide_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>I tried AVISubDetector and SubRip years ago to try to OCR SBS Australia videos (they have a large collection of foreign films with hard-coded subs and abysmal video quality) with very limited success. I'll have to give this a try, thanks.</blockquote><br>
+Funnily enough, this is exactly what we're using it for lol							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1666010">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1666010#post1666010">#1666010</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=113422">HyerrDoktyer</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><img src="./Hardsub-OCR-Guide_files/miner.png" alt="Miner" title="Miner" style="margin-left:3px;margin-right:3px;"> <img src="./Hardsub-OCR-Guide_files/badge_gpchecker.png" title="Golden Popcorn Checker"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=113422"><img src="./Hardsub-OCR-Guide_files/Rank4.png" class="award" title="Rank 4: 86 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jul 20 2019, 07:37">[ Jul 20 2019, 07:37 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1666010&#39;, &#39;HyerrDoktyer&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1666010" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1666010">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/mc10xd.png" class="forum-post__avatar__image" alt="HyerrDoktyer&#39;s avatar" width="204" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1666010">
+				Nice work putting this together, I'm sure this will be a valuable resource to many.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1666016">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1666016#post1666016">#1666016</a>
+			by <strong><a class="username username--user" href="https://passthepopcorn.me/user.php?id=120625">jumpcat</a><img src="./Hardsub-OCR-Guide_files/disabled.png" alt="Banned" title="Be good, and you won&#39;t end up like this user"> (User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jul 20 2019, 08:30">[ Jul 20 2019, 08:30 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1666016&#39;, &#39;jumpcat&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1666016" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1666016">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/default.png" class="forum-post__avatar__image" alt="Default avatar">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1666016">
+				Thanks. 							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1667263">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1667263#post1667263">#1667263</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=90296&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a> <img src="./Hardsub-OCR-Guide_files/badge_checker.png" title="Torrent Checker"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=90296"><img src="./Hardsub-OCR-Guide_files/Rank6.png" class="award" title="Rank 6: 109 Awards"></a> (Torrent Queen)</strong>
+			<span class="user_title"> (OCD about OCR) </span>
+			<span class="time" title="Jul 24 2019, 18:17">[ Jul 24 2019, 18:17 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1667263&#39;, &#39;johnnydeep&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1667263" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1667263">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/i31bbt.jpg" class="forum-post__avatar__image" alt="johnnydeep&#39;s avatar" width="150" height="285">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1667263">
+				<span style="color:#9fc5e8">UPD JUL 24, 2019:</span><br>
+<br>
+Replaced the third screenshot under the FineReader settings spoiler. You gotta select Plain Text instead of Formatted Text to prevent FineReader from adding redundant spaces at the beginning of lines.									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a> <span class="time" title="Jul 27 2019, 05:38">[ Jul 27 2019, 05:38 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1667269">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1667269#post1667269">#1667269</a>
+			by <strong><a class="username username--torrent-king" href="https://passthepopcorn.me/user.php?id=118335">durfu</a><img src="./Hardsub-OCR-Guide_files/filmclub.png" alt="Film Club" title="Film Club" style="margin-bottom:-3px;"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=118335"><img src="./Hardsub-OCR-Guide_files/Rank5.png" class="award" title="Rank 5: 98 Awards"></a> (Torrent King)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jul 24 2019, 18:48">[ Jul 24 2019, 18:48 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1667269&#39;, &#39;durfu&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1667269" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1667269">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/1bfgxe.png" class="forum-post__avatar__image" alt="durfu&#39;s avatar" width="225" height="225">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1667269">
+				This works as well as it looks. 							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1668352">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1668352#post1668352">#1668352</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=110936">cybernaut</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=110936"><img src="./Hardsub-OCR-Guide_files/Rank4.png" class="award" title="Rank 4: 81 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jul 28 2019, 08:48">[ Jul 28 2019, 08:48 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1668352&#39;, &#39;cybernaut&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1668352" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1668352">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/q6l7tp.png" class="forum-post__avatar__image" alt="cybernaut&#39;s avatar" width="275" height="395">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1668352">
+				That's a well detailed guide brother, I didn't expect nothing less from you! Thank you for this and I'm sure the community appreciate your work.<br>
+<br>
+Cheers to you and to everyone who helped you!							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1668428">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1668428#post1668428">#1668428</a>
+			by <strong><a class="username username--elite" href="https://passthepopcorn.me/user.php?id=59847">albatros44</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=59847"><img src="./Hardsub-OCR-Guide_files/Rank1.png" class="award" title="Rank 1: 34 Awards"></a> (Elite)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Jul 28 2019, 18:15">[ Jul 28 2019, 18:15 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1668428&#39;, &#39;albatros44&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1668428" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1668428">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/w583d4.jpg" class="forum-post__avatar__image" alt="albatros44&#39;s avatar" width="150" height="200">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1668428">
+				Thanks. good work							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1673255">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673255#post1673255">#1673255</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=117933">loli</a><img src="./Hardsub-OCR-Guide_files/filmclub.png" alt="Film Club" title="Film Club" style="margin-bottom:-3px;"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=117933&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=117933"><img src="./Hardsub-OCR-Guide_files/Rank3.png" class="award" title="Rank 3: 54 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#bf9000">Eating+Drinking+Playing</span>=<span style="color:red"><strong>Happiness</strong></span>) </span>
+			<span class="time" title="Aug 14 2019, 09:34">[ Aug 14 2019, 09:34 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1673255&#39;, &#39;loli&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1673255" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1673255">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/0p04w2.gif" class="forum-post__avatar__image" alt="loli&#39;s avatar" width="189" height="212">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1673255">
+				Help: there is something wrong:<br>
+<br>
+The single OCRed text is right, but when creating from TXT Results, the text shows "#unrecognized text#".<br>
+<br>
+E.G: <br>
+<br>
+0_02_05_874__0_02_06_873_00634.txt:<br>
+这是兰汐（Right Chinese）<br>
+<br>
+sub.srt： <br>
+1<br>
+00:02:05,874 --&gt; 00:02:06,873<br>
+#unrecognized text#<br>
+<br>
+Is there any solution?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1673294">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673294#post1673294">#1673294</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=90296&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a> <img src="./Hardsub-OCR-Guide_files/badge_checker.png" title="Torrent Checker"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=90296"><img src="./Hardsub-OCR-Guide_files/Rank6.png" class="award" title="Rank 6: 109 Awards"></a> (Torrent Queen)</strong>
+			<span class="user_title"> (OCD about OCR) </span>
+			<span class="time" title="Aug 14 2019, 14:47">[ Aug 14 2019, 14:47 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1673294&#39;, &#39;johnnydeep&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1673294" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1673294">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/i31bbt.jpg" class="forum-post__avatar__image" alt="johnnydeep&#39;s avatar" width="150" height="285">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1673294">
+				<a href="https://passthepopcorn.me/user.php?action=search&amp;search=loli">@loli</a>, the txt was saved in UTF8?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1673486">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673486#post1673486">#1673486</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=117933">loli</a><img src="./Hardsub-OCR-Guide_files/filmclub.png" alt="Film Club" title="Film Club" style="margin-bottom:-3px;"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=117933&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=117933"><img src="./Hardsub-OCR-Guide_files/Rank3.png" class="award" title="Rank 3: 54 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#bf9000">Eating+Drinking+Playing</span>=<span style="color:red"><strong>Happiness</strong></span>) </span>
+			<span class="time" title="Aug 15 2019, 05:41">[ Aug 15 2019, 05:41 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1673486&#39;, &#39;loli&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1673486" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1673486">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/0p04w2.gif" class="forum-post__avatar__image" alt="loli&#39;s avatar" width="189" height="212">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1673486">
+				<strong>johnnydeep wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673294#post1673294"><img class="view_post" alt="View Post" src="./Hardsub-OCR-Guide_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote><a href="https://passthepopcorn.me/user.php?action=search&amp;search=loli">@loli</a>, the txt was saved in UTF8?</blockquote><br>
+<br>
+yes. 							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1673555">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673555#post1673555">#1673555</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=90296&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a> <img src="./Hardsub-OCR-Guide_files/badge_checker.png" title="Torrent Checker"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=90296"><img src="./Hardsub-OCR-Guide_files/Rank6.png" class="award" title="Rank 6: 109 Awards"></a> (Torrent Queen)</strong>
+			<span class="user_title"> (OCD about OCR) </span>
+			<span class="time" title="Aug 15 2019, 14:49">[ Aug 15 2019, 14:49 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1673555&#39;, &#39;johnnydeep&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1673555" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1673555">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/i31bbt.jpg" class="forum-post__avatar__image" alt="johnnydeep&#39;s avatar" width="150" height="285">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1673555">
+				<a href="https://passthepopcorn.me/user.php?action=search&amp;search=loli">@loli</a>, I contacted the VideoSubFinder developer, he tried to OCR Chinese subs, save the .txt in UTF8 (in Windows 10) and creating the .srt file with VSF. It worked.<br>
+<br>
+Could you send a couple of your .txt files?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1673700">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673700#post1673700">#1673700</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=117933">loli</a><img src="./Hardsub-OCR-Guide_files/filmclub.png" alt="Film Club" title="Film Club" style="margin-bottom:-3px;"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=117933&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=117933"><img src="./Hardsub-OCR-Guide_files/Rank3.png" class="award" title="Rank 3: 54 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#bf9000">Eating+Drinking+Playing</span>=<span style="color:red"><strong>Happiness</strong></span>) </span>
+			<span class="time" title="Aug 16 2019, 03:29">[ Aug 16 2019, 03:29 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1673700&#39;, &#39;loli&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1673700" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1673700">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/0p04w2.gif" class="forum-post__avatar__image" alt="loli&#39;s avatar" width="189" height="212">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1673700">
+				<strong>johnnydeep wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673555#post1673555"><img class="view_post" alt="View Post" src="./Hardsub-OCR-Guide_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote><a href="https://passthepopcorn.me/user.php?action=search&amp;search=loli">@loli</a>, I contacted the VideoSubFinder developer, he tried to OCR Chinese subs, save the .txt in UTF8 (in Windows 10) and creating the .srt file with VSF. It worked.<br>
+<br>
+Could you send a couple of your .txt files?</blockquote><br>
+<br>
+Many thanks for your time and support. Here is the txt files in google drive:<br>
+<a rel="noreferrer" target="_blank" href="https://mega.nz/file/ikEDiCjb#FL5QUDjaLSL29MFQb31VULlK2ZoHLRRpOVKd2DK5SgQ">https://mega.nz/file/ikEDiCjb#FL5QUDjaLSL29MFQb31VULlK2ZoHLRRpOVKd2DK5SgQ</a>							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1673704">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673704#post1673704">#1673704</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=90296&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a> <img src="./Hardsub-OCR-Guide_files/badge_checker.png" title="Torrent Checker"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=90296"><img src="./Hardsub-OCR-Guide_files/Rank6.png" class="award" title="Rank 6: 109 Awards"></a> (Torrent Queen)</strong>
+			<span class="user_title"> (OCD about OCR) </span>
+			<span class="time" title="Aug 16 2019, 04:15">[ Aug 16 2019, 04:15 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1673704&#39;, &#39;johnnydeep&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1673704" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1673704">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/i31bbt.jpg" class="forum-post__avatar__image" alt="johnnydeep&#39;s avatar" width="150" height="285">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1673704">
+				<a href="https://passthepopcorn.me/user.php?action=search&amp;search=loli">@loli</a>, I just tried it myself and it worked fine. I'm using VideoSubFinder 4.00, Windows 10. Did you tweak any VSF settings? I didn't.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1673729">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673729#post1673729">#1673729</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=120891">DonLK</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=120891"><img src="./Hardsub-OCR-Guide_files/Rank3.png" class="award" title="Rank 3: 65 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (مفتي التلفزيون‎) </span>
+			<span class="time" title="Aug 16 2019, 08:33">[ Aug 16 2019, 08:33 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1673729&#39;, &#39;DonLK&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1673729" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1673729">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/71bum6.gif" class="forum-post__avatar__image" alt="DonLK&#39;s avatar" width="90" height="125">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1673729">
+				didn't know 4.0 was out already, any noticeable improvements?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1673738">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673738#post1673738">#1673738</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=90296&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a> <img src="./Hardsub-OCR-Guide_files/badge_checker.png" title="Torrent Checker"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=90296"><img src="./Hardsub-OCR-Guide_files/Rank6.png" class="award" title="Rank 6: 109 Awards"></a> (Torrent Queen)</strong>
+			<span class="user_title"> (OCD about OCR) </span>
+			<span class="time" title="Aug 16 2019, 10:41">[ Aug 16 2019, 10:41 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1673738&#39;, &#39;johnnydeep&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1673738" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1673738">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/i31bbt.jpg" class="forum-post__avatar__image" alt="johnnydeep&#39;s avatar" width="150" height="285">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1673738">
+				<strong>DonLK wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673729#post1673729"><img class="view_post" alt="View Post" src="./Hardsub-OCR-Guide_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote>didn't know 4.0 was out already, any noticeable improvements?</blockquote>Yeah, I think that image clearing feature works a bit better in v.4							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1674261">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1674261#post1674261">#1674261</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=117933">loli</a><img src="./Hardsub-OCR-Guide_files/filmclub.png" alt="Film Club" title="Film Club" style="margin-bottom:-3px;"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=117933&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=117933"><img src="./Hardsub-OCR-Guide_files/Rank3.png" class="award" title="Rank 3: 54 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#bf9000">Eating+Drinking+Playing</span>=<span style="color:red"><strong>Happiness</strong></span>) </span>
+			<span class="time" title="Aug 18 2019, 08:10">[ Aug 18 2019, 08:10 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1674261&#39;, &#39;loli&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1674261" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1674261">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/0p04w2.gif" class="forum-post__avatar__image" alt="loli&#39;s avatar" width="189" height="212">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1674261">
+				<strong>johnnydeep wrote:</strong> <a rel="nofollow" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1673704#post1673704"><img class="view_post" alt="View Post" src="./Hardsub-OCR-Guide_files/viewpost-right.png" style="width:12px; height:10px; vertical-align: middle" title="View Post"></a><blockquote><a href="https://passthepopcorn.me/user.php?action=search&amp;search=loli">@loli</a>, I just tried it myself and it worked fine. I'm using VideoSubFinder 4.00, Windows 10. Did you tweak any VSF settings? I didn't.</blockquote><br>
+<br>
+That is strange. I tried on another computer, and it didn't work, eitther.<br>
+<br>
+The two computers' OS are both win7 64 bit. Maybe OS is the problem that lies in?							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1674518">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1674518#post1674518">#1674518</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=90296&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a> <img src="./Hardsub-OCR-Guide_files/badge_checker.png" title="Torrent Checker"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=90296"><img src="./Hardsub-OCR-Guide_files/Rank6.png" class="award" title="Rank 6: 109 Awards"></a> (Torrent Queen)</strong>
+			<span class="user_title"> (OCD about OCR) </span>
+			<span class="time" title="Aug 19 2019, 06:59">[ Aug 19 2019, 06:59 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1674518&#39;, &#39;johnnydeep&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1674518" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1674518">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/i31bbt.jpg" class="forum-post__avatar__image" alt="johnnydeep&#39;s avatar" width="150" height="285">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1674518">
+				<a href="https://passthepopcorn.me/user.php?action=search&amp;search=loli">@loli</a>, asked a friend who's using Win 7 64 bit to give it a try and it worked.<br>
+<br>
+I don't see how you could get 'unrecognized text' in the final .srt if the original .txt does not have 'unrecognized text'. I think you mixed the folders/files or something.<br>
+<br>
+'unrecognized text' is what you get when FineReader fails to OCR the image. Then you'll have a .txt with 'unrecognized text' and, eventually, an .srt with 'unrecognized text' in this particular line.<br>
+<br>
+Make sure you clear the VideoSubFinder's folders (you can use the Clear Folders button) to avoid potential mess/confusion.							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1674723">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1674723#post1674723">#1674723</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=90296&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a> <img src="./Hardsub-OCR-Guide_files/badge_checker.png" title="Torrent Checker"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=90296"><img src="./Hardsub-OCR-Guide_files/Rank6.png" class="award" title="Rank 6: 109 Awards"></a> (Torrent Queen)</strong>
+			<span class="user_title"> (OCD about OCR) </span>
+			<span class="time" title="Aug 20 2019, 04:24">[ Aug 20 2019, 04:24 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1674723&#39;, &#39;johnnydeep&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1674723" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1674723">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/i31bbt.jpg" class="forum-post__avatar__image" alt="johnnydeep&#39;s avatar" width="150" height="285">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1674723">
+				VideoSubFinder 4.30 is out.<br>
+<br>
+<a rel="noreferrer" target="_blank" href="https://sourceforge.net/p/videosubfinder/src/ci/7574ce71c017bf243b1b13dd0b3a39a71ae8d35d/log/?path=">Looks</a> like the Create Cleared TXT Images feature has been improved further.									<div class="forum-post__edited">
+																								Last edited by
+						<a class="username" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a> <span class="time" title="Sep 28 2019, 03:57">[ Sep 28 2019, 03:57 ]</span>					</div>
+							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1686114">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1686114#post1686114">#1686114</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=117636">marshmellowv</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=117636"><img src="./Hardsub-OCR-Guide_files/Rank5.png" class="award" title="Rank 5: 92 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> (<span style="color:#ee82ee">P</span><span style="color:#b97df2">e</span><span style="color:#8578f6">e</span><span style="color:#5073fa">p</span>) </span>
+			<span class="time" title="Sep 27 2019, 23:09">[ Sep 27 2019, 23:09 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1686114&#39;, &#39;marshmellowv&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1686114" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1686114">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/86tmus.jpg" class="forum-post__avatar__image" alt="marshmellowv&#39;s avatar" width="218" height="207">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1686114">
+				WOW. i humbly bow at your feet for this thread. <img border="0" src="./Hardsub-OCR-Guide_files/ohshit.gif" alt=""><br>
+<br>
+i'm shocked at how well this worked!! got subs transcribed and perfectly synced up (tho japanese stuff tends to be easily syncable) in no time. did have to fix a bunch of lines as i was proofwatching, but that's nothing compared to manually timing and transcribing.<br>
+<br>
+heres the film i transcribed using this method - <a href="https://passthepopcorn.me/torrents.php?id=204453&amp;torrentid=713978" class="torrent-info-link" title="1.09 GiB, 11 ↺, 5 ↑, 0 ↓">Zentai [2013] - x264 / MKV / DVD / 720x404</a><br>
+<br>
+hope for more to come! my 'stitch' folder (stuff to sync, transcribe, etc.) may finally get a lil slimmer <img border="0" src="./Hardsub-OCR-Guide_files/laughing.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1686194">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1686194#post1686194">#1686194</a>
+			by <strong><a class="username username--custom-class" href="https://passthepopcorn.me/user.php?id=90296">johnnydeep</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/torrents.php?type=uploaded&amp;userid=90296&amp;scene=3"><img src="./Hardsub-OCR-Guide_files/encoder.png" title="Encoder"></a> <img src="./Hardsub-OCR-Guide_files/badge_checker.png" title="Torrent Checker"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=90296"><img src="./Hardsub-OCR-Guide_files/Rank6.png" class="award" title="Rank 6: 109 Awards"></a> (Torrent Queen)</strong>
+			<span class="user_title"> (OCD about OCR) </span>
+			<span class="time" title="Sep 28 2019, 03:59">[ Sep 28 2019, 03:59 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1686194&#39;, &#39;johnnydeep&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1686194" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1686194">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/i31bbt.jpg" class="forum-post__avatar__image" alt="johnnydeep&#39;s avatar" width="150" height="285">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1686194">
+				<a href="https://passthepopcorn.me/user.php?action=search&amp;search=marshmellowv">@marshmellowv</a>, I'm so happy to hear that the manual is coming in handy <img border="0" src="./Hardsub-OCR-Guide_files/heart.gif" alt=""> <img border="0" src="./Hardsub-OCR-Guide_files/blush.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1695950">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1695950#post1695950">#1695950</a>
+			by <strong><a class="username username--torrent-master" href="https://passthepopcorn.me/user.php?id=118014">MehrAzar</a><img src="./Hardsub-OCR-Guide_files/donor.png" alt="Donor" title="Donor"><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=118014"><img src="./Hardsub-OCR-Guide_files/Rank5.png" class="award" title="Rank 5: 95 Awards"></a> (Torrent Master)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Oct 26 2019, 23:46">[ Oct 26 2019, 23:46 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1695950&#39;, &#39;MehrAzar&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1695950" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1695950">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/6y2t8m.jpg" class="forum-post__avatar__image" alt="MehrAzar&#39;s avatar" width="291" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1695950">
+				<a rel="noreferrer" target="_blank" href="https://broadcasthe.net/torrents.php?action=reqlink&amp;id=1211992">Les.Rivieres.pourpres.AKA.The.Crimson.Rivers.S01.2018.720p.BluRay.x264-HANDJOB</a><br>
+<br>
+<blockquote>English subtitles' note:<br>
+Source: The.Crimson.Rivers.2018.S01.1080p.AMZN.WEB-DL.DDP2.0.H.264-iJP (Thanks man!)<br>
+<br>
+The hardsubs of the AMZN release were completely OCRed<br>
+based on this step-by-step guidance: <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933">Hardsub OCR Guide</a><br>
+Credits and special thanks to the author.</blockquote><br>
+<br>
+Thanks man!  <img border="0" src="./Hardsub-OCR-Guide_files/heart.gif" alt="">							</div>
+		</div>
+	</div>
+</div>
+<div class="forum_post forum-post forum-post--unread" id="post1696601">
+	<div class="forum-post__heading">
+		<span style="float:left;"><a class="forum-post__id" href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933&amp;postid=1696601#post1696601">#1696601</a>
+			by <strong><a class="username username--power-user" href="https://passthepopcorn.me/user.php?id=118948">morgnCore</a><a href="https://passthepopcorn.me/user.php?action=awards&amp;id=118948"><img src="./Hardsub-OCR-Guide_files/Rank1.png" class="award" title="Rank 1: 34 Awards"></a> (Power User)</strong>
+			<span class="user_title"> </span>
+			<span class="time" title="Oct 28 2019, 19:47">[ Oct 28 2019, 19:47 ]</span>							- <a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#quickpost" onclick="Quote( &#39;1696601&#39;, &#39;morgnCore&#39; );">[Quote]</a>
+																		</span>
+		<span id="bar1696601" style="float:right;">
+			<a href="https://passthepopcorn.me/reports.php?action=report&amp;type=post&amp;id=1696601">[Report Post]</a>
+			&nbsp;
+			<a href="https://passthepopcorn.me/forums.php?action=viewthread&amp;threadid=35933#">↑</a>
+		</span>
+	</div>
+	<div class="forum-post__avatar-and-body">
+		<div class="forum-post__avatar">				<img src="./Hardsub-OCR-Guide_files/jPAWlDfO_o.jpg" class="forum-post__avatar__image" alt="morgnCore&#39;s avatar" width="309" height="400">
+			</div>		<div class="forum-post__body">
+			<div class="forum-post__bodyguard" id="content1696601">
+				<a href="https://passthepopcorn.me/user.php?action=search&amp;search=johnnydeep">@johnnydeep</a><br>
+<br>
+<blockquote>The image filenames will contain the timecode and duration info, <em>which will be used by the program later</em>.</blockquote><br>
+<br>
+first of all, great guide, thx a lot for this! <img border="0" src="./Hardsub-OCR-Guide_files/smile.gif" alt=""><br>
+so my problem: i do everything the same, it works perfectly, but i only have one timecode in the first line. OCRed everything well (maybe a few mistakes, i will check it later), but i only have one timecode<br>
+<br>
+1<br>
+00:00:00,000 --&gt; 00:00:01,000<br>
+<br>
+any ideas?							</div>
+		</div>
+	</div>
+</div>
+<div class="pagination pagination--bottom"><span class="pagination__current-page">1-25</span> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--page">26-50</a> | <a href="https://passthepopcorn.me/forums.php?page=3&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--page">51-75</a> | <a href="https://passthepopcorn.me/forums.php?page=4&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--page">76-100</a> | <a href="https://passthepopcorn.me/forums.php?page=5&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--page">101-104</a> | <a href="https://passthepopcorn.me/forums.php?page=2&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--next">Next &gt;</a> <a href="https://passthepopcorn.me/forums.php?page=5&amp;action=viewthread&amp;threadid=35933" class="pagination__link pagination__link--last"> Last &gt;&gt;</a></div>
+		
+	<h2 class="page__title">
+	<a href="https://passthepopcorn.me/forums.php">Forums</a> &gt;
+	<a href="https://passthepopcorn.me/forums.php?action=viewforum&amp;forumid=43">Encoding</a> &gt;
+	Hardsub OCR Guide</h2>
+</div>
+
+<script>
+	function ToggleSearchThreadForm( clickedItem )
+	{
+		var searchForm = $jq( "#searchthread" );
+		searchForm.ToggleHC();
+
+		if ( !searchForm.hasClass( "hidden" ) )
+		{
+			$jq( clickedItem ).html( "[Hide Search]" );
+			$jq( "#searchbox" ).focus();
+		}
+		else
+		{
+			$jq( clickedItem ).html( "[Search this Thread]" );
+		}
+	}
+
+	var bbcodeToolbar = new BbcodeToolbar( "#quickpost" );
+	var youTubeQualityParameter = "";
+	RegisterGlobalAjaxCursorChange();
+	InitializeNewCommentValidator();
+
+						$jq('.forum-post__heading > span:first-of-type > a:first-of-type').next().addBack().hover(
+						function() {
+							$jq(this).parents('.forum-post').find('.forum-post__avatar__partyhat').stop().fadeTo(1000, 0.2);
+						},
+						function() {
+							$jq(this).parents('.forum-post').find('.forum-post__avatar__partyhat').stop().delay(300).fadeTo(1000, 1);
+						}
+					);</script>
+
+	</div>
+	
+</div>
+<div id="lightbox" class="lightbox hidden" tabindex="-1"></div>
+<div id="lightbox__shroud" class="lightbox__shroud hidden"></div>
+
+<!-- Extra divs, for stylesheet developers to add imagery -->
+<div id="extra1"><span></span></div>
+<div id="extra2"><span></span></div>
+<div id="extra3"><span></span></div>
+<div id="extra4"><span></span></div>
+<div id="extra5"><span></span></div>
+<div id="extra6"><span></span></div>
+
+
+</body></html>
