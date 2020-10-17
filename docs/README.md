@@ -1,6 +1,6 @@
 # Main page
 
-[Simple-x264-Encoding-Guide-for-Handbrake-\(Mar-13\)](./ptp_guides/Simple-x264-Encoding-Guide-for-Handbrake-\(Mar-13\).html)
+[Simple-x264-Encoding-Guide-for-Handbrake-\(Mar-13\)](./ptp_guides/Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13).html)
 
 [Source_Encode-Comparison-Screenshots-Guide](./ptp_guides/Source_Encode-Comparison-Screenshots-Guide.html)
 
@@ -8,15 +8,15 @@
 
 [The-HANDJOB-Guide](./ptp_guides/The-HANDJOB-Guide.html)
 
-[The-HANDJOB-Guide-to-BluRay-Encodes-for-Mac-\(Beginner-Friendly\)](./ptp_guides/The-HANDJOB-Guide-to-BluRay-Encodes-for-Mac-\(Beginner-Friendly\).html)
+[The-HANDJOB-Guide-to-BluRay-Encodes-for-Mac-\(Beginner-Friendly\)](./ptp_guides/The-HANDJOB-Guide-to-BluRay-Encodes-for-Mac-(Beginner-Friendly).html)
 
-[The-HANDJOB-Guide-to-DVDRips-for-Mac-\(Beginner-Friendly\)](./ptp_guides/The-HANDJOB-Guide-to-DVDRips-for-Mac-\(Beginner-Friendly\).html)
+[The-HANDJOB-Guide-to-DVDRips-for-Mac-\(Beginner-Friendly\)](./ptp_guides/The-HANDJOB-Guide-to-DVDRips-for-Mac-(Beginner-Friendly).html)
 
-[Advanced-x264-Encoding-Guide-\(New-Version\)](./ptp_guides/Advanced-x264-Encoding-Guide-\(New-Version\).html)
+[Advanced-x264-Encoding-Guide-\(New-Version\)](./ptp_guides/Advanced-x264-Encoding-Guide-(New-Version).html)
 
 [Audio-bit-depth-reduction-and-sample-rate-conversion](./ptp_guides/Audio-bit-depth-reduction-and-sample-rate-conversion.html)
 
-[Encoding-BluRays-\(2016\)](./ptp_guides/Encoding-BluRays-\(2016\).html)
+[Encoding-BluRays-\(2016\)](./ptp_guides/Encoding-BluRays-(2016).html)
 
 [Getting-to-Know-Your-x264](./ptp_guides/Getting-to-Know-Your-x264.html)
 
