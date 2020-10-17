@@ -32,7 +32,7 @@
 
 [How-to-scale-.sup-subtitles-using-bdsup2sub](./ptp_guides/How-to-scale-.sup-subtitles-using-bdsup2sub.html)
 
-[MIXMUX](./ptp_guides/MIXMUX.html)
+[MIXMUX Remux Guide](./ptp_guides/MIXMUX.html)
 
 [Ripping-Obfuscated-Blu-ray-Discs](./ptp_guides/Ripping-Obfuscated-Blu-ray-Discs.html)
 
