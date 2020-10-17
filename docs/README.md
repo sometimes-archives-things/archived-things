@@ -37,3 +37,11 @@
 [Ripping-Obfuscated-Blu-ray-Discs](./ptp_guides/Ripping-Obfuscated-Blu-ray-Discs.html)
 
 [Simple-Remuxing-Guide-using-MKVToolNix](./ptp_guides/Simple-Remuxing-Guide-using-MKVToolNix.html)
+
+[Encoding-Batch-TV-BluRay-Encoding-with-BatchGuy](./btn_guides/Encoding-Batch-TV-BluRay-Encoding-with-BatchGuy-_-Approved-Tutorials-_-Support-_-Forums.html)
+
+[Encoding-Remuxing-Untouched-Bluray-to-MKV](./btn_guides/Encoding-Remuxing-Untouched-Bluray-to-MKV-_-Approved-Tutorials-_-Support-_-Forums.html)
+
+[Remuxing-Remuxing-TV-Blu-ray-Discs-with-BatchGuy-](./btn_guides/Remuxing-Remuxing-TV-Blu-ray-Discs-with-BatchGuy-_-Approved-Tutorials-_-Support-_-Forums.html)
+
+[Subtitles-Convert-Bluray-SUP-to-SRT](./btn_guides/Subtitles-Convert-Bluray-SUP-to-SRT-_-Approved-Tutorials-_-Support-_-Forums.html)
