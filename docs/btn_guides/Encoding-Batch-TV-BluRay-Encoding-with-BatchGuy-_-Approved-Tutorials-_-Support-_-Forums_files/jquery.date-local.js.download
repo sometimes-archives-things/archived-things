@@ -1,0 +1,1 @@
+jQuery(document).ready(function(){jQuery('span[class=date-utc]').map(function(i,e){var LocalDate=new Date(jQuery(e).attr('x-jqdate')*1000);jQuery(e).html(LocalDate.toString());});});

@@ -1,0 +1,41 @@
+var get_req;var post_req;var element;var elements;if(navigator.appName=="Netscape"){document.write("<style type='text/css'>body {overflow-y:scroll;}<\/style>");}
+function $(){var elements=new Array();if(arguments[0]=="document"){return jQuery(document);}
+for(var i=0;i<arguments.length;i++){var element=arguments[i];if(typeof element=='string')
+element=document.getElementById(element);if(arguments.length==1){if(element==null){return jQuery(arguments[i]);}else{return element;}}
+elements.push(element);}
+return elements;}
+function doNothing(){}
+var get_req;var post_req;var element;function get_inc(url,params){try{get_req=new XMLHttpRequest();}catch(e){get_req=new ActiveXObject("Microsoft.XMLHTTP")};get_req.onreadystatechange=GRH;get_req.open("GET",url+params,true);get_req.send(null);}
+function post_inc(url,params,formid){var parameters=serialize(formid);try{post_req=new XMLHttpRequest();post_req.overrideMimeType('text/html');}catch(e){post_req=new ActiveXObject("Microsoft.XMLHTTP")}
+post_req.onreadystatechange=PRH;post_req.open('POST',url+params,true);post_req.setRequestHeader("Content-type","application/x-www-form-urlencoded");post_req.setRequestHeader("Content-length",parameters.length);post_req.setRequestHeader("Connection","close");post_req.send(parameters);}
+function serialize(formid){var query='';var tail='';for(i=0;i<$(formid).elements.length;i++){element=$(formid).elements[i];switch(element.type){case 'text':case 'hidden':case 'password':case 'textarea':case 'select-one':query+=element.name+'='+encodeURIComponent(element.value)+'&'
+break;case 'select-multiple':var isSet=false;for(var j=0;j<element.options.length;j++){var current=element.options[j];if(current.selected){query+=element.name+'='+encodeURIComponent(current.value)+'&';}}
+break;case 'radio':if(element.checked){query+=element.name+'='+encodeURIComponent(element.value)+'&'}
+break;case 'checkbox':if(element.checked){query+=element.name+'='+encodeURIComponent(element.value);query+='&';tail=element.name;}
+break;}}
+query=query.substr(0,query.length-1);return query;}
+function getElementsByClassName(className,tag,elm){var testClass=new RegExp(".*"+className+".*");var tag=tag||"*";var elm=elm||document;var elements=(tag=="*"&&elm.all)?elm.all:elm.getElementsByTagName(tag);var returnElements=[];var current;var length=elements.length;for(var i=0;i<length;i++){current=elements[i];if(testClass.test(current.className)){returnElements.push(current);}}
+return returnElements;}
+function Scale(image){if(image.width>500){image.height=Math.round(((500)/image.width)*image.height);image.width=500;image.title="Preview";image.setAttribute("onclick","Preview(this);");}}
+function Preview(image){$('lightbox').innerHTML="<a onclick=\"Return();\"><img src=\""+image.src+"\" /></a>";$('curtain').style.display="block";$('lightbox').style.display="block";}
+function Return(){$('lightbox').style.display="none";$('curtain').style.display="none";$('lightbox').innerHTML="";}
+function Bookmark(){var url=document.location.href;var end=(url.indexOf("?")==-1)?url.length:url.indexOf("?");switch(url.substring(url.lastIndexOf("/")+1,end)){case 'torrents.php':var sort='0';break;case 'requests.php':var sort='1';break;case 'forums.php':var sort='2';break;default:var sort='3';}
+$('lightbox').innerHTML='<table style="width:600px;margin: auto;"><tr><td class="colhead"><span style="float:left;">New Bookmark</span><span style="float:right;">'+document.title+'</span></td></tr><tr><td valign="top"><form id="bookmark" method="post"><input type="hidden" name="title" value="'+document.title+'" /><input type="hidden" name="sort" value="'+sort+'" /><input type="hidden" name="uri" value="'+url+'" />'+url+'</td></tr><tr><td class="center" valign="top"><input type="button" value="Add Bookmark" onclick="Save_Bookmark()" /><input type="button" value="Cancel" onclick="Return()" /></form></td></tr></table>';$('curtain').style.display="block";$('lightbox').style.display="block";}
+function Save_Bookmark(){var parameters=serialize('bookmark');try{bookmark=new XMLHttpRequest();bookmark.overrideMimeType('text/html');}catch(e){bookmark=new ActiveXObject("Microsoft.XMLHTTP")}
+bookmark.onreadystatechange=function(){if(bookmark.readyState==4&&bookmark.status==200){$('lightbox').style.display="none";$('curtain').style.display="none";$('lightbox').innerHTML="";}};bookmark.open('POST','bookmarks.php?action=add',true);bookmark.setRequestHeader("Content-type","application/x-www-form-urlencoded");bookmark.setRequestHeader("Content-length",parameters.length);bookmark.setRequestHeader("Connection","close");bookmark.send(parameters);}
+function toggleDisplay(elem,opts){if($(opts['prefixParent'])){if(!opts['prefixElemType']){opts['prefixElemType']="*";}
+elems=getElementsByClassName(elem,opts['prefixElemType'],$(opts['prefixParent']));elem=elems[0];}else{elems="";}
+if($(elem).className&&$(elem).className.match(/(^| )hide$/)){$(elem).className=$(elem).className.substr(0,$(elem).className.length-5);if(opts['hideText']&&$(opts['masterElem'])){$(opts['masterElem']).innerHTML=opts['hideText'];}}else{$(elem).className=$(elem).className+' hide';if(opts['showText']&&$(opts['masterElem'])){$(opts['masterElem']).innerHTML=opts['showText'];}}
+newClass=$(elem).className;for(s=0;s<elems.length;s++){elems[s].className=newClass;}
+return false;}
+function toggleChecks(formElem,masterElem){if(masterElem.checked){checked=true;}else{checked=false;}
+for(s=0;s<$(formElem).elements.length;s++){if($(formElem).elements[s].type=="checkbox"){$(formElem).elements[s].checked=checked;}}}
+function spoilerToggle(elem){sibchild=elem.nextSibling.firstChild;if(elem.innerHTML=='[show]'){sibchild.style.display='inline';elem.innerHTML='[hide]';}else if(elem.innerHTML=='[hide]'){sibchild.style.display='none';elem.innerHTML='[show]';}}
+function RemContent(a,b,c){document.getElementById(a).style.display="none";document.getElementById(b).style.display="none";document.getElementById(c).style.display="none";}
+function InsContent(d){document.getElementById(d).style.display="";}
+function show_error(message){jQuery("#ajax_error_message").text(message).show().delay(5000).fadeOut();}
+function show_message(message){jQuery("#ajax_save_message").text(message).show().delay(5000).fadeOut();}
+function errorBox(msg){jQuery.msgbox(msg,{type:'error',buttons:[{type:'submit',value:'OK'}]});}
+function successBox(msg){jQuery.msgbox(msg,{type:'info',buttons:[{type:'submit',value:'OK'}]});}
+function updateLumenMenu(NewLumens){jQuery('#toplumens').fadeOut(250,function(){jQuery('#toplumens').html(NewLumens);jQuery('#toplumens').fadeIn();});}
+function updateBonusMenu(NewBonus){jQuery('#pointsStats').fadeOut(250,function(){jQuery('#pointsStats').html(NewBonus);jQuery('#pointsStats').fadeIn();});}
