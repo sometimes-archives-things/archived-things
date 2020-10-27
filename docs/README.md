@@ -1,4 +1,4 @@
-# Main page
+# Guides
 
 [Simple-x264-Encoding-Guide-for-Handbrake-\(Mar-13\)](./ptp_guides/Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13).html)
 
