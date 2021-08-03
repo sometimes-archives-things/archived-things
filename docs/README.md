@@ -1,5 +1,7 @@
 # Guides
 
+## PTP
+
 [Simple x264 Encoding Guide for Handbrake \(Mar 13\)](./ptp_guides/Simple-x264-Encoding-Guide-for-Handbrake-(Mar-13).html)
 
 [Source_Encode Comparison Screenshots Guide](./ptp_guides/Source_Encode-Comparison-Screenshots-Guide.html)
@@ -38,6 +40,9 @@
 
 [Simple Remuxing Guide using MKVToolNix](./ptp_guides/Simple-Remuxing-Guide-using-MKVToolNix.html)
 
+
+## BTN
+
 [Encoding Batch TV BluRay Encoding with BatchGuy](./btn_guides/Encoding-Batch-TV-BluRay-Encoding-with-BatchGuy-_-Approved-Tutorials-_-Support-_-Forums.html)
 
 [Encoding Remuxing Untouched Bluray to MKV](./btn_guides/Encoding-Remuxing-Untouched-Bluray-to-MKV-_-Approved-Tutorials-_-Support-_-Forums.html)
@@ -46,6 +51,9 @@
 
 [Subtitles Convert Bluray SUP to SRT](./btn_guides/Subtitles-Convert-Bluray-SUP-to-SRT-_-Approved-Tutorials-_-Support-_-Forums.html)
 
-[Blutopia - Full Disc Ripping Guide](blutopia_guides/wiki/25.md)
+
+## Blutopia
+
+[Full Disc Ripping Guide](blutopia_guides/wiki/25.md)
 
 [The Blutopia Guide to Blu-ray Remuxing](blutopia_guides/wiki/26.md)
