@@ -45,3 +45,7 @@
 [Remuxing Remuxing TV Blu ray Discs with BatchGuy](./btn_guides/Remuxing-Remuxing-TV-Blu-ray-Discs-with-BatchGuy-_-Approved-Tutorials-_-Support-_-Forums.html)
 
 [Subtitles Convert Bluray SUP to SRT](./btn_guides/Subtitles-Convert-Bluray-SUP-to-SRT-_-Approved-Tutorials-_-Support-_-Forums.html)
+
+[Blutopia - Full Disc Ripping Guide](blutopia_guides/wiki/25.md)
+
+[The Blutopia Guide to Blu-ray Remuxing](blutopia_guides/wiki/26.md)
